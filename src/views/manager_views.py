@@ -5,6 +5,7 @@ from utils.app_decorator import error_handler
 from config.prompts.prompts import PromptConfig
 from config.log_prompts.logs_config import LogsConfig
 from controllers.asset_data_controller import AssetDataController
+from views.asset_views import AssetViews
 
 logger = logging.getLogger('manager_views')
 
@@ -27,6 +28,7 @@ class ManagerViews:
         self.user_id = user_id
         self.obj_common_helper = CommonHelper()
         self.asset_data_obj = AssetDataController()
+        self.asset_obj = AssetViews()
 
     def manager_operations(self) -> None:
         """

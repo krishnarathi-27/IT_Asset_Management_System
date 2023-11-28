@@ -1,4 +1,4 @@
-"""Module for taking input from admin for various functionalities"""
+"""Module for taking input from employee for various functionalities"""
 import logging
 from utils.common_helper import CommonHelper
 from utils.app_decorator import error_handler

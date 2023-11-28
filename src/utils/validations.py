@@ -1,8 +1,8 @@
 """Module for validating user input by correct regex pattern"""
-import datetime
 import re
 import maskpass
 import logging
+from datetime import datetime
 from config.app_config import AppConfig
 from config.prompts.prompts import PromptConfig
 
@@ -149,7 +149,9 @@ class InputValidations:
         """
         while True:
             purchased_date = input(PromptConfig.INPUT_PURCHASED_DATE).strip()
-            if datetime.strptime(purchased_date, AppConfig.DATE_FORMAT):
+            try:
+                datetime.strptime(purchased_date, AppConfig.DATE_FORMAT)
                 return purchased_date
-            print(PromptConfig.INVALID_INPUT)
-            logger.info("Invalid date entered")
+            except:   
+                print(PromptConfig.INVALID_INPUT)
+                logger.info("Invalid date entered")

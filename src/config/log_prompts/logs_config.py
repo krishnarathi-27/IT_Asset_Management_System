@@ -80,4 +80,3 @@ class LogsConfig:
             cls.LOG_ASSET_ADDED = data['LOG_ASSET_ADDED']
             cls.LOG_ASSET_ASSIGNED = data['LOG_ASSET_ASSIGNED']
             cls.LOG_ASSET_UNASSIGNED = data['LOG_ASSET_UNASSIGNED']
-

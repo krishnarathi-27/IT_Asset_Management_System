@@ -152,3 +152,37 @@ class DatabaseHelper:
             Queries.INSERT_MAPPING_DETAILS,
             (mapping_id,category_id,vendor_id,)
         )
+
+    def get_category_vendor_details(self) -> list:
+        '''
+            Method to fetch data from caegory and endor table
+            Parameters : self
+            Return Type : list
+        '''      
+        data = db.fetch_data(
+                    Queries.FETCH_MAPPING_ID
+            )
+        return data
+    
+    def get_data_if_mapping_id(self,mapping_id: str) -> list:
+        '''
+            Method to fetch data from table if mapping id exists
+            Parameters : self, mapping_id
+            Return Type : list
+        '''          
+        data = db.fetch_data(
+                Queries.FETCH_IF_MAPPING_ID_EXISTS,
+                (mapping_id,)
+            )
+        return data
+    
+    def save_asset_details(self,asset_id: str,mapping_id: str,asset_type: str,purchased_date: str) -> None:
+        '''
+            Method to save asset details in asset tabl
+            Parameters : self,asset_id,mapping_id,asset_type,purchased_date
+            Return Type : None
+        ''' 
+        db.save_data(
+            Queries.INSERY_ASSET_DETAILS,
+            (asset_id,mapping_id,asset_type,purchased_date)
+        )

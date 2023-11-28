@@ -26,3 +26,8 @@ class AppConfig:
     REGEX_EMAIL = r"^[a-z0-9]+@[a-z]+\.[a-z]{2,3}"
     REGEX_PASSWORD = r"^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[@#$%&]).{8,}$"
     
+    ASSIGNABLE_ASSET_TYPE = "assignable"
+    UNASSIGNABLE_ASSET_TYPE = "nassignable"
+    UNAVAILABLE_STATUS = "unavailable"
+    AVAILABLE_STATUS = "available"
+    ASSET_LOCATION = "warehouse"

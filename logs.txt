@@ -35,3 +35,59 @@ Traceback (most recent call last):
     ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 AttributeError: 'AssetDataController' object has no attribute 'category_vendor_exists'
 2023-11-28 06:39:31,464 INFO     [main.py:27] Starting with asset management system.
+2023-11-28 09:39:19,310 INFO     [main.py:27] Starting with asset management system.
+2023-11-28 09:39:27,683 INFO     [main.py:27] Starting with asset management system.
+2023-11-28 09:39:34,054 INFO     [auth_controller.py:54] Providing role based access to authenticated user
+2023-11-28 09:39:34,054 INFO     [manager_views.py:26] Asset Manager logged in the system
+2023-11-28 09:39:34,054 INFO     [asset_views.py:23] Asset Manager logged in the system
+2023-11-28 09:39:34,054 INFO     [manager_views.py:39] Manager menu displayed
+2023-11-28 09:41:00,298 INFO     [main.py:27] Starting with asset management system.
+2023-11-28 09:41:08,317 INFO     [auth_controller.py:54] Providing role based access to authenticated user
+2023-11-28 09:41:08,317 INFO     [manager_views.py:26] Asset Manager logged in the system
+2023-11-28 09:41:08,317 INFO     [manager_views.py:39] Manager menu displayed
+2023-11-28 09:41:16,441 INFO     [validations.py:116] Invalid mapping id entered
+2023-11-28 09:41:27,391 ERROR    [app_decorator.py:32] Incorrect number of bindings supplied. The current statement uses 1, and there are 0 supplied.
+Traceback (most recent call last):
+  File "c:\Users\krathi\OneDrive - WatchGuard Technologies Inc\Desktop\IT_Asset_Management_System\src\utils\app_decorator.py", line 24, in wrapper
+    return func(*args,**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\krathi\OneDrive - WatchGuard Technologies Inc\Desktop\IT_Asset_Management_System\src\views\manager_views.py", line 67, in manager_menu
+    self.asset_obj.add_asset()
+  File "c:\Users\krathi\OneDrive - WatchGuard Technologies Inc\Desktop\IT_Asset_Management_System\src\views\asset_views.py", line 30, in add_asset
+    return_value = self.obj_asset_controller.add_asset_to_inventory(AppConfig.ASSIGNABLE_ASSET_TYPE)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\krathi\OneDrive - WatchGuard Technologies Inc\Desktop\IT_Asset_Management_System\src\controllers\asset_controllers.py", line 26, in add_asset_to_inventory
+    data = self.db_obj.get_data_if_mapping_id(mapping_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\krathi\OneDrive - WatchGuard Technologies Inc\Desktop\IT_Asset_Management_System\src\models\database_helper.py", line 173, in get_data_if_mapping_id
+    data = db.fetch_data(
+           ^^^^^^^^^^^^^^
+  File "c:\Users\krathi\OneDrive - WatchGuard Technologies Inc\Desktop\IT_Asset_Management_System\src\models\database.py", line 69, in fetch_data
+    self.cursor.execute(query)
+sqlite3.ProgrammingError: Incorrect number of bindings supplied. The current statement uses 1, and there are 0 supplied.
+2023-11-28 09:44:06,736 INFO     [main.py:27] Starting with asset management system.
+2023-11-28 09:44:17,905 INFO     [auth_controller.py:54] Providing role based access to authenticated user
+2023-11-28 09:44:17,905 INFO     [manager_views.py:26] Asset Manager logged in the system
+2023-11-28 09:44:17,905 INFO     [manager_views.py:39] Manager menu displayed
+2023-11-28 09:44:38,733 ERROR    [app_decorator.py:44] module 'datetime' has no attribute 'strptime'
+Traceback (most recent call last):
+  File "c:\Users\krathi\OneDrive - WatchGuard Technologies Inc\Desktop\IT_Asset_Management_System\src\utils\app_decorator.py", line 24, in wrapper
+    return func(*args,**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\krathi\OneDrive - WatchGuard Technologies Inc\Desktop\IT_Asset_Management_System\src\views\manager_views.py", line 67, in manager_menu
+    self.asset_obj.add_asset()
+  File "c:\Users\krathi\OneDrive - WatchGuard Technologies Inc\Desktop\IT_Asset_Management_System\src\views\asset_views.py", line 30, in add_asset
+    return_value = self.obj_asset_controller.add_asset_to_inventory(AppConfig.ASSIGNABLE_ASSET_TYPE)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\krathi\OneDrive - WatchGuard Technologies Inc\Desktop\IT_Asset_Management_System\src\controllers\asset_controllers.py", line 29, in add_asset_to_inventory
+    purchased_date = InputValidations.input_date()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\krathi\OneDrive - WatchGuard Technologies Inc\Desktop\IT_Asset_Management_System\src\utils\validations.py", line 152, in input_date
+    if datetime.strptime(purchased_date, AppConfig.DATE_FORMAT):
+       ^^^^^^^^^^^^^^^^^
+AttributeError: module 'datetime' has no attribute 'strptime'
+2023-11-28 09:47:13,849 INFO     [main.py:27] Starting with asset management system.
+2023-11-28 09:47:20,079 INFO     [auth_controller.py:54] Providing role based access to authenticated user
+2023-11-28 09:47:20,079 INFO     [manager_views.py:26] Asset Manager logged in the system
+2023-11-28 09:47:20,079 INFO     [manager_views.py:39] Manager menu displayed
+2023-11-28 09:47:49,758 INFO     [asset_views.py:41] Asset successfully added

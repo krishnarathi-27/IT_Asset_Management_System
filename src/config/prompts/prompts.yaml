@@ -87,11 +87,6 @@ MAINTENANCE_PROMPT : |
   - '4' Back to main menu
   Enter your choice:- 
 
-ASSIGNABLE_ASSET_TYPE : assignable
-UNASSIGNABLE_ASSET_TYPE : unassignable
-UNAVAILABLE_STATUS : unavailable
-AVAILABLE_STATUS : available
-ASSET_LOCATION : warehouse
 
 STARTING_APPLICATION :  ----Welcome to asset management system----
 EXIT_SYSTEM_PROMPT : Do you want to exit from system y/n :- 
