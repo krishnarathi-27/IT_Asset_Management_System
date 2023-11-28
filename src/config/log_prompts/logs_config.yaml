@@ -1,0 +1,28 @@
+#common
+LOG_CATEGORY_ADDED : Category added in database
+LOG_VENDOR_ADDED : Vendor added in database
+
+#auth logs
+
+PROVIDE_ROLE_BASED_ACCESS : Providing role based access to authenticated user
+LOG_INVALID_LOGIN : Invalid login occured
+LOG_STARTING_APPLICATION : Starting with asset management system.
+LOG_DEFAULT_PASSWORD : User changed default password
+
+#admin
+LOG_CREATE_NEW_USER : Create new user
+LOG_ADMIN_LOGGED_IN : Admin logged in the system
+LOG_VENDOR_DEACTIVATED : Vendor deactivated successfully
+
+#database
+LOG_ERROR_CONNECTING_DATABASE : Error occured while connecting to database
+
+#employee 
+LOG_ISSUE_RAISED : Issue raised successfully
+LOG_EMPLOYEE_LOGGED_IN : Employee logged in the system
+
+#manager
+LOG_MANAGER_LOGGED_IN : Asset Manager logged in the system
+LOG_ASSET_ADDED : Asset successfully added
+LOG_ASSET_ASSIGNED : Asset assigned successfully to user
+LOG_ASSET_UNASSIGNED : Asset unassigned from the user

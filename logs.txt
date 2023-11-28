@@ -1,0 +1,37 @@
+2023-11-28 06:17:27,902 INFO     [main.py:27] Starting with asset management system.
+2023-11-28 06:17:36,719 INFO     [auth_controller.py:54] Providing role based access to authenticated user
+2023-11-28 06:17:36,719 INFO     [admin_views.py:27] Admin logged in the system
+2023-11-28 06:17:36,719 INFO     [admin_views.py:39] Admin menu displayed
+2023-11-28 06:24:15,410 INFO     [main.py:27] Starting with asset management system.
+2023-11-28 06:24:26,098 INFO     [auth_controller.py:54] Providing role based access to authenticated user
+2023-11-28 06:24:26,098 INFO     [admin_views.py:27] Admin logged in the system
+2023-11-28 06:24:26,098 INFO     [admin_views.py:39] Admin menu displayed
+2023-11-28 06:24:31,228 ERROR    [app_decorator.py:41] CommonHelper.input_category_details() missing 1 required positional argument: 'self'
+Traceback (most recent call last):
+  File "c:\Users\krathi\OneDrive - WatchGuard Technologies Inc\Desktop\IT_Asset_Management_System\src\utils\app_decorator.py", line 24, in wrapper
+    return func(*args,**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\krathi\OneDrive - WatchGuard Technologies Inc\Desktop\IT_Asset_Management_System\src\views\admin_views.py", line 70, in admin_menu
+    if self.asset_data_obj.create_category():
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\krathi\OneDrive - WatchGuard Technologies Inc\Desktop\IT_Asset_Management_System\src\controllers\asset_data_controller.py", line 17, in create_category
+    data = CommonHelper.input_category_details()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: CommonHelper.input_category_details() missing 1 required positional argument: 'self'
+2023-11-28 06:25:14,613 INFO     [main.py:27] Starting with asset management system.
+2023-11-28 06:25:19,719 INFO     [auth_controller.py:54] Providing role based access to authenticated user
+2023-11-28 06:25:19,719 INFO     [admin_views.py:27] Admin logged in the system
+2023-11-28 06:25:19,722 INFO     [admin_views.py:39] Admin menu displayed
+2023-11-28 06:25:33,584 ERROR    [app_decorator.py:44] 'AssetDataController' object has no attribute 'category_vendor_exists'
+Traceback (most recent call last):
+  File "c:\Users\krathi\OneDrive - WatchGuard Technologies Inc\Desktop\IT_Asset_Management_System\src\utils\app_decorator.py", line 24, in wrapper
+    return func(*args,**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\krathi\OneDrive - WatchGuard Technologies Inc\Desktop\IT_Asset_Management_System\src\views\admin_views.py", line 70, in admin_menu
+    if self.asset_data_obj.create_category():
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\krathi\OneDrive - WatchGuard Technologies Inc\Desktop\IT_Asset_Management_System\src\controllers\asset_data_controller.py", line 33, in create_category
+    self.category_vendor_exists(mapping_id,category_id,vendor_id)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AssetDataController' object has no attribute 'category_vendor_exists'
+2023-11-28 06:39:31,464 INFO     [main.py:27] Starting with asset management system.
