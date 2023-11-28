@@ -1,0 +1,316 @@
+---
+
+#create table queries
+create_authentication_table : |
+  CREATE TABLE IF NOT EXISTS authentication(
+    user_id TEXT PRIMARY KEY,
+    username TEXT UNIQUE,
+    password TEXT,
+    role TEXT,
+    is_changed TEXT DEFAULT "false" 
+  )
+
+create_vendor_table : |
+  CREATE TABLE IF NOT EXISTS vendor_table(
+    vendor_id TEXT PRIMARY KEY,
+    vendor_name TEXT,
+    vendor_email TEXT UNIQUE,
+    active_status TEXT DEFAULT "true"
+  )
+
+create_asset_category_table : |
+  CREATE TABLE IF NOT EXISTS asset_category(
+    category_id TEXT PRIMARY KEY,
+    category_name TEXT,
+    brand_name TEXT
+  )
+
+create_mapping_table : |
+  CREATE TABLE IF NOT EXISTS mapping_table(
+    mapping_id TEXT PRIMARY KEY,
+    category_id TEXT,
+    vendor_id TEXT,
+    FOREIGN KEY(category_id) REFERENCES asset_category(category_id),
+    FOREIGN KEY(vendor_id) REFERENCES vendor_table(vendor_id)
+  )
+
+create_asset_table : |
+  CREATE TABLE IF NOT EXISTS asset_table(
+    asset_id TEXT PRIMARY KEY,
+    mapping_id TEXT,
+    asset_type TEXT,
+    assigned_to TEXT DEFAULT "location",
+    asset_status TEXT DEFAULT "available",
+    purchased_date TEXT,
+    FOREIGN KEY(mapping_id) REFERENCES asset_category(mapping_id)
+  )
+
+create_maintenance_table : |
+  CREATE TABLE IF NOT EXISTS maintenance_table(
+    maintenance_id TEXT PRIMARY KEY,
+    asset_id TEXT,
+    start_date TEXT,
+    return_date TEXT DEFAULT "pending",
+    FOREIGN KEY(asset_id) REFERENCES asset_table(asset_id)
+  )
+
+create_issue_table : |
+  CREATE TABLE IF NOT EXISTS issue_table(
+    issue_id TEXT PRIMARY KEY,
+    user_id TEXT,
+    asset_id TEXT,
+    issue_status TEXT DEFAULT "pending",
+    issue_resolved_by TEXT DEFAULT "pending",
+    FOREIGN KEY(asset_id) REFERENCES asset_table(asset_id),
+    FOREIGN KEY(user_id) REFERENCES user_table(user_id)
+  )
+
+#delete data queries
+delete_user_credentials : DELETE FROM authentication WHERE username = ?
+
+delete_vendor_details : |
+  UPDATE vendor_table
+  SET active_status = "false" 
+  WHERE vendor_email = ? 
+
+#update data queries
+update_default_password : |
+  UPDATE authentication SET password = ?,
+  is_changed = "true" WHERE username = ?
+
+update_asset_status : |
+  UPDATE asset_table 
+  SET assigned_to = ?, asset_status = ? 
+  WHERE asset_id = ?
+
+update_issue_status_under_maintenance : |
+  UPDATE issue_table
+  SET issue_status = "resolved", issue_resolved_by = ?
+  WHERE issue_id = ?
+
+update_asset_status_under_maintenance : |
+  UPDATE asset_table 
+  SET asset_status = "under_maintenance"
+  WHERE asset_id = ?
+
+update_maintenance_return_date : |
+  UPDATE maintenance_table
+  SET return_date = ?
+  WHERE maintenance_id = ?
+
+update_asset_status_again_to_available : |
+  UPDATE asset_table 
+  SET asset_status = "available"
+  WHERE asset_id = ?
+
+#fetch data queries
+fetch_authentication_table : |
+  SELECT user_id, username, role
+  FROM authentication
+
+fetch_vendor_table : SELECT * FROM vendor_table
+
+fetch_category_table : SELECT * FROM asset_category
+
+fetch_assets_table : SELECT * FROM asset_table
+
+fetch_assets_by_user_id : |
+  SELECT authentication.user_id, authentication.username, 
+  asset_table.asset_id, asset_table.purchased_date
+  FROM authentication
+  INNER JOIN asset_table 
+  ON authentication.user_id = asset_table.assigned_to 
+  WHERE authentication.user_id = ?
+
+fetch_assets_by_category_id : |
+  SELECT asset_category.category_id, asset_category.category_name, asset_category.brand_name,
+  asset_table.asset_id, asset_table.purchased_date
+  FROM asset_category
+  INNER JOIN mapping_table ON asset_category.category_id = mapping_table.category_id
+  INNER JOIN asset_table ON asset_table.mapping_id = mapping_table.mapping_id
+  WHERE asset_category.category_id = ?
+
+fetch_assets_by_vendor_email : |
+  SELECT asset_table.asset_id, asset_table.purchased_date, asset_table.assigned_to,
+  mapping_table.vendor_id, vendor_table.vendor_name, vendor_table.vendor_email
+  FROM asset_table
+  INNER JOIN mapping_table ON asset_table.mapping_id = mapping_table.mapping_id
+  INNER JOIN vendor_table ON mapping_table.vendor_id = vendor_table.vendor_id
+  WHERE vendor_table.vendor_email = ?
+  
+fetch_assets_available : |
+  SELECT * 
+  FROM asset_table
+  WHERE asset_status = "available"
+
+fetch_assets_under_maintenance : |
+  SELECT * 
+  FROM asset_table
+  WHERE asset_status = "under_maintenance"
+
+fetch_user_credentials : |
+  SELECT user_id, password, role, is_changed 
+  FROM authentication WHERE username = ?
+
+fetch_assigned_assets_by_uid : |
+  SELECT asset_table.asset_id, asset_table.assigned_to
+  FROM asset_table
+  WHERE asset_table.assigned_to = ?
+
+fetch_category_details : |
+  SELECT asset_category.category_id, asset_category.category_name, asset_category.brand_name, 
+  mapping_table.vendor_id, vendor_table.vendor_name, vendor_table.vendor_email, vendor_table.active_status
+  FROM 
+  asset_category
+  INNER JOIN mapping_table ON mapping_table.category_id = asset_category.category_id
+  INNER JOIN vendor_table ON mapping_table.vendor_id = vendor_table.vendor_id
+
+fetch_assignable_assets : |
+  SELECT asset_table.asset_id, mapping_table.category_id, asset_category.category_name, asset_category.brand_name
+  FROM asset_table
+  INNER JOIN mapping_table ON asset_table.mapping_id = mapping_table.mapping_id
+  INNER JOIN asset_category ON mapping_table.category_id = asset_category.category_id
+  WHERE asset_table.asset_type = "assignable" AND asset_table.asset_status = "available"
+
+fetch_assignable_assets_to_assign : |
+  SELECT * FROM asset_table
+  WHERE asset_type = "assignable" AND asset_status = "available"
+
+fetch_assigned_assets_to_unassign : |
+  SELECT * FROM asset_table
+  WHERE asset_type = "assignable" AND asset_status = "unavailable"
+
+fetch_from_mapping_table : | 
+  SELECT * FROM mapping_table
+  WHERE category_id = ? AND vendor_id = ?
+
+fetch_issues_pending : |
+  SELECT issue_id, user_id, asset_id 
+  FROM issue_table
+  WHERE issue_status = "pending"
+
+fetch_maintenance_table : |
+  SELECT * 
+  FROM maintenance_table 
+  WHERE return_date = "pending"
+
+fetch_asset_id_by_maintenance_table : |
+  SELECT asset_id 
+  FROM maintenance_table
+  WHERE maintenance_id= ? 
+
+#fetch data if exists 
+fetch_if_category_exists : |
+  SELECT category_name
+  FROM asset_category
+  WHERE category_id = ?
+
+fetch_if_asset_exists : |
+  SELECT asset_id 
+  FROM asset_table 
+  WHERE asset_id = ? AND asset_type = "assignable"
+
+fetch_if_user_exists : SELECT user_id FROM authentication WHERE user_id = ?
+
+fetch_vendor_by_email : |
+  SELECT vendor_id 
+  FROM vendor_table 
+  WHERE vendor_email = ? AND active_status = "true"
+
+fetch_details_by_uid : |
+  SELECT user_id, username, role
+  FROM authentication
+  WHERE user_id = ? 
+
+fetch_if_user_have_asset : |
+  SELECT mapping_id
+  FROM asset_table
+  WHERE asset_id = ? AND assigned_to = ?
+
+fetch_by_category_and_brand_name : |
+  SELECT category_id
+  FROM asset_category
+  WHERE category_name = ? AND brand_name = ?
+
+fetch_asset_id_by_issue_id : |
+  SELECT asset_id 
+  FROM issue_table
+  WHERE issue_id = ?
+
+fetch_mapping_id : |
+  SELECT mapping_id, mapping_table.category_id, asset_category.category_name, asset_category.brand_name,
+  mapping_table.vendor_id, vendor_table.vendor_email
+  FROM mapping_table 
+  INNER JOIN asset_category ON mapping_table.category_id = asset_category.category_id
+  INNER JOIN vendor_table ON mapping_table.vendor_id = vendor_table.vendor_id
+
+fetch_if_mapping_id_exists : |
+  SELECT mapping_id 
+  FROM mapping_table
+  WHERE mapping_id = ?
+
+#insert details in table
+insert_vendor_details : |
+  INSERT INTO vendor_table(
+    vendor_id, vendor_name, vendor_email
+  ) VALUES (?,?,?)
+
+insert_category_details : |
+  INSERT INTO asset_category(
+    category_id, category_name, brand_name
+  ) VALUES (?,?,?)
+
+insert_asset_details : |
+  INSERT INTO asset_table(
+  asset_id, mapping_id, asset_type, purchased_date
+  ) VALUES(?,?,?,?)
+
+insert_mapping_details : |
+  INSERT INTO mapping_table(
+  mapping_id,category_id, vendor_id
+  ) VALUES (?,?,?)
+
+insert_in_maintenance_table : |
+  INSERT INTO maintenance_table (
+  maintenance_id, asset_id, start_date
+  ) VALUES(?,?,?)
+
+insert_user_credentials : |
+  INSERT INTO authentication
+  (user_id, username, password, role)
+  VALUES (?,?,?,?)
+
+insert_issue_for_asset : |
+  INSERT INTO issue_table(
+  issue_id, user_id, asset_id
+  ) VALUES (?,?,?)
+
+#lists to show complete table details
+schema_user_table : ['User_id','Username','Role']
+
+schema_vendor_table : ['Vendor_id','Vendor_name','Vendor_email','Active_status']
+
+schema_asset_table : ['Asset_id','Asset_id','Assigned_to','Asset_status','Purchased_date','Mapping_id']
+
+schema_maintenance_table : ['Maintenance_id','Asset_id','start_date','return_date']
+
+schema_category_details_table : ['Category_id','Category_name','Brand_name']
+
+#lists to display data for some conditions
+schema_assets_by_user_id : ['User_id','Username','Asset_id','Purchased_date']
+
+schema_assets_by_category_id : ['Category_id','Category_name','Brand_name','Asset_id','Purchased_date']
+
+schema_assets_by_vendor_email : ['Asset_id','Purchased_date','Assigned_to','Vendor_id','Vendor_name','Vendor_email']
+
+schema_assets_to_user : ['Asset_id','Assigned_to']
+
+schema_pending_issues : ['Issue_id','User_id','Asset_id']
+
+schema_assignable_asset_details : ['Asset_id','Category_id','Category_name','Brand_name']
+
+schema_category_table : ['Category_id','Category_name','Brand_name','Vendor_id','Vendor_name','Vendor_email','Vendor_active_status']
+
+schema_mapping_category_vendor_table : ['Mapping_id', 'Category_id', 'Category_name','Brand_name','Vendor_id','Vendor_email']
+
+...

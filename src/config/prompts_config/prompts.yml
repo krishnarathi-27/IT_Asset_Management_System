@@ -1,0 +1,68 @@
+admin_prompt : |
+  Enter: 
+  - '1' View users
+  - '2' Add user
+  - '3' Delete user
+  - '4' View vendors
+  - '5' Delete vendor
+  - '6' Add vendor
+  - '7' View assets category
+  - '8' Add assets category
+  - '9' Track assets
+  - '10' Logout
+  Your choice:- 
+
+manager_prompt : |
+  Enter:
+  - '1' View users
+  - '2' View vendors
+  - '3' Add vendors
+  - '4' View asset category
+  - '5' Add assets category
+  - '6' Add assets to inventory
+  - '7' View inventory
+  - '8' Assign assets
+  - '9' Unassigned assets
+  - '10' Track assets
+  - '11' Maintenance
+  - '12' Logout
+  Your choice:-
+
+employee_prompt : |
+  Enter:
+  - '1' View details
+  - '2' View assets assigned
+  - '3' Raise maintenance issue
+  - '4' Logout
+  Your choice:-
+  
+create_new_user_role : |
+  Enter role of user:
+  - '1' Asset Manager
+  - '2' Employee
+  Choice:-  
+
+asset_assignable_prompt : |
+  Assign assets 
+  - '1' Assignable asset
+  - '2' Unassignable asset
+  Choice:- 
+
+track_assets_prompt : |
+  Track asset :-
+  - '1' By user id
+  - '2' By category id
+  - '3' By vendors email
+  - '4' By availabilty
+  - '5' Under maintenance
+  - '6' Back to main menu
+  Enter your choice:- 
+
+maintenance_prompt : |
+  Maintenance issues:- 
+  - '1' View pending request
+  - '2' Send asset
+  - '3' Recieve asset
+  - '4' Back to main menu
+  Enter your choice:- 
+

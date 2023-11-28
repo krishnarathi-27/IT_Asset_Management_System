@@ -1,0 +1,98 @@
+#constants
+max_login_attempts : 3
+database_location : 'src\\database\\asset_management.db'
+assignable_asset_type : "assignable"
+unassignable_asset_type : "unassignable"
+unavailable_status : "unavailable"
+available_status : "available"
+asset_location : "warehouse"
+date_format : "%Y-%m-%d"
+regex_user_id : "^EMP[a-zA-Z0-9]{4}$"
+regex_asset_id : "^ASN[a-zA-Z0-9]{4}$"
+regex_category_id : "^CAT[a-zA-Z0-9]{4}$"
+regex_mapping_id : "^MPN[a-zA-Z0-9]{4}$"
+regex_vendor_id : "^VEN[a-zA-Z0-9]{4}$"
+regex_issue_id : "^ISN[a-zA-Z0-9]{4}$"
+regex_maintenance_id : "^MTN[a-zA-Z0-9]{4}$"
+regex_name : ^([A-Za-z0-9]{3,20}.\s*)
+regex_email : ^[a-z0-9]+@[a-z]+\.[a-z]{2,3}
+regex_password : "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[@#$%&]).{8,}$"
+
+#main file
+starting_application : "----Welcome to asset management system----"
+
+#common 
+invalid_input : "Wrong input entered try again !!"
+enter_vendor_email : "Enter vendor email :- "
+vendor_not_exists : "Vendor already exists in database"
+user_not_exists : "User not exists"
+administrator : "admin"
+asset_manager : "asset manager"
+employee : "employee"
+no_data_exists : "No data exists"
+select_from_table : "Select from the above table"
+enter_assetid : "Enter asset id:- "
+enter_vendor_id : "Enter vendor id:- "
+enter_user_id : "Enter user id:- "
+enter_category_id : "Enter category id:- "
+enter_maintenance_id : "Enter maintenance id :- "
+enter_mapping_id : "Enter mapping id :- "
+enter_issue_id : "Enter issue id :- "
+category_id_not_exists : "Category id does not exists"
+assetid_not_exists : "Asset id does not exist for you"
+mapping_id_not_exists : "Mapping id does not exists"
+category_added : Category added successfully
+category_vendor_exists : Category with same vendor 
+enter_category_name : "Enter category name of asset:- "
+enter_brand_name : "Enter brand name :- "
+
+#authentication file
+invalid_login : "Invalid login detected attempts left {}"
+input_default_password : "Enter your default password:- "
+input_new_password : "Enter new password:- "
+input_confirm_password : "Confirm new password "
+password_not_match : "Passwords do not match. Please try again"
+default_password_updated : "Default Password updated successfully!! Login with new credentials."
+provide_role_based_access : "Providing role based access to authenticated user"
+enter_username : "Enter username:- "
+enter_password : "Enter your password:- "
+attempts_message : "Enter your login credentials. You have 3 total attempts"
+attempts_exhausted : "Login attempts exhausted"
+strong_password : |
+  You must enter a strong password
+  - Must be of minimum 7 characters
+  - Must contain atleast one lowercase letter
+  - Must contain atleast one uppercase letter
+  - Must contain atleast one number
+  - Must contain atleast one special character
+login_again : "Do you want to login again ? :- Y/N:- "
+wait_for_login : Your attempts are exhausted you will have to wait for some time
+
+#admin
+welcome_admin : "----Welcome as admin----"
+deleted_vendor : "Deactivated vendor successfully"
+username_exists : "Username already exists. Try another one"
+user_added_success : "User added successfully to database"
+user_deleted_success : "User deleted successfully from database"
+vendor_not_exist_to_delete : "Vendor does not exist to delete"
+
+#employee
+welcome_employee : "----Welcome as Employee----"
+issue_raised : "Issue raised for maintenance successfully"
+
+#manager
+welcome_manager : "----Welcome as Asset Manager----"
+input_vendor_email : "Enter email of vendor:- "
+input_vendor_name : "Enter name of vendor:- "
+vendor_added : "Vendor added successfully"
+input_purchased_date : "Enter purchased date in YYYY-mm-dd:- "
+asset_added_success : "Asset succesfully added"
+assign_asset_statement : "You can assign only assignable assets. See details of assignable assets"
+asset_assign_success : "Asset assigned to user successfully"
+unassign_asset_statement : "You can only unassign assigned assets"
+unassign_asset_success : "Asset unassigned successfully"
+send_for_maintenance : "Asset send for maintenance"
+recieve_from_maintenance : "Asset recieved from maintenance"
+
+#database
+exception_message : We will get back to you soon. Something unexpected occured at the backend side.

@@ -1,0 +1,30 @@
+#main logs
+log_file_location : 'src\utils\logs.txt'
+
+#common
+category_added : Category added in database
+vendor_added : Vendor added in database
+
+#authentication logs
+invalid_login_log : "Invalid login occured"
+starting_application_log : "Starting with asset management system."
+default_pwd_updated_log : "User changed default password"
+
+#admin
+log_create_new_user : 'Create new user'
+log_delete_new_user : 'deletes existing user in the table'
+log_admin_logged_in : 'Admin logged in the system'
+log_vendor_deactivated : 'Vendor deactivated successfully'
+
+#database
+log_error_connecting_database : 'Error occured while connecting to database'
+
+#employee 
+issue_raised : Issue raised successfully
+employee_logged_in : Employee logged in the system
+
+#manager
+manager_logged_in : Asset Manager logged in the system
+asset_added : Asset successfully added
+asigned_assets : Asset assigned successfully to user
+unassigned_asset : Asset unassigned from the user

@@ -1,0 +1,171 @@
+2023-11-17 12:17:29,518 INFO     [main.py:20] Starting with asset management system.
+2023-11-17 13:31:43,025 INFO     [main.py:20] Starting with asset management system.
+2023-11-17 13:31:51,149 INFO     [authentication.py:54] Providing role based access to authenticated user
+2023-11-17 13:31:51,149 INFO     [admin_menu.py:19] Admin logged in the system
+2023-11-17 13:32:17,479 INFO     [main.py:20] Starting with asset management system.
+2023-11-17 13:32:21,847 INFO     [authentication.py:54] Providing role based access to authenticated user
+2023-11-17 13:32:21,847 INFO     [admin_menu.py:19] Admin logged in the system
+2023-11-17 13:32:30,983 DEBUG    [admin_menu.py:60] <class 'ValueError'>
+2023-11-17 13:35:02,159 INFO     [main.py:20] Starting with asset management system.
+2023-11-17 13:35:06,146 INFO     [authentication.py:54] Providing role based access to authenticated user
+2023-11-17 13:35:06,146 INFO     [admin_menu.py:19] Admin logged in the system
+2023-11-17 13:35:12,932 DEBUG    [admin_menu.py:60] <class 'ValueError'>
+2023-11-17 13:36:23,113 INFO     [main.py:20] Starting with asset management system.
+2023-11-17 13:36:29,781 INFO     [authentication.py:54] Providing role based access to authenticated user
+2023-11-17 13:36:29,781 INFO     [admin_menu.py:19] Admin logged in the system
+2023-11-17 13:36:38,205 DEBUG    [admin_menu.py:60] <class 'ValueError'>
+2023-11-17 13:37:24,717 DEBUG    [admin_menu.py:60] <class 'ValueError'>
+2023-11-17 13:37:26,042 DEBUG    [admin_menu.py:60] <class 'ValueError'>
+2023-11-17 13:37:31,198 INFO     [main.py:20] Starting with asset management system.
+2023-11-17 13:37:35,123 INFO     [authentication.py:54] Providing role based access to authenticated user
+2023-11-17 13:37:35,123 INFO     [admin_menu.py:19] Admin logged in the system
+2023-11-17 13:37:39,789 DEBUG    [admin_menu.py:60] <class 'ValueError'>
+2023-11-17 13:39:59,148 INFO     [main.py:20] Starting with asset management system.
+2023-11-17 13:40:35,474 INFO     [authentication.py:54] Providing role based access to authenticated user
+2023-11-17 13:40:35,474 INFO     [admin_menu.py:19] Admin logged in the system
+2023-11-17 13:41:06,408 DEBUG    [admin_menu.py:60] <class 'ValueError'>
+2023-11-17 13:42:25,045 INFO     [main.py:20] Starting with asset management system.
+2023-11-17 13:42:31,278 INFO     [authentication.py:54] Providing role based access to authenticated user
+2023-11-17 13:42:31,278 INFO     [admin_menu.py:19] Admin logged in the system
+2023-11-17 13:42:36,664 DEBUG    [admin_menu.py:60] <class 'ValueError'>
+2023-11-17 13:44:15,718 INFO     [main.py:20] Starting with asset management system.
+2023-11-17 13:44:19,740 INFO     [authentication.py:54] Providing role based access to authenticated user
+2023-11-17 13:44:19,740 INFO     [admin_menu.py:19] Admin logged in the system
+2023-11-17 13:46:46,443 INFO     [main.py:20] Starting with asset management system.
+2023-11-17 13:46:50,254 INFO     [authentication.py:54] Providing role based access to authenticated user
+2023-11-17 13:46:50,254 INFO     [admin_menu.py:19] Admin logged in the system
+2023-11-17 13:49:13,848 INFO     [admin_actions.py:52] Create new user
+2023-11-17 13:49:37,100 INFO     [admin_actions.py:68] deletes existing user in the table
+2023-11-17 13:54:14,871 INFO     [main.py:20] Starting with asset management system.
+2023-11-17 13:54:22,992 INFO     [authentication.py:54] Providing role based access to authenticated user
+2023-11-17 13:54:22,992 INFO     [admin_menu.py:19] Admin logged in the system
+2023-11-17 13:54:47,458 ERROR    [admin_menu.py:58] UNIQUE constraint failed: vendor_table.vendor_email
+2023-11-17 14:10:10,237 INFO     [main.py:20] Starting with asset management system.
+2023-11-17 14:10:25,878 INFO     [authentication.py:54] Providing role based access to authenticated user
+2023-11-17 14:10:25,878 INFO     [admin_menu.py:19] Admin logged in the system
+2023-11-17 14:16:25,019 INFO     [main.py:20] Starting with asset management system.
+2023-11-17 14:21:52,712 INFO     [main.py:20] Starting with asset management system.
+2023-11-17 14:21:57,331 INFO     [authentication.py:54] Providing role based access to authenticated user
+2023-11-17 14:21:57,331 INFO     [admin_menu.py:19] Admin logged in the system
+2023-11-17 14:22:31,361 INFO     [main.py:20] Starting with asset management system.
+2023-11-17 14:22:34,772 INFO     [authentication.py:54] Providing role based access to authenticated user
+2023-11-17 14:22:34,772 INFO     [admin_menu.py:19] Admin logged in the system
+2023-11-17 14:22:53,365 INFO     [vendor_operations.py:29] Vendor added in database
+2023-11-17 14:24:16,025 INFO     [main.py:20] Starting with asset management system.
+2023-11-17 14:24:19,546 DEBUG    [authentication.py:27] Invalid login occured
+2023-11-17 14:24:23,594 INFO     [authentication.py:54] Providing role based access to authenticated user
+2023-11-17 14:24:23,594 INFO     [admin_menu.py:19] Admin logged in the system
+2023-11-17 14:27:25,587 INFO     [main.py:20] Starting with asset management system.
+2023-11-17 14:27:52,147 INFO     [authentication.py:54] Providing role based access to authenticated user
+2023-11-17 14:27:52,159 INFO     [admin_menu.py:19] Admin logged in the system
+2023-11-17 14:28:10,343 DEBUG    [admin_menu.py:58] <class 'ValueError'>
+2023-11-17 14:28:48,046 INFO     [admin_actions.py:53] Create new user
+2023-11-17 14:29:35,864 INFO     [admin_actions.py:70] deletes existing user in the table
+2023-11-17 14:30:21,519 INFO     [admin.py:37] Vendor deactivated successfully
+2023-11-17 14:31:07,042 INFO     [vendor_operations.py:29] Vendor added in database
+2023-11-17 14:32:00,126 INFO     [vendor_operations.py:29] Vendor added in database
+2023-11-17 14:34:48,232 DEBUG    [track_assets.py:117] <class 'ValueError'>
+2023-11-17 14:37:10,252 DEBUG    [admin_menu.py:58] <class 'ValueError'>
+2023-11-17 14:37:37,399 INFO     [authentication.py:54] Providing role based access to authenticated user
+2023-11-17 14:37:37,399 INFO     [admin_menu.py:19] Admin logged in the system
+2023-11-17 14:37:53,420 INFO     [authentication.py:54] Providing role based access to authenticated user
+2023-11-17 14:37:53,423 INFO     [admin_menu.py:19] Admin logged in the system
+2023-11-17 14:38:19,549 DEBUG    [admin_menu.py:58] <class 'ValueError'>
+2023-11-17 14:38:36,341 INFO     [authentication.py:54] Providing role based access to authenticated user
+2023-11-17 14:38:36,343 INFO     [manager_menu.py:22] Asset Manager logged in the system
+2023-11-17 14:39:28,607 INFO     [main.py:20] Starting with asset management system.
+2023-11-17 14:39:32,587 INFO     [authentication.py:54] Providing role based access to authenticated user
+2023-11-17 14:39:32,596 INFO     [manager_menu.py:22] Asset Manager logged in the system
+2023-11-17 14:39:49,180 DEBUG    [maintenance.py:111] <class 'ValueError'>
+2023-11-17 14:41:01,999 ERROR    [helper_functions.py:27] cannot access local variable 'new_tuple' where it is not associated with a value
+2023-11-17 14:42:07,879 INFO     [main.py:20] Starting with asset management system.
+2023-11-17 14:42:14,451 INFO     [authentication.py:54] Providing role based access to authenticated user
+2023-11-17 14:42:14,451 INFO     [manager_menu.py:22] Asset Manager logged in the system
+2023-11-17 14:43:34,238 INFO     [vendor_operations.py:29] Vendor added in database
+2023-11-17 14:44:10,720 INFO     [vendor_operations.py:29] Vendor added in database
+2023-11-17 14:45:21,750 INFO     [authentication.py:54] Providing role based access to authenticated user
+2023-11-17 14:45:21,750 INFO     [employee_menu.py:20] Employee logged in the system
+2023-11-17 14:45:25,079 DEBUG    [employee_menu.py:83] <class 'ValueError'>
+2023-11-17 14:45:43,718 DEBUG    [authentication.py:27] Invalid login occured
+2023-11-17 14:45:52,864 INFO     [authentication.py:54] Providing role based access to authenticated user
+2023-11-17 14:45:52,864 INFO     [employee_menu.py:20] Employee logged in the system
+2023-11-17 14:46:21,374 INFO     [employee_menu.py:47] Issue raised successfully
+2023-11-20 16:19:54,819 INFO     [main.py:19] Starting with asset management system.
+2023-11-20 16:19:59,509 INFO     [authentication.py:54] Providing role based access to authenticated user
+2023-11-20 16:19:59,509 INFO     [admin_menu.py:19] Admin logged in the system
+2023-11-20 16:28:55,168 INFO     [main.py:19] Starting with asset management system.
+2023-11-20 16:29:02,651 DEBUG    [authentication.py:27] Invalid login occured
+2023-11-20 16:29:08,954 INFO     [authentication.py:54] Providing role based access to authenticated user
+2023-11-20 16:29:08,954 INFO     [admin_menu.py:19] Admin logged in the system
+2023-11-20 17:12:07,739 INFO     [main.py:19] Starting with asset management system.
+2023-11-20 17:12:16,696 INFO     [authentication.py:54] Providing role based access to authenticated user
+2023-11-20 17:12:16,696 INFO     [admin_menu.py:19] Admin logged in the system
+2023-11-21 10:15:58,623 INFO     [main.py:19] Starting with asset management system.
+2023-11-21 10:16:03,375 INFO     [authentication.py:54] Providing role based access to authenticated user
+2023-11-21 10:16:03,375 INFO     [admin_menu.py:19] Admin logged in the system
+2023-11-21 10:16:09,830 DEBUG    [admin_menu.py:54] <class 'ValueError'>
+2023-11-21 11:04:28,382 INFO     [main.py:19] Starting with asset management system.
+2023-11-21 11:04:34,926 ERROR    [helper_functions.py:24] 
+2023-11-21 11:38:58,502 INFO     [main.py:19] Starting with asset management system.
+2023-11-21 11:40:40,228 INFO     [main.py:19] Starting with asset management system.
+2023-11-21 11:40:44,162 ERROR    [helper_functions.py:24] 
+2023-11-21 12:56:55,290 INFO     [main.py:19] Starting with asset management system.
+2023-11-21 13:20:16,308 INFO     [main.py:19] Starting with asset management system.
+2023-11-21 13:50:20,557 INFO     [main.py:19] Starting with asset management system.
+2023-11-21 13:50:25,715 ERROR    [helper_functions.py:24] 
+2023-11-21 14:12:46,002 INFO     [main.py:19] Starting with asset management system.
+2023-11-21 14:12:57,256 INFO     [main.py:19] Starting with asset management system.
+2023-11-21 15:21:00,603 INFO     [main.py:19] Starting with asset management system.
+2023-11-21 16:01:34,358 INFO     [main.py:19] Starting with asset management system.
+2023-11-22 10:38:41,143 INFO     [main.py:19] Starting with asset management system.
+2023-11-22 11:12:58,917 INFO     [main.py:19] Starting with asset management system.
+2023-11-22 11:13:04,813 INFO     [authentication.py:54] Providing role based access to authenticated user
+2023-11-22 11:13:04,813 INFO     [admin_menu.py:19] Admin logged in the system
+2023-11-22 11:13:04,829 ERROR    [helper_functions.py:24] type object 'PromptsConfig' has no attribute 'admin_prompt'
+2023-11-22 16:19:02,757 INFO     [main.py:19] Starting with asset management system.
+2023-11-22 16:27:52,361 INFO     [main.py:19] Starting with asset management system.
+2023-11-22 16:28:52,672 INFO     [main.py:19] Starting with asset management system.
+2023-11-22 16:32:50,050 INFO     [main.py:19] Starting with asset management system.
+2023-11-22 16:36:19,994 INFO     [main.py:19] Starting with asset management system.
+2023-11-22 16:36:23,616 INFO     [authentication.py:54] Providing role based access to authenticated user
+2023-11-22 16:36:23,616 INFO     [admin_menu.py:23] Admin logged in the system
+2023-11-22 16:36:43,633 INFO     [admin_actions.py:54] Create new user
+2023-11-22 16:37:24,353 INFO     [vendor_operations.py:29] Vendor added in database
+2023-11-22 16:37:48,072 INFO     [admin_menu.py:48] Vendor deactivated successfully
+2023-11-22 16:39:31,885 INFO     [main.py:19] Starting with asset management system.
+2023-11-22 16:39:37,746 INFO     [authentication.py:54] Providing role based access to authenticated user
+2023-11-22 16:39:37,746 INFO     [admin_menu.py:23] Admin logged in the system
+2023-11-22 16:40:12,325 INFO     [admin_actions.py:54] Create new user
+2023-11-23 11:36:10,141 INFO     [main.py:19] Starting with asset management system.
+2023-11-23 11:37:27,677 INFO     [authentication.py:54] Providing role based access to authenticated user
+2023-11-23 11:37:27,690 INFO     [admin_menu.py:23] Admin logged in the system
+2023-11-23 11:38:26,438 INFO     [main.py:19] Starting with asset management system.
+2023-11-23 11:38:33,809 INFO     [authentication.py:54] Providing role based access to authenticated user
+2023-11-23 11:38:33,809 INFO     [admin_menu.py:23] Admin logged in the system
+2023-11-23 11:38:36,207 ERROR    [helper_functions.py:23] cannot access local variable 'connection' where it is not associated with a value
+2023-11-23 11:39:20,635 INFO     [main.py:19] Starting with asset management system.
+2023-11-23 11:39:25,147 INFO     [authentication.py:54] Providing role based access to authenticated user
+2023-11-23 11:39:25,147 INFO     [admin_menu.py:23] Admin logged in the system
+2023-11-23 11:55:06,730 INFO     [main.py:19] Starting with asset management system.
+2023-11-23 11:55:24,275 INFO     [main.py:19] Starting with asset management system.
+2023-11-24 10:12:15,639 INFO     [main.py:19] Starting with asset management system.
+2023-11-24 10:12:20,721 INFO     [authentication.py:54] Providing role based access to authenticated user
+2023-11-24 10:12:20,721 INFO     [admin_menu.py:23] Admin logged in the system
+2023-11-26 13:23:08,270 INFO     [main.py:19] Starting with asset management system.
+2023-11-26 13:33:21,897 INFO     [main.py:19] Starting with asset management system.
+2023-11-26 14:41:47,517 INFO     [main.py:19] Starting with asset management system.
+2023-11-26 14:41:52,915 INFO     [authentication.py:54] Providing role based access to authenticated user
+2023-11-26 14:41:52,916 INFO     [admin_menu.py:23] Admin logged in the system
+2023-11-26 14:41:52,916 ERROR    [helper_functions.py:23] can only concatenate str (not "NoneType") to str
+2023-11-26 14:42:37,555 INFO     [main.py:19] Starting with asset management system.
+2023-11-26 14:42:42,244 INFO     [authentication.py:54] Providing role based access to authenticated user
+2023-11-26 14:42:42,244 INFO     [admin_menu.py:23] Admin logged in the system
+2023-11-26 14:42:42,260 ERROR    [helper_functions.py:23] type object 'PromptsConfig' has no attribute 'admin_prompt'
+2023-11-26 14:45:13,500 INFO     [main.py:19] Starting with asset management system.
+2023-11-27 21:26:13,089 INFO     [main.py:19] Starting with asset management system.
+2023-11-27 21:26:52,955 INFO     [main.py:19] Starting with asset management system.
+2023-11-27 21:26:57,320 INFO     [authentication.py:54] Providing role based access to authenticated user
+2023-11-27 21:26:57,320 INFO     [admin_menu.py:23] Admin logged in the system
+2023-11-27 22:13:43,173 INFO     [main.py:19] Starting with asset management system.
+2023-11-27 22:13:48,642 INFO     [authentication.py:54] Providing role based access to authenticated user
+2023-11-27 22:13:48,642 INFO     [admin_menu.py:23] Admin logged in the system
