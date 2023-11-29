@@ -42,6 +42,7 @@ class CommonHelper:
                 logger.info("New password not matches confirm new password")
             else:
                 new_hashed_password = hashlib.sha256(new_password.encode()).hexdigest()    
+                print(new_hashed_password)
                 self.db_obj.update_default_password((new_hashed_password,username))
                 print(PromptConfig.DEFAULT_PASSWORD_UPDATED)
                 logger.info(LogsConfig.LOG_DEFAULT_PASSWORD)
@@ -73,8 +74,9 @@ class CommonHelper:
         data = self.db_obj.get_user_details()
         if not data:
             print(PromptConfig.NO_DATA_EXISTS)
-            return
+            return False
         CommonHelper.display_table(data, Header.SCHEMA_USER_TABLE)
+        return True
 
     @staticmethod
     def input_category_details() -> tuple:
@@ -86,5 +88,5 @@ class CommonHelper:
         category_name = input(PromptConfig.ENTER_CATEGORY_NAME).strip().lower()
         brand_name = input(PromptConfig.ENTER_BRAND_NAME).strip().lower()
         vendor_email = InputValidations.input_email()
-
         return (category_name,brand_name,vendor_email)
+    

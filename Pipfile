@@ -8,6 +8,7 @@ maskpass = "*"
 shortuuid = "*"
 pyyaml = "*"
 tabulate = "*"
+coverage = "*"
 
 [dev-packages]
 

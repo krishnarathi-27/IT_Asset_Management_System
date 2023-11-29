@@ -87,7 +87,6 @@ MAINTENANCE_PROMPT : |
   - '4' Back to main menu
   Enter your choice:- 
 
-
 STARTING_APPLICATION :  ----Welcome to asset management system----
 EXIT_SYSTEM_PROMPT : Do you want to exit from system y/n :- 
 INVALID_INPUT : Wrong input entered try again !!
