@@ -9,7 +9,7 @@ from config.log_prompts.logs_config import LogsConfig
 
 logger = logging.getLogger('asset_data_controller')
 
-class AssetDataController:
+class AssetDataControllers:
     """
         Class containinig methods to create and view both category and vendor
         ...
@@ -27,13 +27,14 @@ class AssetDataController:
     def __init__(self) -> None:
         self.db_helper_obj = DatabaseHelper()
 
-    def __category_vendor_exists(self,mapping_id: str, category_id: str, vendor_id: str) -> bool:
+    def _category_vendor_exists(self,mapping_id: str, category_id: str, vendor_id: str) -> bool:
         """
             Method that checks if category with same vendor exists or not 
             Parameters : self, mapping_id, category_id, vendor_id
             Return type : bool
         """
         mapping_data = self.db_helper_obj.get_from_mapping_table(category_id, vendor_id)
+        print(mapping_data)
         if mapping_data:
             self.db_helper_obj.save_data_in_mapping_table(mapping_id,category_id,vendor_id)
             logging.info(LogsConfig.LOG_CATEGORY_ADDED)
@@ -55,7 +56,7 @@ class AssetDataController:
         vendor_id = vendor_id[0][0]
         category_exists = self.db_helper_obj.get_by_category_and_brand_name(data[0],data[1])
         mapping_id = "MPN" + shortuuid.ShortUUID().random(length=4)
-        if len(category_exists) == 0:
+        if not category_exists:
             self.db_helper_obj.save_category_mapping_details(
                 (category_id,data[0],data[1]),
                 (mapping_id,category_id,vendor_id)
@@ -63,7 +64,7 @@ class AssetDataController:
             return True
         else:
             category_id = category_exists[0][0]
-            return self.__category_vendor_exists(mapping_id,category_id,vendor_id)
+            return self._category_vendor_exists(mapping_id,category_id,vendor_id)
 
     def create_vendor(self) -> None:
         """

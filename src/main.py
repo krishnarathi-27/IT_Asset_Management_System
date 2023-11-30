@@ -4,7 +4,7 @@
 """
 import logging
 from models.database import db
-from views.auth_view import AuthView
+from views.auth_views import AuthViews
 from config.app_config import AppConfig
 from config.prompts.prompts import PromptConfig
 from config.log_prompts.logs_config import LogsConfig
@@ -27,7 +27,7 @@ if __name__ == "__main__":
     logger.info(LogsConfig.LOG_STARTING_APPLICATION)
 
     #logins the user
-    auth_obj = AuthView()
+    auth_obj = AuthViews()
     auth_obj.login()
 
     #closes database connection

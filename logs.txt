@@ -91,3 +91,8 @@ AttributeError: module 'datetime' has no attribute 'strptime'
 2023-11-28 09:47:20,079 INFO     [manager_views.py:26] Asset Manager logged in the system
 2023-11-28 09:47:20,079 INFO     [manager_views.py:39] Manager menu displayed
 2023-11-28 09:47:49,758 INFO     [asset_views.py:41] Asset successfully added
+2023-11-29 14:15:00,357 INFO     [main.py:27] Starting with asset management system.
+2023-11-29 14:15:04,330 INFO     [auth_view.py:52] Login attempts reducing due to invalid login
+2023-11-29 14:15:36,050 INFO     [auth_controller.py:54] Providing role based access to authenticated user
+2023-11-29 14:15:36,050 INFO     [admin_views.py:27] Admin logged in the system
+2023-11-29 14:15:36,050 INFO     [admin_views.py:39] Admin menu displayed

@@ -7,12 +7,12 @@ import time
 import maskpass
 #local imports
 from config.app_config import AppConfig
-from controllers.auth_controller import AuthController
+from controllers.auth_controllers import AuthControllers
 from config.prompts.prompts import PromptConfig
 
 logger = logging.getLogger('auth_view')
 
-class AuthView:
+class AuthViews:
     """
         Class containing max_login_attempts and method for taking user credentials for input.
         ...
@@ -27,7 +27,7 @@ class AuthView:
   
     def __init__(self) -> None:
         self.__login_attempts = AppConfig.MAX_LOGIN_ATTEMPTS
-        self.auth_controller_obj = AuthController()
+        self.auth_controller_obj = AuthControllers()
 
     def login(self) -> None:
         '''

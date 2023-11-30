@@ -13,7 +13,7 @@ from views.manager_views import ManagerViews
 
 logger = logging.getLogger('auth_controller')
 
-class AuthController:
+class AuthControllers:
     """
         Class containing methods for validating user, providing role based access and changing their default password.
         ...
@@ -31,21 +31,21 @@ class AuthController:
         self.db_obj = DatabaseHelper()
         self.common_helper_obj = CommonHelper()
 
-    def __first_login(self,username: str,hashed_input_password: str,password: str) -> bool:
+    def valid_first_login(self,username: str,hashed_input_password: str,password: str) -> bool:
         """
             Method for changing default password on first valid login
             Parameters : self, username, hashed_input_password, password
             Return type : bool
         """
-        if hashed_input_password != password:
-            logger.info("Wrong default password entered")
-            return False
-        else:
+        if hashed_input_password == password:
             logger.info("User changing default password")
             self.common_helper_obj.change_default_password(username)
             return True
+        else:
+            logger.info("Wrong default password entered")
+            return False
 
-    def __role_based_access(self,role: str,user_id: str) -> None:
+    def role_based_access(self,role: str,user_id: str) -> bool:
         """
             Method for providig role based accessto valid user.
             Parameters : self, role, user_id
@@ -56,12 +56,17 @@ class AuthController:
         if role == AppConfig.ADMININSTRATOR:
             admin_obj = AdminViews()     
             admin_obj.admin_operations()
+            return True
         elif role == AppConfig.ASSET_MANAGER:
             manager_obj = ManagerViews(user_id)
             manager_obj.manager_operations()
-        else:
+            return True
+        elif role == "employee":
             employee_obj = EmployeeViews(user_id)
             employee_obj.employee_operations()
+            return True
+        else:
+            return False
 
     def validate_user(self,username: str,input_password: str) -> bool:
         """
@@ -78,9 +83,9 @@ class AuthController:
             hashed_password = hashlib.sha256(input_password.encode()).hexdigest()
             if is_changed == "false":
                 logger.info("User logged in first time")
-                return self.__first_login(username,hashed_password,password)
+                return self.valid_first_login(username,hashed_password,password)
             else:             
                 if hashed_password == password:
-                    self.__role_based_access(role,user_id) 
-                    return True
+                    return self.role_based_access(role,user_id) 
+
         return False

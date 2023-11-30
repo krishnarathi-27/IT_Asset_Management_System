@@ -42,7 +42,6 @@ class CommonHelper:
                 logger.info("New password not matches confirm new password")
             else:
                 new_hashed_password = hashlib.sha256(new_password.encode()).hexdigest()    
-                print(new_hashed_password)
                 self.db_obj.update_default_password((new_hashed_password,username))
                 print(PromptConfig.DEFAULT_PASSWORD_UPDATED)
                 logger.info(LogsConfig.LOG_DEFAULT_PASSWORD)

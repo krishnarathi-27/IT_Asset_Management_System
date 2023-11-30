@@ -4,7 +4,7 @@ from models.database_helper import DatabaseHelper
 from utils.common_helper import CommonHelper
 from utils.validations import InputValidations
 
-class AssetController:
+class AssetControllers:
 
     def __init__(self) -> None:
         self.db_obj = DatabaseHelper()

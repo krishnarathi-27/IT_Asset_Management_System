@@ -10,7 +10,7 @@ from utils.common_helper import CommonHelper
 
 logger = logging.getLogger('admin_controller')
 
-class AdminController:
+class AdminControllers:
     """
         Class containing methods to create new user and deactivate vendor
         ...

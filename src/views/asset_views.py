@@ -4,7 +4,7 @@ from utils.common_helper import CommonHelper
 from config.prompts.prompts import PromptConfig
 from config.log_prompts.logs_config import LogsConfig
 from config.app_config import AppConfig
-from controllers.asset_controllers import AssetController
+from controllers.asset_controllers import AssetControllers
 
 logger = logging.getLogger('auth_views')
 
@@ -21,7 +21,7 @@ class AssetViews:
     """
     def __init__(self) -> None:
         self.obj_common_helper = CommonHelper()
-        self.obj_asset_controller = AssetController()
+        self.obj_asset_controller = AssetControllers()
 
     def add_asset(self) -> None:               
         while True:

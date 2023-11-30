@@ -1,13 +1,13 @@
 """Module for taking input from admin for various functionalities"""
 import logging
 from os import system
-from controllers.admin_controller import AdminController
+from controllers.admin_controllers import AdminControllers
 from utils.common_helper import CommonHelper
 from utils.app_decorator import error_handler
 from config.app_config import AppConfig
 from config.prompts.prompts import PromptConfig
 from config.log_prompts.logs_config import LogsConfig
-from controllers.asset_data_controller import AssetDataController
+from controllers.asset_data_controllers import AssetDataControllers
 
 logger = logging.getLogger('admin_views')
 
@@ -27,8 +27,8 @@ class AdminViews:
         logger.info(LogsConfig.LOG_ADMIN_LOGGED_IN)
         print(PromptConfig.WELCOME_ADMIN)
         self.obj_common_helper = CommonHelper()
-        self.obj_admin_controller = AdminController()
-        self.asset_data_obj = AssetDataController()
+        self.obj_admin_controller = AdminControllers()
+        self.asset_data_obj = AssetDataControllers()
 
     def admin_operations(self) -> None:
         """

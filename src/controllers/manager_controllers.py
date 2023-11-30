@@ -1,0 +1,2 @@
+class ManagerControllers:
+    pass

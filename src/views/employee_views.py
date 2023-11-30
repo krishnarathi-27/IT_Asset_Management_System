@@ -26,6 +26,9 @@ class EmployeeViews:
         self.user_id = user_id
         self.obj_common_helper = CommonHelper()
 
+    def raise_issue_input(self) -> None:
+        pass
+    
     def employee_operations(self) -> None:
         """
             Method that contains loop for displaying employee menu
