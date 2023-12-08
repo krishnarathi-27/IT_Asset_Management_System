@@ -39,3 +39,21 @@ class AssetViews:
         else:
             print(PromptConfig.ASSET_ADDED_SUCCESS)
             logging.info(LogsConfig.LOG_ASSET_ADDED)
+    
+    def view_asset(self) -> None:
+        if not self.obj_asset_controller.view_asset():
+            print("Data do not exists")
+
+    def check_assign_asset(self) -> None:
+        if self.obj_asset_controller.assign_asset():
+            print(PromptConfig.ASSET_ASSIGN_SUCCESS)
+            logger.info(LogsConfig.LOG_ASSET_ASSIGNED)
+        else:
+            print(PromptConfig.NO_DATA_EXISTS)
+
+    def check_unassign_asset(self) -> None:
+        if self.obj_asset_controller.unassign_asset():
+            print(PromptConfig.ASSET_UNASSIGN_SUCCESS)
+            logger.info(LogsConfig.LOG_ASSET_UNASSIGNED)
+        else:
+            print(PromptConfig.NO_DATA_EXISTS)

@@ -30,6 +30,12 @@ class ManagerViews:
         self.asset_data_obj = AssetDataControllers()
         self.asset_obj = AssetViews()
 
+    def check_category_created(self)->None:
+        if self.asset_data_obj.create_category():
+            print("Category added successfully")
+        else:
+            print("Data already exists")
+
     def manager_operations(self) -> None:
         """
             Method that contains loop for displaying manager menu
@@ -61,16 +67,15 @@ class ManagerViews:
             if not self.asset_data_obj.view_category():
                 print("No data exists")
         elif user_choice == "5" :
-            self.asset_data_obj.create_category()
-            print("Category added successfully")
+            self.check_category_created()
         elif user_choice == "6" :
             self.asset_obj.add_asset()
         elif user_choice == "7" :
-            self.asset_obj.view_assets_details()
+            self.asset_obj.view_asset()
         elif user_choice == "8" :
-            self.asset_obj.assign_asset()
+            self.asset_obj.check_assign_asset()
         elif user_choice == "9" : 
-            self.asset_obj.unassign_asset()
+            self.asset_obj.check_unassign_asset()
         elif user_choice == "10":
             self.track_asset_obj.menu_options()
         elif user_choice == "11":

@@ -27,15 +27,14 @@ class AssetDataControllers:
     def __init__(self) -> None:
         self.db_helper_obj = DatabaseHelper()
 
-    def _category_vendor_exists(self,mapping_id: str, category_id: str, vendor_id: str) -> bool:
+    def category_vendor_exists(self,mapping_id: str, category_id: str, vendor_id: str) -> bool:
         """
             Method that checks if category with same vendor exists or not 
             Parameters : self, mapping_id, category_id, vendor_id
             Return type : bool
         """
         mapping_data = self.db_helper_obj.get_from_mapping_table(category_id, vendor_id)
-        print(mapping_data)
-        if mapping_data:
+        if not mapping_data:
             self.db_helper_obj.save_data_in_mapping_table(mapping_id,category_id,vendor_id)
             logging.info(LogsConfig.LOG_CATEGORY_ADDED)
             return True
@@ -64,7 +63,7 @@ class AssetDataControllers:
             return True
         else:
             category_id = category_exists[0][0]
-            return self._category_vendor_exists(mapping_id,category_id,vendor_id)
+            return self.category_vendor_exists(mapping_id,category_id,vendor_id)
 
     def create_vendor(self) -> None:
         """

@@ -186,3 +186,73 @@ class DatabaseHelper:
             Queries.INSERY_ASSET_DETAILS,
             (asset_id,mapping_id,asset_type,purchased_date)
         )
+
+    def get_asset_details(self)->list:
+        '''
+            Method to view asset details in asset table
+            Parameters : self
+            Return Type : list
+        ''' 
+        data = db.fetch_data(
+                Queries.FETCH_ASSETS_TABLE
+            )
+        return data
+    
+    def fetch_assignable_asset(self) -> list:
+        '''
+            Method to view asset details in asset table that are assignable
+            Parameters : self
+            Return Type : list
+        ''' 
+        data = db.fetch_data(
+                Queries.FETCH_ASSIGNABLE_ASSETS
+            )
+        return data
+    
+    def fetch_asset_exists(self,asset_id) -> list:
+        '''
+            Method to fetch assets of asset_id
+            Parameters : self
+            Return Type : list
+        ''' 
+        data = db.fetch_data(
+                Queries.FETCH_IF_ASSET_EXISTS,
+                (asset_id,)
+            )
+        return data
+    
+    def fetch_user_exists(self,user_id) -> list:
+        '''
+            Method to fetch ausers of user_id
+            Parameters : self
+            Return Type : list
+        '''        
+        data = db.fetch_data(
+                Queries.FETCH_IF_USER_EXISTS,
+                (user_id,)
+            )
+        return data
+    
+    def save_asset_status(self,assigned_to ,asset_status, asset_id) -> None:
+        '''
+            Method to save asset_status, assigned_to
+            Parameters : self
+            Return Type : list
+        '''        
+        db.save_data(
+            Queries.UPDATE_ASSET_STATUS,
+            (assigned_to,asset_status,asset_id,)
+        )
+
+    def fetch_unassignable_assets(self) -> list:
+        '''
+            Method to view asset details in asset table that are unassignable
+            Parameters : self
+            Return Type : list
+        '''         
+        data = db.fetch_data(
+                    Queries.FETCH_ASSIGNED_ASSETS_TO_UNASSIGN
+                )
+        return data
+    
+    

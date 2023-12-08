@@ -53,13 +53,13 @@ class AdminViews:
         if user_choice == "1" :
             self.obj_common_helper.display_user_details()
         elif user_choice == "2" :
-            self.__select_new_user()
+            self.select_new_user()
             print("Data added successfully")
         elif user_choice == "3" :
             if not self.asset_data_obj.view_vendor():
                 print("No data exists")
         elif user_choice == "4" :
-            self.__check_deactivate_vendor()
+            self.check_deactivate_vendor()
         elif user_choice == "5" :
             self.asset_data_obj.create_vendor()
             print("Data added successfully")
@@ -67,8 +67,7 @@ class AdminViews:
             if not self.asset_data_obj.view_category():
                 print("No data exists")
         elif user_choice == "7" :
-            if self.asset_data_obj.create_category():
-                print("Category added successfully")
+           self.check_category_created()
         elif user_choice == "8" : 
             self.track_asset_obj.menu_options()
         elif user_choice == "9" :
@@ -79,7 +78,7 @@ class AdminViews:
         
         return False
     
-    def __select_new_user(self) -> None:
+    def select_new_user(self) -> None:
         """
             Method that takes input from admin to select user role and create new user 
             Parameters : self
@@ -96,7 +95,7 @@ class AdminViews:
             else:
                 print(PromptConfig.INVALID_INPUT + "\n")
 
-    def __check_deactivate_vendor(self) -> None:     
+    def check_deactivate_vendor(self) -> None:     
         """
             Method that checks that vendor can be deactivated 
             Parameters : self
@@ -107,3 +106,9 @@ class AdminViews:
         else:
             print("No data exists of vendor")
 
+    def check_category_created(self)->None:
+        if self.asset_data_obj.create_category():
+            print("Category added successfully")
+        else:
+            print("Data already exists")
+            

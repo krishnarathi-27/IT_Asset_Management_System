@@ -146,10 +146,8 @@ INPUT_VENDOR_NAME : Enter name of vendor:-
 VENDOR_ADDED : Vendor added successfully
 INPUT_PURCHASED_DATE : Enter purchased date in YYYY-mm-dd:- 
 ASSET_ADDED_SUCCESS : Asset succesfully added
-ASSIGN_ASSET_STATEMENT : You can assign only assignable assets. See details of assignable assets
-ASSET_UNASSIGN_SUCCESS : Asset assigned to user successfully
-UNASSIGN_ASSET_STATEMENT : You can only unassign assigned assets
-UNASSET_UNASSIGN_SUCCESS : Asset unassigned successfully
+ASSET_ASSIGN_SUCCESS : Asset assigned to user successfully
+ASSET_UNASSIGN_SUCCESS : Asset unassigned successfully
 SEND_FOR_MAINTENANCE : Asset send for maintenance
 RECIEVE_FROM_MAINTENANCE : Asset recieved from maintenance
 

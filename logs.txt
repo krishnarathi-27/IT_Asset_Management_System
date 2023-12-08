@@ -96,3 +96,25 @@ AttributeError: module 'datetime' has no attribute 'strptime'
 2023-11-29 14:15:36,050 INFO     [auth_controller.py:54] Providing role based access to authenticated user
 2023-11-29 14:15:36,050 INFO     [admin_views.py:27] Admin logged in the system
 2023-11-29 14:15:36,050 INFO     [admin_views.py:39] Admin menu displayed
+2023-12-05 18:42:24,845 INFO     [main.py:27] Starting with asset management system.
+2023-12-05 18:42:37,738 INFO     [auth_controllers.py:54] Providing role based access to authenticated user
+2023-12-05 18:42:37,738 INFO     [admin_views.py:27] Admin logged in the system
+2023-12-05 18:42:37,738 INFO     [admin_views.py:39] Admin menu displayed
+2023-12-05 18:42:57,797 INFO     [admin_controllers.py:43] Create new user
+2023-12-05 18:43:26,194 INFO     [asset_data_controllers.py:79] Vendor added in database
+2023-12-05 18:44:19,250 INFO     [asset_data_controllers.py:40] Category added in database
+2023-12-05 19:10:58,547 INFO     [main.py:27] Starting with asset management system.
+2023-12-05 19:11:03,633 INFO     [auth_controllers.py:54] Providing role based access to authenticated user
+2023-12-05 19:11:03,633 INFO     [admin_views.py:27] Admin logged in the system
+2023-12-05 19:11:03,633 INFO     [admin_views.py:39] Admin menu displayed
+2023-12-08 10:57:16,620 INFO     [main.py:27] Starting with asset management system.
+2023-12-08 10:57:21,875 INFO     [auth_controllers.py:54] Providing role based access to authenticated user
+2023-12-08 10:57:21,875 INFO     [manager_views.py:26] Asset Manager logged in the system
+2023-12-08 10:57:21,875 INFO     [manager_views.py:45] Manager menu displayed
+2023-12-08 10:57:33,290 INFO     [validations.py:77] Inavlid asset id entered
+2023-12-08 10:57:58,876 INFO     [asset_views.py:51] Asset assigned successfully to user
+2023-12-08 11:39:53,850 INFO     [main.py:27] Starting with asset management system.
+2023-12-08 11:39:58,477 INFO     [auth_controllers.py:54] Providing role based access to authenticated user
+2023-12-08 11:39:58,477 INFO     [manager_views.py:26] Asset Manager logged in the system
+2023-12-08 11:39:58,477 INFO     [manager_views.py:45] Manager menu displayed
+2023-12-08 11:40:20,103 INFO     [asset_views.py:58] Asset unassigned from the user

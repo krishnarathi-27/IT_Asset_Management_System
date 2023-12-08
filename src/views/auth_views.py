@@ -59,4 +59,3 @@ class AuthViews:
             choice = input(PromptConfig.EXIT_SYSTEM_PROMPT).lower()
             if choice == "y":
                 break
-            
