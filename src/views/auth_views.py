@@ -27,7 +27,7 @@ class AuthViews:
   
     def __init__(self) -> None:
         self.__login_attempts = AppConfig.MAX_LOGIN_ATTEMPTS
-        self.auth_controller_obj = AuthControllers()
+        self.obj_auth_controller = AuthControllers()
 
     def login(self) -> None:
         '''
@@ -46,7 +46,7 @@ class AuthViews:
             else:
                 username = input(PromptConfig.ENTER_USERNAME)
                 input_password = maskpass.askpass(PromptConfig.ENTER_PASSWORD)
-                is_valid_success = self.auth_controller_obj.validate_user(username,input_password)
+                is_valid_success = self.obj_auth_controller.validate_user(username,input_password)
                 
                 if not is_valid_success:
                     logger.info("Login attempts reducing due to invalid login")

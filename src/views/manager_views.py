@@ -5,11 +5,14 @@ from utils.app_decorator import error_handler
 from config.prompts.prompts import PromptConfig
 from config.log_prompts.logs_config import LogsConfig
 from controllers.asset_data_controllers import AssetDataControllers
+from controllers.manager_controllers import ManagerControllers
 from views.asset_views import AssetViews
+from views.track_asset_views import TrackAssetViews
+from views.maintenance_views import MaintenanceViews
 
 logger = logging.getLogger('manager_views')
 
-class ManagerViews:
+class ManagerViews(AssetDataControllers):
     """
         Class that contains menu options for taking input from manager to perform manager operations
         ...
@@ -27,11 +30,13 @@ class ManagerViews:
         print(PromptConfig.WELCOME_MANAGER)
         self.user_id = user_id
         self.obj_common_helper = CommonHelper()
-        self.asset_data_obj = AssetDataControllers()
-        self.asset_obj = AssetViews()
+        self.obj_asset = AssetViews()
+        self.obj_track_asset = TrackAssetViews()
+        self.obj_manager_controller = ManagerControllers()
+        self.obj_maintenance = MaintenanceViews()
 
     def check_category_created(self)->None:
-        if self.asset_data_obj.create_category():
+        if self.create_category():
             print("Category added successfully")
         else:
             print("Data already exists")
@@ -55,31 +60,32 @@ class ManagerViews:
             Return type : bool
         """
         user_choice = input(PromptConfig.MANAGER_PROMPT + "\n")
+
         if user_choice == "1" : 
             self.obj_common_helper.display_user_details()
         elif user_choice == "2" :
-            if not self.asset_data_obj.view_vendor():
-                print("No data exists")
+            if not self.view_vendor():
+                print(PromptConfig.NO_DATA_EXISTS)
         elif user_choice == "3" :
-            self.asset_data_obj.create_vendor()
-            print("Data added successfully")
+            self.create_vendor()
+            print("Vendor added successfully")
         elif user_choice == "4" :
-            if not self.asset_data_obj.view_category():
-                print("No data exists")
+            if not self.view_category():
+                print(PromptConfig.NO_DATA_EXISTS)
         elif user_choice == "5" :
             self.check_category_created()
         elif user_choice == "6" :
-            self.asset_obj.add_asset()
+            self.obj_asset.add_asset()
         elif user_choice == "7" :
-            self.asset_obj.view_asset()
+            self.obj_asset.view_asset()
         elif user_choice == "8" :
-            self.asset_obj.check_assign_asset()
+            self.obj_asset.check_assign_asset()
         elif user_choice == "9" : 
-            self.asset_obj.check_unassign_asset()
+            self.obj_asset.check_unassign_asset()
         elif user_choice == "10":
-            self.track_asset_obj.menu_options()
+            self.obj_track_asset.track_asset_operations()
         elif user_choice == "11":
-            self.resolve_issue_obj.menu_operation()
+            self.obj_maintenance.maintenance_operations()
         elif user_choice == "12":
             return True
         else :

@@ -29,8 +29,7 @@ ADMIN_PROMPT : |
   - '5' Add vendor
   - '6' View assets category
   - '7' Add assets category
-  - '8' Track assets
-  - '9' Logout
+  - '8' Logout
   Your choice:- 
 
 MANAGER_PROMPT : |

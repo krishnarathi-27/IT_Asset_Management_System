@@ -118,3 +118,56 @@ AttributeError: module 'datetime' has no attribute 'strptime'
 2023-12-08 11:39:58,477 INFO     [manager_views.py:26] Asset Manager logged in the system
 2023-12-08 11:39:58,477 INFO     [manager_views.py:45] Manager menu displayed
 2023-12-08 11:40:20,103 INFO     [asset_views.py:58] Asset unassigned from the user
+2023-12-08 13:30:27,136 INFO     [main.py:27] Starting with asset management system.
+2023-12-08 13:30:34,103 INFO     [auth_controllers.py:54] Providing role based access to authenticated user
+2023-12-08 13:30:34,104 INFO     [manager_views.py:28] Asset Manager logged in the system
+2023-12-08 13:30:34,104 INFO     [manager_views.py:49] Manager menu displayed
+2023-12-08 13:30:36,314 INFO     [track_asset_views.py:74] Track asset menu displayed
+2023-12-08 13:30:38,180 ERROR    [app_decorator.py:41] CommonHelper.display_user_details() missing 1 required positional argument: 'self'
+Traceback (most recent call last):
+  File "c:\Users\krathi\OneDrive - WatchGuard Technologies Inc\Desktop\IT_Asset_Management_System\src\utils\app_decorator.py", line 24, in wrapper
+    return func(*args,**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\krathi\OneDrive - WatchGuard Technologies Inc\Desktop\IT_Asset_Management_System\src\views\track_asset_views.py", line 88, in track_asset_menu
+    self.track_input_username()
+  File "c:\Users\krathi\OneDrive - WatchGuard Technologies Inc\Desktop\IT_Asset_Management_System\src\views\track_asset_views.py", line 31, in track_input_username
+    if not CommonHelper.display_user_details():
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: CommonHelper.display_user_details() missing 1 required positional argument: 'self'
+2023-12-08 13:31:14,844 INFO     [auth_views.py:56] Login attempt resetting
+2023-12-08 13:31:17,469 INFO     [main.py:36] Connection closed. Exiting from application
+2023-12-08 13:33:00,977 INFO     [main.py:27] Starting with asset management system.
+2023-12-08 13:33:06,496 INFO     [auth_controllers.py:54] Providing role based access to authenticated user
+2023-12-08 13:33:06,496 INFO     [manager_views.py:28] Asset Manager logged in the system
+2023-12-08 13:33:06,496 INFO     [manager_views.py:49] Manager menu displayed
+2023-12-08 13:33:09,248 INFO     [track_asset_views.py:74] Track asset menu displayed
+2023-12-08 13:33:12,388 ERROR    [app_decorator.py:41] CommonHelper.display_user_details() missing 1 required positional argument: 'self'
+Traceback (most recent call last):
+  File "c:\Users\krathi\OneDrive - WatchGuard Technologies Inc\Desktop\IT_Asset_Management_System\src\utils\app_decorator.py", line 24, in wrapper
+    return func(*args,**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\krathi\OneDrive - WatchGuard Technologies Inc\Desktop\IT_Asset_Management_System\src\views\track_asset_views.py", line 88, in track_asset_menu
+    self.track_input_username()
+  File "c:\Users\krathi\OneDrive - WatchGuard Technologies Inc\Desktop\IT_Asset_Management_System\src\views\track_asset_views.py", line 31, in track_input_username
+    if not CommonHelper.display_user_details():
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: CommonHelper.display_user_details() missing 1 required positional argument: 'self'
+2023-12-08 13:36:09,061 INFO     [validations.py:38] Invalid email entered
+2023-12-08 13:36:52,058 INFO     [track_asset_views.py:101] Invalid input entered
+2023-12-08 13:36:59,013 INFO     [main.py:27] Starting with asset management system.
+2023-12-08 13:37:03,031 INFO     [auth_controllers.py:54] Providing role based access to authenticated user
+2023-12-08 13:37:03,031 INFO     [manager_views.py:28] Asset Manager logged in the system
+2023-12-08 13:37:03,031 INFO     [manager_views.py:49] Manager menu displayed
+2023-12-08 13:37:06,483 INFO     [track_asset_views.py:74] Track asset menu displayed
+2023-12-08 13:37:20,436 INFO     [validations.py:64] Invalid user id entered
+2023-12-08 13:37:45,891 INFO     [track_asset_views.py:101] Invalid input entered
+2023-12-08 13:40:00,256 INFO     [main.py:27] Starting with asset management system.
+2023-12-08 13:40:05,070 INFO     [auth_controllers.py:54] Providing role based access to authenticated user
+2023-12-08 13:40:05,070 INFO     [manager_views.py:28] Asset Manager logged in the system
+2023-12-08 13:40:05,070 INFO     [manager_views.py:49] Manager menu displayed
+2023-12-08 13:40:07,174 INFO     [track_asset_views.py:74] Track asset menu displayed
+2023-12-08 13:41:01,289 INFO     [main.py:27] Starting with asset management system.
+2023-12-08 13:41:05,029 INFO     [auth_controllers.py:54] Providing role based access to authenticated user
+2023-12-08 13:41:05,029 INFO     [manager_views.py:28] Asset Manager logged in the system
+2023-12-08 13:41:05,029 INFO     [manager_views.py:49] Manager menu displayed
+2023-12-08 13:41:06,576 INFO     [track_asset_views.py:70] Track asset menu displayed

@@ -25,7 +25,7 @@ class AssetDataControllers:
         view_category() -> view category details
     """
     def __init__(self) -> None:
-        self.db_helper_obj = DatabaseHelper()
+        self.obj_db_helper = DatabaseHelper()
 
     def category_vendor_exists(self,mapping_id: str, category_id: str, vendor_id: str) -> bool:
         """
@@ -33,9 +33,9 @@ class AssetDataControllers:
             Parameters : self, mapping_id, category_id, vendor_id
             Return type : bool
         """
-        mapping_data = self.db_helper_obj.get_from_mapping_table(category_id, vendor_id)
+        mapping_data = self.obj_db_helper.get_from_mapping_table(category_id, vendor_id)
         if not mapping_data:
-            self.db_helper_obj.save_data_in_mapping_table(mapping_id,category_id,vendor_id)
+            self.obj_db_helper.save_data_in_mapping_table(mapping_id,category_id,vendor_id)
             logging.info(LogsConfig.LOG_CATEGORY_ADDED)
             return True
         else:
@@ -49,14 +49,14 @@ class AssetDataControllers:
         """
         data = CommonHelper.input_category_details()
         category_id = "CAT" + shortuuid.ShortUUID().random(length=4) 
-        vendor_id = self.db_helper_obj.get_vendor_by_email(data[2])
+        vendor_id = self.obj_db_helper.get_vendor_by_email(data[2])
         if not vendor_id:
             return False
         vendor_id = vendor_id[0][0]
-        category_exists = self.db_helper_obj.get_by_category_and_brand_name(data[0],data[1])
+        category_exists = self.obj_db_helper.get_by_category_and_brand_name(data[0],data[1])
         mapping_id = "MPN" + shortuuid.ShortUUID().random(length=4)
         if not category_exists:
-            self.db_helper_obj.save_category_mapping_details(
+            self.obj_db_helper.save_category_mapping_details(
                 (category_id,data[0],data[1]),
                 (mapping_id,category_id,vendor_id)
             )
@@ -74,7 +74,7 @@ class AssetDataControllers:
         vendor_id = "VEN" + shortuuid.ShortUUID().random(length=4)         
         vendor_email = InputValidations.input_email()
         vendor_name = InputValidations.input_name()
-        self.db_helper_obj.save_new_vendor(vendor_id,vendor_name,vendor_email)
+        self.obj_db_helper.save_new_vendor(vendor_id,vendor_name,vendor_email)
         logging.info(LogsConfig.LOG_VENDOR_ADDED)
 
     def view_vendor(self) -> bool:
@@ -83,7 +83,7 @@ class AssetDataControllers:
             Parameters : self
             Return type : bool
         """
-        data = self.db_helper_obj.get_vendor_details()
+        data = self.obj_db_helper.get_vendor_details()
         if not data:
             return False
         CommonHelper.display_table(data,Header.SCHEMA_VENDOR_TABLE)
@@ -95,7 +95,7 @@ class AssetDataControllers:
             Parameters : self
             Return type : bool
         """
-        data = self.db_helper_obj.get_category_details()
+        data = self.obj_db_helper.get_category_details()
         if not data:
             return False
         CommonHelper.display_table(data,Header.SCHEMA_CATEGORY_TABLE)

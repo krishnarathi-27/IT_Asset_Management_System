@@ -11,7 +11,7 @@ from controllers.asset_data_controllers import AssetDataControllers
 
 logger = logging.getLogger('admin_views')
 
-class AdminViews:
+class AdminViews(AssetDataControllers):
     """
         Class that contains menu options for taking input from admin to perform admin operations
         ...
@@ -28,7 +28,6 @@ class AdminViews:
         print(PromptConfig.WELCOME_ADMIN)
         self.obj_common_helper = CommonHelper()
         self.obj_admin_controller = AdminControllers()
-        self.asset_data_obj = AssetDataControllers()
 
     def admin_operations(self) -> None:
         """
@@ -54,23 +53,21 @@ class AdminViews:
             self.obj_common_helper.display_user_details()
         elif user_choice == "2" :
             self.select_new_user()
-            print("Data added successfully")
+            print("User added successfully")
         elif user_choice == "3" :
-            if not self.asset_data_obj.view_vendor():
-                print("No data exists")
+            if not self.view_vendor():
+                print(PromptConfig.NO_DATA_EXISTS)
         elif user_choice == "4" :
             self.check_deactivate_vendor()
         elif user_choice == "5" :
-            self.asset_data_obj.create_vendor()
-            print("Data added successfully")
+            self.create_vendor()
+            print("Vendor added successfully")
         elif user_choice == "6" :
-            if not self.asset_data_obj.view_category():
-                print("No data exists")
+            if not self.view_category():
+                print(PromptConfig.NO_DATA_EXISTS)
         elif user_choice == "7" :
            self.check_category_created()
-        elif user_choice == "8" : 
-            self.track_asset_obj.menu_options()
-        elif user_choice == "9" :
+        elif user_choice == "8" :
             return True
         else :
             print(PromptConfig.INVALID_INPUT + "\n") 
@@ -107,7 +104,7 @@ class AdminViews:
             print("No data exists of vendor")
 
     def check_category_created(self)->None:
-        if self.asset_data_obj.create_category():
+        if self.create_category():
             print("Category added successfully")
         else:
             print("Data already exists")

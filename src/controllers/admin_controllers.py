@@ -16,7 +16,7 @@ class AdminControllers:
         ...
         Attributes 
         ----------
-        db_helper_obj -> object of DatabaseHelper class for accessing its methods
+        obj_db_helper -> object of DatabaseHelper class for accessing its methods
         Methods
         -------
         create_new_user() -> creates new user in the system
@@ -24,7 +24,7 @@ class AdminControllers:
     """
     
     def __init__(self) -> None:
-        self.db_helper_obj = DatabaseHelper()
+        self.obj_db_helper = DatabaseHelper()
 
     def create_new_user(self,user_role: str) -> None:
         """
@@ -36,7 +36,7 @@ class AdminControllers:
         username = InputValidations.input_name() 
         password =  InputValidations.input_password()
         hashed_password = hashlib.sha256(password.encode()).hexdigest()
-        self.db_helper_obj.save_new_user(
+        self.obj_db_helper.save_new_user(
             user_id,username,hashed_password,user_role
         )
 
@@ -48,15 +48,15 @@ class AdminControllers:
             Parameters : self
             Return Type : bool
         """
-        data = self.db_helper_obj.get_vendor_details()
+        data = self.obj_db_helper.get_vendor_details()
         if not data:
             return False
         CommonHelper.display_table(data,Header.SCHEMA_VENDOR_TABLE)
         vendor_email = InputValidations.input_email()
-        data = self.db_helper_obj.get_vendor_by_email()
+        data = self.obj_db_helper.get_vendor_by_email()
         if not data:
             return False
-        self.db_helper_obj.update_vendor_active_status(vendor_email)
+        self.obj_db_helper.update_vendor_active_status(vendor_email)
 
         logger.info(LogsConfig.LOG_VENDOR_DEACTIVATED)
         return True

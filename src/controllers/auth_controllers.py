@@ -19,7 +19,7 @@ class AuthControllers:
         ...
         Attributes
         ----------
-        db_obj -> object of DatabaseHelper class for accessing its methods.
+        obj_db_helper -> object of DatabaseHelper class for accessing its methods.
 
         Methods
         -------
@@ -28,8 +28,8 @@ class AuthControllers:
         validate_user() -> checks if the user entered credentials is a valid password or not 
     """
     def __init__(self) -> None:
-        self.db_obj = DatabaseHelper()
-        self.common_helper_obj = CommonHelper()
+        self.obj_db_helper = DatabaseHelper()
+        self.obj_common_helper = CommonHelper()
 
     def valid_first_login(self,username: str,hashed_input_password: str,password: str) -> bool:
         """
@@ -39,7 +39,7 @@ class AuthControllers:
         """
         if hashed_input_password == password:
             logger.info("User changing default password")
-            self.common_helper_obj.change_default_password(username)
+            self.obj_common_helper.change_default_password(username)
             return True
         else:
             logger.info("Wrong default password entered")
@@ -74,7 +74,7 @@ class AuthControllers:
             Paramters : self, username, input_password
             Return type : bool
         """
-        user_data = self.db_obj.get_user_credentials(username)
+        user_data = self.obj_db_helper.get_user_credentials(username)
         if user_data:
             password = user_data[0][1]
             role = user_data[0][2]

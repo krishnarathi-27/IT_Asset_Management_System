@@ -209,7 +209,7 @@ class DatabaseHelper:
             )
         return data
     
-    def fetch_asset_exists(self,asset_id) -> list:
+    def fetch_asset_exists(self,asset_id: str) -> list:
         '''
             Method to fetch assets of asset_id
             Parameters : self
@@ -221,7 +221,7 @@ class DatabaseHelper:
             )
         return data
     
-    def fetch_user_exists(self,user_id) -> list:
+    def fetch_user_exists(self,user_id: str) -> list:
         '''
             Method to fetch ausers of user_id
             Parameters : self
@@ -233,7 +233,7 @@ class DatabaseHelper:
             )
         return data
     
-    def save_asset_status(self,assigned_to ,asset_status, asset_id) -> None:
+    def save_asset_status(self,assigned_to: str ,asset_status: str, asset_id: str) -> None:
         '''
             Method to save asset_status, assigned_to
             Parameters : self
@@ -255,4 +255,97 @@ class DatabaseHelper:
                 )
         return data
     
+    def fetch_asset_by_userid(self, user_id: str) -> list:
+        '''
+            Method to fetch asset by user id
+            Parameters : self
+            Return Type : list
+        '''        
+        data = db.fetch_data(
+                    Queries.FETCH_ASSETS_BY_USER_ID,
+                    (user_id,)
+            )
+        return data
     
+    def fetch_category_exists(self,category_id: str) -> list:
+        '''
+            Method to fetch assets by category_id
+            Parameters : self
+            Return Type : list
+        '''             
+        data = db.fetch_data(
+                Queries.FETCH_ASSETS_BY_CATEGORY_ID,
+                (category_id,)
+            )
+        return data
+
+    def fetch_vendor_exists(self,vendor_email: str) -> list:
+        '''
+            Method to fetch assets by vendor_email
+            Parameters : self
+            Return Type : list
+        '''             
+        data = db.fetch_data(
+                Queries.FETCH_ASSETS_BY_VENDOR_EMAIL,
+                (vendor_email,)
+            )
+        return data
+    
+    def fetch_asset_available(self) -> list:
+        '''
+            Method to fetch assets available
+            Parameters : self
+            Return Type : list
+        '''         
+        data = db.fetch_data(
+                Queries.FETCH_ASSETS_AVAILABLE
+            )
+        return data
+    
+    def fetch_asset_maintenance(self) -> list:
+        '''
+            Method to fetch assets maintenance
+            Parameters : self
+            Return Type : list
+        '''         
+        data = db.fetch_data(
+                Queries.FETCH_ASSETS_UNDER_MAINTENANCE
+            )
+        return data
+    
+    def fetch_pending_issues(self) -> list:
+        '''
+            Method to fetch pending_issues
+            Parameters : self
+            Return Type : list
+        '''         
+        data = db.fetch_data(
+                Queries.FETCH_ISSUES_PENDING
+            )
+        return data
+    
+    def save_maintenance_status(self, tuple1: tuple,tuple2: tuple,tuple3: tuple) -> None:
+        '''
+            Method to save maintenance status 
+            Parameters : self, tuple1, tuple2, tuple3
+            Return Type : None
+        ''' 
+        db.save_data([
+                Queries.UPDATE_ISSUE_STATUS_UNDER_MAINTENANCE,
+                Queries.INSERT_IN_MAINTENANCE_TABLE,
+                Queries.UPDATE_ASSET_STATUS_UNDER_MAINTENANCE
+            ],
+            [tuple1, tuple2, tuple3]
+        )
+
+    def fetch_asset_by_issueid(self, issue_id: str) -> list:
+        '''
+            Method to asset by issue id
+            Parameters : self, issue_id
+            Return Type : list
+        '''  
+        data = db.fetch_data(
+            Queries.FETCH_ASSET_ID_BY_ISSUE_ID,
+            (issue_id,)
+        )
+        return data
