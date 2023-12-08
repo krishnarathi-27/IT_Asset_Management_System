@@ -1,9 +1,10 @@
 """Module for taking input from employee for various functionalities"""
 import logging
-from utils.common_helper import CommonHelper
 from utils.app_decorator import error_handler
 from config.prompts.prompts import PromptConfig
 from config.log_prompts.logs_config import LogsConfig
+from utils.validations import InputValidations
+from controllers.employee_controllers import EmployeeControllers
 
 logger = logging.getLogger('employee_views')
 
@@ -24,10 +25,23 @@ class EmployeeViews:
         logger.info(LogsConfig.LOG_EMPLOYEE_LOGGED_IN)
         print(PromptConfig.WELCOME_EMPLOYEE)
         self.user_id = user_id
-        self.obj_common_helper = CommonHelper()
+        self.obj_emp_controller = EmployeeControllers()
 
-    def raise_issue_input(self) -> None:
-        pass
+    def check_assets_assigned(self) -> None:
+        if not self.obj_emp_controller.display_assets_assigned(self.user_id):
+            print(PromptConfig.NO_DATA_EXISTS)
+
+    def input_raise_issue(self) -> None:
+        if not self.obj_emp_controller.display_assets_assigned(self.user_id):
+            print(PromptConfig.NO_DATA_EXISTS)
+            return
+        
+        asset_id = InputValidations.input_asset_id()
+        if not self.obj_emp_controller.raise_issue(self.user_id, asset_id):
+            print(PromptConfig.ASSET_ID_NOT_EXISTS)
+            return 
+        else:
+            print(PromptConfig.ISSUE_RAISED)
     
     def employee_operations(self) -> None:
         """
@@ -48,12 +62,13 @@ class EmployeeViews:
             Return type : bool
         """
         user_choice = input(PromptConfig.EMPLOYEE_PROMPT + "\n")
+        
         if user_choice == "1" : 
-            pass
+            self.obj_emp_controller.display_employee_details(self.user_id)
         elif user_choice == "2" :
-            pass
+            self.check_assets_assigned()
         elif user_choice == "3" : 
-            self.raise_issue()
+            self.input_raise_issue()
         elif user_choice == "4" :
             return True
         else :

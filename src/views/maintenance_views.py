@@ -35,6 +35,20 @@ class MaintenanceViews:
         if not self.obj_manager_controller.send_asset(issue_id, self.user_id):
             print(PromptConfig.NO_DATA_EXISTS)
             return
+        else:
+            print("Asset sent for maintenance")
+        
+    def input_recieve_asset(self) -> None:
+        if not self.obj_manager_controller.display_maintenance_table():
+            print(PromptConfig.NO_DATA_EXISTS)
+            return
+        
+        maintenance_id = InputValidations.input_maintenance_id()
+        if not self.obj_manager_controller.recieve_asset(maintenance_id):
+            print(PromptConfig.NO_DATA_EXISTS)
+            return
+        else:
+            print("Asset recieved from maintenance")
         
     def maintenance_operations(self) -> None:
         """
@@ -59,9 +73,9 @@ class MaintenanceViews:
             if not self.obj_manager_controller.view_pending_issues():
                 print(PromptConfig.NO_DATA_EXISTS)
         elif user_choice == "2" :
-            pass
+            self.input_send_asset()
         elif user_choice == "3" :
-            pass
+            self.input_recieve_asset()
         elif user_choice == "4" :
             return True
         else :

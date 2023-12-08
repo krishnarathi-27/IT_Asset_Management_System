@@ -90,3 +90,27 @@ class ManagerControllers:
         tuple2 = (maintenance_id,asset_id,start_date)
         tuple3 = (asset_id,)
         self.obj_db_helper.save_maintenance_status(tuple1,tuple2,tuple3)
+        return True
+
+    def recieve_asset(self,maintenance_id: str) -> bool:
+        asset_id = self.obj_db_helper.fetch_asset_by_maintanceid(maintenance_id)
+        if not asset_id:
+            return False
+        
+        asset_id = asset_id[0][0]
+        dt = datetime.now()
+        return_date = dt.strftime(AppConfig.DATE_FORMAT)
+
+        tuple1 = (return_date,maintenance_id)
+        tuple2 = (asset_id,)
+        self.obj_db_helper.save_maintenance_status_recieve(tuple1,tuple2)
+        return True
+    
+    def display_maintenance_table(self) -> None:
+        data = self.obj_db_helper.fetch_maintenance_table()
+        if not data:
+            return False
+        
+        CommonHelper.display_table(data, Header.SCHEMA_MAINTENANCE_TABLE)
+        return True
+        

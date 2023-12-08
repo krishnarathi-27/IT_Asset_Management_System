@@ -11,7 +11,7 @@ from controllers.asset_data_controllers import AssetDataControllers
 
 logger = logging.getLogger('admin_views')
 
-class AdminViews(AssetDataControllers):
+class AdminViews:
     """
         Class that contains menu options for taking input from admin to perform admin operations
         ...
@@ -27,6 +27,7 @@ class AdminViews(AssetDataControllers):
         logger.info(LogsConfig.LOG_ADMIN_LOGGED_IN)
         print(PromptConfig.WELCOME_ADMIN)
         self.obj_common_helper = CommonHelper()
+        self.obj_asset_data = AssetDataControllers()
         self.obj_admin_controller = AdminControllers()
 
     def admin_operations(self) -> None:
@@ -55,15 +56,15 @@ class AdminViews(AssetDataControllers):
             self.select_new_user()
             print("User added successfully")
         elif user_choice == "3" :
-            if not self.view_vendor():
+            if not self.obj_asset_data.view_vendor():
                 print(PromptConfig.NO_DATA_EXISTS)
         elif user_choice == "4" :
             self.check_deactivate_vendor()
         elif user_choice == "5" :
-            self.create_vendor()
+            self.obj_asset_data.create_vendor()
             print("Vendor added successfully")
         elif user_choice == "6" :
-            if not self.view_category():
+            if not self.obj_asset_data.view_category():
                 print(PromptConfig.NO_DATA_EXISTS)
         elif user_choice == "7" :
            self.check_category_created()
@@ -104,7 +105,7 @@ class AdminViews(AssetDataControllers):
             print("No data exists of vendor")
 
     def check_category_created(self)->None:
-        if self.create_category():
+        if self.obj_asset_data.create_category():
             print("Category added successfully")
         else:
             print("Data already exists")

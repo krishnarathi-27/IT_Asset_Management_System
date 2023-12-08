@@ -12,7 +12,7 @@ from views.maintenance_views import MaintenanceViews
 
 logger = logging.getLogger('manager_views')
 
-class ManagerViews(AssetDataControllers):
+class ManagerViews:
     """
         Class that contains menu options for taking input from manager to perform manager operations
         ...
@@ -31,12 +31,13 @@ class ManagerViews(AssetDataControllers):
         self.user_id = user_id
         self.obj_common_helper = CommonHelper()
         self.obj_asset = AssetViews()
+        self.obj_asset_data = AssetDataControllers()
         self.obj_track_asset = TrackAssetViews()
         self.obj_manager_controller = ManagerControllers()
-        self.obj_maintenance = MaintenanceViews()
+        self.obj_maintenance = MaintenanceViews(user_id)
 
     def check_category_created(self)->None:
-        if self.create_category():
+        if self.obj_asset_data.create_category():
             print("Category added successfully")
         else:
             print("Data already exists")
@@ -64,13 +65,13 @@ class ManagerViews(AssetDataControllers):
         if user_choice == "1" : 
             self.obj_common_helper.display_user_details()
         elif user_choice == "2" :
-            if not self.view_vendor():
+            if not self.obj_asset_data.view_vendor():
                 print(PromptConfig.NO_DATA_EXISTS)
         elif user_choice == "3" :
-            self.create_vendor()
+            self.obj_asset_data.create_vendor()
             print("Vendor added successfully")
         elif user_choice == "4" :
-            if not self.view_category():
+            if not self.obj_asset_data.view_category():
                 print(PromptConfig.NO_DATA_EXISTS)
         elif user_choice == "5" :
             self.check_category_created()

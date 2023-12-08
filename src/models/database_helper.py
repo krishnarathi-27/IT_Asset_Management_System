@@ -338,6 +338,19 @@ class DatabaseHelper:
             [tuple1, tuple2, tuple3]
         )
 
+    def save_maintenance_status_recieve(self, tuple1: tuple, tuple2: tuple) -> None:
+        '''
+            Method to save maintenance status as recived
+            Paramaters : self, tuple1, tuple2
+            Return Type : None
+        '''
+        db.save_data([
+            Queries.UPDATE_MAINTENANCE_RETURN_DATE,
+            Queries.UPDATE_ASSET_STATUS_AGAIN_TO_AVAILABLE
+        ],
+        [tuple1,tuple2]
+        )
+        
     def fetch_asset_by_issueid(self, issue_id: str) -> list:
         '''
             Method to asset by issue id
@@ -349,3 +362,73 @@ class DatabaseHelper:
             (issue_id,)
         )
         return data
+    
+    def fetch_asset_by_maintanceid(self, maintenance_id: str) -> list:
+        '''
+            Method to asset by maintenance id
+            Parameters : self, maintenance_id
+            Return Type : list
+        '''       
+        data = db.fetch_data(
+            Queries.FETCH_ASSET_ID_BY_MAINTENANCE_TABLE,
+            (maintenance_id,)
+        )
+        return data
+    
+    def fetch_maintenance_table(self) -> list:
+        '''
+            Method to fetch maintenance table
+            Paramters : self
+            Return Type : list
+        '''
+        data = db.fetch_data(
+            Queries.FETCH_MAINTENANCE_TABLE
+        )
+        return data
+    
+    def fetch_employee_details(self, user_id: str) -> list:
+        '''
+            Method to fetch details of employee
+            Paramters : self, userid
+            Return Type : list
+        '''
+        data = db.fetch_data(
+                Queries.FETCH_DETAILS_BY_UID,
+                (user_id,)
+        )
+        return data
+    
+    def fetch_assets_assigned_to_user(self, user_id: str) -> list:
+        '''
+            Method to fetch assets assigned to user
+            Paramters : self, user_id
+            Return Type : list
+        '''
+        data = db.fetch_data(
+                Queries.FETCH_ASSIGNED_ASSETS_BY_UID,
+                (user_id,)
+        )
+        return data        
+    
+    def fetch_asset_id_exists_for_user(self, asset_id: str,user_id: str) -> list:
+        '''
+            Method to fetch if assets exists for user
+            Paramters : self, asset_id,user_id
+            Return Type : list
+        '''
+        data = db.fetch_data(
+                Queries.FETCH_IF_USER_HAVE_ASSET,
+                (asset_id,user_id,)
+        )
+        return data     
+
+    def save_raised_issue(self,issue_id: str,user_id: str,asset_id: str) -> None:
+        '''
+            Method to save issue raised
+            Paramters : self,issue_id,user_id,asset_id
+            Return Type : None
+        '''      
+        db.save_data(
+            Queries.INSERT_ISSUE_FOR_ASSET,
+            (issue_id,user_id,asset_id,)
+        )
