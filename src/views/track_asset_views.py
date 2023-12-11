@@ -4,6 +4,7 @@ from utils.common_helper import CommonHelper
 from utils.app_decorator import error_handler
 from config.prompts.prompts import PromptConfig
 from config.log_prompts.logs_config import LogsConfig
+from config.queries import Header
 from utils.validations import InputValidations
 from controllers.manager_controllers import ManagerControllers
 from controllers.asset_data_controllers import AssetDataControllers
@@ -32,34 +33,48 @@ class TrackAssetViews:
             print(PromptConfig.NO_DATA_EXISTS)
         else:
             user_id = InputValidations.input_user_id()
-            if not self.obj_manager_controller.fetch_by_username(user_id):
+            data = self.obj_manager_controller.fetch_by_username(user_id)
+            if not data:
                 print(PromptConfig.NO_DATA_EXISTS)
+            CommonHelper.display_table(data,Header.SCHEMA_ASSETS_BY_USER_ID)
 
     def track_input_category(self) -> None:
         if not self.obj_asset_data_controller.view_category():
             return
         else:
+            CommonHelper.display_table(data,Header.SCHEMA_CATEGORY_TABLE)
             category_id = InputValidations.input_category_id()
-            if not self.obj_manager_controller.fetch_by_category(category_id):
+            data = self.obj_manager_controller.fetch_by_category(category_id)
+            if not data:
                 print(PromptConfig.NO_DATA_EXISTS)
+            else:
+                CommonHelper.display_table(data,Header.SCHEMA_ASSETS_BY_CATEGORY_ID)
 
     def track_input_vendor(self) -> None:
         if not self.obj_asset_data_controller.view_vendor():
             return
         else:
+            CommonHelper.display_table(data,Header.SCHEMA_VENDOR_TABLE)
             vendor_email = InputValidations.input_email()
-            if not self.obj_manager_controller.fetch_by_vendor(vendor_email):
+            data = self.obj_manager_controller.fetch_by_vendor(vendor_email)
+            if not data:
                 print(PromptConfig.NO_DATA_EXISTS)
             else:
-                print(PromptConfig.NO_DATA_EXISTS)
+                CommonHelper.display_table(data,Header.SCHEMA_ASSETS_BY_VENDOR_EMAIL)
 
     def track_asset_available(self) -> None:
-        if not self.obj_manager_controller.fetch_asset_available():
+        data = self.obj_manager_controller.fetch_asset_available()
+        if not data:
             print(PromptConfig.NO_DATA_EXISTS)
+        else:
+            CommonHelper.display_table(data,Header.SCHEMA_ASSET_TABLE)
 
     def track_asset_maintenance(self) -> None:
-        if not self.obj_manager_controller.fetch_asset_maintenance():
+        data =  self.obj_manager_controller.fetch_asset_maintenance()
+        if not data:
             print(PromptConfig.NO_DATA_EXISTS)
+        else:
+            CommonHelper.display_table(data,Header.SCHEMA_ASSET_TABLE)
 
     def track_asset_operations(self) -> None:
         """

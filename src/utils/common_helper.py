@@ -79,15 +79,4 @@ class CommonHelper:
         CommonHelper.display_table(data, Header.SCHEMA_USER_TABLE)
         return True
 
-    @staticmethod
-    def input_category_details() -> tuple:
-        """
-            Method to input category details 
-            Parameters : self
-            Return type : tuple
-        """
-        category_name = input(PromptConfig.ENTER_CATEGORY_NAME).strip().lower()
-        brand_name = input(PromptConfig.ENTER_BRAND_NAME).strip().lower()
-        vendor_email = InputValidations.input_email()
-        return (category_name,brand_name,vendor_email)
     

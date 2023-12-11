@@ -4,10 +4,8 @@ import shortuuid
 from datetime import datetime
 from models.database import db
 from config.queries import Queries
-from config.queries import Header
 from config.app_config import AppConfig
 from config.log_prompts.logs_config import LogsConfig
-from utils.common_helper import CommonHelper
 
 logger = logging.getLogger('manager_controller')
 
@@ -25,63 +23,40 @@ class ManagerControllers:
                         Queries.FETCH_IF_USER_EXISTS,
                         (user_id,))
         if not data_user:
-            return False
-        
+            return data_user    
         data = db.fetch_data(
                     Queries.FETCH_ASSETS_BY_USER_ID,
                     (user_id,))
         if not data:
-            return False
-        
-        CommonHelper.display_table(data,Header.SCHEMA_ASSETS_BY_USER_ID)
-        return True
+            return data
+        return data
     
     def fetch_by_category(self,category_id) -> bool:
-        data_category = db.fetch_data(
+        data = db.fetch_data(
                             Queries.FETCH_ASSETS_BY_CATEGORY_ID,
                             (category_id,))
-        if not data_category:
-            return False
-        
-        CommonHelper.display_table(data_category,Header.SCHEMA_ASSETS_BY_CATEGORY_ID)
-        return True
+        return data
     
     def fetch_by_vendor(self,vendor_email) -> bool:
-        data_vendor = db.fetch_data(
+        data = db.fetch_data(
                             Queries.FETCH_ASSETS_BY_VENDOR_EMAIL,
                             (vendor_email,))
-        if not data_vendor:
-            return False
-        
-        CommonHelper.display_table(data_vendor,Header.SCHEMA_ASSETS_BY_VENDOR_EMAIL)
-        return True
+        return data
 
     def fetch_asset_available(self) -> bool:
         data = db.fetch_data(
                 Queries.FETCH_ASSETS_AVAILABLE)
-        if not data:
-            return False
-        
-        CommonHelper.display_table(data,Header.SCHEMA_ASSET_TABLE)
-        return True
+        return data
     
     def fetch_asset_maintenance(self) -> bool:
         data = db.fetch_data(
                 Queries.FETCH_ASSETS_UNDER_MAINTENANCE)
-        if not data:
-            return False
-        
-        CommonHelper.display_table(data,Header.SCHEMA_ASSET_TABLE)
-        return True
+        return data
     
     def view_pending_issues(self) -> bool:
         data = db.fetch_data(
                 Queries.FETCH_ISSUES_PENDING)
-        if not data:
-            return False
-        
-        CommonHelper.display_table(data, Header.SCHEMA_PENDING_ISSUES)
-        return True
+        return data
     
     def send_asset(self,issue_id, user_id) -> bool:
         asset_id = db.fetch_data(
@@ -125,9 +100,5 @@ class ManagerControllers:
     def display_maintenance_table(self) -> None:
         data = data = db.fetch_data(
             Queries.FETCH_MAINTENANCE_TABLE)
-        if not data:
-            return False
-        
-        CommonHelper.display_table(data, Header.SCHEMA_MAINTENANCE_TABLE)
-        return True
+        return data
         

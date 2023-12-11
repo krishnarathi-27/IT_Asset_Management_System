@@ -2,6 +2,7 @@
 import logging
 from utils.common_helper import CommonHelper
 from utils.app_decorator import error_handler
+from config.queries import Header
 from config.prompts.prompts import PromptConfig
 from config.log_prompts.logs_config import LogsConfig
 from utils.validations import InputValidations
@@ -27,10 +28,10 @@ class MaintenanceViews:
         self.obj_manager_controller = ManagerControllers()
 
     def input_send_asset(self) -> None:
-        if not self.obj_manager_controller.view_pending_issues():
+        data = self.obj_manager_controller.view_pending_issues()
+        if not data:
             print(PromptConfig.NO_DATA_EXISTS)
-            return
-        
+            return 
         issue_id = InputValidations.input_issue_id()
         if not self.obj_manager_controller.send_asset(issue_id, self.user_id):
             print(PromptConfig.NO_DATA_EXISTS)
@@ -39,10 +40,11 @@ class MaintenanceViews:
             print("Asset sent for maintenance")
         
     def input_recieve_asset(self) -> None:
-        if not self.obj_manager_controller.display_maintenance_table():
+        data = self.obj_manager_controller.display_maintenance_table()
+        if not data:
             print(PromptConfig.NO_DATA_EXISTS)
             return
-        
+        CommonHelper.display_table(data, Header.SCHEMA_MAINTENANCE_TABLE)
         maintenance_id = InputValidations.input_maintenance_id()
         if not self.obj_manager_controller.recieve_asset(maintenance_id):
             print(PromptConfig.NO_DATA_EXISTS)
@@ -60,7 +62,14 @@ class MaintenanceViews:
         while True:
             if self.maintenance_menu():
                 break
-
+    
+    def display_issues(self):
+        data = self.obj_manager_controller.view_pending_issues()
+        if not data:
+           print(PromptConfig.NO_DATA_EXISTS)   
+        else: 
+            CommonHelper.display_table(data, Header.SCHEMA_PENDING_ISSUES)
+        
     @error_handler
     def maintenance_menu(self) -> bool:
         """
@@ -70,8 +79,7 @@ class MaintenanceViews:
         """
         user_choice = input(PromptConfig.MAINTENANCE_PROMPT + "\n")
         if user_choice == "1" : 
-            if not self.obj_manager_controller.view_pending_issues():
-                print(PromptConfig.NO_DATA_EXISTS)
+            self.display_issues()
         elif user_choice == "2" :
             self.input_send_asset()
         elif user_choice == "3" :

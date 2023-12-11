@@ -4,16 +4,16 @@ from utils.common_helper import CommonHelper
 from utils.app_decorator import error_handler
 from config.prompts.prompts import PromptConfig
 from config.log_prompts.logs_config import LogsConfig
-from controllers.asset_data_controllers import AssetDataControllers
 from controllers.manager_controllers import ManagerControllers
 from views.asset_views import AssetViews
 from utils.validations import InputValidations
 from views.track_asset_views import TrackAssetViews
 from views.maintenance_views import MaintenanceViews
+from views.asset_data_views import AssetDataViews
 
 logger = logging.getLogger('manager_views')
 
-class ManagerViews:
+class ManagerViews(AssetDataViews):
     """
         Class that contains menu options for taking input from manager to perform manager operations
         ...
@@ -27,21 +27,15 @@ class ManagerViews:
         manager_menu() -> contains menu options for taking input from manager
     """
     def __init__(self,user_id) -> None:
+        super().__init__()
         logger.info(LogsConfig.LOG_MANAGER_LOGGED_IN)
         print(PromptConfig.WELCOME_MANAGER)
         self.user_id = user_id
         self.obj_common_helper = CommonHelper()
         self.obj_asset = AssetViews()
-        self.obj_asset_data = AssetDataControllers()
         self.obj_track_asset = TrackAssetViews()
         self.obj_manager_controller = ManagerControllers()
         self.obj_maintenance = MaintenanceViews(user_id)
-
-    def check_category_created(self)->None:
-        if self.obj_asset_data.create_category():
-            print("Category added successfully")
-        else:
-            print("Data already exists")
 
     def manager_operations(self) -> None:
         """
@@ -95,10 +89,3 @@ class ManagerViews:
         
         return False
  
-    def check_vendor_created(self)->None:
-        vendor_email = InputValidations.input_email()
-        vendor_name = InputValidations.input_name()
-        if self.obj_asset_data.create_vendor(vendor_email,vendor_name):
-            print("Vendor added successfully")
-        else:
-            print("Data already exists")

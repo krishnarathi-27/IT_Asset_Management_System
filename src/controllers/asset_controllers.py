@@ -18,11 +18,7 @@ class AssetControllers:
         return True
 
     def add_asset_to_inventory(self,asset_type) -> bool:
-        '''
-            Method to add assets in the inventory
-            Parameters : self
-            Return type : bool
-        '''
+        ''' Method to add assets in the inventory '''
         asset_id = "ASN" + shortuuid.ShortUUID().random(length=4)       
         data = db.fetch_data(
                     Queries.FETCH_MAPPING_ID

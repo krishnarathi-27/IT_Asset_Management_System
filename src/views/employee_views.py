@@ -4,6 +4,8 @@ from utils.app_decorator import error_handler
 from config.prompts.prompts import PromptConfig
 from config.log_prompts.logs_config import LogsConfig
 from utils.validations import InputValidations
+from config.queries import Header
+from utils.common_helper import CommonHelper
 from controllers.employee_controllers import EmployeeControllers
 
 logger = logging.getLogger('employee_views')
@@ -27,10 +29,20 @@ class EmployeeViews:
         self.user_id = user_id
         self.obj_emp_controller = EmployeeControllers()
 
-    def check_assets_assigned(self) -> None:
-        if not self.obj_emp_controller.display_assets_assigned(self.user_id):
+    def display_details(self) -> None:
+        data = self.obj_emp_controller.display_employee_details(self.user_id)
+        if not data:
             print(PromptConfig.NO_DATA_EXISTS)
+        else:
+            CommonHelper.display_table(data, Header.SCHEMA_USER_TABLE)
 
+    def check_assets_assigned(self) -> None:
+        data = self.obj_emp_controller.display_assets_assigned(self.user_id)
+        if not data:
+            print(PromptConfig.NO_DATA_EXISTS)
+        else:
+            CommonHelper.display_table(data, Header.SCHEMA_ASSETS_TO_USER)
+            
     def input_raise_issue(self) -> None:
         if not self.obj_emp_controller.display_assets_assigned(self.user_id):
             print(PromptConfig.NO_DATA_EXISTS)
@@ -64,7 +76,7 @@ class EmployeeViews:
         user_choice = input(PromptConfig.EMPLOYEE_PROMPT + "\n")
         
         if user_choice == "1" : 
-            self.obj_emp_controller.display_employee_details(self.user_id)
+            self.display_details()
         elif user_choice == "2" :
             self.check_assets_assigned()
         elif user_choice == "3" : 

@@ -2,17 +2,19 @@
 import logging
 from os import system
 from controllers.admin_controllers import AdminControllers
+from controllers.asset_data_controllers import AssetDataControllers
 from utils.common_helper import CommonHelper
+from config.queries import Header
+from utils.validations import InputValidations
 from utils.app_decorator import error_handler
 from config.app_config import AppConfig
 from config.prompts.prompts import PromptConfig
 from config.log_prompts.logs_config import LogsConfig
-from utils.validations import InputValidations
-from controllers.asset_data_controllers import AssetDataControllers
+from views.asset_data_views import AssetDataViews
 
 logger = logging.getLogger('admin_views')
 
-class AdminViews:
+class AdminViews(AssetDataViews):
     """
         Class that contains menu options for taking input from admin to perform admin operations
         ...
@@ -25,18 +27,15 @@ class AdminViews:
         admin_menu() -> contains menu options for taking input from admin
     """
     def __init__(self) -> None:
+        super().__init__()
         logger.info(LogsConfig.LOG_ADMIN_LOGGED_IN)
         print(PromptConfig.WELCOME_ADMIN)
-        self.obj_common_helper = CommonHelper()
         self.obj_asset_data = AssetDataControllers()
+        self.obj_common_helper = CommonHelper()
         self.obj_admin_controller = AdminControllers()
 
     def admin_operations(self) -> None:
-        """
-            Method that contains loop for displaying admin menu
-            Parameters : self
-            Return type : None
-        """
+        """ Method that contains loop for displaying admin menu """
         logger.info("Admin menu displayed")
         while True:
             if self.admin_menu():
@@ -44,28 +43,21 @@ class AdminViews:
 
     @error_handler
     def admin_menu(self) -> bool:
-        """
-            Method that takes input from admin to perform operations, along with error handler decorator 
-            Parameters : self
-            Return type : bool
-        """
+        """ Method that takes input from admin to perform operations, along with error handler decorator """
         user_choice = input(PromptConfig.ADMIN_PROMPT + "\n")
         # system('cls')
         if user_choice == "1" :
             self.obj_common_helper.display_user_details()
         elif user_choice == "2" :
-            self.select_new_user()
-            print("User added successfully")
+            self.create_user()
         elif user_choice == "3" :
-            if not self.obj_asset_data.view_vendor():
-                print(PromptConfig.NO_DATA_EXISTS)
+            self.display_vendors()
         elif user_choice == "4" :
             self.check_deactivate_vendor()
         elif user_choice == "5" :
             self.check_vendor_created()
         elif user_choice == "6" :
-            if not self.obj_asset_data.view_category():
-                print(PromptConfig.NO_DATA_EXISTS)
+            self.display_category()
         elif user_choice == "7" :
            self.check_category_created()
         elif user_choice == "8" :
@@ -76,44 +68,32 @@ class AdminViews:
         
         return False
     
-    def select_new_user(self) -> None:
-        """
-            Method that takes input from admin to select user role and create new user 
-            Parameters : self
-            Return type : None
-        """
+    def create_user(self) :
+        username = InputValidations.input_name() 
+        password =  InputValidations.input_password() 
         while True:
             role = input(PromptConfig.CREATE_NEW_USER_ROLE + "\n") 
             if role == '1':
                 user_role = AppConfig.ASSET_MANAGER
-                return self.obj_admin_controller.create_new_user(user_role)           
+                break         
             elif role == '2':
                 user_role = AppConfig.EMPLOYEE
-                return self.obj_admin_controller.create_new_user(user_role)
+                break
             else:
                 print(PromptConfig.INVALID_INPUT + "\n")
 
-    def check_deactivate_vendor(self) -> None:     
-        """
-            Method that checks that vendor can be deactivated 
-            Parameters : self
-            Return type : None
-        """
-        if self.obj_admin_controller.deactivate_vendor():
-            print("Vendor deactivated successfully")
-        else:
-            print("No data exists of vendor")
+        self.obj_admin_controller.create_new_user(user_role,username,password)
+        print("User added successfully")
 
-    def check_category_created(self)->None:
-        if self.obj_asset_data.create_category():
-            print("Category added successfully")
+    def check_deactivate_vendor(self) -> None:     
+        """ Method that checks that vendor can be deactivated """
+        data = self.obj_asset_data.view_vendor()
+        if not data:
+            print(PromptConfig.NO_DATA_EXISTS)
         else:
-            print("Data already exists")
-            
-    def check_vendor_created(self)->None:
-        vendor_email = InputValidations.input_email()
-        vendor_name = InputValidations.input_name()
-        if self.obj_asset_data.create_vendor(vendor_email,vendor_name):
-            print("Vendor added successfully")
-        else:
-            print("Data already exists")
+            CommonHelper.display_table(data,Header.SCHEMA_VENDOR_TABLE)
+            vendor_email = InputValidations.input_email()
+            if self.obj_admin_controller.deactivate_vendor(vendor_email):
+                print("Vendor deactivated successfully")
+            else:
+                print("No data exists of vendor")
