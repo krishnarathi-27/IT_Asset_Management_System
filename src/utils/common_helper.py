@@ -2,8 +2,9 @@
 import logging
 import hashlib
 from tabulate import tabulate
+from models.database import db
+from config.queries import Queries
 from utils.validations import InputValidations
-from models.database_helper import DatabaseHelper
 from config.queries import Header
 from config.prompts.prompts import PromptConfig
 from config.log_prompts.logs_config import LogsConfig
@@ -22,9 +23,6 @@ class CommonHelper:
         -------
         change_default_password() = Methods that changes default password on first valid login 
     """
-    def __init__(self) -> None:
-        self.db_obj = DatabaseHelper()
-
     def change_default_password(self,username: str) -> None:
         """
             Method for changing default password of validated user
@@ -42,7 +40,10 @@ class CommonHelper:
                 logger.info("New password not matches confirm new password")
             else:
                 new_hashed_password = hashlib.sha256(new_password.encode()).hexdigest()    
-                self.db_obj.update_default_password((new_hashed_password,username))
+                db.save_data(
+                        Queries.UPDATE_DEFAULT_PASSWORD,
+                        (new_hashed_password,username,)
+                    )
                 print(PromptConfig.DEFAULT_PASSWORD_UPDATED)
                 logger.info(LogsConfig.LOG_DEFAULT_PASSWORD)
                 return
@@ -70,7 +71,8 @@ class CommonHelper:
             Parameters : self
             Return type : None
         """
-        data = self.db_obj.get_user_details()
+        data = db.fetch_data(
+                    Queries.FETCH_AUTHENTICATION_TABLE)
         if not data:
             print(PromptConfig.NO_DATA_EXISTS)
             return False

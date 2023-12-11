@@ -1,0 +1,16 @@
+2023-12-11 05:43:24,520 INFO     [main.py:27] Starting with asset management system.
+2023-12-11 05:43:29,536 INFO     [auth_controllers.py:54] Providing role based access to authenticated user
+2023-12-11 05:43:29,537 INFO     [admin_views.py:27] Admin logged in the system
+2023-12-11 05:43:29,537 INFO     [admin_views.py:39] Admin menu displayed
+2023-12-11 05:43:50,028 INFO     [admin_controllers.py:42] Create new user
+2023-12-11 05:44:11,350 INFO     [admin_controllers.py:67] Vendor deactivated successfully
+2023-12-11 05:44:26,669 INFO     [validations.py:38] Invalid email entered
+2023-12-11 05:44:40,095 INFO     [asset_data_controllers.py:94] Vendor added in database
+2023-12-11 05:45:29,733 INFO     [auth_views.py:56] Login attempt resetting
+2023-12-11 05:45:42,478 INFO     [auth_views.py:52] Login attempts reducing due to invalid login
+2023-12-11 05:45:54,658 INFO     [auth_controllers.py:54] Providing role based access to authenticated user
+2023-12-11 05:45:54,658 INFO     [manager_views.py:29] Asset Manager logged in the system
+2023-12-11 05:45:54,658 INFO     [manager_views.py:51] Manager menu displayed
+2023-12-11 05:46:38,490 INFO     [asset_views.py:41] Asset successfully added
+2023-12-11 05:46:44,218 INFO     [auth_views.py:56] Login attempt resetting
+2023-12-11 05:46:45,913 INFO     [main.py:36] Connection closed. Exiting from application

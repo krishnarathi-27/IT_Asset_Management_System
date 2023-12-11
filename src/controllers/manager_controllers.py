@@ -2,10 +2,11 @@
 import logging
 import shortuuid
 from datetime import datetime
+from models.database import db
+from config.queries import Queries
 from config.queries import Header
 from config.app_config import AppConfig
 from config.log_prompts.logs_config import LogsConfig
-from models.database_helper import DatabaseHelper
 from utils.common_helper import CommonHelper
 
 logger = logging.getLogger('manager_controller')
@@ -19,17 +20,16 @@ class ManagerControllers:
         Methods
         -------
     """
-    
-    def __init__(self) -> None:
-        self.obj_db_helper = DatabaseHelper()
-        self.obj_common_helper = CommonHelper()
-
     def fetch_by_username(self,user_id) -> bool:
-        data_user = self.obj_db_helper.fetch_user_exists(user_id)
+        data_user = data = db.fetch_data(
+                        Queries.FETCH_IF_USER_EXISTS,
+                        (user_id,))
         if not data_user:
             return False
         
-        data = self.obj_db_helper.fetch_asset_by_userid(user_id)
+        data = db.fetch_data(
+                    Queries.FETCH_ASSETS_BY_USER_ID,
+                    (user_id,))
         if not data:
             return False
         
@@ -37,7 +37,9 @@ class ManagerControllers:
         return True
     
     def fetch_by_category(self,category_id) -> bool:
-        data_category = self.obj_db_helper.fetch_category_exists(category_id)
+        data_category = db.fetch_data(
+                            Queries.FETCH_ASSETS_BY_CATEGORY_ID,
+                            (category_id,))
         if not data_category:
             return False
         
@@ -45,7 +47,9 @@ class ManagerControllers:
         return True
     
     def fetch_by_vendor(self,vendor_email) -> bool:
-        data_vendor = self.obj_db_helper.fetch_vendor_exists(vendor_email)
+        data_vendor = db.fetch_data(
+                            Queries.FETCH_ASSETS_BY_VENDOR_EMAIL,
+                            (vendor_email,))
         if not data_vendor:
             return False
         
@@ -53,7 +57,8 @@ class ManagerControllers:
         return True
 
     def fetch_asset_available(self) -> bool:
-        data = self.obj_db_helper.fetch_asset_available()
+        data = db.fetch_data(
+                Queries.FETCH_ASSETS_AVAILABLE)
         if not data:
             return False
         
@@ -61,7 +66,8 @@ class ManagerControllers:
         return True
     
     def fetch_asset_maintenance(self) -> bool:
-        data = self.obj_db_helper.fetch_asset_maintenance()
+        data = db.fetch_data(
+                Queries.FETCH_ASSETS_UNDER_MAINTENANCE)
         if not data:
             return False
         
@@ -69,7 +75,8 @@ class ManagerControllers:
         return True
     
     def view_pending_issues(self) -> bool:
-        data = self.obj_db_helper.fetch_pending_issues()
+        data = db.fetch_data(
+                Queries.FETCH_ISSUES_PENDING)
         if not data:
             return False
         
@@ -77,7 +84,9 @@ class ManagerControllers:
         return True
     
     def send_asset(self,issue_id, user_id) -> bool:
-        asset_id = self.obj_db_helper.fetch_asset_by_issueid(issue_id)
+        asset_id = db.fetch_data(
+                        Queries.FETCH_ASSET_ID_BY_ISSUE_ID,
+                        (issue_id,))
         if not asset_id:
             return False
         
@@ -86,14 +95,18 @@ class ManagerControllers:
         dt = datetime.now()
         start_date = dt.strftime(AppConfig.DATE_FORMAT)
 
-        tuple1 = (user_id,issue_id)
-        tuple2 = (maintenance_id,asset_id,start_date)
-        tuple3 = (asset_id,)
-        self.obj_db_helper.save_maintenance_status(tuple1,tuple2,tuple3)
+        db.save_data([
+                Queries.UPDATE_ISSUE_STATUS_UNDER_MAINTENANCE,
+                Queries.INSERT_IN_MAINTENANCE_TABLE,
+                Queries.UPDATE_ASSET_STATUS_UNDER_MAINTENANCE],
+                [(user_id,issue_id,), (maintenance_id,asset_id,start_date,), (asset_id,)]
+        )
         return True
 
     def recieve_asset(self,maintenance_id: str) -> bool:
-        asset_id = self.obj_db_helper.fetch_asset_by_maintanceid(maintenance_id)
+        asset_id = db.fetch_data(
+                        Queries.FETCH_ASSET_ID_BY_MAINTENANCE_TABLE,
+                        (maintenance_id,))
         if not asset_id:
             return False
         
@@ -101,13 +114,17 @@ class ManagerControllers:
         dt = datetime.now()
         return_date = dt.strftime(AppConfig.DATE_FORMAT)
 
-        tuple1 = (return_date,maintenance_id)
-        tuple2 = (asset_id,)
-        self.obj_db_helper.save_maintenance_status_recieve(tuple1,tuple2)
+        db.save_data([
+            Queries.UPDATE_MAINTENANCE_RETURN_DATE,
+            Queries.UPDATE_ASSET_STATUS_AGAIN_TO_AVAILABLE
+        ],
+        [(return_date,maintenance_id,),(asset_id,)]
+        )
         return True
     
     def display_maintenance_table(self) -> None:
-        data = self.obj_db_helper.fetch_maintenance_table()
+        data = data = db.fetch_data(
+            Queries.FETCH_MAINTENANCE_TABLE)
         if not data:
             return False
         

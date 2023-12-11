@@ -3,7 +3,8 @@
 """
 import hashlib
 import logging
-from models.database_helper import DatabaseHelper
+from models.database import db
+from config.queries import Queries
 from config.app_config import AppConfig
 from utils.common_helper import CommonHelper
 from config.log_prompts.logs_config import LogsConfig
@@ -28,7 +29,6 @@ class AuthControllers:
         validate_user() -> checks if the user entered credentials is a valid password or not 
     """
     def __init__(self) -> None:
-        self.obj_db_helper = DatabaseHelper()
         self.obj_common_helper = CommonHelper()
 
     def valid_first_login(self,username: str,hashed_input_password: str,password: str) -> bool:
@@ -74,7 +74,10 @@ class AuthControllers:
             Paramters : self, username, input_password
             Return type : bool
         """
-        user_data = self.obj_db_helper.get_user_credentials(username)
+        user_data = db.fetch_data(
+                    Queries.FETCH_USER_CREDENTIALS,
+                    (username,)
+                )
         if user_data:
             password = user_data[0][1]
             role = user_data[0][2]

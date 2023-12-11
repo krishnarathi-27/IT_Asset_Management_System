@@ -7,6 +7,7 @@ from utils.app_decorator import error_handler
 from config.app_config import AppConfig
 from config.prompts.prompts import PromptConfig
 from config.log_prompts.logs_config import LogsConfig
+from utils.validations import InputValidations
 from controllers.asset_data_controllers import AssetDataControllers
 
 logger = logging.getLogger('admin_views')
@@ -61,8 +62,7 @@ class AdminViews:
         elif user_choice == "4" :
             self.check_deactivate_vendor()
         elif user_choice == "5" :
-            self.obj_asset_data.create_vendor()
-            print("Vendor added successfully")
+            self.check_vendor_created()
         elif user_choice == "6" :
             if not self.obj_asset_data.view_category():
                 print(PromptConfig.NO_DATA_EXISTS)
@@ -110,3 +110,10 @@ class AdminViews:
         else:
             print("Data already exists")
             
+    def check_vendor_created(self)->None:
+        vendor_email = InputValidations.input_email()
+        vendor_name = InputValidations.input_name()
+        if self.obj_asset_data.create_vendor(vendor_email,vendor_name):
+            print("Vendor added successfully")
+        else:
+            print("Data already exists")
