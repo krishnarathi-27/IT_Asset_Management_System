@@ -1,32 +1,21 @@
-"""
-    Module for validating user, changing their default passsword, and providing them role based access
-"""
+""" Module for validating user, changing their default passsword, and providing them role based access """
 import hashlib
 import logging
-from models.database import db
+#local imports
 from config.queries import Queries
 from config.app_config import AppConfig
-from utils.common_helper import CommonHelper
 from config.log_prompts.logs_config import LogsConfig
+from models.database import db
 from views.admin_views import AdminViews
 from views.employee_views import EmployeeViews
 from views.manager_views import ManagerViews
+from utils.common_helper import CommonHelper
 
 logger = logging.getLogger('auth_controller')
 
 class AuthControllers:
     """
         Class containing methods for validating user, providing role based access and changing their default password.
-        ...
-        Attributes
-        ----------
-        obj_db_helper -> object of DatabaseHelper class for accessing its methods.
-
-        Methods
-        -------
-        first_login() -> private method, for checking if password entered matches with default password.
-        role_based_access() -> private method, for providing role based access to the valid user
-        validate_user() -> checks if the user entered credentials is a valid password or not 
     """
     def __init__(self) -> None:
         self.obj_common_helper = CommonHelper()
@@ -55,15 +44,15 @@ class AuthControllers:
         
         if role == AppConfig.ADMININSTRATOR:
             admin_obj = AdminViews()     
-            admin_obj.admin_operations()
+            admin_obj.admin_menu()
             return True
         elif role == AppConfig.ASSET_MANAGER:
             manager_obj = ManagerViews(user_id)
-            manager_obj.manager_operations()
+            manager_obj.manager_menu()
             return True
-        elif role == "employee":
+        elif role == AppConfig.EMPLOYEE:
             employee_obj = EmployeeViews(user_id)
-            employee_obj.employee_operations()
+            employee_obj.employee_menu()
             return True
         else:
             return False

@@ -1,51 +1,39 @@
 """Module for taking input from admin for various functionalities"""
 import logging
-from os import system
-from controllers.admin_controllers import AdminControllers
-from controllers.asset_data_controllers import AssetDataControllers
-from utils.common_helper import CommonHelper
+#local imports
 from config.queries import Header
-from utils.validations import InputValidations
-from utils.app_decorator import error_handler
 from config.app_config import AppConfig
 from config.prompts.prompts import PromptConfig
 from config.log_prompts.logs_config import LogsConfig
+from controllers.admin_controllers import AdminControllers
+from controllers.asset_data_controllers import AssetDataControllers
+from utils.common_helper import CommonHelper
+from utils.validations import InputValidations
+from utils.app_decorator import error_handler
 from views.asset_data_views import AssetDataViews
 
 logger = logging.getLogger('admin_views')
 
 class AdminViews(AssetDataViews):
     """
-        Class that contains menu options for taking input from admin to perform admin operations
-        ...
-        Attributes
-        ----------
-        obj_common_helper = object of class CommonHelper
-        Methods
-        -------
-        admin_operations() -> containing loop for displaying admin menu
-        admin_menu() -> contains menu options for taking input from admin
+        Class that contains menu options for taking input from admin to perform admin operations  
     """
     def __init__(self) -> None:
         super().__init__()
-        logger.info(LogsConfig.LOG_ADMIN_LOGGED_IN)
-        print(PromptConfig.WELCOME_ADMIN)
         self.obj_asset_data = AssetDataControllers()
         self.obj_common_helper = CommonHelper()
         self.obj_admin_controller = AdminControllers()
 
-    def admin_operations(self) -> None:
-        """ Method that contains loop for displaying admin menu """
-        logger.info("Admin menu displayed")
-        while True:
-            if self.admin_menu():
-                break
+        logger.info(LogsConfig.LOG_ADMIN_LOGGED_IN)
+        print(PromptConfig.WELCOME_ADMIN)
 
     @error_handler
     def admin_menu(self) -> bool:
         """ Method that takes input from admin to perform operations, along with error handler decorator """
+
+        logger.info("Admin menu displayed")
         user_choice = input(PromptConfig.ADMIN_PROMPT + "\n")
-        # system('cls')
+        
         if user_choice == "1" :
             self.obj_common_helper.display_user_details()
         elif user_choice == "2" :
@@ -61,6 +49,7 @@ class AdminViews(AssetDataViews):
         elif user_choice == "7" :
            self.check_category_created()
         elif user_choice == "8" :
+            logger.info("Admin logged out")
             return True
         else :
             print(PromptConfig.INVALID_INPUT + "\n") 
@@ -69,6 +58,8 @@ class AdminViews(AssetDataViews):
         return False
     
     def create_user(self) :
+        """ Method to create new user in the system """
+
         username = InputValidations.input_name() 
         password =  InputValidations.input_password() 
         while True:
@@ -83,10 +74,13 @@ class AdminViews(AssetDataViews):
                 print(PromptConfig.INVALID_INPUT + "\n")
 
         self.obj_admin_controller.create_new_user(user_role,username,password)
-        print("User added successfully")
+        
+        logger.info("New user added to the system")
+        print(PromptConfig.USER_ADDED_SUCCESS)
 
     def check_deactivate_vendor(self) -> None:     
-        """ Method that checks that vendor can be deactivated """
+        """ Method that checks that vendor is deactivated or not """
+
         data = self.obj_asset_data.view_vendor()
         if not data:
             print(PromptConfig.NO_DATA_EXISTS)
@@ -94,6 +88,7 @@ class AdminViews(AssetDataViews):
             CommonHelper.display_table(data,Header.SCHEMA_VENDOR_TABLE)
             vendor_email = InputValidations.input_email()
             if self.obj_admin_controller.deactivate_vendor(vendor_email):
-                print("Vendor deactivated successfully")
+                print(PromptConfig.DEACTIVATED_VENDOR)
+                logger.info("Vendor deactivated from the system")
             else:
-                print("No data exists of vendor")
+                print(PromptConfig.VENDOR_NOT_EXIST_TO_DELETE)

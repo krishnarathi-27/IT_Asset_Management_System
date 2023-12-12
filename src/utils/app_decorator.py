@@ -21,7 +21,9 @@ def error_handler(func):
             Return type = None
         """
         try:
-            return func(*args,**kwargs)
+            while True:
+                if func(*args,**kwargs):
+                    return
         except sqlite3.IntegrityError as err:
             logger.exception(err)
             print(PromptConfig.DB_INTEGRITY_ERROR)

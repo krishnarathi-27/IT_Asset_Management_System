@@ -7,8 +7,8 @@ import time
 import maskpass
 #local imports
 from config.app_config import AppConfig
-from controllers.auth_controllers import AuthControllers
 from config.prompts.prompts import PromptConfig
+from controllers.auth_controllers import AuthControllers
 
 logger = logging.getLogger('auth_view')
 
@@ -19,10 +19,6 @@ class AuthViews:
         Attributes
         ----------
         login_attempts -> maximum login attempts for each user i.e 3
-
-        Methods
-        -------
-        login() -> takes user credential as input
     """
   
     def __init__(self) -> None:
@@ -30,11 +26,8 @@ class AuthViews:
         self.obj_auth_controller = AuthControllers()
 
     def login(self) -> None:
-        '''
-            Method that takes user credentials as input.
-            Parameter : self
-            Return type : None
-        '''
+        ''' Method that takes user credentials as input '''
+
         print(PromptConfig.ATTEMPTS_MESSAGE)
         while True:
             if self.__login_attempts == 0:

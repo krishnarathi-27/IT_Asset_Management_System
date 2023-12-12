@@ -14,14 +14,6 @@ logger = logging.getLogger('common_helper')
 class CommonHelper:
     """
         Class contains methods which are common and used across various files.
-        ...
-        Attributes
-        ----------
-        db_obj = object of DatabaseHelper class
-
-        Methods
-        -------
-        change_default_password() = Methods that changes default password on first valid login 
     """
     def change_default_password(self,username: str) -> None:
         """
@@ -29,15 +21,18 @@ class CommonHelper:
             Parameters : self, username
             Return type : None
         """
+
         while True:
             logger.info("Validated user changing default password")
             print(PromptConfig.STRONG_PASSWORD)
             new_password = InputValidations.input_password()
             print(PromptConfig.INPUT_CONFIRM_PASSWORD)
             confirm_password = InputValidations.input_password()
+
             if new_password != confirm_password:
                 print(PromptConfig.PASSWORD_NOT_MATCH)
                 logger.info("New password not matches confirm new password")
+
             else:
                 new_hashed_password = hashlib.sha256(new_password.encode()).hexdigest()    
                 db.save_data(
@@ -65,18 +60,15 @@ class CommonHelper:
                 )
             )
 
-    def display_user_details(self) -> None:
-        """
-            Method to display details of users 
-            Parameters : self
-            Return type : None
-        """
-        data = db.fetch_data(
-                    Queries.FETCH_AUTHENTICATION_TABLE)
+    def display_user_details(self) -> bool:
+        """ Method to display details of users """
+
+        data = db.fetch_data(Queries.FETCH_AUTHENTICATION_TABLE)
+        
         if not data:
             print(PromptConfig.NO_DATA_EXISTS)
             return False
+        
         CommonHelper.display_table(data, Header.SCHEMA_USER_TABLE)
         return True
-
-    
+   

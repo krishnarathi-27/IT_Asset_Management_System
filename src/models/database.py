@@ -45,7 +45,6 @@ class Database:
         self.cursor.execute(Queries.CREATE_MAINTENANCE_TABLE)
         self.cursor.execute(Queries.CREATE_ISSUE_TABLE)
 
-
     def save_data(self,query : Union[str,list],data: Union[tuple,list]) -> None:
         """
         This saves data in the database
@@ -71,6 +70,5 @@ class Database:
             self.cursor.execute(query,tup)
         data = self.cursor.fetchall()
         return data 
-
 
 db = Database()

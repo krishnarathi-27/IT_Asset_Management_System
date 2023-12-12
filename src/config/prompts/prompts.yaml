@@ -88,7 +88,9 @@ MAINTENANCE_PROMPT : |
 
 STARTING_APPLICATION :  ----Welcome to asset management system----
 EXIT_SYSTEM_PROMPT : Do you want to exit from system y/n :- 
-INVALID_INPUT : Wrong input entered try again !!
+EXITING_APPLICATION : Exiting from Application
+DATA_ALREADY_EXISTS : Same data already exists in database
+INVALID_INPUT : Invalid input entered try again 
 ENTER_VENDOR_EMAIL : Enter vendor email :- 
 SELECT_FROM_TABLE : Select from the above table
 ENTER_ASSET_ID : Enter asset id:- 
@@ -132,7 +134,7 @@ DEACTIVATED_VENDOR : Deactivated vendor successfully
 USERNAME_EXISTS : Username already exists. Try another one
 USER_ADDED_SUCCESS : User added successfully to database
 USER_DELETED_SUCCESS : User deleted successfully from database
-VENDOR_NOT_EXIST_TO_DELETE : Vendor does not exist to delete
+VENDOR_NOT_EXIST_TO_DELETE : Vendor do not exist to delete
 
 #employee
 WELCOME_EMPLOYEE : ----Welcome Employee----

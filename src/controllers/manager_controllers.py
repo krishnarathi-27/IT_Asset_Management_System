@@ -2,6 +2,7 @@
 import logging
 import shortuuid
 from datetime import datetime
+#local imports
 from models.database import db
 from config.queries import Queries
 from config.app_config import AppConfig
@@ -12,53 +13,65 @@ logger = logging.getLogger('manager_controller')
 class ManagerControllers:
     """
         Class containing methods to track assets
-        Attributes 
-        ----------
-        db_helper_obj -> object of DatabaseHelper class for accessing its methods
-        Methods
-        -------
     """
-    def fetch_by_username(self,user_id) -> bool:
+    def fetch_by_username(self,user_id: str) -> bool:
+        """ Methods that fetch username from database """
+
         data_user = data = db.fetch_data(
                         Queries.FETCH_IF_USER_EXISTS,
                         (user_id,))
+        
         if not data_user:
             return False   
+        
         data = db.fetch_data(
                     Queries.FETCH_ASSETS_BY_USER_ID,
                     (user_id,))
+        
         if not data:
             return False
         return data
     
-    def fetch_by_category(self,category_id) -> bool:
+    def fetch_by_category(self,category_id: str) -> list:
+        """ Methods that fetch category with category id """
+
         data = db.fetch_data(
                             Queries.FETCH_ASSETS_BY_CATEGORY_ID,
                             (category_id,))
         return data
     
-    def fetch_by_vendor(self,vendor_email) -> bool:
+    def fetch_by_vendor(self,vendor_email) -> list:
+        """ Methods that fetch vendor with vendor id """
+
         data = db.fetch_data(
                             Queries.FETCH_ASSETS_BY_VENDOR_EMAIL,
                             (vendor_email,))
         return data
 
-    def fetch_asset_available(self) -> bool:
+    def fetch_asset_available(self) -> list:
+        """ Methods that assets available """
+
         data = db.fetch_data(
                 Queries.FETCH_ASSETS_AVAILABLE)
         return data
     
-    def fetch_asset_maintenance(self) -> bool:
+    def fetch_asset_maintenance(self) -> list:
+        """ Methods that fetch assets under maintenance """
+
         data = db.fetch_data(
                 Queries.FETCH_ASSETS_UNDER_MAINTENANCE)
         return data
     
-    def view_pending_issues(self) -> bool:
+    def view_pending_issues(self) -> list:
+        """ Methods that fetch pending issues"""
+
         data = db.fetch_data(
                 Queries.FETCH_ISSUES_PENDING)
         return data
     
-    def send_asset(self,issue_id, user_id) -> bool:
+    def send_asset(self,issue_id: str, user_id: str) -> bool:
+        """ Method that sends asset for maintenance """
+
         asset_id = db.fetch_data(
                         Queries.FETCH_ASSET_ID_BY_ISSUE_ID,
                         (issue_id,))
@@ -79,6 +92,8 @@ class ManagerControllers:
         return True
 
     def recieve_asset(self,maintenance_id: str) -> bool:
+        """ Method that recieve asset from maintenance """
+
         asset_id = db.fetch_data(
                         Queries.FETCH_ASSET_ID_BY_MAINTENANCE_TABLE,
                         (maintenance_id,))
@@ -97,7 +112,9 @@ class ManagerControllers:
         )
         return True
     
-    def display_maintenance_table(self) -> None:
+    def display_maintenance_table(self) -> list:
+        """ Method that fetches maintenance table """
+
         data = data = db.fetch_data(
             Queries.FETCH_MAINTENANCE_TABLE)
         return data

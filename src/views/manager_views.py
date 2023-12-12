@@ -1,12 +1,12 @@
 """Module for taking input from manager for various functionalities"""
 import logging
-from utils.common_helper import CommonHelper
-from utils.app_decorator import error_handler
+#local imports
 from config.prompts.prompts import PromptConfig
 from config.log_prompts.logs_config import LogsConfig
 from controllers.manager_controllers import ManagerControllers
+from utils.common_helper import CommonHelper
+from utils.app_decorator import error_handler
 from views.asset_views import AssetViews
-from utils.validations import InputValidations
 from views.track_asset_views import TrackAssetViews
 from views.maintenance_views import MaintenanceViews
 from views.asset_data_views import AssetDataViews
@@ -16,15 +16,6 @@ logger = logging.getLogger('manager_views')
 class ManagerViews(AssetDataViews):
     """
         Class that contains menu options for taking input from manager to perform manager operations
-        ...
-        Attributes
-        ----------
-        obj_common_helper = object of class CommonHelper
-        user_id = user id of the user that logged in the system
-        Methods
-        -------
-        manager_operations() -> containing loop for displaying manager menu
-        manager_menu() -> contains menu options for taking input from manager
     """
     def __init__(self,user_id) -> None:
         super().__init__()
@@ -37,24 +28,11 @@ class ManagerViews(AssetDataViews):
         self.obj_manager_controller = ManagerControllers()
         self.obj_maintenance = MaintenanceViews(user_id)
 
-    def manager_operations(self) -> None:
-        """
-            Method that contains loop for displaying manager menu
-            Parameters : self
-            Return type : None
-        """
-        logger.info("Manager menu displayed")         
-        while True:
-            if self.manager_menu():
-                break
-
     @error_handler
     def manager_menu(self) -> bool:
-        """
-            Method that takes input from manager to perform operations, along with error handler decorator 
-            Parameters : self
-            Return type : bool
-        """
+        """ Method that takes input from manager to perform operations, along with error handler decorator """
+
+        logger.info("Manager menu displayed")
         user_choice = input(PromptConfig.MANAGER_PROMPT + "\n")
 
         if user_choice == "1" : 
@@ -76,9 +54,9 @@ class ManagerViews(AssetDataViews):
         elif user_choice == "9" : 
             self.obj_asset.check_unassign_asset()
         elif user_choice == "10":
-            self.obj_track_asset.track_asset_operations()
+            self.obj_track_asset.track_asset_menu()
         elif user_choice == "11":
-            self.obj_maintenance.maintenance_operations()
+            self.obj_maintenance.maintenance_menu()
         elif user_choice == "12":
             return True
         else :

@@ -32,5 +32,5 @@ if __name__ == "__main__":
 
     #closes database connection
     db.connection.close()
-    print("Exiting from Application")
-    logger.info("Connection closed. Exiting from application")
+    print(PromptConfig.EXITING_APPLICATION)
+    logger.info(LogsConfig.LOG_EXITING_APPLICATION)

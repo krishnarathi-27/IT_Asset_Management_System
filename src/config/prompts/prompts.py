@@ -47,6 +47,8 @@ class PromptConfig:
 
     STARTING_APPLICATION = None
     EXIT_SYSTEM_PROMPT = None
+    EXITING_APPLICATION = None
+    DATA_ALREADY_EXISTS = None
     INVALID_INPUT = None
     ENTER_VENDOR_EMAIL = None
     SELECT_FROM_TABLE = None
@@ -156,6 +158,8 @@ class PromptConfig:
 
             cls.STARTING_APPLICATION = data['STARTING_APPLICATION']
             cls.EXIT_SYSTEM_PROMPT = data['EXIT_SYSTEM_PROMPT']
+            cls.EXITING_APPLICATION = data['EXITING_APPLICATION']
+            cls.DATA_ALREADY_EXISTS = data['DATA_ALREADY_EXISTS']
             cls.INVALID_INPUT = data['INVALID_INPUT']
             cls.ENTER_VENDOR_EMAIL = data['ENTER_VENDOR_EMAIL']
             cls.SELECT_FROM_TABLE = data['SELECT_FROM_TABLE']

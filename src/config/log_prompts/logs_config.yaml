@@ -1,12 +1,12 @@
 #common
 LOG_CATEGORY_ADDED : Category added in database
 LOG_VENDOR_ADDED : Vendor added in database
+LOG_STARTING_APPLICATION : Starting with asset management system.
+LOG_EXITING_APPLICATION : Connection closed. Exiting from application
 
 #auth logs
-
 PROVIDE_ROLE_BASED_ACCESS : Providing role based access to authenticated user
 LOG_INVALID_LOGIN : Invalid login occured
-LOG_STARTING_APPLICATION : Starting with asset management system.
 LOG_DEFAULT_PASSWORD : User changed default password
 
 #admin
