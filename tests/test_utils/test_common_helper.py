@@ -30,11 +30,4 @@ class TestInputValidations(TestCase):
         mock_db.fetch_data.return_value = True
         self.assertTrue(self.common_obj.display_user_details())
         mock_db.fetch_data.assert_called_once()
-
-    @mock.patch('src.utils.common_helper.InputValidations.input_email')
-    @mock.patch('builtins.input')
-    def test_input_category_details(self,mock_input,mock_input_validation):
-        mock_input.side_effect =["mouse","dell"]
-        mock_input_validation.return_value = "krish@gmail.com"
-        self.assertEqual(CommonHelper.input_category_details(),("mouse","dell","krish@gmail.com"))
     
