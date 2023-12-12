@@ -60,13 +60,11 @@ class ManagerViews(AssetDataViews):
         if user_choice == "1" : 
             self.obj_common_helper.display_user_details()
         elif user_choice == "2" :
-            if not self.obj_asset_data.view_vendor():
-                print(PromptConfig.NO_DATA_EXISTS)
+            self.display_vendors()
         elif user_choice == "3" :
             self.check_vendor_created()
         elif user_choice == "4" :
-            if not self.obj_asset_data.view_category():
-                print(PromptConfig.NO_DATA_EXISTS)
+            self.display_category()
         elif user_choice == "5" :
             self.check_category_created()
         elif user_choice == "6" :
