@@ -3,20 +3,21 @@ from config.prompts.prompts import PromptConfig
 
 PromptConfig.load()
 
+
 class Header:
     """Header class is used to load headers of tables displayed"""
-    
+
     SCHEMA_USER_TABLE = (
         PromptConfig.HEADER_USERID,
         PromptConfig.HEADER_USERNAME,
-        PromptConfig.HEADER_ROLE
+        PromptConfig.HEADER_ROLE,
     )
 
     SCHEMA_VENDOR_TABLE = (
         PromptConfig.HEADER_VENDOR_ID,
         PromptConfig.HEADER_VENDOR_NAME,
         PromptConfig.HEADER_VENDOR_EMAIL,
-        PromptConfig.HEADER_ACTIVE_STATUS
+        PromptConfig.HEADER_ACTIVE_STATUS,
     )
 
     SCHEMA_ASSET_TABLE = (
@@ -25,27 +26,27 @@ class Header:
         PromptConfig.HEADER_ASSIGNED_TO,
         PromptConfig.HEADER_ASSET_STATUS,
         PromptConfig.HEADER_PURCHASED_DATE,
-        PromptConfig.HEADER_MAPPING_ID
+        PromptConfig.HEADER_MAPPING_ID,
     )
 
     SCHEMA_MAINTENANCE_TABLE = (
         PromptConfig.HEADER_MAINTENANCE_ID,
         PromptConfig.HEADER_ASSET_ID,
         PromptConfig.HEADER_START_DATE,
-        PromptConfig.HEADER_RETURN_DATE
+        PromptConfig.HEADER_RETURN_DATE,
     )
 
     SCHEMA_CATEGORY_DETAILS_TABLE = (
         PromptConfig.HEADER_CATEGORY_ID,
         PromptConfig.HEADER_CATEGORY_NAME,
-        PromptConfig.HEADER_BRAND_NAME
+        PromptConfig.HEADER_BRAND_NAME,
     )
 
     SCHEMA_ASSETS_BY_USER_ID = (
         PromptConfig.HEADER_USERID,
         PromptConfig.HEADER_USERNAME,
         PromptConfig.HEADER_ASSET_ID,
-        PromptConfig.HEADER_PURCHASED_DATE
+        PromptConfig.HEADER_PURCHASED_DATE,
     )
 
     SCHEMA_ASSETS_BY_CATEGORY_ID = (
@@ -53,7 +54,7 @@ class Header:
         PromptConfig.HEADER_CATEGORY_NAME,
         PromptConfig.HEADER_BRAND_NAME,
         PromptConfig.HEADER_ASSET_ID,
-        PromptConfig.HEADER_PURCHASED_DATE
+        PromptConfig.HEADER_PURCHASED_DATE,
     )
 
     SCHEMA_ASSETS_BY_VENDOR_EMAIL = (
@@ -62,25 +63,25 @@ class Header:
         PromptConfig.HEADER_ASSIGNED_TO,
         PromptConfig.HEADER_VENDOR_ID,
         PromptConfig.HEADER_VENDOR_NAME,
-        PromptConfig.HEADER_VENDOR_EMAIL
+        PromptConfig.HEADER_VENDOR_EMAIL,
     )
 
     SCHEMA_ASSETS_TO_USER = (
         PromptConfig.HEADER_ASSET_ID,
-        PromptConfig.HEADER_ASSIGNED_TO
+        PromptConfig.HEADER_ASSIGNED_TO,
     )
 
     SCHEMA_PENDING_ISSUES = (
         PromptConfig.HEADER_ISSUE_ID,
         PromptConfig.HEADER_USERID,
-        PromptConfig.HEADER_ASSET_ID
+        PromptConfig.HEADER_ASSET_ID,
     )
 
     SCHEMA_ASSIGNABLE_ASSET_DETAILS = (
         PromptConfig.HEADER_ASSET_ID,
         PromptConfig.HEADER_CATEGORY_ID,
         PromptConfig.HEADER_CATEGORY_NAME,
-        PromptConfig.HEADER_BRAND_NAME
+        PromptConfig.HEADER_BRAND_NAME,
     )
 
     SCHEMA_CATEGORY_TABLE = (
@@ -89,7 +90,7 @@ class Header:
         PromptConfig.HEADER_BRAND_NAME,
         PromptConfig.HEADER_VENDOR_ID,
         PromptConfig.HEADER_VENDOR_NAME,
-        PromptConfig.HEADER_ACTIVE_STATUS
+        PromptConfig.HEADER_ACTIVE_STATUS,
     )
 
     SCHEMA_MAPPING_CATGEORY_VENDOR_TABLE = (
@@ -98,9 +99,9 @@ class Header:
         PromptConfig.HEADER_CATEGORY_NAME,
         PromptConfig.HEADER_BRAND_NAME,
         PromptConfig.HEADER_VENDOR_ID,
-        PromptConfig.HEADER_VENDOR_EMAIL
+        PromptConfig.HEADER_VENDOR_EMAIL,
     )
-    
+
 
 class Queries:
     """Queries class is used to load queries"""
@@ -169,7 +170,7 @@ class Queries:
             FOREIGN KEY(user_id) REFERENCES user_table(user_id)
         )    
     """
-    #UPDATE DATA QUERIES
+    # UPDATE DATA QUERIES
     UPDATE_VENDOR_ACTIVE_STATUS = """
         UPDATE vendor_table
         SET active_status = "false" 
@@ -205,7 +206,7 @@ class Queries:
         WHERE asset_id = ? 
     """
 
-    #FETCH DATA 
+    # FETCH DATA
     FETCH_AUTHENTICATION_TABLE = """
         SELECT user_id, username, role
         FROM authentication  
@@ -328,7 +329,7 @@ class Queries:
         FROM asset_table
         WHERE asset_id = ? AND assigned_to = ?    
     """
-    FETCH_BY_CATEGORY_AND_BRAND_NAME= """
+    FETCH_BY_CATEGORY_AND_BRAND_NAME = """
         SELECT category_id
         FROM asset_category
         WHERE category_name = ? AND brand_name = ?    

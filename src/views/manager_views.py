@@ -1,6 +1,7 @@
 """Module for taking input from manager for various functionalities"""
 import logging
-#local imports
+
+# local imports
 from config.prompts.prompts import PromptConfig
 from config.log_prompts.logs_config import LogsConfig
 from controllers.manager_controllers import ManagerControllers
@@ -11,13 +12,15 @@ from views.track_asset_views import TrackAssetViews
 from views.maintenance_views import MaintenanceViews
 from views.asset_data_views import AssetDataViews
 
-logger = logging.getLogger('manager_views')
+logger = logging.getLogger("manager_views")
+
 
 class ManagerViews(AssetDataViews):
     """
-        Class that contains menu options for taking input from manager to perform manager operations
+    Class that contains menu options for taking input from manager to perform manager operations
     """
-    def __init__(self,user_id) -> None:
+
+    def __init__(self, user_id) -> None:
         super().__init__()
         logger.info(LogsConfig.LOG_MANAGER_LOGGED_IN)
         print(PromptConfig.WELCOME_MANAGER)
@@ -28,40 +31,46 @@ class ManagerViews(AssetDataViews):
         self.obj_manager_controller = ManagerControllers()
         self.obj_maintenance = MaintenanceViews(user_id)
 
+    def manager_menu_operations(self) -> None:
+        """Method to perform manager tasks"""
+
+        while True:
+            if self.manager_menu():
+                break
+
     @error_handler
     def manager_menu(self) -> bool:
-        """ Method that takes input from manager to perform operations, along with error handler decorator """
+        """Method that takes input from manager to perform operations, along with error handler decorator"""
 
         logger.info("Manager menu displayed")
         user_choice = input(PromptConfig.MANAGER_PROMPT + "\n")
 
-        if user_choice == "1" : 
+        if user_choice == "1":
             self.obj_common_helper.display_user_details()
-        elif user_choice == "2" :
+        elif user_choice == "2":
             self.display_vendors()
-        elif user_choice == "3" :
+        elif user_choice == "3":
             self.check_vendor_created()
-        elif user_choice == "4" :
+        elif user_choice == "4":
             self.display_category()
-        elif user_choice == "5" :
+        elif user_choice == "5":
             self.check_category_created()
-        elif user_choice == "6" :
+        elif user_choice == "6":
             self.obj_asset.add_asset()
-        elif user_choice == "7" :
+        elif user_choice == "7":
             self.obj_asset.view_asset()
-        elif user_choice == "8" :
+        elif user_choice == "8":
             self.obj_asset.check_assign_asset()
-        elif user_choice == "9" : 
+        elif user_choice == "9":
             self.obj_asset.check_unassign_asset()
         elif user_choice == "10":
-            self.obj_track_asset.track_asset_menu()
+            self.obj_track_asset.track_asset_menu_operations()
         elif user_choice == "11":
-            self.obj_maintenance.maintenance_menu()
+            self.obj_maintenance.maintenance_menu_operations()
         elif user_choice == "12":
             return True
-        else :
-            print(PromptConfig.INVALID_INPUT + "\n") 
+        else:
+            print(PromptConfig.INVALID_INPUT + "\n")
             logger.info("Invalid input entered")
-        
+
         return False
- 

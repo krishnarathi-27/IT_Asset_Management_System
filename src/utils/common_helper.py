@@ -9,17 +9,19 @@ from config.queries import Header
 from config.prompts.prompts import PromptConfig
 from config.log_prompts.logs_config import LogsConfig
 
-logger = logging.getLogger('common_helper')
+logger = logging.getLogger("common_helper")
+
 
 class CommonHelper:
     """
-        Class contains methods which are common and used across various files.
+    Class contains methods which are common and used across various files.
     """
-    def change_default_password(self,username: str) -> None:
+
+    def change_default_password(self, username: str) -> None:
         """
-            Method for changing default password of validated user
-            Parameters : self, username
-            Return type : None
+        Method for changing default password of validated user
+        Parameters : self, username
+        Return type : None
         """
 
         while True:
@@ -34,41 +36,36 @@ class CommonHelper:
                 logger.info("New password not matches confirm new password")
 
             else:
-                new_hashed_password = hashlib.sha256(new_password.encode()).hexdigest()    
+                new_hashed_password = hashlib.sha256(new_password.encode()).hexdigest()
                 db.save_data(
-                        Queries.UPDATE_DEFAULT_PASSWORD,
-                        (new_hashed_password,username,)
-                    )
+                    Queries.UPDATE_DEFAULT_PASSWORD,
+                    (
+                        new_hashed_password,
+                        username,
+                    ),
+                )
                 print(PromptConfig.DEFAULT_PASSWORD_UPDATED)
                 logger.info(LogsConfig.LOG_DEFAULT_PASSWORD)
                 return
 
-    @staticmethod        
+    @staticmethod
     def display_table(data: list, headers: list) -> None:
         """
-            Method to display data in tabular format using tabulate
-            Parameters : data, headers
-            Return type : None
+        Method to display data in tabular format using tabulate
+        Parameters : data, headers
+        Return type : None
         """
         row_id = [i for i in range(1, len(data) + 1)]
-        print(
-                tabulate(
-                    data,
-                    headers,
-                    showindex = row_id,
-                    tablefmt = "simple_grid"
-                )
-            )
+        print(tabulate(data, headers, showindex=row_id, tablefmt="simple_grid"))
 
     def display_user_details(self) -> bool:
-        """ Method to display details of users """
+        """Method to display details of users"""
 
         data = db.fetch_data(Queries.FETCH_AUTHENTICATION_TABLE)
-        
+
         if not data:
             print(PromptConfig.NO_DATA_EXISTS)
             return False
-        
+
         CommonHelper.display_table(data, Header.SCHEMA_USER_TABLE)
         return True
-   

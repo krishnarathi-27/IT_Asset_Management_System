@@ -1,1 +1,0 @@
-from src.views.asset_views import AssetViews

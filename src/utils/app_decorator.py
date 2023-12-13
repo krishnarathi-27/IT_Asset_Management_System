@@ -5,25 +5,25 @@ import logging
 
 from config.prompts.prompts import PromptConfig
 
-logger = logging.getLogger('app_decorator')
+logger = logging.getLogger("app_decorator")
+
 
 def error_handler(func):
     """
-        Method which acts as decorator for handling all types of exception
-        Parameter = function
-        Return type = function
+    Method which acts as decorator for handling all types of exception
+    Parameter = function
+    Return type = function
     """
+
     @functools.wraps(func)
-    def wrapper(*args : tuple,**kwargs : dict) -> None:
+    def wrapper(*args: tuple, **kwargs: dict) -> None:
         """
-            Method which handles exception
-            Parameter = *args, **kwargs
-            Return type = None
+        Method which handles exception
+        Parameter = *args, **kwargs
+        Return type = None
         """
         try:
-            while True:
-                if func(*args,**kwargs):
-                    return
+            return func(*args, **kwargs)
         except sqlite3.IntegrityError as err:
             logger.exception(err)
             print(PromptConfig.DB_INTEGRITY_ERROR)
@@ -45,4 +45,5 @@ def error_handler(func):
         except Exception as err:
             logger.exception(err)
             print(PromptConfig.GENERAL_EXCEPTION_MSG)
+
     return wrapper
