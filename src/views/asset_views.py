@@ -2,10 +2,10 @@
 import logging
 
 # local imports
-from config.prompts.prompts import PromptConfig
-from config.log_prompts.logs_config import LogsConfig
-from config.queries import Header
 from config.app_config import AppConfig
+from config.log_prompts.logs_config import LogsConfig
+from config.prompts.prompts import PromptConfig
+from config.queries import Header
 from controllers.asset_controllers import AssetControllers
 from utils.common_helper import CommonHelper
 from utils.validations import InputValidations

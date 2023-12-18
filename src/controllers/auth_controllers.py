@@ -64,9 +64,7 @@ class AuthControllers:
 
     def validate_user(self, username: str, input_password: str) -> bool:
         """
-        Method for validating user by their credentials
-        Paramters : self, username, input_password
-        Return type : bool
+        Method for validating user by their credentials Paramters : self, username, input_password Return type : bool
         """
         user_data = db.fetch_data(Queries.FETCH_USER_CREDENTIALS, (username,))
         if user_data:

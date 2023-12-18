@@ -43,7 +43,7 @@ class AssetControllers:
                 Queries.INSERY_ASSET_DETAILS,
                 (asset_id, mapping_id, asset_type, purchased_date),
             )
-            logger.info("New asset added to inventory")
+            logger.info(LogsConfig.LOG_ASSET_ADDED_INVENTORY)
             return True
 
     def view_assignable_asset(self) -> list:
@@ -73,7 +73,6 @@ class AssetControllers:
                 asset_id,
             ),
         )
-        logger.info("Asset assigned to user")
         return True
 
     def view_unassignable_asset(self) -> list:
@@ -99,5 +98,4 @@ class AssetControllers:
                     asset_id,
                 ),
             )
-            logger.info("Assets unassigned from the user")
             return True

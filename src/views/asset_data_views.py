@@ -2,9 +2,9 @@
 import logging
 
 # local imports
-from config.queries import Header
-from config.prompts.prompts import PromptConfig
 from config.log_prompts.logs_config import LogsConfig
+from config.prompts.prompts import PromptConfig
+from config.queries import Header
 from controllers.asset_data_controllers import AssetDataControllers
 from utils.common_helper import CommonHelper
 from utils.validations import InputValidations
@@ -21,9 +21,9 @@ class AssetDataViews:
     def display_vendors(self) -> None:
         """Method that displays all the vendor if exists"""
 
-        logger.info("Displays vendors of the system")
+        logger.info()
 
-        data = self.obj_asset_data.view_vendor()
+        data = self.obj_asset_data.view_vendor(LogsConfig.LOG_VENDOR_DISPLAYED)
         if not data:
             print(PromptConfig.NO_DATA_EXISTS)
         else:
@@ -32,7 +32,7 @@ class AssetDataViews:
     def display_category(self) -> None:
         """Method that displays all the category of assets if exists"""
 
-        logger.info("Displays category of the system")
+        logger.info(LogsConfig.LOG_CATEGORY_DISPLAYED)
 
         data = self.obj_asset_data.view_category()
         if not data:

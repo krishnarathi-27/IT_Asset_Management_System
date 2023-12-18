@@ -33,7 +33,7 @@ class EmployeeControllers:
             (
                 asset_id,
                 user_id,
-            ),
+            )
         )
 
         if not asset_exists:
@@ -45,7 +45,6 @@ class EmployeeControllers:
                 issue_id,
                 user_id,
                 asset_id,
-            ),
+            )
         )
-        logger.info("Issue raised successfully")
         return True

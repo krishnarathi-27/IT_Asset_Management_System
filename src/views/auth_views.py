@@ -8,6 +8,7 @@ import maskpass
 
 # local imports
 from config.app_config import AppConfig
+from config.log_prompts.logs_config import LogsConfig
 from config.prompts.prompts import PromptConfig
 from controllers.auth_controllers import AuthControllers
 
@@ -33,11 +34,11 @@ class AuthViews:
         print(PromptConfig.ATTEMPTS_MESSAGE)
         while True:
             if self.__login_attempts == 0:
-                logger.info("Login attempts are exhausted")
+                logger.debug(LogsConfig.LOG_LOGIN_EXHAUSTED)
                 print(PromptConfig.ATTEMPTS_EXHAUSTED)
                 self.__login_attempts = AppConfig.MAX_LOGIN_ATTEMPTS
                 time.sleep(20)
-                logger.info("Login attempts ressetting")
+                logger.info(LogsConfig.LOG_LOGIN_ATTEMPTS_RESETTING)
             else:
                 username = input(PromptConfig.ENTER_USERNAME)
                 input_password = maskpass.askpass(PromptConfig.ENTER_PASSWORD)
@@ -46,11 +47,11 @@ class AuthViews:
                 )
 
                 if not is_valid_success:
-                    logger.info("Login attempts reducing due to invalid login")
+                    logger.debug(LogsConfig.LOG_LOGIN_ATTEMPT_REDUCING)
                     self.__login_attempts -= 1
                     print(PromptConfig.INVALID_LOGIN.format(self.__login_attempts))
                 else:
-                    logger.info("Login attempt resetting")
+                    logger.debug(LogsConfig.LOG_LOGIN_ATTEMPTS_RESETTING)
                     self.__login_attempts = AppConfig.MAX_LOGIN_ATTEMPTS
 
             choice = input(PromptConfig.EXIT_SYSTEM_PROMPT).lower()

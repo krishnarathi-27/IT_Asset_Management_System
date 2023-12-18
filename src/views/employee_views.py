@@ -6,8 +6,8 @@ from config.prompts.prompts import PromptConfig
 from config.log_prompts.logs_config import LogsConfig
 from config.queries import Header
 from controllers.employee_controllers import EmployeeControllers
+from utils.app_decorator import error_handler, loop
 from utils.common_helper import CommonHelper
-from utils.app_decorator import error_handler
 from utils.validations import InputValidations
 
 logger = logging.getLogger("employee_views")
@@ -58,19 +58,13 @@ class EmployeeViews:
 
         else:
             print(PromptConfig.ISSUE_RAISED)
-
-    def employee_menu_operations(self) -> None:
-        """Method to perform employee tasks"""
-
-        while True:
-            if self.employee_menu():
-                break
-
+    
+    @loop
     @error_handler
-    def employee_menu(self) -> bool:
+    def employee_menu_operations(self) -> bool:
         """Method that takes input from employee to perform operations, along with error handler decorator"""
 
-        logger.info("Employee menu displayed")
+        logger.info(LogsConfig.LOG_EMPLOYEE_MENU)
         user_choice = input(PromptConfig.EMPLOYEE_PROMPT + "\n")
 
         if user_choice == "1":
@@ -80,9 +74,10 @@ class EmployeeViews:
         elif user_choice == "3":
             self.input_raise_issue()
         elif user_choice == "4":
+            logger.info(LogsConfig.LOG_EMPLOYEE_LOGGED_OUT)
             return True
         else:
             print(PromptConfig.INVALID_INPUT + "\n")
-            logger.info("Invalid input entered")
+            logger.info(LogsConfig.LOG_INVALID_INPUT)
 
         return False

@@ -1,4 +1,4 @@
-"""Module contains decorator for handling all the types of exception in the project"""
+"""Module contains different types of decorator used across the projects"""
 import functools
 import sqlite3
 import logging
@@ -7,6 +7,16 @@ from config.prompts.prompts import PromptConfig
 
 logger = logging.getLogger("app_decorator")
 
+def loop(func):
+
+    @functools.wraps(func)
+    def wrapper(*args: tuple,**kwargs: dict) -> None:
+        while True:
+            result = func(*args,**kwargs)
+            if result:
+                return result
+
+    return wrapper
 
 def error_handler(func):
     """
@@ -36,12 +46,6 @@ def error_handler(func):
         except sqlite3.Error as err:
             logger.exception(err)
             print(PromptConfig.DB_GENERAL_ERROR)
-        except ValueError as err:
-            logger.exception(err)
-            print(PromptConfig.INVALID_INPUT_ERROR)
-        except TypeError as err:
-            logger.exception(err)
-            print(PromptConfig.INVALID_INPUT_ERROR)
         except Exception as err:
             logger.exception(err)
             print(PromptConfig.GENERAL_EXCEPTION_MSG)

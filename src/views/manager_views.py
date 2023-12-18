@@ -6,7 +6,7 @@ from config.prompts.prompts import PromptConfig
 from config.log_prompts.logs_config import LogsConfig
 from controllers.manager_controllers import ManagerControllers
 from utils.common_helper import CommonHelper
-from utils.app_decorator import error_handler
+from utils.app_decorator import error_handler, loop
 from views.asset_views import AssetViews
 from views.track_asset_views import TrackAssetViews
 from views.maintenance_views import MaintenanceViews
@@ -31,18 +31,12 @@ class ManagerViews(AssetDataViews):
         self.obj_manager_controller = ManagerControllers()
         self.obj_maintenance = MaintenanceViews(user_id)
 
-    def manager_menu_operations(self) -> None:
-        """Method to perform manager tasks"""
-
-        while True:
-            if self.manager_menu():
-                break
-
+    @loop
     @error_handler
-    def manager_menu(self) -> bool:
+    def manager_menu_operations(self) -> bool:
         """Method that takes input from manager to perform operations, along with error handler decorator"""
 
-        logger.info("Manager menu displayed")
+        logger.info(LogsConfig.LOG_MANAGER_MENU)
         user_choice = input(PromptConfig.MANAGER_PROMPT + "\n")
 
         if user_choice == "1":
@@ -71,6 +65,6 @@ class ManagerViews(AssetDataViews):
             return True
         else:
             print(PromptConfig.INVALID_INPUT + "\n")
-            logger.info("Invalid input entered")
+            logger.info(LogsConfig.LOG_INVALID_INPUT)
 
         return False

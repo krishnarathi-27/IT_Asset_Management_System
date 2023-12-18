@@ -71,7 +71,7 @@ class AssetDataControllers:
                         category_id,
                         vendor_id,
                     ),
-                ],
+                ]
             )
             return True
 
@@ -100,7 +100,7 @@ class AssetDataControllers:
                 vendor_id,
                 vendor_name,
                 vendor_email,
-            ),
+            )
         )
         logging.info(LogsConfig.LOG_VENDOR_ADDED)
 

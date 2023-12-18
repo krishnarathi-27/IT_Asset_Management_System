@@ -23,12 +23,12 @@ class ManagerControllers:
         data_user = data = db.fetch_data(Queries.FETCH_IF_USER_EXISTS, (user_id,))
 
         if not data_user:
-            return False
+            return data_user
 
         data = db.fetch_data(Queries.FETCH_ASSETS_BY_USER_ID, (user_id,))
 
         if not data:
-            return False
+            return data_user
         return data
 
     def fetch_by_category(self, category_id: str) -> list:
@@ -90,7 +90,7 @@ class ManagerControllers:
                     start_date,
                 ),
                 (asset_id,),
-            ],
+            ]
         )
         return True
 
@@ -118,7 +118,7 @@ class ManagerControllers:
                     maintenance_id,
                 ),
                 (asset_id,),
-            ],
+            ]
         )
         return True
 

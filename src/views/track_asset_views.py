@@ -8,7 +8,7 @@ from config.queries import Header
 from controllers.manager_controllers import ManagerControllers
 from controllers.asset_data_controllers import AssetDataControllers
 from utils.common_helper import CommonHelper
-from utils.app_decorator import error_handler
+from utils.app_decorator import error_handler, loop
 from utils.validations import InputValidations
 
 logger = logging.getLogger("track_asset_views")
@@ -99,15 +99,9 @@ class TrackAssetViews:
             CommonHelper.display_table(data, Header.SCHEMA_ASSET_TABLE)
             logger.info("Assets tracked by status under maintenance")
 
-    def track_asset_menu_operations(self) -> None:
-        """Method to perform track_asset tasks"""
-
-        while True:
-            if self.track_asset_menu():
-                break
-
+    @loop
     @error_handler
-    def track_asset_menu(self) -> bool:
+    def track_asset_menu_operations(self) -> bool:
         """Method that takes input to perform operations, along with error handler decorator"""
 
         user_choice = input(PromptConfig.TRACK_ASSETS_PROMPT + "\n")
@@ -126,6 +120,6 @@ class TrackAssetViews:
             return True
         else:
             print(PromptConfig.INVALID_INPUT + "\n")
-            logger.info("Invalid input entered")
+            logger.info(LogsConfig.LOG_INVALID_INPUT)
 
         return False

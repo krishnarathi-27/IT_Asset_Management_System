@@ -25,7 +25,6 @@ class CommonHelper:
         """
 
         while True:
-            logger.info("Validated user changing default password")
             print(PromptConfig.STRONG_PASSWORD)
             new_password = InputValidations.input_password()
             print(PromptConfig.INPUT_CONFIRM_PASSWORD)
@@ -33,7 +32,6 @@ class CommonHelper:
 
             if new_password != confirm_password:
                 print(PromptConfig.PASSWORD_NOT_MATCH)
-                logger.info("New password not matches confirm new password")
 
             else:
                 new_hashed_password = hashlib.sha256(new_password.encode()).hexdigest()
@@ -42,7 +40,7 @@ class CommonHelper:
                     (
                         new_hashed_password,
                         username,
-                    ),
+                    )
                 )
                 print(PromptConfig.DEFAULT_PASSWORD_UPDATED)
                 logger.info(LogsConfig.LOG_DEFAULT_PASSWORD)

@@ -2,15 +2,15 @@
 import logging
 
 # local imports
-from config.queries import Header
 from config.app_config import AppConfig
-from config.prompts.prompts import PromptConfig
 from config.log_prompts.logs_config import LogsConfig
+from config.prompts.prompts import PromptConfig
+from config.queries import Header
 from controllers.admin_controllers import AdminControllers
 from controllers.asset_data_controllers import AssetDataControllers
+from utils.app_decorator import error_handler, loop
 from utils.common_helper import CommonHelper
 from utils.validations import InputValidations
-from utils.app_decorator import error_handler
 from views.asset_data_views import AssetDataViews
 
 logger = logging.getLogger("admin_views")
@@ -30,18 +30,12 @@ class AdminViews(AssetDataViews):
         logger.info(LogsConfig.LOG_ADMIN_LOGGED_IN)
         print(PromptConfig.WELCOME_ADMIN)
 
-    def admin_menu_operations(self) -> None:
-        """Method to perform admin tasks"""
-
-        while True:
-            if self.admin_menu():
-                break
-
+    @loop
     @error_handler
-    def admin_menu(self) -> bool:
+    def admin_menu_operations(self) -> bool:
         """Method that takes input from admin to perform operations, along with error handler decorator"""
 
-        logger.info("Admin menu displayed")
+        logger.info(LogsConfig.LOG_ADMIN_MENU)
         user_choice = input(PromptConfig.ADMIN_PROMPT + "\n")
 
         if user_choice == "1":
@@ -59,16 +53,18 @@ class AdminViews(AssetDataViews):
         elif user_choice == "7":
             self.check_category_created()
         elif user_choice == "8":
-            logger.info("Admin logged out")
+            logger.info(LogsConfig.LOG_ADMIN_LOGGED_OUT)
             return True
         else:
             print(PromptConfig.INVALID_INPUT + "\n")
-            logger.info("Invalid input entered")
+            logger.info(LogsConfig.LOG_INVALID_INPUT)
 
         return False
 
     def create_user(self) -> None:
         """Method to create new user in the system"""
+
+        logger.info(LogsConfig.LOG_CREATE_NEW_USER)
 
         username = InputValidations.input_name()
         password = InputValidations.input_password()
@@ -85,12 +81,12 @@ class AdminViews(AssetDataViews):
 
         self.obj_admin_controller.create_new_user(user_role, username, password)
 
-        logger.info("New user added to the system")
         print(PromptConfig.USER_ADDED_SUCCESS)
 
     def check_deactivate_vendor(self) -> None:
         """Method that checks that vendor is deactivated or not"""
-
+        logger.info(LogsConfig.LOG_TO_DEACTIVATE_VENDOR)
+        
         data = self.obj_asset_data.view_vendor()
         if not data:
             print(PromptConfig.NO_DATA_EXISTS)
@@ -99,6 +95,5 @@ class AdminViews(AssetDataViews):
             vendor_email = InputValidations.input_email()
             if self.obj_admin_controller.deactivate_vendor(vendor_email):
                 print(PromptConfig.DEACTIVATED_VENDOR)
-                logger.info("Vendor deactivated from the system")
             else:
                 print(PromptConfig.VENDOR_NOT_EXIST_TO_DELETE)

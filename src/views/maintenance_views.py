@@ -3,11 +3,11 @@ import logging
 
 # local imports
 from config.queries import Header
-from config.prompts.prompts import PromptConfig
 from config.log_prompts.logs_config import LogsConfig
+from config.prompts.prompts import PromptConfig
 from controllers.manager_controllers import ManagerControllers
+from utils.app_decorator import error_handler, loop
 from utils.common_helper import CommonHelper
-from utils.app_decorator import error_handler
 from utils.validations import InputValidations
 
 logger = logging.getLogger("maintenance_views")
@@ -39,7 +39,7 @@ class MaintenanceViews:
 
         else:
             print(PromptConfig.SEND_FOR_MAINTENANCE)
-            logger.info("Asset send for maintenance")
+            logger.info(LogsConfig.ASSET_SEND_MAINTENANCE)
 
     def input_recieve_asset(self) -> None:
         """Method that recieves assets from maintenance"""
@@ -58,7 +58,7 @@ class MaintenanceViews:
 
         else:
             print(PromptConfig.RECIEVE_FROM_MAINTENANCE)
-            logger.info("Recive asset from maintenance")
+            logger.info(LogsConfig.ASSET_RECIEVED_MAINTENANCE)
 
     def display_issues(self) -> None:
         """Method that diplays all the pending issues"""
@@ -70,15 +70,9 @@ class MaintenanceViews:
         else:
             CommonHelper.display_table(data, Header.SCHEMA_PENDING_ISSUES)
 
-    def maintenance_menu_operations(self) -> None:
-        """Method to perform maintenance tasks"""
-
-        while True:
-            if self.maintenance_menu():
-                break
-
+    @loop
     @error_handler
-    def maintenance_menu(self) -> bool:
+    def maintenance_menu_operations(self) -> bool:
         """Method that takes input to perform operations, along with error handler decorator"""
 
         user_choice = input(PromptConfig.MAINTENANCE_PROMPT + "\n")
@@ -93,6 +87,6 @@ class MaintenanceViews:
             return True
         else:
             print(PromptConfig.INVALID_INPUT + "\n")
-            logger.info("Invalid input entered")
+            logger.info(LogsConfig.LOG_INVALID_INPUT)
 
         return False

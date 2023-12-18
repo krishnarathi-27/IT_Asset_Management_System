@@ -34,7 +34,7 @@ class AdminControllers:
             ),
         )
 
-        logger.info(LogsConfig.LOG_CREATE_NEW_USER)
+        logger.info(LogsConfig.LOG_USER_CREATED)
 
     def deactivate_vendor(self, vendor_email: str) -> bool:
         """Method for deactivating existing vendor in the system"""
