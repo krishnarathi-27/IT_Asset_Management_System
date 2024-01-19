@@ -12,6 +12,8 @@ coverage = "*"
 cohesion = "*"
 flake8 = "*"
 pylint = "*"
+pytest = "*"
+pytest-cov = "*"
 
 [dev-packages]
 

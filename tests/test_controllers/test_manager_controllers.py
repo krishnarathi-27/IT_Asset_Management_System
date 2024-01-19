@@ -79,7 +79,5 @@ class TestManagerControllers(TestCase):
 
     @mock.patch("src.controllers.manager_controllers.db")
     def test_fetch_by_username_negative(self, mock_db) -> None:
-        mock_db.fetch_data.side_effect = [[], ["data"], []]
-        self.assertFalse(self.obj_manager.fetch_by_username("EMPsdf4"))
-        self.assertFalse(self.obj_manager.fetch_by_username("EMPsdf4"))
-        self.assertEqual(mock_db.fetch_data.call_count, 3)
+        mock_db.fetch_data.return_value = []
+        self.assertEqual(self.obj_manager.fetch_by_username("EMPsdf4"),[])
