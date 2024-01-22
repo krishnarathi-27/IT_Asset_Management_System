@@ -25,3 +25,14 @@
 2024-01-19 10:26:00,353 INFO     [admin_views.py:38] Admin menu displayed
 2024-01-19 10:26:06,765 INFO     [admin_views.py:67] Create new user
 2024-01-19 10:36:31,964 INFO     [admin_views.py:38] Admin menu displayed
+2024-01-22 01:09:34,042 INFO     [main.py:27] Starting with asset management system.
+2024-01-22 01:18:10,585 INFO     [main.py:27] Starting with asset management system.
+2024-01-22 01:19:14,897 INFO     [main.py:27] Starting with asset management system.
+2024-01-22 01:19:19,952 INFO     [main.py:27] Starting with asset management system.
+2024-01-22 01:24:50,372 INFO     [main.py:27] Starting with asset management system.
+2024-01-22 01:26:27,175 INFO     [main.py:27] Starting with asset management system.
+2024-01-22 01:43:10,412 INFO     [main.py:28] Starting with asset management system.
+2024-01-22 01:44:50,611 INFO     [main.py:28] Starting with asset management system.
+2024-01-22 01:48:36,759 INFO     [main.py:28] Starting with asset management system.
+2024-01-22 01:48:36,779 INFO     [main.py:40] Connection closed. Exiting from application
+2024-01-22 01:50:50,639 INFO     [main.py:27] Starting with asset management system.
