@@ -21,14 +21,11 @@ class ManagerControllers:
         """Methods that fetch username from database"""
 
         data_user = data = db.fetch_data(Queries.FETCH_IF_USER_EXISTS, (user_id,))
-        print('-------------------------')
         print(data_user)
         if not data_user:
             return data_user
 
         data = db.fetch_data(Queries.FETCH_ASSETS_BY_USER_ID, (user_id,))
-        print('-------------------------')
-        print(data_user)
         if not data:
             return data_user
         return data

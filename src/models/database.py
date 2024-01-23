@@ -1,5 +1,11 @@
 """This Module provides all methods related for database operations"""
-import sqlite3
+import os
+import mysql.connector
+import logging
+
+from pathlib import Path
+from dotenv import load_dotenv
+
 from typing import Union
 
 # local imports
@@ -8,6 +14,15 @@ from config.queries import Queries
 from config.log_prompts.logs_config import LogsConfig
 from config.prompts.prompts import PromptConfig
 
+dotenv_path = Path('.env')
+load_dotenv(dotenv_path=dotenv_path)
+
+logger = logging.getLogger(__name__)
+
+MYSQL_USER = os.getenv('MYSQL_USER')
+MYSQL_PASSWORD = os.getenv('MYSQL_PASSWORD')
+MYSQL_HOST = os.getenv('MYSQL_HOST')
+MYSQL_DB = os.getenv('MYSQL_DB')
 
 class Database:
     """
@@ -20,6 +35,8 @@ class Database:
     save_data() : To save data in database
     fetch_data() : TO fetch data from database
     """
+    connection = None
+    cursor = None
 
     def __init__(self) -> None:
         """
@@ -27,11 +44,26 @@ class Database:
         Parameters = self
         Return Type = None
         """
-        try:
-            self.connection = sqlite3.connect(AppConfig.DATABASE_LOCATION)
-            self.cursor = self.connection.cursor()
-        except sqlite3.Error:
-            raise sqlite3.Error
+        if Database.connection is None:
+            try:
+                Database.connection = mysql.connector.connect(
+                    user = MYSQL_USER,
+                    password=MYSQL_PASSWORD,
+                    host=MYSQL_HOST
+
+                    )
+                Database.cursor = Database.connection.cursor(dictionary=True)
+                Database.cursor.execute(Queries.CREATE_DATABASE.format(MYSQL_DB))
+                Database.cursor.execute(Queries.USE_DATABASE.format(MYSQL_DB))
+            except Exception as error:
+                logger.exception(error)
+                raise mysql.connector.Error from error
+            else:
+                logger.debug("Connection established")
+
+        self.connection = Database.connection
+        self.cursor = Database.cursor
+        
 
     def create_all_table(self) -> None:
         """
@@ -44,7 +76,6 @@ class Database:
         self.cursor.execute(Queries.CREATE_VENDOR_TABLE)
         self.cursor.execute(Queries.CREATE_MAPPING_TABLE)
         self.cursor.execute(Queries.CREATE_ASSET_TABLE)
-        self.cursor.execute(Queries.CREATE_MAINTENANCE_TABLE)
         self.cursor.execute(Queries.CREATE_ISSUE_TABLE)
 
     def save_data(self, query: Union[str, list], data: Union[tuple, list]) -> None:
