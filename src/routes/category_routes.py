@@ -2,7 +2,7 @@ import shortuuid
 from flask.views import MethodView
 from flask_smorest import Blueprint, abort
 
-from models.database import db
+from database.database import db
 from utils.mapped_roles import MappedRole
 from controllers.asset_data_controllers import AssetDataControllers
 from schemas.asset_schema import CategoryDetailsSchema, CategorySchema

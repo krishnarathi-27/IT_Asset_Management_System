@@ -29,7 +29,7 @@ def create_app():
 
     api = Api(app)
 
-    app.config["JWT_SECRET_KEY"] = "261152921044102586974899032980882739636"
+    app.config["JWT_SECRET_KEY"] = "krishna261152921044102586974899032980882739636"
     jwt = JWTManager(app)
 
     @jwt.expired_token_loader

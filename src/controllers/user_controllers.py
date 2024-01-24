@@ -53,3 +53,4 @@ class UserController:
         hashed_password = hashlib.sha256(new_password.encode('utf-8')).hexdigest()
         result = self.db_object.save_data(Queries.UPDATE_PASSWORD, (hashed_password, user_id,))
         return True
+    

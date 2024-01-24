@@ -1,7 +1,7 @@
 """ Module contains methods for employee """
 import logging
 import shortuuid
-from models.database import db
+from database.database import db
 from config.queries import Queries
 from config.log_prompts.logs_config import LogsConfig
 

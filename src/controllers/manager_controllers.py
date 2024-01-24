@@ -4,7 +4,7 @@ import shortuuid
 from datetime import datetime
 
 # local imports
-from models.database import db
+from database.database import db
 from config.queries import Queries
 from config.app_config import AppConfig
 from config.log_prompts.logs_config import LogsConfig

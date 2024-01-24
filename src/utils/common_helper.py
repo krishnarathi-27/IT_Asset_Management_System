@@ -2,7 +2,7 @@
 import logging
 import hashlib
 from tabulate import tabulate
-from models.database import db
+from database.database import db
 from config.queries import Queries
 from utils.validations import InputValidations
 from config.queries import Header

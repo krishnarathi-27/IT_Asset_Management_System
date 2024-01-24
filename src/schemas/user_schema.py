@@ -7,8 +7,8 @@ class LoginSchema(Schema):
 
 class LoginSuccessSchema(Schema):
     access_token = fields.Str(dump_only=True)
-    refresh_token = fields.Str(dump_only=True)
-    message = fields.Str(dump_only=True)
+    # refresh_token = fields.Str(dump_only=True)
+    # message = fields.Str(dump_only=True)
 
 class UserCreateSchema(Schema):
     user_id = fields.Str(dump_only=True)
