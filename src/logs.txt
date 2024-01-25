@@ -1,0 +1,286 @@
+2024-01-24 13:55:49,716 INFO     [_internal.py:96] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-01-24 13:55:49,717 INFO     [_internal.py:96] [33mPress CTRL+C to quit[0m
+2024-01-24 13:55:49,720 INFO     [_internal.py:96]  * Restarting with stat
+2024-01-24 13:55:51,005 WARNING  [_internal.py:96]  * Debugger is active!
+2024-01-24 13:55:51,008 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-01-24 13:55:52,479 ERROR    [common_helper.py:51] (1064, "1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ', password, role, is_changed \n        FROM authentication WHERE username = 'admi' at line 1", '42000')
+Traceback (most recent call last):
+  File "C:\Users\krathi\.virtualenvs\IT_Asset_Management_System-uJemEU57\Lib\site-packages\mysql\connector\connection_cext.py", line 661, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ', password, role, is_changed 
+        FROM authentication WHERE username = 'admi' at line 1
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\krathi\.virtualenvs\IT_Asset_Management_System-uJemEU57\Lib\site-packages\flask\app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krathi\.virtualenvs\IT_Asset_Management_System-uJemEU57\Lib\site-packages\flask\app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krathi\.virtualenvs\IT_Asset_Management_System-uJemEU57\Lib\site-packages\flask\views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krathi\.virtualenvs\IT_Asset_Management_System-uJemEU57\Lib\site-packages\flask\views.py", line 191, in dispatch_request
+    return current_app.ensure_sync(meth)(**kwargs)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krathi\.virtualenvs\IT_Asset_Management_System-uJemEU57\Lib\site-packages\webargs\core.py", line 649, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krathi\.virtualenvs\IT_Asset_Management_System-uJemEU57\Lib\site-packages\flask_smorest\arguments.py", line 82, in wrapper
+    return func(*f_args, **f_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krathi\.virtualenvs\IT_Asset_Management_System-uJemEU57\Lib\site-packages\flask_smorest\response.py", line 89, in wrapper
+    func(*args, **kwargs)
+  File "C:\Users\krathi\OneDrive - WatchGuard Technologies Inc\Desktop\IT_Asset_Management_System\src\routes\auth_routes.py", line 19, in post
+    token = obj_auth.login(user_data)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krathi\OneDrive - WatchGuard Technologies Inc\Desktop\IT_Asset_Management_System\src\controller\auth\login.py", line 16, in login
+    result = self.obj_auth_handler.validate_user(username, password)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krathi\OneDrive - WatchGuard Technologies Inc\Desktop\IT_Asset_Management_System\src\handlers\auth.py", line 21, in validate_user
+    user_data = db_object.fetch_data(Queries.FETCH_USER_CREDENTIALS, (username,))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krathi\OneDrive - WatchGuard Technologies Inc\Desktop\IT_Asset_Management_System\src\database\database.py", line 103, in fetch_data
+    self.cursor.execute(query, tup)
+  File "C:\Users\krathi\.virtualenvs\IT_Asset_Management_System-uJemEU57\Lib\site-packages\mysql\connector\cursor_cext.py", line 374, in execute
+    result = self._cnx.cmd_query(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krathi\.virtualenvs\IT_Asset_Management_System-uJemEU57\Lib\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 74, in wrapper
+    return method(cnx, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krathi\.virtualenvs\IT_Asset_Management_System-uJemEU57\Lib\site-packages\mysql\connector\connection_cext.py", line 669, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ', password, role, is_changed 
+        FROM authentication WHERE username = 'admi' at line 1
+2024-01-24 13:55:52,606 INFO     [_internal.py:96] 127.0.0.1 - - [24/Jan/2024 13:55:52] "POST /asset-management/login HTTP/1.1" 200 -
+2024-01-24 14:05:37,072 INFO     [_internal.py:96] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-01-24 14:05:37,072 INFO     [_internal.py:96] [33mPress CTRL+C to quit[0m
+2024-01-24 14:05:37,077 INFO     [_internal.py:96]  * Restarting with stat
+2024-01-24 14:05:38,347 WARNING  [_internal.py:96]  * Debugger is active!
+2024-01-24 14:05:38,349 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-01-24 14:05:42,008 INFO     [_internal.py:96] 127.0.0.1 - - [24/Jan/2024 14:05:42] "POST /asset-management/login HTTP/1.1" 200 -
+2024-01-24 14:05:47,812 INFO     [_internal.py:96] 127.0.0.1 - - [24/Jan/2024 14:05:47] "[31m[1mGET /asset-management/user HTTP/1.1[0m" 405 -
+2024-01-24 14:06:07,370 INFO     [_internal.py:96] 127.0.0.1 - - [24/Jan/2024 14:06:07] "GET /asset-management/user/all HTTP/1.1" 200 -
+2024-01-24 14:06:14,807 INFO     [user.py:32] User with same username already exists 1062 (23000): Duplicate entry 'aayushi-employee' for key 'authentication.username'
+2024-01-24 14:06:14,807 INFO     [_internal.py:96] 127.0.0.1 - - [24/Jan/2024 14:06:14] "[31m[1mPOST /asset-management/user HTTP/1.1[0m" 409 -
+2024-01-24 14:06:24,168 INFO     [_internal.py:96] 127.0.0.1 - - [24/Jan/2024 14:06:24] "GET /asset-management/user/profile HTTP/1.1" 200 -
+2024-01-24 14:06:41,029 INFO     [_internal.py:96] 127.0.0.1 - - [24/Jan/2024 14:06:41] "[31m[1mPUT /asset-management/user/change-password HTTP/1.1[0m" 422 -
+2024-01-24 14:09:37,118 INFO     [_internal.py:96] 127.0.0.1 - - [24/Jan/2024 14:09:37] "GET /asset-management/swagger-ui HTTP/1.1" 200 -
+2024-01-24 14:09:38,116 INFO     [_internal.py:96] 127.0.0.1 - - [24/Jan/2024 14:09:38] "GET /asset-management/openapi.json HTTP/1.1" 200 -
+2024-01-24 14:09:38,135 INFO     [_internal.py:96] 127.0.0.1 - - [24/Jan/2024 14:09:38] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-01-24 14:21:20,525 INFO     [_internal.py:96] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-01-24 14:21:20,525 INFO     [_internal.py:96] [33mPress CTRL+C to quit[0m
+2024-01-24 14:21:20,525 INFO     [_internal.py:96]  * Restarting with stat
+2024-01-24 14:21:21,972 WARNING  [_internal.py:96]  * Debugger is active!
+2024-01-24 14:21:21,972 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-01-24 14:21:30,742 INFO     [_internal.py:96] 127.0.0.1 - - [24/Jan/2024 14:21:30] "POST /asset-management/login HTTP/1.1" 200 -
+2024-01-24 14:21:37,921 INFO     [_internal.py:96] 127.0.0.1 - - [24/Jan/2024 14:21:37] "[31m[1mPUT /asset-management/user/change-password HTTP/1.1[0m" 401 -
+2024-01-24 14:21:49,757 INFO     [_internal.py:96] 127.0.0.1 - - [24/Jan/2024 14:21:49] "[31m[1mPUT /asset-management/user/change-password HTTP/1.1[0m" 401 -
+2024-01-24 14:21:55,135 INFO     [_internal.py:96] 127.0.0.1 - - [24/Jan/2024 14:21:55] "[31m[1mPUT /asset-management/user/change-password HTTP/1.1[0m" 401 -
+2024-01-24 14:22:44,180 INFO     [_internal.py:96] 127.0.0.1 - - [24/Jan/2024 14:22:44] "POST /asset-management/login HTTP/1.1" 200 -
+2024-01-24 14:23:47,689 INFO     [_internal.py:96] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-01-24 14:23:47,689 INFO     [_internal.py:96] [33mPress CTRL+C to quit[0m
+2024-01-24 14:23:47,689 INFO     [_internal.py:96]  * Restarting with stat
+2024-01-24 14:23:49,065 WARNING  [_internal.py:96]  * Debugger is active!
+2024-01-24 14:23:49,081 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-01-24 14:23:50,085 INFO     [_internal.py:96] 127.0.0.1 - - [24/Jan/2024 14:23:50] "POST /asset-management/login HTTP/1.1" 200 -
+2024-01-24 14:23:52,733 INFO     [_internal.py:96] 127.0.0.1 - - [24/Jan/2024 14:23:52] "[31m[1mPUT /asset-management/user/change-password HTTP/1.1[0m" 401 -
+2024-01-24 14:24:18,427 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\handlers\\user.py', reloading
+2024-01-24 14:24:18,505 INFO     [_internal.py:96]  * Restarting with stat
+2024-01-24 14:24:19,937 WARNING  [_internal.py:96]  * Debugger is active!
+2024-01-24 14:24:19,941 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-01-24 14:24:23,580 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\handlers\\user.py', reloading
+2024-01-24 14:24:23,647 INFO     [_internal.py:96]  * Restarting with stat
+2024-01-24 14:24:25,022 WARNING  [_internal.py:96]  * Debugger is active!
+2024-01-24 14:24:25,022 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-01-24 14:24:27,516 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\handlers\\user.py', reloading
+2024-01-24 14:24:27,610 INFO     [_internal.py:96]  * Restarting with stat
+2024-01-24 14:24:28,988 WARNING  [_internal.py:96]  * Debugger is active!
+2024-01-24 14:24:28,988 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-01-24 14:24:34,850 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\handlers\\user.py', reloading
+2024-01-24 14:24:34,932 INFO     [_internal.py:96]  * Restarting with stat
+2024-01-24 14:24:39,853 INFO     [_internal.py:96] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-01-24 14:24:39,853 INFO     [_internal.py:96] [33mPress CTRL+C to quit[0m
+2024-01-24 14:24:39,853 INFO     [_internal.py:96]  * Restarting with stat
+2024-01-24 14:24:41,236 WARNING  [_internal.py:96]  * Debugger is active!
+2024-01-24 14:24:41,250 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-01-24 14:24:52,673 INFO     [_internal.py:96] 127.0.0.1 - - [24/Jan/2024 14:24:52] "POST /asset-management/login HTTP/1.1" 200 -
+2024-01-24 14:25:01,204 INFO     [_internal.py:96] 127.0.0.1 - - [24/Jan/2024 14:25:01] "[31m[1mPUT /asset-management/user/change-password HTTP/1.1[0m" 400 -
+2024-01-24 14:25:08,087 INFO     [_internal.py:96] 127.0.0.1 - - [24/Jan/2024 14:25:08] "PUT /asset-management/user/change-password HTTP/1.1" 200 -
+2024-01-24 16:45:21,360 INFO     [_internal.py:96] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-01-24 16:45:21,360 INFO     [_internal.py:96] [33mPress CTRL+C to quit[0m
+2024-01-24 16:45:21,372 INFO     [_internal.py:96]  * Restarting with stat
+2024-01-24 16:45:24,132 WARNING  [_internal.py:96]  * Debugger is active!
+2024-01-24 16:45:24,140 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-01-24 16:45:29,436 INFO     [_internal.py:96] 127.0.0.1 - - [24/Jan/2024 16:45:29] "POST /asset-management/login HTTP/1.1" 200 -
+2024-01-24 16:45:39,232 INFO     [_internal.py:96] 127.0.0.1 - - [24/Jan/2024 16:45:39] "[31m[1mGET /asset-management/category HTTP/1.1[0m" 405 -
+2024-01-24 16:45:44,626 INFO     [_internal.py:96] 127.0.0.1 - - [24/Jan/2024 16:45:44] "GET /asset-management/category/all HTTP/1.1" 200 -
+2024-01-24 16:49:40,319 INFO     [_internal.py:96] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-01-24 16:49:40,319 INFO     [_internal.py:96] [33mPress CTRL+C to quit[0m
+2024-01-24 16:49:40,329 INFO     [_internal.py:96]  * Restarting with stat
+2024-01-24 16:49:42,421 WARNING  [_internal.py:96]  * Debugger is active!
+2024-01-24 16:49:42,421 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-01-24 16:49:53,590 INFO     [_internal.py:96] 127.0.0.1 - - [24/Jan/2024 16:49:53] "POST /asset-management/login HTTP/1.1" 200 -
+2024-01-24 16:49:56,811 ERROR    [common_helper.py:52] 1146 (42S02): Table 'assetmanagement.asset_category' doesn't exist
+Traceback (most recent call last):
+  File "C:\Users\krathi\.virtualenvs\IT_Asset_Management_System-uJemEU57\Lib\site-packages\mysql\connector\connection_cext.py", line 661, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Table 'assetmanagement.asset_category' doesn't exist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\krathi\.virtualenvs\IT_Asset_Management_System-uJemEU57\Lib\site-packages\flask\app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krathi\.virtualenvs\IT_Asset_Management_System-uJemEU57\Lib\site-packages\flask\app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krathi\.virtualenvs\IT_Asset_Management_System-uJemEU57\Lib\site-packages\flask\views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krathi\.virtualenvs\IT_Asset_Management_System-uJemEU57\Lib\site-packages\flask\views.py", line 191, in dispatch_request
+    return current_app.ensure_sync(meth)(**kwargs)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krathi\.virtualenvs\IT_Asset_Management_System-uJemEU57\Lib\site-packages\flask_smorest\blueprint.py", line 297, in wrapper
+    return func(*f_args, **f_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krathi\OneDrive - WatchGuard Technologies Inc\Desktop\IT_Asset_Management_System\src\utils\rbac.py", line 14, in inner
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krathi\.virtualenvs\IT_Asset_Management_System-uJemEU57\Lib\site-packages\flask_smorest\response.py", line 89, in wrapper
+    func(*args, **kwargs)
+  File "C:\Users\krathi\OneDrive - WatchGuard Technologies Inc\Desktop\IT_Asset_Management_System\src\routes\category_routes.py", line 21, in get
+    response = obj_view_category.view_all_category()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krathi\OneDrive - WatchGuard Technologies Inc\Desktop\IT_Asset_Management_System\src\controller\category\view_category.py", line 12, in view_all_category
+    response = self.obj_category_handler.view_all_category()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krathi\OneDrive - WatchGuard Technologies Inc\Desktop\IT_Asset_Management_System\src\handlers\category.py", line 20, in view_all_category
+    data = db_object.fetch_data(Queries.FETCH_CATEGORY_TABLE_WITH_VENDORS)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krathi\OneDrive - WatchGuard Technologies Inc\Desktop\IT_Asset_Management_System\src\database\database.py", line 101, in fetch_data
+    self.cursor.execute(query)
+  File "C:\Users\krathi\.virtualenvs\IT_Asset_Management_System-uJemEU57\Lib\site-packages\mysql\connector\cursor_cext.py", line 374, in execute
+    result = self._cnx.cmd_query(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krathi\.virtualenvs\IT_Asset_Management_System-uJemEU57\Lib\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 74, in wrapper
+    return method(cnx, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\krathi\.virtualenvs\IT_Asset_Management_System-uJemEU57\Lib\site-packages\mysql\connector\connection_cext.py", line 669, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1146 (42S02): Table 'assetmanagement.asset_category' doesn't exist
+2024-01-24 16:49:56,938 INFO     [_internal.py:96] 127.0.0.1 - - [24/Jan/2024 16:49:56] "GET /asset-management/category/all HTTP/1.1" 200 -
+2024-01-24 16:50:51,179 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\app.py', reloading
+2024-01-24 16:50:51,313 INFO     [_internal.py:96]  * Restarting with stat
+2024-01-24 16:50:54,963 INFO     [_internal.py:96]  * Restarting with stat
+2024-01-24 16:50:56,526 WARNING  [_internal.py:96]  * Debugger is active!
+2024-01-24 16:50:56,529 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-01-24 16:51:01,890 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\app.py', reloading
+2024-01-24 16:51:01,982 INFO     [_internal.py:96]  * Restarting with stat
+2024-01-24 16:51:04,283 INFO     [_internal.py:96]  * Restarting with stat
+2024-01-24 16:51:06,071 WARNING  [_internal.py:96]  * Debugger is active!
+2024-01-24 16:51:06,081 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-01-24 16:51:10,790 INFO     [_internal.py:96] 127.0.0.1 - - [24/Jan/2024 16:51:10] "[33mGET /asset-management/category/all HTTP/1.1[0m" 404 -
+2024-01-24 16:51:21,299 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\app.py', reloading
+2024-01-24 16:51:21,376 INFO     [_internal.py:96]  * Restarting with stat
+2024-01-24 16:51:23,110 WARNING  [_internal.py:96]  * Debugger is active!
+2024-01-24 16:51:23,113 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-01-24 16:51:28,072 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\app.py', reloading
+2024-01-24 16:51:28,206 INFO     [_internal.py:96]  * Restarting with stat
+2024-01-24 16:51:37,617 INFO     [_internal.py:96] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-01-24 16:51:37,618 INFO     [_internal.py:96] [33mPress CTRL+C to quit[0m
+2024-01-24 16:51:37,620 INFO     [_internal.py:96]  * Restarting with stat
+2024-01-24 16:51:39,898 WARNING  [_internal.py:96]  * Debugger is active!
+2024-01-24 16:51:39,906 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-01-24 16:52:36,942 INFO     [_internal.py:96] 127.0.0.1 - - [24/Jan/2024 16:52:36] "[35m[1mPOST /asset-management/category HTTP/1.1[0m" 500 -
+2024-01-24 16:52:58,079 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\controller\\category\\create_category.py', reloading
+2024-01-24 16:52:58,188 INFO     [_internal.py:96]  * Restarting with stat
+2024-01-24 16:52:59,758 WARNING  [_internal.py:96]  * Debugger is active!
+2024-01-24 16:52:59,758 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-01-24 16:53:06,054 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\controller\\category\\create_category.py', reloading
+2024-01-24 16:53:06,129 INFO     [_internal.py:96]  * Restarting with stat
+2024-01-24 16:53:07,880 WARNING  [_internal.py:96]  * Debugger is active!
+2024-01-24 16:53:07,883 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-01-24 16:53:12,810 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\controller\\category\\create_category.py', reloading
+2024-01-24 16:53:16,622 INFO     [_internal.py:96] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-01-24 16:53:16,624 INFO     [_internal.py:96] [33mPress CTRL+C to quit[0m
+2024-01-24 16:53:16,625 INFO     [_internal.py:96]  * Restarting with stat
+2024-01-24 16:53:18,486 WARNING  [_internal.py:96]  * Debugger is active!
+2024-01-24 16:53:18,488 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-01-24 16:53:19,480 INFO     [_internal.py:96] 127.0.0.1 - - [24/Jan/2024 16:53:19] "[33mPOST /asset-management/category HTTP/1.1[0m" 404 -
+2024-01-24 16:53:27,521 INFO     [asset_data_controllers.py:105] Vendor added in database
+2024-01-24 16:53:27,521 INFO     [_internal.py:96] 127.0.0.1 - - [24/Jan/2024 16:53:27] "[35m[1mPOST /asset-management/vendor HTTP/1.1[0m" 201 -
+2024-01-24 16:53:33,349 INFO     [_internal.py:96] 127.0.0.1 - - [24/Jan/2024 16:53:33] "[35m[1mPOST /asset-management/category HTTP/1.1[0m" 201 -
+2024-01-24 16:53:37,372 INFO     [_internal.py:96] 127.0.0.1 - - [24/Jan/2024 16:53:37] "[35m[1mPOST /asset-management/category HTTP/1.1[0m" 500 -
+2024-01-24 16:54:01,708 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\handlers\\category.py', reloading
+2024-01-24 16:54:02,918 INFO     [_internal.py:96]  * Restarting with stat
+2024-01-24 16:54:04,521 WARNING  [_internal.py:96]  * Debugger is active!
+2024-01-24 16:54:04,524 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-01-24 16:54:08,216 INFO     [_internal.py:96] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-01-24 16:54:08,216 INFO     [_internal.py:96] [33mPress CTRL+C to quit[0m
+2024-01-24 16:54:08,216 INFO     [_internal.py:96]  * Restarting with stat
+2024-01-24 16:54:10,527 WARNING  [_internal.py:96]  * Debugger is active!
+2024-01-24 16:54:10,537 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-01-24 16:54:19,038 INFO     [_internal.py:96] 127.0.0.1 - - [24/Jan/2024 16:54:19] "[31m[1mPOST /asset-management/category HTTP/1.1[0m" 409 -
+2024-01-24 16:54:53,074 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\handlers\\category.py', reloading
+2024-01-24 16:54:53,180 INFO     [_internal.py:96]  * Restarting with stat
+2024-01-24 17:22:42,055 INFO     [_internal.py:96] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-01-24 17:22:42,055 INFO     [_internal.py:96] [33mPress CTRL+C to quit[0m
+2024-01-24 17:22:42,071 INFO     [_internal.py:96]  * Restarting with stat
+2024-01-24 17:22:44,001 WARNING  [_internal.py:96]  * Debugger is active!
+2024-01-24 17:22:44,007 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-01-24 17:22:50,842 INFO     [_internal.py:96] 127.0.0.1 - - [24/Jan/2024 17:22:50] "GET /asset-management/swagger-ui HTTP/1.1" 200 -
+2024-01-24 17:22:51,451 INFO     [_internal.py:96] 127.0.0.1 - - [24/Jan/2024 17:22:51] "GET /asset-management/openapi.json HTTP/1.1" 200 -
+2024-01-24 17:43:11,501 INFO     [_internal.py:96] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-01-24 17:43:11,501 INFO     [_internal.py:96] [33mPress CTRL+C to quit[0m
+2024-01-24 17:43:11,501 INFO     [_internal.py:96]  * Restarting with stat
+2024-01-24 17:43:13,445 WARNING  [_internal.py:96]  * Debugger is active!
+2024-01-24 17:43:13,448 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-01-24 17:43:19,088 INFO     [_internal.py:96] 127.0.0.1 - - [24/Jan/2024 17:43:19] "POST /asset-management/login HTTP/1.1" 200 -
+2024-01-24 17:44:03,313 INFO     [vendor.py:45] Vendor added in database
+2024-01-24 17:44:03,313 INFO     [_internal.py:96] 127.0.0.1 - - [24/Jan/2024 17:44:03] "[35m[1mPOST /asset-management/vendor HTTP/1.1[0m" 201 -
+2024-01-24 17:44:31,309 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\handlers\\vendor.py', reloading
+2024-01-24 17:44:31,427 INFO     [_internal.py:96]  * Restarting with stat
+2024-01-24 17:44:33,503 WARNING  [_internal.py:96]  * Debugger is active!
+2024-01-24 17:44:33,503 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-01-24 17:44:34,895 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\handlers\\vendor.py', reloading
+2024-01-24 17:44:34,981 INFO     [_internal.py:96]  * Restarting with stat
+2024-01-24 17:44:37,046 WARNING  [_internal.py:96]  * Debugger is active!
+2024-01-24 17:44:37,046 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-01-24 17:44:39,684 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\handlers\\vendor.py', reloading
+2024-01-24 17:44:39,797 INFO     [_internal.py:96]  * Restarting with stat
+2024-01-24 17:44:41,411 WARNING  [_internal.py:96]  * Debugger is active!
+2024-01-24 17:44:41,420 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-01-24 17:44:46,491 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\handlers\\vendor.py', reloading
+2024-01-24 17:44:46,598 INFO     [_internal.py:96]  * Restarting with stat
+2024-01-24 17:44:48,533 WARNING  [_internal.py:96]  * Debugger is active!
+2024-01-24 17:44:48,533 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-01-24 17:48:03,927 INFO     [_internal.py:96] 127.0.0.1 - - [24/Jan/2024 17:48:03] "GET /asset-management/swagger-ui HTTP/1.1" 200 -
+2024-01-24 17:48:04,922 INFO     [_internal.py:96] 127.0.0.1 - - [24/Jan/2024 17:48:04] "GET /asset-management/openapi.json HTTP/1.1" 200 -
+2024-01-24 17:48:48,081 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\controller\\vendor\\view_vendor.py', reloading
+2024-01-24 17:48:48,174 INFO     [_internal.py:96]  * Restarting with stat
+2024-01-24 17:48:51,302 WARNING  [_internal.py:96]  * Debugger is active!
+2024-01-24 17:48:51,302 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-01-24 18:06:21,065 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\controller\\vendor\\view_vendor.py', reloading
+2024-01-24 18:06:21,164 INFO     [_internal.py:96]  * Restarting with stat
+2024-01-24 18:06:23,021 WARNING  [_internal.py:96]  * Debugger is active!
+2024-01-24 18:06:23,025 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-01-24 18:06:25,627 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\controller\\vendor\\view_vendor.py', reloading
+2024-01-24 18:06:25,740 INFO     [_internal.py:96]  * Restarting with stat
+2024-01-24 18:06:27,640 WARNING  [_internal.py:96]  * Debugger is active!
+2024-01-24 18:06:27,640 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455

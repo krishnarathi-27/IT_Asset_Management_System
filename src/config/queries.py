@@ -119,7 +119,8 @@ class Queries:
         CREATE TABLE IF NOT EXISTS asset_category(
             category_id VARCHAR(10) PRIMARY KEY,
             category_name VARCHAR(30),
-            brand_name VARCHAR(30)
+            brand_name VARCHAR(30),
+            UNIQUE(category_name,brand_name)
         )   
     """
     CREATE_MAPPING_TABLE = """
@@ -190,6 +191,11 @@ class Queries:
         WHERE user_id = %s
     """
     # FETCH DATA
+    FETCH_PASSWORD = """
+        SELECT password 
+        FROM authentication
+        WHERE user_id = %s
+    """
     FETCH_AUTHENTICATION_TABLE = """
         SELECT user_id, username, role
         FROM authentication  

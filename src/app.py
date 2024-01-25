@@ -1,21 +1,34 @@
-import os
-from config.app_config import AppConfig
+import logging
 from flask import Flask, jsonify
 from flask_jwt_extended import JWTManager
 from flask_smorest import Api
+from mysql.connector import Error
 
+from config.app_config import AppConfig
 from config.prompts.prompts import PromptConfig
 from config.log_prompts.logs_config import LogsConfig
+from utils.common_helper import CommonHelper
+from database.database import db
 
 from routes.auth_routes import blp as AuthRoutes
 from routes.user_routes import blp as UserRoutes
 from src.routes.category_routes import blp as CategoryRoutes
 from src.routes.vendor_routes import blp as VendorRoutes
 
+logging.basicConfig(
+    format="%(asctime)s %(levelname)-8s [%(filename)s:%(lineno)d] %(message)s",
+    level=logging.DEBUG,
+    filename=AppConfig.LOG_LOCATION,
+)
+
+logger = logging.getLogger("main")
+
 def create_app():
 
     PromptConfig.load()
     LogsConfig.load()
+
+    db.create_all_table()
 
     app = Flask(__name__)
 
@@ -26,6 +39,8 @@ def create_app():
     app.config["OPENAPI_URL_PREFIX"] = "/asset-management/"
     app.config["OPENAPI_SWAGGER_UI_PATH"] = "/swagger-ui"
     app.config["OPENAPI_SWAGGER_UI_URL"] = "https://cdn.jsdelivr.net/npm/swagger-ui-dist/"
+
+    app.register_error_handler(Error, CommonHelper.server_error_handler)
 
     api = Api(app)
 
@@ -87,6 +102,5 @@ def create_app():
     api.register_blueprint(UserRoutes,url_prefix="/asset-management")
     api.register_blueprint(CategoryRoutes,url_prefix="/asset-management")
     api.register_blueprint(VendorRoutes,url_prefix="/asset-management")
-    # print(app.url_map)
 
     return app

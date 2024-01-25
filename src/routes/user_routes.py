@@ -20,9 +20,9 @@ class Users(MethodView):
     def get(self):
 
         obj_view_user = ViewUserController()
-        data = obj_view_user.view_all_user()
+        response = obj_view_user.view_all_user()
             
-        return data
+        return response
 
 @blp.route("/user")  
 class User(MethodView):
@@ -64,7 +64,7 @@ class UserPassword(MethodView):
         user_id = get_jwt_identity()
 
         obj_update_user = UpdateUserController()
-        response = obj_update_user.change_password(user_id,user_data)
+        response = obj_update_user.update_password(user_id,user_data)
 
         return response
     

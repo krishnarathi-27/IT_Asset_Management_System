@@ -7,14 +7,20 @@ class DataAlreadyExists(Exception):
 class UserAlreadyExistsException(DataAlreadyExists):
     pass
 
-class VendorAlreadyExists(DataAlreadyExists):
+class VendorAlreadyExistsException(DataAlreadyExists):
     pass
 
-class CategoryAlreadyExists(DataAlreadyExists):
+class CategoryAlreadyExistsException(DataAlreadyExists):
     pass
 
 class DBException(Exception):
     pass
 
 class NoDataExistsException(Exception):
+    pass
+
+class PasswordsNotMatchException(Exception):
+    pass
+
+class VendorNotExistsException(Exception):
     pass

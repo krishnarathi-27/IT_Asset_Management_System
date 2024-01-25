@@ -1,6 +1,6 @@
 from flask_smorest import abort
 from handlers.auth import AuthHandler
-from utils.exceptions import InvalidUserCredentials, DBException
+from utils.exceptions import InvalidUserCredentials
 
 class LoginController:
 
@@ -29,5 +29,3 @@ class LoginController:
         except InvalidUserCredentials:
             abort(401, "USer credentials are invalid")
 
-        except DBException:
-            abort(500, "Server not responding. Try again after some time")

@@ -1,6 +1,6 @@
 from flask_smorest import abort
 from handlers.user import UserHandler
-from utils.exceptions import DBException, NoDataExistsException
+from utils.exceptions import NoDataExistsException
 
 class ViewUserController:
 
@@ -15,8 +15,6 @@ class ViewUserController:
         except NoDataExistsException:
             abort(404, message="Resource of user data not found")
 
-        except DBException:
-            abort(500, message="Server not responding try after some time")
 
     def view_user_by_id(self, user_id):
         try:
@@ -27,5 +25,3 @@ class ViewUserController:
         except NoDataExistsException:
             abort(404, message="Resource of user data not found")
 
-        except DBException:
-            abort(500, message="Server not responding try after some time")

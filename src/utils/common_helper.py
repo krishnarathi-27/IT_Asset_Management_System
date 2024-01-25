@@ -1,11 +1,11 @@
 """Module contains common utility functions which are accessed across different modules"""
 import logging
 import hashlib
-from tabulate import tabulate
+from flask_smorest import abort
+
 from database.database import db
 from config.queries import Queries
 from utils.validations import InputValidations
-from config.queries import Header
 from config.prompts.prompts import PromptConfig
 from config.log_prompts.logs_config import LogsConfig
 
@@ -47,23 +47,13 @@ class CommonHelper:
                 return
 
     @staticmethod
-    def display_table(data: list, headers: list) -> None:
-        """
-        Method to display data in tabular format using tabulate
-        Parameters : data, headers
-        Return type : None
-        """
-        row_id = [i for i in range(1, len(data) + 1)]
-        print(tabulate(data, headers, showindex=row_id, tablefmt="simple_grid"))
+    def server_error_handler(error: Exception):
+        
+        logger.exception(error)
+        
+        error_response = {
+            "status_code": 500,
+            "message": "Internal server erro occured. Try again after sometime"
+        }
 
-    def display_user_details(self) -> bool:
-        """Method to display details of users"""
-
-        data = db.fetch_data(Queries.FETCH_AUTHENTICATION_TABLE)
-
-        if not data:
-            print(PromptConfig.NO_DATA_EXISTS)
-            return False
-
-        CommonHelper.display_table(data, Header.SCHEMA_USER_TABLE)
-        return True
+        return error_response

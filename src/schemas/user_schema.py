@@ -8,7 +8,7 @@ class LoginSchema(Schema):
 class LoginSuccessSchema(Schema):
     access_token = fields.Str(dump_only=True)
     # refresh_token = fields.Str(dump_only=True)
-    # message = fields.Str(dump_only=True)
+    message = fields.Str(dump_only=True)
 
 class UserCreateSchema(Schema):
     user_id = fields.Str(dump_only=True)
@@ -23,5 +23,6 @@ class UserDetailsSchema(Schema):
     role = fields.Str(dump_only=True)
 
 class UserPassword(Schema):
+    old_password = fields.Str(required=True)
     new_password = fields.Str(required=True)
     confirm_password = fields.Str(required=True)
