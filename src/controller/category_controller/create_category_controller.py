@@ -1,6 +1,6 @@
-from flask_smorest import abort
-from handlers.category import CategoryHandler
-from utils.exceptions import CategoryAlreadyExistsException, VendorNotExistsException
+from flask import jsonify
+from src.handlers.category_handler import CategoryHandler
+from utils.exceptions import MyBaseException
 
 class CreateCategoryController:
 
@@ -17,17 +17,19 @@ class CreateCategoryController:
             category_id = self.obj_category_handler.create_category(category_name, brand_name, vendor_email)
 
             if category_id:
-                response = {
+                response = jsonify({
                     "category_id": category_id,
                     "category_name": category_name,
                     "brand_name": brand_name,
                     "vendor_email": vendor_email,
                     "message": "Category created successfully"
-                }
+                })
                 return response
         
-        except CategoryAlreadyExistsException:
-            abort (409, message="Category already exists in database")
+        except MyBaseException as error:
+            error_response = jsonify({
+                "message": error.error_message,
+                "description": error.error_description
+            })
 
-        except VendorNotExistsException:
-            abort (404, message="Vendor email not exist")
+            return error_response, error.error_code

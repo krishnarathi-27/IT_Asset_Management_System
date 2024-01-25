@@ -2,14 +2,16 @@ import shortuuid
 from flask.views import MethodView
 from flask_smorest import Blueprint, abort
 
-from controller.vendor.create_vendor import CreateVendorController
+from controller.vendor_controller.create_vendor_controller import CreateVendorController
+from controller.vendor_controller.view_vendor_controller import ViewVendorController
+from controller.vendor_controller.delete_vendor_controller import DeleteVendorController
 from utils.mapped_roles import MappedRole
 from src.schemas.asset_schema import VendorSchema, VendorDetailsSchema, VendorDeactivateSchema
 from utils.rbac import role_required
 
 blp = Blueprint("vendors",__name__, description="Operations on asset vendors")
     
-@blp.route("/vendor/all")
+@blp.route("/vendors")
 class Vendors(MethodView):
 
     @blp.doc(parameters=[{'name': 'Authorization', 'in': 'header', 'description': 'Authorization: Bearer <access_token>', 'required': 'true'}])
@@ -17,10 +19,10 @@ class Vendors(MethodView):
     @blp.response(200,VendorDetailsSchema(many=True))
     def get(self):
         
-        pass
+        obj_view_vendor = ViewVendorController()
+        response = obj_view_vendor.view_all_vendor()
 
-@blp.route("/vendor")
-class Vendor(MethodView):
+        return response
     
     @blp.doc(parameters=[{'name': 'Authorization', 'in': 'header', 'description': 'Authorization: Bearer <access_token>', 'required': 'true'}])
     @role_required([MappedRole.ADMIN_ROLE,MappedRole.MANAGER_ROLE])
@@ -41,10 +43,8 @@ class Vendor(MethodView):
     @blp.response(200,VendorDeactivateSchema)
     def delete(self, vendor_id):
         
-        result = obj_asset_data_controller.deactivate_vendor(vendor_id)
-        
-        if not result:
-            abort (404, message="Vendor not exists")
+        obj_delete_vendor = DeleteVendorController()
+        response = obj_delete_vendor.delete_vendor(vendor_id)
 
-        return {"message": "Vendor deactivated successfully"}, 200
+        return response
     

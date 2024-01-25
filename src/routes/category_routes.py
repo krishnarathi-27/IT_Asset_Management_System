@@ -1,15 +1,15 @@
 from flask.views import MethodView
 from flask_smorest import Blueprint
 
-from controller.category.view_category import ViewCategoryController
-from controller.category.create_category import CreateCategoryController
+from controller.category_controller.view_category_controller import ViewCategoryController
+from controller.category_controller.create_category_controller import CreateCategoryController
 from utils.mapped_roles import MappedRole
 from schemas.asset_schema import CategoryDetailsSchema, CategorySchema
 from utils.rbac import role_required
 
 blp = Blueprint("categories",__name__, description="Operations on asset category")
 
-@blp.route("/category/all")
+@blp.route("/categories")
 class Categories(MethodView):
     
     @blp.doc(parameters=[{'name': 'Authorization', 'in': 'header', 'description': 'Authorization: Bearer <access_token>', 'required': 'true'}])
@@ -21,9 +21,6 @@ class Categories(MethodView):
         response = obj_view_category.view_all_category()
         
         return response
-
-@blp.route("/category")
-class Category(MethodView):
     
     @blp.doc(parameters=[{'name': 'Authorization', 'in': 'header', 'description': 'Authorization: Bearer <access_token>', 'required': 'true'}])
     @role_required([MappedRole.ADMIN_ROLE,MappedRole.MANAGER_ROLE])

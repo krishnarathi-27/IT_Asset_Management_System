@@ -3,7 +3,7 @@ from flask_smorest import Blueprint
 
 from database.database import db
 from schemas.user_schema import LoginSchema, LoginSuccessSchema
-from controller.auth.login import LoginController
+from controller.auth_controller.login_controller import LoginController
 
 blp = Blueprint("authentication", __name__, description="Operations on authentication task")
 

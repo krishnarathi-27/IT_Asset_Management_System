@@ -1,6 +1,6 @@
-from flask_smorest import abort
-from handlers.vendor import VendorHandler
-from utils.exceptions import VendorAlreadyExistsException
+from flask import jsonify
+from src.handlers.vendor_handler import VendorHandler
+from utils.exceptions import MyBaseException
 
 class CreateVendorController:
 
@@ -15,13 +15,18 @@ class CreateVendorController:
 
             vendor_id = self.obj_vendor_handler.create_vendor(vendor_name, vendor_email)
 
-            response = {
+            response = jsonify({
                     "vendor_id": vendor_id,
                     "vendor_name": vendor_name,
                     "vendor_email": vendor_email,
                     "message": "Vendor created successfully"
-                }
+                })
             return response
         
-        except VendorAlreadyExistsException:
-            abort (409, message="Vendor already exists in database")
+        except MyBaseException as error:
+            error_response = jsonify({
+                "message": error.error_message,
+                "description": error.error_description
+            })
+
+            return error_response, error.error_code

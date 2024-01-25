@@ -1,53 +1,26 @@
 """Module contains different types of decorator used across the projects"""
 import functools
-import sqlite3
 import logging
+from mysql.connector import IntegrityError, Error
 
-from config.prompts.prompts import PromptConfig
+from utils.exceptions import CustomException, DBException
 
 logger = logging.getLogger("app_decorator")
 
-def loop(func):
-
-    @functools.wraps(func)
-    def wrapper(*args: tuple,**kwargs: dict) -> None:
-        while True:
-            result = func(*args,**kwargs)
-            if result:
-                return result
-
-    return wrapper
-
 def error_handler(func):
-    """
-    Method which acts as decorator for handling all types of exception
-    Parameter = function
-    Return type = function
-    """
 
     @functools.wraps(func)
-    def wrapper(*args: tuple, **kwargs: dict) -> None:
-        """
-        Method which handles exception
-        Parameter = *args, **kwargs
-        Return type = None
-        """
+    def wrapper(*args, **kwargs):
+
         try:
             return func(*args, **kwargs)
-        except sqlite3.IntegrityError as err:
-            logger.exception(err)
-            print(PromptConfig.DB_INTEGRITY_ERROR)
-        except sqlite3.OperationalError as err:
-            logger.exception(err)
-            print(PromptConfig.DB_ERROR_MESSAGE)
-        except sqlite3.ProgrammingError as err:
-            logger.exception(err)
-            print(PromptConfig.DB_ERROR_MESSAGE)
-        except sqlite3.Error as err:
-            logger.exception(err)
-            print(PromptConfig.DB_GENERAL_ERROR)
-        except Exception as err:
-            logger.exception(err)
-            print(PromptConfig.GENERAL_EXCEPTION_MSG)
-
+        
+        except IntegrityError as error:
+            logger.error(f"Tried to insert duplicate entry in database {error}")
+            raise DBException(409,"","")
+        
+        except Error as error:
+            logger.error(f"Error occured in database {error}")
+            raise DBException
+    
     return wrapper

@@ -213,7 +213,12 @@ class Queries:
         INNER JOIN vendor_table ON mapping_table.vendor_id = vendor_table.vendor_id
     """
     FETCH_ASSETS_TABLE = """
-        SELECT * FROM asset_table
+        SELECT asset_table.asset_id, asset_table.asset_type, assigned_to, asset_status,
+        asset_category.category_name, vendor_table.vendor_name
+        FROM asset_table
+        INNER JOIN mapping_table ON asset_table.mapping_id = mapping_table.mapping_id
+        INNER JOIN asset_category ON mapping_table.category_id = asset_category.category_id
+        INNER JOIN vendor_table ON mapping_table.vendor_id = vendor_table.vendor_id
     """
     FETCH_ASSETS_BY_USER_ID = """
         SELECT authentication.user_id, authentication.username, 

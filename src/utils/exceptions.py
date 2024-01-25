@@ -1,26 +1,22 @@
-class InvalidUserCredentials(Exception):
+from dataclasses import dataclass
+
+@dataclass
+class MyBaseException(Exception):
+    error_code : int
+    error_message : str
+    error_description : str
+
+class CustomException(MyBaseException):
     pass
 
-class DataAlreadyExists(Exception):
+class DBException(MyBaseException):
     pass
 
-class UserAlreadyExistsException(DataAlreadyExists):
+class InvalidCredentials(MyBaseException):
     pass
 
-class VendorAlreadyExistsException(DataAlreadyExists):
+class DataNotExists(MyBaseException):
     pass
 
-class CategoryAlreadyExistsException(DataAlreadyExists):
-    pass
-
-class DBException(Exception):
-    pass
-
-class NoDataExistsException(Exception):
-    pass
-
-class PasswordsNotMatchException(Exception):
-    pass
-
-class VendorNotExistsException(Exception):
+class DataAlreadyExists(MyBaseException):
     pass
