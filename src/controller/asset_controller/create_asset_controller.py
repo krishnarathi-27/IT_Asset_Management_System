@@ -11,10 +11,11 @@ class CreateAssetController:
 
         try:
             category_name = request_data['category_name']
+            brand_name = request_data['brand_name']
             vendor_email = request_data['vendor_email']
             asset_type = request_data['asset_type']
 
-            self.obj_asset_handler.create_new_asset(category_name, vendor_email, asset_type)
+            self.obj_asset_handler.create_asset(category_name, vendor_email, brand_name, asset_type)
 
             response = jsonify({
                 "category_name": request_data['category_name'],
@@ -30,5 +31,4 @@ class CreateAssetController:
             })
 
             return error_response, error.error_code
-
             

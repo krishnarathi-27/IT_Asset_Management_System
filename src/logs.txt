@@ -1,0 +1,146 @@
+2024-01-29 13:48:28,573 INFO     [_internal.py:96] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-01-29 13:48:28,573 INFO     [_internal.py:96] [33mPress CTRL+C to quit[0m
+2024-01-29 13:48:28,576 INFO     [_internal.py:96]  * Restarting with stat
+2024-01-29 13:48:30,546 WARNING  [_internal.py:96]  * Debugger is active!
+2024-01-29 13:48:30,551 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-01-29 13:50:21,814 INFO     [_internal.py:96] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-01-29 13:50:21,814 INFO     [_internal.py:96] [33mPress CTRL+C to quit[0m
+2024-01-29 13:50:21,814 INFO     [_internal.py:96]  * Restarting with stat
+2024-01-29 13:50:23,606 WARNING  [_internal.py:96]  * Debugger is active!
+2024-01-29 13:50:23,606 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-01-29 13:50:59,499 INFO     [_internal.py:96] 127.0.0.1 - - [29/Jan/2024 13:50:59] "GET /asset-management/swagger-ui HTTP/1.1" 200 -
+2024-01-29 13:51:00,099 INFO     [_internal.py:96] 127.0.0.1 - - [29/Jan/2024 13:51:00] "GET /asset-management/openapi.json HTTP/1.1" 200 -
+2024-01-29 13:51:53,684 INFO     [_internal.py:96] 127.0.0.1 - - [29/Jan/2024 13:51:53] "POST /asset-management/login HTTP/1.1" 200 -
+2024-01-29 13:52:27,884 INFO     [_internal.py:96] 127.0.0.1 - - [29/Jan/2024 13:52:27] "GET /asset-management/issues HTTP/1.1" 200 -
+2024-01-29 13:52:33,745 INFO     [_internal.py:96] 127.0.0.1 - - [29/Jan/2024 13:52:33] "GET /asset-management/issues HTTP/1.1" 200 -
+2024-01-29 13:53:30,402 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\handlers\\issue_handler.py', reloading
+2024-01-29 13:53:30,476 INFO     [_internal.py:96]  * Restarting with stat
+2024-01-29 13:53:32,663 WARNING  [_internal.py:96]  * Debugger is active!
+2024-01-29 13:53:32,663 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-01-29 13:53:36,399 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\handlers\\issue_handler.py', reloading
+2024-01-29 13:53:36,474 INFO     [_internal.py:96]  * Restarting with stat
+2024-01-29 13:53:38,230 WARNING  [_internal.py:96]  * Debugger is active!
+2024-01-29 13:53:38,230 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-01-29 13:53:40,642 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\handlers\\issue_handler.py', reloading
+2024-01-29 13:53:40,727 INFO     [_internal.py:96]  * Restarting with stat
+2024-01-29 13:53:44,482 INFO     [_internal.py:96] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-01-29 13:53:44,482 INFO     [_internal.py:96] [33mPress CTRL+C to quit[0m
+2024-01-29 13:53:44,485 INFO     [_internal.py:96]  * Restarting with stat
+2024-01-29 13:53:46,288 WARNING  [_internal.py:96]  * Debugger is active!
+2024-01-29 13:53:46,288 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-01-29 13:53:47,268 INFO     [_internal.py:96] 127.0.0.1 - - [29/Jan/2024 13:53:47] "[33mGET /asset-management/issues HTTP/1.1[0m" 404 -
+2024-01-29 13:53:59,951 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\handlers\\issue_handler.py', reloading
+2024-01-29 13:54:00,048 INFO     [_internal.py:96]  * Restarting with stat
+2024-01-29 13:54:01,849 WARNING  [_internal.py:96]  * Debugger is active!
+2024-01-29 13:54:01,849 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-01-29 14:40:37,388 INFO     [_internal.py:96] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-01-29 14:40:37,388 INFO     [_internal.py:96] [33mPress CTRL+C to quit[0m
+2024-01-29 14:40:37,394 INFO     [_internal.py:96]  * Restarting with stat
+2024-01-29 14:40:39,383 WARNING  [_internal.py:96]  * Debugger is active!
+2024-01-29 14:40:39,383 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-01-29 14:40:55,506 INFO     [_internal.py:96] 127.0.0.1 - - [29/Jan/2024 14:40:55] "GET /asset-management/assets HTTP/1.1" 200 -
+2024-01-29 14:42:15,909 INFO     [_internal.py:96] 127.0.0.1 - - [29/Jan/2024 14:42:15] "POST /asset-management/login HTTP/1.1" 200 -
+2024-01-29 14:42:53,615 INFO     [_internal.py:96] 127.0.0.1 - - [29/Jan/2024 14:42:53] "[31m[1mPOST /asset-management/issues HTTP/1.1[0m" 422 -
+2024-01-29 14:44:06,108 INFO     [_internal.py:96] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-01-29 14:44:06,108 INFO     [_internal.py:96] [33mPress CTRL+C to quit[0m
+2024-01-29 14:44:06,110 INFO     [_internal.py:96]  * Restarting with stat
+2024-01-29 14:44:08,156 WARNING  [_internal.py:96]  * Debugger is active!
+2024-01-29 14:44:08,159 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-01-29 14:44:08,318 INFO     [_internal.py:96] 127.0.0.1 - - [29/Jan/2024 14:44:08] "[33mPOST /asset-management/issues HTTP/1.1[0m" 404 -
+2024-01-29 14:44:26,292 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\controller\\issue_controller\\create_issue_controller.py', reloading
+2024-01-29 14:44:26,363 INFO     [_internal.py:96]  * Restarting with stat
+2024-01-29 14:44:28,295 WARNING  [_internal.py:96]  * Debugger is active!
+2024-01-29 14:44:28,295 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-01-29 14:44:29,604 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\controller\\issue_controller\\create_issue_controller.py', reloading
+2024-01-29 14:44:29,685 INFO     [_internal.py:96]  * Restarting with stat
+2024-01-29 14:44:31,428 WARNING  [_internal.py:96]  * Debugger is active!
+2024-01-29 14:44:31,428 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-01-29 14:44:34,994 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\controller\\issue_controller\\create_issue_controller.py', reloading
+2024-01-29 14:44:35,080 INFO     [_internal.py:96]  * Restarting with stat
+2024-01-29 14:44:38,937 INFO     [_internal.py:96] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-01-29 14:44:38,937 INFO     [_internal.py:96] [33mPress CTRL+C to quit[0m
+2024-01-29 14:44:38,940 INFO     [_internal.py:96]  * Restarting with stat
+2024-01-29 14:44:40,907 WARNING  [_internal.py:96]  * Debugger is active!
+2024-01-29 14:44:40,907 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-01-29 14:44:41,125 INFO     [_internal.py:96] 127.0.0.1 - - [29/Jan/2024 14:44:41] "[33mPOST /asset-management/issues HTTP/1.1[0m" 404 -
+2024-01-29 14:44:51,215 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\controller\\issue_controller\\create_issue_controller.py', reloading
+2024-01-29 14:44:51,290 INFO     [_internal.py:96]  * Restarting with stat
+2024-01-29 14:44:53,020 WARNING  [_internal.py:96]  * Debugger is active!
+2024-01-29 14:44:53,028 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-01-29 14:45:14,465 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\config\\queries.py', reloading
+2024-01-29 14:45:14,542 INFO     [_internal.py:96]  * Restarting with stat
+2024-01-29 14:45:18,582 INFO     [_internal.py:96] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-01-29 14:45:18,582 INFO     [_internal.py:96] [33mPress CTRL+C to quit[0m
+2024-01-29 14:45:18,592 INFO     [_internal.py:96]  * Restarting with stat
+2024-01-29 14:45:20,474 WARNING  [_internal.py:96]  * Debugger is active!
+2024-01-29 14:45:20,487 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-01-29 14:45:20,654 INFO     [_internal.py:96] 127.0.0.1 - - [29/Jan/2024 14:45:20] "POST /asset-management/issues HTTP/1.1" 200 -
+2024-01-29 14:45:36,657 INFO     [_internal.py:96] 127.0.0.1 - - [29/Jan/2024 14:45:36] "POST /asset-management/login HTTP/1.1" 200 -
+2024-01-29 14:45:39,578 INFO     [_internal.py:96] 127.0.0.1 - - [29/Jan/2024 14:45:39] "GET /asset-management/issues HTTP/1.1" 200 -
+2024-01-29 14:46:19,920 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\handlers\\issue_handler.py', reloading
+2024-01-29 14:46:19,993 INFO     [_internal.py:96]  * Restarting with stat
+2024-01-29 14:46:21,982 WARNING  [_internal.py:96]  * Debugger is active!
+2024-01-29 14:46:21,982 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-01-29 14:52:30,295 INFO     [_internal.py:96] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-01-29 14:52:30,295 INFO     [_internal.py:96] [33mPress CTRL+C to quit[0m
+2024-01-29 14:52:30,295 INFO     [_internal.py:96]  * Restarting with stat
+2024-01-29 14:52:32,214 WARNING  [_internal.py:96]  * Debugger is active!
+2024-01-29 14:52:32,214 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-01-29 14:52:48,404 INFO     [_internal.py:96] 127.0.0.1 - - [29/Jan/2024 14:52:48] "POST /asset-management/login HTTP/1.1" 200 -
+2024-01-29 14:52:53,215 INFO     [_internal.py:96] 127.0.0.1 - - [29/Jan/2024 14:52:53] "POST /asset-management/issues HTTP/1.1" 200 -
+2024-01-29 14:52:54,556 INFO     [_internal.py:96] 127.0.0.1 - - [29/Jan/2024 14:52:54] "[33mPOST /asset-management/issues HTTP/1.1[0m" 404 -
+2024-01-29 14:53:23,909 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\handlers\\issue_handler.py', reloading
+2024-01-29 14:53:23,976 INFO     [_internal.py:96]  * Restarting with stat
+2024-01-29 14:53:25,906 WARNING  [_internal.py:96]  * Debugger is active!
+2024-01-29 14:53:25,906 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-01-29 14:53:27,212 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\handlers\\issue_handler.py', reloading
+2024-01-29 14:53:27,291 INFO     [_internal.py:96]  * Restarting with stat
+2024-01-29 14:53:29,097 WARNING  [_internal.py:96]  * Debugger is active!
+2024-01-29 14:53:29,100 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-01-29 14:53:37,018 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\handlers\\issue_handler.py', reloading
+2024-01-29 14:53:37,123 INFO     [_internal.py:96]  * Restarting with stat
+2024-01-29 15:31:33,678 INFO     [_internal.py:96] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-01-29 15:31:33,678 INFO     [_internal.py:96] [33mPress CTRL+C to quit[0m
+2024-01-29 15:31:33,683 INFO     [_internal.py:96]  * Restarting with stat
+2024-01-29 15:31:36,079 WARNING  [_internal.py:96]  * Debugger is active!
+2024-01-29 15:31:36,079 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-01-29 15:31:36,283 INFO     [_internal.py:96] 127.0.0.1 - - [29/Jan/2024 15:31:36] "[33mGET /asset-management/issues/EMP8Feo HTTP/1.1[0m" 404 -
+2024-01-29 15:31:46,148 INFO     [_internal.py:96] 127.0.0.1 - - [29/Jan/2024 15:31:46] "[31m[1mGET /asset-management/issues HTTP/1.1[0m" 403 -
+2024-01-29 15:32:07,593 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\routes\\issue_routes.py', reloading
+2024-01-29 15:32:07,665 INFO     [_internal.py:96]  * Restarting with stat
+2024-01-29 15:32:09,670 WARNING  [_internal.py:96]  * Debugger is active!
+2024-01-29 15:32:09,670 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-01-29 15:32:12,065 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\routes\\issue_routes.py', reloading
+2024-01-29 15:32:12,139 INFO     [_internal.py:96]  * Restarting with stat
+2024-01-29 15:32:13,989 WARNING  [_internal.py:96]  * Debugger is active!
+2024-01-29 15:32:13,989 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-01-29 15:32:15,290 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\routes\\issue_routes.py', reloading
+2024-01-29 15:32:15,360 INFO     [_internal.py:96]  * Restarting with stat
+2024-01-29 15:32:17,222 WARNING  [_internal.py:96]  * Debugger is active!
+2024-01-29 15:32:17,240 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-01-29 15:32:19,712 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\routes\\issue_routes.py', reloading
+2024-01-29 15:32:19,799 INFO     [_internal.py:96]  * Restarting with stat
+2024-01-29 15:32:23,412 INFO     [_internal.py:96] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-01-29 15:32:23,412 INFO     [_internal.py:96] [33mPress CTRL+C to quit[0m
+2024-01-29 15:32:23,415 INFO     [_internal.py:96]  * Restarting with stat
+2024-01-29 15:32:25,402 WARNING  [_internal.py:96]  * Debugger is active!
+2024-01-29 15:32:25,402 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-01-29 15:32:28,805 INFO     [_internal.py:96] 127.0.0.1 - - [29/Jan/2024 15:32:28] "[33mGET /asset-management/issues/EMP8Feo HTTP/1.1[0m" 404 -
+2024-01-29 15:32:37,868 INFO     [_internal.py:96] 127.0.0.1 - - [29/Jan/2024 15:32:37] "GET /asset-management/issue/EMP8Feo HTTP/1.1" 200 -
+2024-01-29 15:33:43,416 INFO     [_internal.py:96] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-01-29 15:33:43,416 INFO     [_internal.py:96] [33mPress CTRL+C to quit[0m
+2024-01-29 15:33:43,416 INFO     [_internal.py:96]  * Restarting with stat
+2024-01-29 15:33:45,447 WARNING  [_internal.py:96]  * Debugger is active!
+2024-01-29 15:33:45,447 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-01-29 15:33:45,558 INFO     [_internal.py:96] 127.0.0.1 - - [29/Jan/2024 15:33:45] "GET /asset-management/issue/EMP8Feo HTTP/1.1" 200 -

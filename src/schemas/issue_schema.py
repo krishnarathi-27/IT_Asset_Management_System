@@ -6,3 +6,7 @@ class IssueSchema(Schema):
     asset_id = fields.Str(required=True,validate=validate.Regexp(AppConfig.REGEX_ASSET_ID))
     user_id = fields.Str(required=True,validate=validate.Regexp(AppConfig.REGEX_USER_ID))
     issue_status = fields.Str(required=True)
+
+class IssueCreateSchema(Schema):
+    asset_id = fields.Str(required=True,validate=validate.Regexp(AppConfig.REGEX_ASSET_ID))
+    

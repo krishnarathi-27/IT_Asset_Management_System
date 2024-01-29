@@ -25,7 +25,7 @@ class Assets(MethodView):
         return response
     
     @blp.doc(parameters=[{'name': 'Authorization', 'in': 'header', 'description': 'Authorization: Bearer <access_token>', 'required': 'true'}])
-    @role_required([MappedRole.ADMIN_ROLE])
+    @role_required([MappedRole.MANAGER_ROLE])
     @blp.arguments(AssetSchema)
     @blp.response(201,AssetSchema)
     def post(self,request_data):
@@ -39,12 +39,13 @@ class Assets(MethodView):
 class AssetAssign(MethodView):
     
     @blp.doc(parameters=[{'name': 'Authorization', 'in': 'header', 'description': 'Authorization: Bearer <access_token>', 'required': 'true'}])
+    @role_required([MappedRole.MANAGER_ROLE])
     @blp.arguments(AssetUpdateSchema)
-    @jwt_required()
-    def put(self,request_data):
+    @blp.response(200,AssetUpdateSchema)
+    def put(self,request_data,asset_id):
 
         obj_update_user = UpdateAssetController()
-        response = obj_update_user.update_password(request_data)
+        response = obj_update_user.assign_asset(request_data,asset_id)
 
         return response
 
@@ -52,12 +53,13 @@ class AssetAssign(MethodView):
 class AssetUnassign(MethodView):
      
     @blp.doc(parameters=[{'name': 'Authorization', 'in': 'header', 'description': 'Authorization: Bearer <access_token>', 'required': 'true'}])
+    @role_required([MappedRole.MANAGER_ROLE])
     @blp.arguments(AssetUpdateSchema)
-    @jwt_required()
-    def put(self,request_data):
+    @blp.response(200,AssetUpdateSchema)
+    def put(self,request_data,asset_id):
 
         obj_update_user = UpdateAssetController()
-        response = obj_update_user.update_password(request_data)
+        response = obj_update_user.unassign_asset(request_data, asset_id)
 
         return response
     

@@ -2,7 +2,7 @@ import logging
 from flask import Flask, jsonify
 from flask_jwt_extended import JWTManager
 from flask_smorest import Api
-from mysql.connector import Error
+from datetime import timedelta
 
 from config.app_config import AppConfig
 from config.prompts.prompts import PromptConfig
@@ -13,6 +13,8 @@ from routes.auth_routes import blp as AuthRoutes
 from routes.user_routes import blp as UserRoutes
 from src.routes.category_routes import blp as CategoryRoutes
 from src.routes.vendor_routes import blp as VendorRoutes
+from src.routes.asset_routes import blp as AssetRoutes
+from src.routes.issue_routes import blp as IssueRoutes
 
 logging.basicConfig(
     format="%(asctime)s %(levelname)-8s [%(filename)s:%(lineno)d] %(message)s",
@@ -38,6 +40,7 @@ def create_app():
     app.config["OPENAPI_URL_PREFIX"] = "/asset-management/"
     app.config["OPENAPI_SWAGGER_UI_PATH"] = "/swagger-ui"
     app.config["OPENAPI_SWAGGER_UI_URL"] = "https://cdn.jsdelivr.net/npm/swagger-ui-dist/"
+    app.config["JWT_ACCESS_TOKEN_EXPIRES"] = timedelta(hours=1)
 
     api = Api(app)
 
@@ -99,5 +102,7 @@ def create_app():
     api.register_blueprint(UserRoutes,url_prefix="/asset-management")
     api.register_blueprint(CategoryRoutes,url_prefix="/asset-management")
     api.register_blueprint(VendorRoutes,url_prefix="/asset-management")
+    api.register_blueprint(AssetRoutes,url_prefix="/asset-management")
+    api.register_blueprint(IssueRoutes,url_prefix="/asset-management")
 
     return app

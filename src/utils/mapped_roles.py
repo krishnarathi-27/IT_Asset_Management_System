@@ -14,7 +14,7 @@ class MappedRole:
         if role == AppConfig.ADMININSTRATOR:
             return cls.ADMIN_ROLE
         elif role == AppConfig.ASSET_MANAGER:
-            return cls.EMPLOYEE_ROLE
+            return cls.MANAGER_ROLE
         elif role == AppConfig.EMPLOYEE:
             return cls.EMPLOYEE_ROLE
         

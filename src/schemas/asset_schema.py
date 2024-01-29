@@ -40,15 +40,14 @@ class ViewAssetSchema(Schema):
 
 class AssetSchema(Schema):
     category_name = fields.Str(required=True,validate=validate.Regexp(AppConfig.REGEX_NAME))
+    brand_name = fields.Str(required=True,validate=validate.Regexp(AppConfig.REGEX_NAME))
     vendor_email = fields.Str(required=True,validate=validate.Regexp(AppConfig.REGEX_EMAIL))
     asset_type = fields.Str(required=True,validate=validate.Regexp(AppConfig.REGEX_NAME))
     message = fields.Str(dump_only=True)
 
 class AssetUpdateSchema(Schema):
-    asset_id = fields.Str(required=True,validate=validate.Regexp(AppConfig.REGEX_ASSET_ID))
-    category_name = fields.Str(dump_only=True)
-    vendor_email = fields.Str(dump_only=True)
-    asset_type = fields.Str(dump_only=True)
-    employee_id = fields.Str(required=True)
-    asset_status = fields.Str(dump_only=True)
+    mapping_id = fields.Str(required=True,validate=validate.Regexp(AppConfig.REGEX_MAPPING_ID))
+    asset_type = fields.Str(required=True)
+    asset_status = fields.Str(required=True)
+    assigned_to = fields.Str(required=True)
     message = fields.Str(dump_only=True)

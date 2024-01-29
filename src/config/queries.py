@@ -176,7 +176,7 @@ class Queries:
     """
     UPDATE_ASSET_STATUS_UNDER_MAINTENANCE = """
         UPDATE asset_table 
-        SET asset_status = "under_maintenance"
+        SET asset_status = "under-maintenance"
         WHERE asset_id = %s     
     """
 
@@ -323,19 +323,24 @@ class Queries:
     FETCH_IF_USER_HAVE_ASSET = """
         SELECT mapping_id
         FROM asset_table
-        WHERE asset_id = %s AND assigned_to = %s    
+        WHERE asset_id = %s AND assigned_to = %s AND asset_status = "unavailable"
+    """
+    FETCH_MAPPING_ID = """
+        SELECT mapping_id 
+        FROM mapping_table
+        WHERE category_id = %s AND vendor_id = %s
     """
     FETCH_BY_CATEGORY_AND_BRAND_NAME = """
         SELECT category_id
         FROM asset_category
-        WHERE category_name = %s AND brand_name = %s    
+        WHERE category_name = %s AND brand_name = %s
     """
     FETCH_ASSET_ID_BY_ISSUE_ID = """
         SELECT asset_id 
         FROM issue_table
         WHERE issue_id = %s
     """
-    FETCH_MAPPING_ID = """
+    FETCH_MAPPINGID = """
         SELECT mapping_id, mapping_table.category_id, asset_category.category_name, asset_category.brand_name,
         mapping_table.vendor_id, vendor_table.vendor_email
         FROM mapping_table 
@@ -376,4 +381,13 @@ class Queries:
         INSERT INTO issue_table(
         issue_id, user_id, asset_id
         ) VALUES (%s, %s, %s)  
+    """
+    FETCH_ISSUE_TABLE = """
+        SELECT * 
+        FROM issue_table
+    """
+    FETCH_ISSUE_BY_USER_ID = """
+        SELECT * 
+        FROM issue_table
+        WHERE user_id = %s
     """
