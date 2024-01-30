@@ -1,161 +1,38 @@
 ---
-HEADER_USERID : User_id
-HEADER_USERNAME : Username
-HEADER_ROLE : Role
-HEADER_VENDOR_ID : Vendor_id
-HEADER_VENDOR_NAME : Vendor_name
-HEADER_VENDOR_EMAIL : Vendor_email
-HEADER_ACTIVE_STATUS : Vendor_active_status
-HEADER_ASSET_ID : Asset_id
-HEADER_ASSET_TYPE : Asset_type
-HEADER_ASSIGNED_TO : Assigned_to
-HEADER_ASSET_STATUS : Asset_status
-HEADER_PURCHASED_DATE : Purchased_date
-HEADER_MAPPING_ID : Mapping_id
-HEADER_MAINTENANCE_ID : Maintenance_id
-HEADER_START_DATE : Start_date
-HEADER_RETURN_DATE : Return_date
-HEADER_CATEGORY_ID : Category_id
-HEADER_CATEGORY_NAME : Category_name
-HEADER_BRAND_NAME : Brand_name
-HEADER_ISSUE_ID : Issue_id
+USER_ID_PREFIX: EMP
+ASSET_ID_PREFIX: ASN
+VENDOR_ID_PREFIX: VEN
+CATEGORY_ID_PREFIX: CAT
+ISSUE_ID_PREFIX: ISN
+MAPPING_ID_PREFIX: MPN
 
-ADMIN_PROMPT : |
-  Enter: 
-  - '1' View users
-  - '2' Add user
-  - '3' View vendors
-  - '4' Deactivate vendor
-  - '5' Add vendor
-  - '6' View assets category
-  - '7' Add assets category
-  - '8' Logout
-  Your choice:- 
+CONFLICT_MSG: Conflict
+INTERNAL_SERVER_ERROR: Internal server error
+RESOURCE_NOT_FOUND: Resource not found
+UNAUTHORISED: Unauthorised
+BAD_REQUEST: Bad request
 
-MANAGER_PROMPT : |
-  Enter:
-  - '1' View users
-  - '2' View vendors
-  - '3' Add vendors
-  - '4' View asset category
-  - '5' Add assets category
-  - '6' Add assets to inventory
-  - '7' View inventory
-  - '8' Assign assets
-  - '9' Unassigned assets
-  - '10' Track assets
-  - '11' Maintenance
-  - '12' Logout
-  Your choice:-
-
-EMPLOYEE_PROMPT : |
-  Enter:
-  - '1' View details
-  - '2' View assets assigned
-  - '3' Raise maintenance issue
-  - '4' Logout
-  Your choice:-
-
-CREATE_NEW_USER_ROLE : |
-  Enter role of user:
-  - '1' Asset Manager
-  - '2' Employee
-  Choice:-  
-
-ASSET_ASSIGNABLE_PROMPT : |
-  Assign assets 
-  - '1' Assignable asset
-  - '2' Unassignable asset
-  Choice:- 
-
-TRACK_ASSETS_PROMPT : |
-  Track asset :-
-  - '1' By user id
-  - '2' By category id
-  - '3' By vendors email
-  - '4' By availabilty
-  - '5' Under maintenance
-  - '6' Back to main menu
-  Enter your choice:- 
-
-MAINTENANCE_PROMPT : |
-  Maintenance issues:- 
-  - '1' View pending request
-  - '2' Send asset
-  - '3' Recieve asset
-  - '4' Back to main menu
-  Enter your choice:- 
-
-STARTING_APPLICATION :  ----Welcome to asset management system----
-EXIT_SYSTEM_PROMPT : Do you want to exit from system y/n :- 
-EXITING_APPLICATION : Exiting from Application
-DATA_ALREADY_EXISTS : Same data already exists in database
-INVALID_INPUT : Invalid input entered try again 
-ENTER_VENDOR_EMAIL : Enter vendor email :- 
-SELECT_FROM_TABLE : Select from the above table
-ENTER_ASSET_ID : Enter asset id:- 
-ENTER_VENDOR_ID : Enter vendor id:- 
-ENTER_USER_ID : Enter user id:- 
-ENTER_CATEGORY_ID : Enter category id:- 
-ENTER_MAINTENANCE_ID : Enter maintenance id :- 
-ENTER_MAPPING_ID : Enter mapping id :- 
-ENTER_ISSUE_ID : Enter issue id :- 
-CATEGORY_ID_NOT_EXISTS : Category id does not exists
-USER_NOT_EXISTS : User not exists
-VENDOR_NOT_EXISTS : Vendor already exists in database
-NO_DATA_EXISTS : No data exists
-ASSET_ID_NOT_EXISTS : Asset id does not exist for you
-MAPPING_ID_NOT_EXISTS : Mapping id does not exists
-CATEGORY_ADDED : Category added successfully
-CATEGORY_VENDOR_EXISTS : Category with same vendor 
-ENTER_CATEGORY_NAME : Enter category name of asset:- 
-ENTER_BRAND_NAME : Enter brand name :- 
-
-#authentication file
-INVALID_LOGIN : Invalid login detected attempts left {}
-INPUT_DEFAULT_PASSWORD : Enter your default password:- 
-INPUT_NEW_PASSWORD : Enter new password:- 
-INPUT_CONFIRM_PASSWORD : Confirm new password 
-PASSWORD_NOT_MATCH : Passwords do not match. Please try again
-DEFAULT_PASSWORD_UPDATED : Default Password updated successfully!! Login with new credentials.
-ENTER_USERNAME : Enter username :- 
-ENTER_PASSWORD : Enter your password :- 
-ATTEMPTS_MESSAGE : Enter your login credentials. You have 3 total attempts
-ATTEMPTS_EXHAUSTED : Login attempts exhausted
-STRONG_PASSWORD : |
-  You must enter a strong password
-  - Must be of minimum 7 characters, atleast one lowercase letter,one uppercase letter, one number, one special character
-LOGIN_AGAIN : Do you want to login again ? :- Y/N:- 
-WAIT_FOR_LOGIN : Your attempts are exhausted you will have to wait for some time
-
-#admin
-WELCOME_ADMIN: ----Welcome admin----
-DEACTIVATED_VENDOR : Deactivated vendor successfully
-USERNAME_EXISTS : Username already exists. Try another one
-USER_ADDED_SUCCESS : User added successfully to database
-USER_DELETED_SUCCESS : User deleted successfully from database
-VENDOR_NOT_EXIST_TO_DELETE : Vendor do not exist to delete
-
-#employee
-WELCOME_EMPLOYEE : ----Welcome Employee----
-ISSUE_RAISED : Issue raised for maintenance successfully
-
-#manager
-WELCOME_MANAGER : ----Welcome Asset Manager----
-INPUT_VENDOR_EMAIL : Enter email of vendor:- 
-INPUT_VENDOR_NAME : Enter name of vendor:- 
-VENDOR_ADDED : Vendor added successfully
-INPUT_PURCHASED_DATE : Enter purchased date in YYYY-mm-dd:- 
-ASSET_ADDED_SUCCESS : Asset succesfully added
-ASSET_ASSIGN_SUCCESS : Asset assigned to user successfully
-ASSET_UNASSIGN_SUCCESS : Asset unassigned successfully
-SEND_FOR_MAINTENANCE : Asset send for maintenance
-RECIEVE_FROM_MAINTENANCE : Asset recieved from maintenance
-
-#exception message
-DB_ERROR_MESSAGE : Standby--We will get back to you soon, something unexpected occured at the backend side
-DB_INTEGRITY_ERROR : Data entered already exists in database, Enter unique data.
-DB_GENERAL_ERROR : Something bad occured at backend. Please wait while we resolve the issue
-INVALID_INPUT_ERROR : Bad input entered.
-GENERAL_EXCEPTION_MSG : We are facing some issue in the code. Wait while we resolve it
+USERNAME_EXISTS: Username already exists
+SERVER_ERROR: Server not responding. Try again after some time
+VENDOR_NOT_EXISTS: Vendor not exists to deactivate
+USER_NOT_EXISTS: User not exists in database
+INVALID_CREDENTIALS_ENTERED: Invalid credentials entered
+PASSWORDS_NOT_MATCH: New password and old password do not match
+ASSETS_NOT_EXISTS: No assets available in inventory
+CATEGORY_NOT_EXISTS: Category not exists in database
+ASSET_ID_NOT_EXISTS: Asset id not exists
+VENDOR_ALREADY_EXISTS: Vendor already exists in database
+CATEGORY_ALREADY_EXISTS: Category already exists in database
+ISSUE_ALREADY_EXISTS: Issue already exists
+ISSUE_NOT_EXISTS: No issues available
+ASSET_CREATED: Asset created in inventory successfully
+ASSET_ASSIGNED: Asset assigned to user successfully
+ASSET_UNASSIGNED: Asset unassigned from user successfully
+USER_LOGGED_IN : User logged in successfully
+CATEGORY_CREATED : Category created successfully
+ISSUE_CREATED : Issue created successfully
+USER_CREATED : User created successfully
+PASSWORD_UPDATED : Password updated successfully
+VENDOR_CREATED : Vendor created successfully
+VENDOR_DEACTIVATED : Vendor deactivated successfully
 ...

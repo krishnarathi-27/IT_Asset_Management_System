@@ -1,4 +1,6 @@
 from flask import jsonify
+from config.app_config import AppConfig
+from database.database import db as db_object
 from flask_jwt_extended import get_jwt_identity
 from src.handlers.user_handler import UserHandler
 from utils.exceptions import MyBaseException
@@ -6,7 +8,7 @@ from utils.exceptions import MyBaseException
 class ViewUserController:
 
     def __init__(self):
-        self.obj_user_handler = UserHandler()
+        self.obj_user_handler = UserHandler(db_object)
 
     def view_all_user(self):
         try:
@@ -15,8 +17,8 @@ class ViewUserController:
 
         except MyBaseException as error:
             error_response = jsonify({
-                "message": error.error_message,
-                "description": error.error_description
+                AppConfig.MESSAGE : error.error_message,
+                AppConfig.DESCRIPTION : error.error_description
             })
 
             return error_response, error.error_code
@@ -31,8 +33,8 @@ class ViewUserController:
 
         except MyBaseException as error:
             error_response = jsonify({
-                "message": error.error_message,
-                "description": error.error_description
+                AppConfig.MESSAGE : error.error_message,
+                AppConfig.DESCRIPTION : error.error_description
             })
 
             return error_response, error.error_code

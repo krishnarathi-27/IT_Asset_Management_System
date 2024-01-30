@@ -1,6 +1,9 @@
 from flask import jsonify
 from flask_jwt_extended import get_jwt_identity
 
+from config.app_config import AppConfig
+from config.prompts.prompts import PromptConfig
+from database.database import db as db_object
 from src.utils.secure_password import HashPassword
 from src.handlers.user_handler import UserHandler
 from utils.exceptions import MyBaseException
@@ -8,14 +11,14 @@ from utils.exceptions import MyBaseException
 class UpdateUserController:
 
     def __init__(self):
-        self.obj_user_handler = UserHandler()
+        self.obj_user_handler = UserHandler(db_object)
 
     def update_password(self, user_data):
 
         try:
-            old_password = user_data['old_password']
-            new_password = user_data['new_password']
-            confirm_password = user_data['confirm_password']
+            old_password = user_data[AppConfig.OLD_PASSWORD]
+            new_password = user_data[AppConfig.NEW_PASSWORD]
+            confirm_password = user_data[AppConfig.CONFIRM_PASSWORD]
 
             user_id = get_jwt_identity()
 
@@ -24,14 +27,14 @@ class UpdateUserController:
             self.obj_user_handler.change_password(user_id,old_password,new_password,confirm_password, obj_secure_password)
 
             response = {
-                "message": "Password updated successfully"
+                AppConfig.MESSAGE : PromptConfig.PASSWORD_UPDATED
             }
             return response
 
         except MyBaseException as error:
             error_response = jsonify({
-                "message": error.error_message,
-                "description": error.error_description
+                AppConfig.MESSAGE : error.error_message,
+                AppConfig.DESCRIPTION : error.error_description
             })
 
             return error_response, error.error_code

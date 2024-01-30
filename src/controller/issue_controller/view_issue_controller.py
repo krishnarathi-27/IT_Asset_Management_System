@@ -1,5 +1,8 @@
 from flask import jsonify
-from flask_jwt_extended import get_jwt_identity
+
+from config.app_config import AppConfig
+from config.prompts.prompts import PromptConfig
+from database.database import db as db_object
 from src.handlers.issue_handler import IssueHandler
 from utils.exceptions import MyBaseException
 
@@ -15,8 +18,8 @@ class ViewIssueController:
 
         except MyBaseException as error:
             error_response = jsonify({
-                "message": error.error_message,
-                "description": error.error_description
+                AppConfig.MESSAGE : error.error_message,
+                AppConfig.DESCRIPTION : error.error_description
             })
 
             return error_response, error.error_code
@@ -29,8 +32,8 @@ class ViewIssueController:
 
         except MyBaseException as error:
             error_response = jsonify({
-                "message": error.error_message,
-                "description": error.error_description
+                AppConfig.MESSAGE : error.error_message,
+                AppConfig.DESCRIPTION : error.error_description
             })
 
             return error_response, error.error_code

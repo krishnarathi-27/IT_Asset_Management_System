@@ -6,7 +6,6 @@ from datetime import timedelta
 
 from config.app_config import AppConfig
 from config.prompts.prompts import PromptConfig
-from config.log_prompts.logs_config import LogsConfig
 from database.database import db
 
 from routes.auth_routes import blp as AuthRoutes
@@ -27,7 +26,6 @@ logger = logging.getLogger("main")
 def create_app():
 
     PromptConfig.load()
-    LogsConfig.load()
 
     db.create_all_table()
 
