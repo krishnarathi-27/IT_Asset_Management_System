@@ -1,5 +1,35 @@
 # IT ASSET MANAGEMENT SYSTEM
 
+## Introduction 
+```bash 
+    This application is designed to manage IT assets in an organisations. It provides functionality for Admins, Asset Manager and Employee. Details about assets such as category and vendor of asset is managed by keeping track of the inventory of all assets available in the organisations along with which assets are assigned to which employee.
+```
+
+## Project Installation & Getting Started
+
+```bash
+1. Clone this repository
+    https://github.com/krishnarathi-27/IT_Asset_Management_System.git
+
+2. Install project dependencies using
+    python -m pipenv install
+
+3. Make .env file in the project root directory along with following :
+    ADMIN_MAPPING=
+    MANAGER_MAPPING=
+    EMPLOYEE_MAPPING=
+    MYSQL_USER=
+    MYSQL_PASSWORD=
+    MYSQL_HOST=
+    MYSQL_DB=
+    JWT_SECRET_KEY=
+
+4. Run Application using the following command
+    cd .\src\
+    python -m flask run
+
+```
+
 ##  Project Structure
 
 ```bash
