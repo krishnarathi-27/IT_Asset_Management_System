@@ -1,39 +1,43 @@
-from flask import jsonify
+import logging
 
-from config.app_config import AppConfig
+from config.app_config import StatusCodes
 from config.prompts.prompts import PromptConfig
 from database.database import db as db_object
 from src.handlers.category_handler import CategoryHandler
 from utils.exceptions import MyBaseException
+from utils.response import SuccessResponse, ErrorResponse
+
+logger = logging.getLogger('create_category_controller')
 
 class CreateCategoryController:
+    """Controller for creating category"""
 
-    def __init__(self):
-        self.obj_category_handler = CategoryHandler()
+    def __init__(self) -> None:
+        self.obj_category_handler = CategoryHandler(db_object)
 
-    def create_new_category(self, request_data):
+    def create_new_category(self, request_data: dict) -> dict:
+        """Method to create new category if vendor exists and if same category already not exists"""
+        logger.info('Controller for creating new category')
 
         try:
-            category_name = request_data[AppConfig.CATEGORY_NAME]
-            brand_name = request_data[AppConfig.BRAND_NAME]
-            vendor_email = request_data[AppConfig.VENDOR_EMAIL]
+            category_name = request_data['category_name']
+            brand_name = request_data['brand_name']
+            vendor_email = request_data['vendor_email']
 
             category_id = self.obj_category_handler.create_category(category_name, brand_name, vendor_email)
 
             if category_id:
-                response = jsonify({
-                    AppConfig.CATEGORY_ID : category_id,
-                    AppConfig.CATEGORY_NAME : category_name,
-                    AppConfig.BRAND_NAME : brand_name,
-                    AppConfig.VENDOR_EMAIL : vendor_email,
-                    AppConfig.MESSAGE : PromptConfig.CATEGORY_CREATED
-                })
-                return response
+                response = {
+                    "category_id": category_id,
+                    "category_name": category_name,
+                    "brand_name": brand_name,
+                    "vendor_email": vendor_email,
+                    "message" : PromptConfig.CATEGORY_CREATED
+                }
+                return SuccessResponse.success_message(StatusCodes.CREATED, 
+                                                       PromptConfig.CATEGORY_CREATED,
+                                                       response), StatusCodes.CREATED
         
         except MyBaseException as error:
-            error_response = jsonify({
-                AppConfig.MESSAGE: error.error_message,
-                AppConfig.DESCRIPTION : error.error_description
-            })
-
-            return error_response, error.error_code
+            logger.error(f'Error handled by custom error handler {error.error_message}')
+            return ErrorResponse.error_message(error), error.error_code

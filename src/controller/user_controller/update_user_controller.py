@@ -1,24 +1,30 @@
-from flask import jsonify
+import logging
 from flask_jwt_extended import get_jwt_identity
 
-from config.app_config import AppConfig
+from config.app_config import StatusCodes
 from config.prompts.prompts import PromptConfig
 from database.database import db as db_object
 from src.utils.secure_password import HashPassword
 from src.handlers.user_handler import UserHandler
+from utils.response import SuccessResponse, ErrorResponse
 from utils.exceptions import MyBaseException
 
-class UpdateUserController:
+logger = logging.getLogger('update_user_controller')
 
-    def __init__(self):
+class UpdateUserController:
+    """Controller to update user details"""
+
+    def __init__(self) -> None:
         self.obj_user_handler = UserHandler(db_object)
 
-    def update_password(self, user_data):
+    def update_password(self, user_data: dict) -> dict:
+        """Method to update password of user"""
+        logger.info("Method to update user password")
 
         try:
-            old_password = user_data[AppConfig.OLD_PASSWORD]
-            new_password = user_data[AppConfig.NEW_PASSWORD]
-            confirm_password = user_data[AppConfig.CONFIRM_PASSWORD]
+            old_password = user_data['old_password']
+            new_password = user_data['new_password']
+            confirm_password = user_data['confirm_password']
 
             user_id = get_jwt_identity()
 
@@ -27,15 +33,15 @@ class UpdateUserController:
             self.obj_user_handler.change_password(user_id,old_password,new_password,confirm_password, obj_secure_password)
 
             response = {
-                AppConfig.MESSAGE : PromptConfig.PASSWORD_UPDATED
+                "access_token" : access_token,
+                "message": PromptConfig.PASSWORD_UPDATED
             }
-            return response
+            logger.info("Password of user updated successfully")
+            return SuccessResponse.success_message(StatusCodes.OK, 
+                                                   PromptConfig.PASSWORD_UPDATED, 
+                                                   response), StatusCodes.OK
 
         except MyBaseException as error:
-            error_response = jsonify({
-                AppConfig.MESSAGE : error.error_message,
-                AppConfig.DESCRIPTION : error.error_description
-            })
-
-            return error_response, error.error_code
+            logger.error(f'Error handled by custom error handler {error.error_message}')
+            return ErrorResponse.error_message(error), error.error_code
             

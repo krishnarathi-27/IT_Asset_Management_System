@@ -35,4 +35,13 @@ USER_CREATED : User created successfully
 PASSWORD_UPDATED : Password updated successfully
 VENDOR_CREATED : Vendor created successfully
 VENDOR_DEACTIVATED : Vendor deactivated successfully
+
+SUCCESS_REPONSE : Request is successfull
+USER_DATA_FETCHED : User details fetched
+CATEGORY_DATA_FETCHED : Category details fetched
+ISSUE_DATA_FETCHED : Issue details fetched
+ISSUE_USER_DATA_FETCHED : Issue details of any user fetched
+ASSET_DATA_FETCHED : Assets in inventory fetched
+VENDOR_DATA_FETCHED : Vendor details fetched
+
 ...

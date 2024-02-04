@@ -57,3 +57,14 @@ class AppConfig:
     NEW_PASSWORD = 'new_password'
     CONFIRM_PASSWORD = 'confirm_password'
     VENDOR_NAME = 'vendor_name'
+
+class StatusCodes:
+    OK = 200
+    CREATED = 201
+    BAD_REQUEST = 400
+    UNAUTHORIZED = 401
+    FORBIDDEN = 403
+    NOT_FOUND = 404
+    CONFLICT = 409
+    UNPROCESSABLE_ENTITY = 422
+    INTERNAL_SERVER_ERROR = 500

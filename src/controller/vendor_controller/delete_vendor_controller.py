@@ -1,30 +1,38 @@
-from flask import jsonify
+import logging
 
-from config.app_config import AppConfig
+from config.app_config import StatusCodes
 from config.prompts.prompts import PromptConfig
 from database.database import db as db_object
 from handlers.vendor_handler import VendorHandler
 from utils.exceptions import MyBaseException
+from utils.response import ErrorResponse, SuccessResponse
+
+logger = logging.getLogger('delete_vendor_controller')
 
 class DeleteVendorController:
+    """Controller to deactivate vendor status"""
 
-    def __init__(self):
+    def __init__(self) -> None:
         self.obj_vendor_handler = VendorHandler(db_object)
 
-    def delete_vendor(self,vendor_id):
+    def delete_vendor(self,vendor_id: str) -> dict:
+        """Method to deactivate vendor from database"""
+        logger.info("Deactivating vendor from database")
+
         try:
             self.obj_vendor_handler.deactivate_vendor(vendor_id)
 
-            response = jsonify({
-                AppConfig.MESSAGE : PromptConfig.VENDOR_DEACTIVATED
-            })
+            response = {
+                'vendor_id' : vendor_id,
+                'message' : PromptConfig.VENDOR_DEACTIVATED
+            }
 
-            return response
+            logger.info(f'Vendor {vendor_id} deactiavted successfully')
+            return SuccessResponse.success_message(StatusCodes.OK, 
+                                                       PromptConfig.VENDOR_DEACTIVATED,
+                                                       response), StatusCodes.OK
 
         except MyBaseException as error:
-            error_response = jsonify({
-                AppConfig.MESSAGE : error.error_message,
-                AppConfig.DESCRIPTION : error.error_description
-            })
-
-            return error_response, error.error_code
+            logger.error(f'Error handled by custom error handler {error.error_message}')
+            return ErrorResponse.error_message(error), error.error_code
+        

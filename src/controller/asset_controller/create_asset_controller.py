@@ -1,38 +1,43 @@
-from flask import jsonify
+import logging
 
-from config.app_config import AppConfig
+from config.app_config import StatusCodes
 from config.prompts.prompts import PromptConfig
 from database.database import db as db_object
 from handlers.asset_handler import AssetHandler
 from utils.exceptions import MyBaseException
+from utils.response import SuccessResponse, ErrorResponse
+
+logger = logging.getLogger('create_asset_controller')
 
 class CreateAssetController:
+    """Controller to add new asset in inventory"""
 
-    def __init__(self):
+    def __init__(self) -> None:
         self.obj_asset_handler = AssetHandler(db_object)
 
-    def create_asset(self, request_data):
+    def create_asset(self, request_data: dict) -> dict:
+        """Function to add new asset in inventory"""
+        logging.info('Function to add asset in inventory')
 
         try:
-            category_name = request_data[AppConfig.CATEGORY_NAME]
-            brand_name = request_data[AppConfig.BRAND_NAME]
-            vendor_email = request_data[AppConfig.VENDOR_EMAIL]
-            asset_type = request_data[AppConfig.ASSET_TYPE]
+            category_name = request_data['category_name']
+            brand_name = request_data['brand_name']
+            vendor_email = request_data['vendor_email']
+            asset_type = request_data['asset_type']
 
-            self.obj_asset_handler.create_asset(category_name, vendor_email, brand_name, asset_type)
+            asset_id = self.obj_asset_handler.create_asset(category_name, vendor_email, brand_name, asset_type)
 
-            response = jsonify({
-                AppConfig.CATEGORY_NAME : request_data[AppConfig.CATEGORY_NAME],
-                AppConfig.VENDOR_EMAIL: request_data[AppConfig.VENDOR_EMAIL],
-                AppConfig.MESSAGE: PromptConfig.ASSET_CREATED
-            })
-            return response
+            response = {
+                'asset_id': asset_id,
+                'category_name' : request_data['category_name'],
+                'vendor_email': request_data['vendor_email'],
+                'message': PromptConfig.ASSET_CREATED
+            }
+            return SuccessResponse.success_message(StatusCodes.CREATED, 
+                                                       PromptConfig.ASSET_CREATED,
+                                                       response), StatusCodes.CREATED
         
         except MyBaseException as error:
-            error_response = jsonify({
-                AppConfig.MESSAGE: error.error_message,
-                AppConfig.DESCRIPTION: error.error_description
-            })
-
-            return error_response, error.error_code
+            logger.error(f'Error handled by custom error handler {error.error_message}')
+            return ErrorResponse.error_message(error), error.error_code
             

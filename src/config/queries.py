@@ -3,95 +3,6 @@ from config.prompts.prompts import PromptConfig
 
 PromptConfig.load()
 
-
-class Header:
-    """Header class is used to load headers of tables displayed"""
-
-    SCHEMA_USER_TABLE = (
-        PromptConfig.HEADER_USERID,
-        PromptConfig.HEADER_USERNAME,
-        PromptConfig.HEADER_ROLE,
-    )
-
-    SCHEMA_VENDOR_TABLE = (
-        PromptConfig.HEADER_VENDOR_ID,
-        PromptConfig.HEADER_VENDOR_NAME,
-        PromptConfig.HEADER_VENDOR_EMAIL,
-        PromptConfig.HEADER_ACTIVE_STATUS,
-    )
-
-    SCHEMA_ASSET_TABLE = (
-        PromptConfig.HEADER_ASSET_ID,
-        PromptConfig.HEADER_ASSET_TYPE,
-        PromptConfig.HEADER_ASSIGNED_TO,
-        PromptConfig.HEADER_ASSET_STATUS,
-        PromptConfig.HEADER_MAPPING_ID,
-    )
-
-    SCHEMA_CATEGORY_DETAILS_TABLE = (
-        PromptConfig.HEADER_CATEGORY_ID,
-        PromptConfig.HEADER_CATEGORY_NAME,
-        PromptConfig.HEADER_BRAND_NAME,
-    )
-
-    SCHEMA_ASSETS_BY_USER_ID = (
-        PromptConfig.HEADER_USERID,
-        PromptConfig.HEADER_USERNAME,
-        PromptConfig.HEADER_ASSET_ID,
-    )
-
-    SCHEMA_ASSETS_BY_CATEGORY_ID = (
-        PromptConfig.HEADER_CATEGORY_ID,
-        PromptConfig.HEADER_CATEGORY_NAME,
-        PromptConfig.HEADER_BRAND_NAME,
-        PromptConfig.HEADER_ASSET_ID,
-    )
-
-    SCHEMA_ASSETS_BY_VENDOR_EMAIL = (
-        PromptConfig.HEADER_ASSET_ID,
-        PromptConfig.HEADER_ASSIGNED_TO,
-        PromptConfig.HEADER_VENDOR_ID,
-        PromptConfig.HEADER_VENDOR_NAME,
-        PromptConfig.HEADER_VENDOR_EMAIL,
-    )
-
-    SCHEMA_ASSETS_TO_USER = (
-        PromptConfig.HEADER_ASSET_ID,
-        PromptConfig.HEADER_ASSIGNED_TO,
-    )
-
-    SCHEMA_PENDING_ISSUES = (
-        PromptConfig.HEADER_ISSUE_ID,
-        PromptConfig.HEADER_USERID,
-        PromptConfig.HEADER_ASSET_ID,
-    )
-
-    SCHEMA_ASSIGNABLE_ASSET_DETAILS = (
-        PromptConfig.HEADER_ASSET_ID,
-        PromptConfig.HEADER_CATEGORY_ID,
-        PromptConfig.HEADER_CATEGORY_NAME,
-        PromptConfig.HEADER_BRAND_NAME,
-    )
-
-    SCHEMA_CATEGORY_TABLE = (
-        PromptConfig.HEADER_CATEGORY_ID,
-        PromptConfig.HEADER_CATEGORY_NAME,
-        PromptConfig.HEADER_BRAND_NAME,
-        PromptConfig.HEADER_VENDOR_ID,
-        PromptConfig.HEADER_VENDOR_NAME,
-        PromptConfig.HEADER_ACTIVE_STATUS,
-    )
-
-    SCHEMA_MAPPING_CATGEORY_VENDOR_TABLE = (
-        PromptConfig.HEADER_MAPPING_ID,
-        PromptConfig.HEADER_CATEGORY_ID,
-        PromptConfig.HEADER_CATEGORY_NAME,
-        PromptConfig.HEADER_BRAND_NAME,
-        PromptConfig.HEADER_VENDOR_ID,
-        PromptConfig.HEADER_VENDOR_EMAIL,
-    )
-
-
 class Queries:
     """Queries class is used to load queries"""
 
@@ -166,7 +77,7 @@ class Queries:
     """
     UPDATE_ASSET_STATUS = """
         UPDATE asset_table 
-        SET assigned_to = %s , asset_status = %s  
+        SET mapping_id = %s, assigned_to = %s , asset_status = %s, asset_type = %s
         WHERE asset_id = %s     
     """
     UPDATE_ISSUE_STATUS_UNDER_MAINTENANCE = """
@@ -298,7 +209,7 @@ class Queries:
         WHERE category_id = %s     
     """
     FETCH_IF_ASSET_EXISTS = """
-        SELECT asset_id 
+        SELECT mapping_id 
         FROM asset_table 
         WHERE asset_id = %s AND asset_type = "assignable"    
     """

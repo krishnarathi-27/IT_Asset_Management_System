@@ -1,62 +1,67 @@
-from flask import jsonify
+import logging
 
-from config.app_config import AppConfig
+from config.app_config import StatusCodes
 from config.prompts.prompts import PromptConfig
 from database.database import db as db_object
 from handlers.asset_handler import AssetHandler
 from utils.exceptions import MyBaseException
+from utils.response import SuccessResponse, ErrorResponse
+
+logger = logging.getLogger('update_asset_controller')
 
 class UpdateAssetController:
+    """Controller to update assets status"""
 
-    def __init__(self):
+    def __init__(self) -> None:
         self.obj_asset_handler = AssetHandler(db_object)
 
-    def assign_asset(self, request_data, asset_id):
+    def assign_asset(self, request_data: dict, asset_id: str) -> dict:
+        """Function to assign asset to user"""
+        logger.info("Assigning assets to user")
 
         try:
-            mapping_id  = request_data[AppConfig.MAPPING_ID]
-            asset_type= request_data[AppConfig.ASSET_TYPE]
-            assigned_to= request_data[AppConfig.ASSIGNED_TO]
-            asset_status= request_data[AppConfig.ASSET_STATUS]
+            mapping_id  = request_data['mapping_id']
+            asset_type= request_data['asset_type']
+            assigned_to= request_data['assigned_to']
+            asset_status= request_data['asset_status']
             
             self.obj_asset_handler.assign_asset(asset_id, assigned_to)
 
-            response = jsonify({
-                AppConfig.ASSET_ID : asset_id,
-                AppConfig.USER_ID : request_data[AppConfig.ASSIGNED_TO],
-                AppConfig.MESSAGE : PromptConfig.ASSET_ASSIGNED
-            })
-            return response
+            response = {
+                'asset_id' : asset_id,
+                'user_id' : request_data['assigned_to'],
+                'message' : PromptConfig.ASSET_ASSIGNED
+            }
+            logger.info(f'Assets assigned to user {assigned_to}')
+            return SuccessResponse.success_message(StatusCodes.OK, 
+                                                       PromptConfig.ASSET_ASSIGNED,
+                                                       response), StatusCodes.OK
         
         except MyBaseException as error:
-            error_response = jsonify({
-                AppConfig.MESSAGE : error.error_message,
-                AppConfig.DESCRIPTION : error.error_description
-            })
-
-            return error_response, error.error_code
+            logger.error(f'Error handled by custom error handler {error.error_message}')
+            return ErrorResponse.error_message(error), error.error_code
         
-    def unassign_asset(self, request_data, asset_id):
+    def unassign_asset(self, request_data: dict, asset_id: str) -> dict:
+        """Function to unassign assigned asset from user"""
+        logger.info('Asset unassigned successfully')
 
         try:
-            mapping_id  = request_data[AppConfig.MAPPING_ID]
-            asset_type= request_data[AppConfig.ASSET_TYPE]
-            assigned_to= request_data[AppConfig.ASSIGNED_TO]
-            asset_status= request_data[AppConfig.ASSET_STATUS]
+            mapping_id  = request_data['mapping_id']
+            asset_type= request_data['asset_type']
+            assigned_to= request_data['assigned_to']
+            asset_status= request_data['asset_status']
 
             self.obj_asset_handler.unassign_asset(asset_id)
 
-            response = jsonify({
-                AppConfig.ASSET_ID : asset_id,
-                AppConfig.MESSAGE : PromptConfig.ASSET_UNASSIGNED
-            })
-            return response
+            response = {
+                'asset_id' : asset_id,
+                'message' : PromptConfig.ASSET_UNASSIGNED
+            }
+            return SuccessResponse.success_message(StatusCodes.OK, 
+                                                       PromptConfig.ASSET_UNASSIGNED,
+                                                       response), StatusCodes.OK
         
         except MyBaseException as error:
-            error_response = jsonify({
-                AppConfig.MESSAGE : error.error_message,
-                AppConfig.DESCRIPTION : error.error_description
-            })
-
-            return error_response, error.error_code
+            logger.error(f'Error handled by custom error handler {error.error_message}')
+            return ErrorResponse.error_message(error), error.error_code
         

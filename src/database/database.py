@@ -11,7 +11,6 @@ from typing import Union
 # local imports
 from config.app_config import AppConfig
 from config.queries import Queries
-from config.log_prompts.logs_config import LogsConfig
 from config.prompts.prompts import PromptConfig
 
 dotenv_path = Path('.env')

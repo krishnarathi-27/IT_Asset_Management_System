@@ -51,6 +51,13 @@ class PromptConfig:
     PASSWORD_UPDATED = None
     VENDOR_CREATED = None
     VENDOR_DEACTIVATED = None
+    SUCCESS_REPONSE = None
+    USER_DATA_FETCHED = None
+    CATEGORY_DATA_FETCHED = None
+    ISSUE_DATA_FETCHED = None
+    ISSUE_USER_DATA_FETCHED = None
+    ASSET_DATA_FETCHED = None
+    VENDOR_DATA_FETCHED = None
 
     @classmethod
     def load(cls) -> None:
@@ -98,3 +105,11 @@ class PromptConfig:
             cls.PASSWORD_UPDATED = data['PASSWORD_UPDATED']
             cls.VENDOR_CREATED = data['VENDOR_CREATED']
             cls.VENDOR_DEACTIVATED = data['VENDOR_DEACTIVATED']
+            cls.SUCCESS_RESPONSE = data['SUCCESS_REPONSE']
+
+            cls.USER_DATA_FETCHED = data['USER_DATA_FETCHED']
+            cls.CATEGORY_DATA_FETCHED = data['CATEGORY_DATA_FETCHED']
+            cls.ISSUE_DATA_FETCHED = data['ISSUE_DATA_FETCHED']
+            cls.ISSUE_USER_DATA_FETCHED = data['ISSUE_USER_DATA_FETCHED']
+            cls.ASSET_DATA_FETCHED = data['ASSET_DATA_FETCHED']
+            cls.VENDOR_DATA_FETCHED = data['VENDOR_DATA_FETCHED']
