@@ -2,9 +2,9 @@ import logging
 
 from config.app_config import StatusCodes
 from config.prompts.prompts import PromptConfig
-from database.database import db as db_object
+from database.database import Database
 from utils.secure_password import HashPassword
-from handlers.user_handler import UserHandler
+from handlers.user_handler.create_user_handler import CreateUserHandler
 from utils.exceptions import MyBaseException
 from utils.response import SuccessResponse, ErrorResponse
 
@@ -14,7 +14,8 @@ class CreateUserController:
     """Controller to create new user in database"""
 
     def __init__(self) -> None:
-        self.obj_user_handler = UserHandler(db_object)
+        db_object = Database()
+        self.obj_user_handler = CreateUserHandler(db_object)
 
     def create_user(self, user_data: dict) -> dict:
         """Method to create new user"""

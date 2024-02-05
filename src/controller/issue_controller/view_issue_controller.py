@@ -3,8 +3,8 @@ from flask import jsonify
 
 from config.app_config import StatusCodes
 from config.prompts.prompts import PromptConfig
-from database.database import db as db_object
-from handlers.issue_handler import IssueHandler
+from database.database import Database
+from handlers.issue_handler.view_issue_handler import ViewIssueHandler
 from utils.exceptions import MyBaseException
 from utils.response import SuccessResponse, ErrorResponse
 
@@ -14,7 +14,8 @@ class ViewIssueController:
     """Controller to view all the issues"""
 
     def __init__(self) -> None:
-        self.obj_issue_handler = IssueHandler(db_object)
+        db_object = Database()
+        self.obj_issue_handler = ViewIssueHandler(db_object)
 
     def view_all_issue(self) -> dict:
         """Method to view all the issues"""

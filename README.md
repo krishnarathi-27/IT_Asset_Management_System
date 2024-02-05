@@ -37,115 +37,120 @@
 ##  Project Structure
 
 ```bash
-|   .env
-|   .flaskenv
-|   .gitignore
-|   Pipfile
-|   Pipfile.lock
-|   pytest.ini
-|   README.md
-|   tree.txt
+|   app.py
+|   logs.txt
+|   __init__.py
 |   
-+---src
-|   |   app.py
-|   |   logs.txt
++---config
+|   |   app_config.py
+|   |   flask_config.py
+|   |   queries.py
 |   |   __init__.py
 |   |   
-|   +---config
-|   |   |   app_config.py
-|   |   |   queries.py
-|   |   |   __init__.py
-|   |   |   
-|   |   \---prompts
-|   |           prompts.py
-|   |           prompts.yaml
-|   |           __init__.py
-|   |           
-|   +---controller
-|   |   +---asset_controller
-|   |   |       create_asset_controller.py
-|   |   |       update_asset_controller.py
-|   |   |       view_asset_controller.py
-|   |   |       
-|   |   +---auth_controller
-|   |   |       login_controller.py
-|   |   |       logout_controller.py
-|   |   |       
-|   |   +---category_controller
-|   |   |       create_category_controller.py
-|   |   |       view_category_controller.py
-|   |   |       
-|   |   +---issue_controller
-|   |   |       create_issue_controller.py
-|   |   |       update_issue_controller.py
-|   |   |       view_issue_controller.py
-|   |   |       
-|   |   +---user_controller
-|   |   |       create_user_controller.py
-|   |   |       update_user_controller.py
-|   |   |       view_user_controller.py
-|   |   |       
-|   |   \---vendor_controller
-|   |           create_vendor_controller.py
-|   |           delete_vendor_controller.py
-|   |           view_vendor_controller.py
-|   |           
-|   +---database
-|   |       database.py
-|   |       database_context.py
+|   \---prompts
+|           prompts.py
+|           prompts.yaml
+|           __init__.py
+|           
++---controller
+|   |   __init__.py
+|   |   
+|   +---asset_controller
+|   |       create_asset_controller.py
+|   |       update_asset_controller.py
+|   |       view_asset_controller.py
 |   |       __init__.py
 |   |       
-|   +---handlers
-|   |       asset_handler.py
-|   |       auth_handler.py
-|   |       category_handler.py
-|   |       issue_handler.py
-|   |       user_handler.py
-|   |       vendor_handler.py
+|   +---auth_controller
+|   |       login_controller.py
+|   |       logout_controller.py
+|   |       __init__.py
 |   |       
-|   +---routes
-|   |       asset_routes.py
-|   |       auth_routes.py
-|   |       category_routes.py
-|   |       issue_routes.py
-|   |       track_routes.py
-|   |       user_routes.py
-|   |       vendor_routes.py
+|   +---category_controller
+|   |       create_category_controller.py
+|   |       view_category_controller.py
+|   |       __init__.py
 |   |       
-|   +---schemas
-|   |       asset_schema.py
-|   |       issue_schema.py
-|   |       user_schema.py
+|   +---issue_controller
+|   |       create_issue_controller.py
+|   |       update_issue_controller.py
+|   |       view_issue_controller.py
+|   |       __init__.py
 |   |       
-|   \---utils
-|           exceptions.py
-|           mapped_roles.py
-|           rbac.py
-|           secure_password.py
+|   +---user_controller
+|   |       create_user_controller.py
+|   |       update_user_controller.py
+|   |       view_user_controller.py
+|   |       __init__.py
+|   |       
+|   \---vendor_controller
+|           create_vendor_controller.py
+|           delete_vendor_controller.py
+|           view_vendor_controller.py
+|           __init__.py
 |           
-\---tests
-    |   __init__.py
-    |   
-    +---test_controllers
-    |       test_admin_controllers.py
-    |       test_asset_controllers.py
-    |       test_asset_data_controllers.py
-    |       test_auth_controllers.py
-    |       test_employee_controllers.py
-    |       test_manager_controllers.py
-    |       __init__.py
-    |       
-    +---test_utils
-    |       test_app_decorator.py
-    |       test_common_helper.py
-    |       test_validations.py
-    |       __init__.py
-    |       
-    \---test_views
-            test_admin_views.py
-            test_employee_views.py
-            test_maintenance_views.py
-            test_manager_views.py
-            test_track_asset_views.py
++---database
+|       database.py
+|       database_context.py
+|       __init__.py
+|       
++---handlers
+|   |   auth_handler.py
+|   |   __init__.py
+|   |   
+|   +---asset_handler
+|   |       create_asset_handler.py
+|   |       update_asset_handler.py
+|   |       view_asset_handler.py
+|   |       __init__.py
+|   |       
+|   +---category_handler
+|   |       create_category_handler.py
+|   |       view_category_handler.py
+|   |       __init__.py
+|   |       
+|   +---issue_handler
+|   |       create_issue_handler.py
+|   |       update_issue_handler.py
+|   |       view_issue_handler.py
+|   |       __init__.py
+|   |       
+|   +---user_handler
+|   |       create_user_handler.py
+|   |       update_user_handler.py
+|   |       view_user_handler.py
+|   |       __init__.py
+|   |       
+|   \---vendor_handler
+|           create_vendor_handler.py
+|           delete_vendor_handler.py
+|           view_vendor_handler.py
+|           __init__.py
+|           
++---routes
+|       asset_routes.py
+|       auth_routes.py
+|       category_routes.py
+|       issue_routes.py
+|       track_routes.py
+|       user_routes.py
+|       vendor_routes.py
+|       __init__.py
+|       
++---schemas
+|       asset_schema.py
+|       issue_schema.py
+|       user_schema.py
+|       __init__.py
+|       
+\---utils
+        common_helper.py
+        error_handler.py
+        exceptions.py
+        mapped_roles.py
+        rbac.py
+        response.py
+        secure_password.py
+        __init__.py
             
 ```   

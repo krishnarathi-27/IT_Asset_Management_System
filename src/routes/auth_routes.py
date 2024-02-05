@@ -2,7 +2,6 @@ import logging
 from flask.views import MethodView
 from flask_smorest import Blueprint
 
-from database.database import db
 from schemas.user_schema import LoginSchema, LoginSuccessSchema
 from controller.auth_controller.login_controller import LoginController
 

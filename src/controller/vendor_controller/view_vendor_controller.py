@@ -2,8 +2,8 @@ import logging
 
 from config.app_config import StatusCodes
 from config.prompts.prompts import PromptConfig
-from database.database import db as db_object
-from src.handlers.vendor_handler import VendorHandler
+from database.database import Database
+from src.handlers.vendor_handler.view_vendor_handler import ViewVendorHandler
 from utils.exceptions import MyBaseException
 from utils.response import SuccessResponse, ErrorResponse
 
@@ -13,7 +13,8 @@ class ViewVendorController:
     """Controller to view vendor details"""
 
     def __init__(self) -> None:
-        self.obj_vendor_handler = VendorHandler(db_object)
+        db_object = Database()
+        self.obj_vendor_handler = ViewVendorHandler(db_object)
 
     def view_all_vendor(self) -> dict:
         """Method to display all vendors of database"""

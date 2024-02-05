@@ -65,6 +65,16 @@ class Queries:
             FOREIGN KEY(user_id) REFERENCES authentication(user_id) ON DELETE CASCADE ON UPDATE CASCADE
         )    
     """
+
+    CREATE_TOKEN_TABLE = """
+        CREATE TABLE IF NOT EXISTS token_table(
+            user_id VARCHAR(10) ,
+            access_token VARCHAR(100) UNIQUE NOT NULL PRIMARY KEY,
+            refresh_token VARCHAR(100) UNIQUE NOT NULL,
+            token_status VARCHAR(20) DEFAULT "issued",
+            FOREIGN KEY(user_id) REFERENCES authentication(user_id) ON DELETE CASCADE ON UPDATE CASCADE
+        )
+    """
     # UPDATE DATA QUERIES
     UPDATE_VENDOR_ACTIVE_STATUS = """
         UPDATE vendor_table
@@ -80,9 +90,9 @@ class Queries:
         SET mapping_id = %s, assigned_to = %s , asset_status = %s, asset_type = %s
         WHERE asset_id = %s     
     """
-    UPDATE_ISSUE_STATUS_UNDER_MAINTENANCE = """
+    UPDATE_ISSUE_STATUS = """
         UPDATE issue_table
-        SET issue_status = "resolved", issue_resolved_by = %s 
+        SET issue_status = "resolved", user_id = %s, asset_id = %s 
         WHERE issue_id = %s  
     """
     UPDATE_ASSET_STATUS_UNDER_MAINTENANCE = """
@@ -101,9 +111,14 @@ class Queries:
         SET password = %s
         WHERE user_id = %s
     """
+    UPDATE_TOKEN_STATUS = """
+        UPDATE token_table
+        SET token_status = %s
+        WHERE access_token = %s
+    """
     # FETCH DATA
     FETCH_PASSWORD = """
-        SELECT password 
+        SELECT password, role
         FROM authentication
         WHERE user_id = %s
     """
@@ -125,7 +140,7 @@ class Queries:
     """
     FETCH_ASSETS_TABLE = """
         SELECT asset_table.asset_id, asset_table.asset_type, assigned_to, asset_status,
-        asset_category.category_name, vendor_table.vendor_name
+        asset_category.category_name, vendor_table.vendor_email
         FROM asset_table
         INNER JOIN mapping_table ON asset_table.mapping_id = mapping_table.mapping_id
         INNER JOIN asset_category ON mapping_table.category_id = asset_category.category_id
@@ -293,6 +308,11 @@ class Queries:
         issue_id, user_id, asset_id
         ) VALUES (%s, %s, %s)  
     """
+    INSERT_TOKEN_DETAILS = """
+        INSERT INTO token_table(
+        user_id, access_token, refresh_token
+        ) VALUES (%s, %s, %s)  
+    """
     FETCH_ISSUE_TABLE = """
         SELECT * 
         FROM issue_table
@@ -301,4 +321,14 @@ class Queries:
         SELECT * 
         FROM issue_table
         WHERE user_id = %s
+    """
+    FETCH_IF_ISSUE_PENDING = """
+        SELECT issue_status
+        FROM issue_table
+        WHERE issue_id = %s
+    """
+    FETCH_IF_TOKEN_REVOKED = """
+        SELECT token_status
+        FROM token_table
+        WHERE access_token = %s
     """

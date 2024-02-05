@@ -2,8 +2,8 @@ import logging
 
 from config.app_config import StatusCodes
 from config.prompts.prompts import PromptConfig
-from database.database import db as db_object
-from src.handlers.category_handler import CategoryHandler
+from database.database import Database
+from handlers.category_handler.view_category_handler import ViewCategoryHandler
 from utils.exceptions import MyBaseException
 from utils.response import SuccessResponse, ErrorResponse
 
@@ -13,7 +13,8 @@ class ViewCategoryController:
     """Controller to view all the category of assets"""
 
     def __init__(self) -> None:
-        self.obj_category_handler = CategoryHandler(db_object)
+        db_object = Database()
+        self.obj_category_handler = ViewCategoryHandler(db_object)
 
     def view_all_category(self) -> dict:
         """Method to view all categories of assets data"""

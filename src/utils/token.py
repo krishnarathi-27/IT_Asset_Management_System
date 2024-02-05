@@ -1,0 +1,41 @@
+from flask_jwt_extended import get_jti, create_access_token, create_refresh_token
+from config.queries import Queries
+from database.database import Database
+from utils.mapped_roles import MappedRole
+
+class Token:
+
+    def __init__(self):
+        self.db_object = Database()
+
+    def check_token_revoked(self, jwt_payload):
+        jti_access_token = jwt_payload["jti"]
+
+        result = self.db_object.fetch_data(Queries.FETCH_IF_TOKEN_REVOKED,(jti_access_token,))
+        if result[0]['token_status'] == "revoked":
+            return True
+        return False
+
+    def revoke_token(self, jwt_payload):
+        jti_access_token = jwt_payload["jti"]
+
+        self.db_object.save_data(Queries.UPDATE_TOKEN_STATUS,('revoked',jti_access_token,))
+
+    def generate_token(self,role: str,user_id: str,is_changed = None):
+        get_role = MappedRole.get_mapped_role(role)
+
+        if is_changed:
+            password_type = 0
+        else:
+            password_type = 1
+
+        access_token = create_access_token(identity=user_id,additional_claims={'tent': get_role,'house': password_type})
+        jti_access_token = get_jti(access_token)
+        
+        refresh_token = create_refresh_token(identity=user_id,additional_claims={'tent': get_role,'house': password_type})
+        jti_refresh_token = get_jti(refresh_token)
+
+        self.db_object.save_data(Queries.INSERT_TOKEN_DETAILS,(user_id,jti_access_token,jti_refresh_token,))
+
+        return (access_token, refresh_token)
+    

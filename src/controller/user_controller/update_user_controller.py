@@ -3,9 +3,9 @@ from flask_jwt_extended import get_jwt_identity
 
 from config.app_config import StatusCodes
 from config.prompts.prompts import PromptConfig
-from database.database import db as db_object
+from database.database import Database
 from src.utils.secure_password import HashPassword
-from src.handlers.user_handler import UserHandler
+from src.handlers.user_handler.update_user_handler import UpdateUserHandler
 from utils.response import SuccessResponse, ErrorResponse
 from utils.exceptions import MyBaseException
 
@@ -15,7 +15,8 @@ class UpdateUserController:
     """Controller to update user details"""
 
     def __init__(self) -> None:
-        self.obj_user_handler = UserHandler(db_object)
+        db_object = Database()
+        self.obj_user_handler = UpdateUserHandler(db_object)
 
     def update_password(self, user_data: dict) -> dict:
         """Method to update password of user"""
@@ -30,10 +31,13 @@ class UpdateUserController:
 
             obj_secure_password = HashPassword()
 
-            self.obj_user_handler.change_password(user_id,old_password,new_password,confirm_password, obj_secure_password)
+            token = self.obj_user_handler.change_password(
+                                    user_id,old_password,new_password,
+                                    confirm_password, obj_secure_password)
 
             response = {
-                "access_token" : access_token,
+                "access_token" : token[0],
+                "refesh_token" : token[1],
                 "message": PromptConfig.PASSWORD_UPDATED
             }
             logger.info("Password of user updated successfully")

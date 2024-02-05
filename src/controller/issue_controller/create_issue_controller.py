@@ -2,9 +2,9 @@ import logging
 
 from config.app_config import StatusCodes
 from config.prompts.prompts import PromptConfig
-from database.database import db as db_object
+from database.database import Database
 from flask_jwt_extended import get_jwt_identity
-from handlers.issue_handler import IssueHandler
+from handlers.issue_handler.create_issue_handler import CreateIssueHandler
 from utils.exceptions import MyBaseException
 from utils.response import SuccessResponse, ErrorResponse
 
@@ -14,7 +14,8 @@ class CreateIssueController:
     """Controller to create new issue related to asset"""
 
     def __init__(self) -> None:
-        self.obj_issue_handler = IssueHandler(db_object)
+        db_object = Database()
+        self.obj_issue_handler = CreateIssueHandler(db_object)
 
     def create_issue(self, request_data: dict) -> dict:
         """Method to create new issue for asset of an employee"""

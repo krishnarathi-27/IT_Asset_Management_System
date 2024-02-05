@@ -2,8 +2,8 @@ import logging
 
 from config.app_config import StatusCodes
 from config.prompts.prompts import PromptConfig
-from database.database import db as db_object
-from handlers.vendor_handler import VendorHandler
+from database.database import Database
+from handlers.vendor_handler.delete_vendor_handler import DeleteVendorHandler
 from utils.exceptions import MyBaseException
 from utils.response import ErrorResponse, SuccessResponse
 
@@ -13,7 +13,8 @@ class DeleteVendorController:
     """Controller to deactivate vendor status"""
 
     def __init__(self) -> None:
-        self.obj_vendor_handler = VendorHandler(db_object)
+        db_object = Database()
+        self.obj_vendor_handler = DeleteVendorHandler(db_object)
 
     def delete_vendor(self,vendor_id: str) -> dict:
         """Method to deactivate vendor from database"""

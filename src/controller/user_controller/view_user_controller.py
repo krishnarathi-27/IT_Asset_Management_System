@@ -2,9 +2,9 @@ import logging
 
 from config.app_config import StatusCodes
 from config.prompts.prompts import PromptConfig
-from database.database import db as db_object
+from database.database import Database
 from flask_jwt_extended import get_jwt_identity
-from src.handlers.user_handler import UserHandler
+from src.handlers.user_handler.view_user_handler import ViewUserHandler
 from utils.response import SuccessResponse, ErrorResponse
 from utils.exceptions import MyBaseException
 
@@ -14,7 +14,8 @@ class ViewUserController:
     """Controller to view all user details or view user profile"""
 
     def __init__(self) -> None:
-        self.obj_user_handler = UserHandler(db_object)
+        db_object = Database()
+        self.obj_user_handler = ViewUserHandler(db_object)
 
     def view_all_user(self) -> None:
         """Method to view all user details"""

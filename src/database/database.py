@@ -1,17 +1,12 @@
 """This Module provides all methods related for database operations"""
 import os
-import mysql.connector
 import logging
-
 from pathlib import Path
 from dotenv import load_dotenv
 
-from typing import Union
-
 # local imports
-from config.app_config import AppConfig
 from config.queries import Queries
-from config.prompts.prompts import PromptConfig
+from database.database_context import DatabaseContext
 
 dotenv_path = Path('.env')
 load_dotenv(dotenv_path=dotenv_path)
@@ -24,84 +19,44 @@ MYSQL_HOST = os.getenv('MYSQL_HOST')
 MYSQL_DB = os.getenv('MYSQL_DB')
 
 class Database:
-    """
-    This class contains method to perform all database related operations
-    ...
-    Methods
-    -------
-    init() : To create connection and cursor
-    create_all_tables() : To create all the table
-    save_data() : To save data in database
-    fetch_data() : TO fetch data from database
-    """
-    connection = None
-    cursor = None
-
-    def __init__(self) -> None:
-        """
-        This method creates sqlite connection and cursor
-        Parameters = self
-        Return Type = None
-        """
-        if Database.connection is None:
-            try:
-                Database.connection = mysql.connector.connect(
-                    user = MYSQL_USER,
-                    password=MYSQL_PASSWORD,
-                    host=MYSQL_HOST
-
-                    )
-                Database.cursor = Database.connection.cursor(dictionary=True)
-                Database.cursor.execute(Queries.CREATE_DATABASE.format(MYSQL_DB))
-                Database.cursor.execute(Queries.USE_DATABASE.format(MYSQL_DB))
-            except Exception as error:
-                logger.exception(error)
-                raise mysql.connector.Error from error
-            else:
-                logger.debug("Connection established")
-
-        self.connection = Database.connection
-        self.cursor = Database.cursor
-        
-
+    
     def create_all_table(self) -> None:
-        """
-        This method creates all tables of not exists
-        Parameters = self
-        Return Type = None
-        """
-        self.cursor.execute(Queries.CREATE_AUTHENTICATION_TABLE)
-        self.cursor.execute(Queries.CREATE_ASSET_CATEGORY_TABLE)
-        self.cursor.execute(Queries.CREATE_VENDOR_TABLE)
-        self.cursor.execute(Queries.CREATE_MAPPING_TABLE)
-        self.cursor.execute(Queries.CREATE_ASSET_TABLE)
-        self.cursor.execute(Queries.CREATE_ISSUE_TABLE)
+        '''creates table in database if not exists'''
 
-    def save_data(self, query: Union[str, list], data: Union[tuple, list]) -> None:
-        """
-        This saves data in the database
-        Parameters = query that can we either string or list, tuple
-        Return Type = None
-        """
-        if isinstance(query, str):
-            self.cursor.execute(query, data)
-        else:
-            for i in range(0, len(query)):
-                self.cursor.execute(query[i], data[i])
-        self.connection.commit()
+        with DatabaseContext() as connection:
+            cursor = connection.cursor()
+            cursor.execute(Queries.CREATE_AUTHENTICATION_TABLE)
+            cursor.execute(Queries.CREATE_ASSET_CATEGORY_TABLE)
+            cursor.execute(Queries.CREATE_VENDOR_TABLE)
+            cursor.execute(Queries.CREATE_MAPPING_TABLE)
+            cursor.execute(Queries.CREATE_ASSET_TABLE)
+            cursor.execute(Queries.CREATE_ISSUE_TABLE)
+            cursor.execute(Queries.CREATE_TOKEN_TABLE)
 
-    def fetch_data(self, query: str, tup: tuple = None) -> list:
-        """
-        This fetches data in the database
-        Parameters = query, tuple
-        Return Type = List
-        """
-        if not tup:
-            self.cursor.execute(query)
-        else:
-            self.cursor.execute(query, tup)
-        data = self.cursor.fetchall()
-        return data
+    def save_data(self, query: str, data: tuple = None) -> bool:
+        '''saves data in database'''
 
+        with DatabaseContext() as connection:
+            cursor = connection.cursor(dictionary=True)
+            if not data:
+                cursor.execute(query)
+            else:
+                cursor.execute(query, data)
+            # cursor.execute('SELECT ROW_COUNT()')
 
-db = Database()
+            # rows_affected = cursor.fetchone()['ROW_COUNT()']
+            # if rows_affected:
+            #     return True
+            # return False
+
+    def fetch_data(self, query: str, data: tuple = None) -> list[dict]:
+        '''reads data from database.'''
+
+        with DatabaseContext() as connection:
+            cursor = connection.cursor(dictionary=True)
+            if not data:
+                cursor.execute(query)
+            else:
+                cursor.execute(query, data)
+
+            return cursor.fetchall()

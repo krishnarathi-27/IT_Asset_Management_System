@@ -58,6 +58,9 @@ class PromptConfig:
     ISSUE_USER_DATA_FETCHED = None
     ASSET_DATA_FETCHED = None
     VENDOR_DATA_FETCHED = None
+    ISSUE_ALREADY_RESOLVED = None
+    CUSTOM_ERROR_MSG = None
+    ISSUE_RESOLVED = None
 
     @classmethod
     def load(cls) -> None:
@@ -113,3 +116,6 @@ class PromptConfig:
             cls.ISSUE_USER_DATA_FETCHED = data['ISSUE_USER_DATA_FETCHED']
             cls.ASSET_DATA_FETCHED = data['ASSET_DATA_FETCHED']
             cls.VENDOR_DATA_FETCHED = data['VENDOR_DATA_FETCHED']
+            cls.ISSUE_ALREADY_RESOLVED = data['ISSUE_ALREADY_RESOLVED']
+            cls.CUSTOM_ERROR_MSG = data['CUSTOM_ERROR_MSG']
+            cls.ISSUE_RESOLVED = data['ISSUE_RESOLVED']

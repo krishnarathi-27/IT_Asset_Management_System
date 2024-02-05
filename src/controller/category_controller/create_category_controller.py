@@ -2,8 +2,8 @@ import logging
 
 from config.app_config import StatusCodes
 from config.prompts.prompts import PromptConfig
-from database.database import db as db_object
-from src.handlers.category_handler import CategoryHandler
+from database.database import Database
+from src.handlers.category_handler.create_category_handler import CreateCategoryHandler
 from utils.exceptions import MyBaseException
 from utils.response import SuccessResponse, ErrorResponse
 
@@ -13,7 +13,8 @@ class CreateCategoryController:
     """Controller for creating category"""
 
     def __init__(self) -> None:
-        self.obj_category_handler = CategoryHandler(db_object)
+        db_object = Database()
+        self.obj_category_handler = CreateCategoryHandler(db_object)
 
     def create_new_category(self, request_data: dict) -> dict:
         """Method to create new category if vendor exists and if same category already not exists"""
@@ -24,6 +25,8 @@ class CreateCategoryController:
             brand_name = request_data['brand_name']
             vendor_email = request_data['vendor_email']
 
+            category_name = category_name.lower()
+            brand_name = brand_name.lower()
             category_id = self.obj_category_handler.create_category(category_name, brand_name, vendor_email)
 
             if category_id:

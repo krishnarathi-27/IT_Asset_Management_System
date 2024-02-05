@@ -34,30 +34,6 @@ class AppConfig:
     AVAILABLE_STATUS = "available"
     ASSET_LOCATION = "warehouse"
 
-    #dictionary keys
-    CATEGORY_ID = 'category_id'
-    VENDOR_ID = 'vendor_id'
-    MAPPING_ID = 'mapping_id'
-    USER_ID = 'user_id'
-    ASSET_ID= 'asset_id'
-    USERNAME = 'username'
-    PASSWORD = 'password'
-    IS_CHANGED = 'is_changed'
-    ROLE = 'role'
-    CATEGORY_NAME = 'category_name'
-    BRAND_NAME = 'brand_name'
-    VENDOR_EMAIL = 'vendor_email'
-    ASSET_TYPE = 'asset_type'
-    MESSAGE = 'message'
-    DESCRIPTION = 'description'
-    ASSIGNED_TO = 'assigned_to'
-    ASSET_STATUS = 'asset_status'
-    ACCESS_TOKEN = 'access_token'
-    OLD_PASSWORD = 'old_password'
-    NEW_PASSWORD = 'new_password'
-    CONFIRM_PASSWORD = 'confirm_password'
-    VENDOR_NAME = 'vendor_name'
-
 class StatusCodes:
     OK = 200
     CREATED = 201

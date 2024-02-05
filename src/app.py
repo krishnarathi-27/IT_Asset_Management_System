@@ -2,7 +2,7 @@ import logging
 from flask import Flask
 from config.app_config import AppConfig
 from config.prompts.prompts import PromptConfig
-from database.database import db
+from database.database import Database
 from config.flask_config import create_flask_config, register_blueprints, intialise_jwt_config
 
 logging.basicConfig(
@@ -18,6 +18,7 @@ def create_app():
     logger.info('Creating flask app')
     
     PromptConfig.load()
+    db = Database()
     db.create_all_table()
 
     app = Flask(__name__)

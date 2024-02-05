@@ -43,5 +43,7 @@ ISSUE_DATA_FETCHED : Issue details fetched
 ISSUE_USER_DATA_FETCHED : Issue details of any user fetched
 ASSET_DATA_FETCHED : Assets in inventory fetched
 VENDOR_DATA_FETCHED : Vendor details fetched
-
+ISSUE_ALREADY_RESOLVED : Issue already resolved
+CUSTOM_ERROR_MSG : My custom error message
+ISSUE_RESOLVED : Issue resolved successfully
 ...

@@ -40,16 +40,19 @@ class CreateCategoryHandler:
         """Method to check if category with same brand exists or not"""
         logger.info('Method to check if category with same brand exists')
 
-        category_id = fetch_category_details(category_name, brand_name)
+        category_details = self.db_object.fetch_data(Queries.FETCH_BY_CATEGORY_AND_BRAND_NAME, 
+                                                (category_name,brand_name,))
+        
         mapping_id = PromptConfig.MAPPING_ID_PREFIX + shortuuid.ShortUUID().random(length=4)
-
-        if not category_id:
+        
+        if not category_details:
             self.db_object.save_data(
                 [Queries.INSERT_CATEGORY_DETAILS, Queries.INSERT_MAPPING_DETAILS],
                 [(category_id, category_name,brand_name),
                  (mapping_id,category_id,vendor_id,)])
 
         else:
+            category_id = category_details[0]['category_id']
             return self.check_category_with_same_vendor(mapping_id, category_id, vendor_id)
 
     def create_category(self,category_name: str, brand_name: str, vendor_email: str) -> bool:
@@ -58,6 +61,7 @@ class CreateCategoryHandler:
 
         try:
             vendor_id = fetch_vendor_details(vendor_email)
+            
             category_id = PromptConfig.CATEGORY_ID_PREFIX + shortuuid.ShortUUID().random(length=4)
             self.check_category(category_id, vendor_id, category_name, brand_name)
             return category_id

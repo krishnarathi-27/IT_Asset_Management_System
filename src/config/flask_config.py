@@ -2,14 +2,14 @@ import logging
 from flask import jsonify
 from flask_jwt_extended import JWTManager
 from flask_smorest import Api
-from datetime import timedelta
 
 from routes.auth_routes import blp as AuthRoutes
 from routes.user_routes import blp as UserRoutes
-from src.routes.category_routes import blp as CategoryRoutes
-from src.routes.vendor_routes import blp as VendorRoutes
-from src.routes.asset_routes import blp as AssetRoutes
-from src.routes.issue_routes import blp as IssueRoutes
+from routes.category_routes import blp as CategoryRoutes
+from routes.vendor_routes import blp as VendorRoutes
+from routes.asset_routes import blp as AssetRoutes
+from routes.issue_routes import blp as IssueRoutes
+from utils.token import Token
 
 logger = logging.getLogger('flask_config')
 
@@ -33,9 +33,11 @@ def intialise_jwt_config(app):
     logger.info('Intialising all jwt decorators')
 
     jwt = JWTManager(app)
+    token_obj = Token()
 
     @jwt.expired_token_loader
     def expired_token_callback(jwt_header, jwt_payload):
+        token_obj.revoke_token(jwt_payload)
         return (
             jsonify({"message": "The token has expired.", "error": "token_expired"}),
             401,
@@ -71,10 +73,9 @@ def intialise_jwt_config(app):
             401,
         )
     
-    # @jwt.token_in_blocklist_loader
-    # def check_if_token_in_blocklist(jwt_header, jwt_payload):
-    #     return jwt_payload["jti"] in BLOCKLIST
-
+    @jwt.token_in_blocklist_loader
+    def check_if_token_in_blocklist(jwt_header, jwt_payload):
+        return token_obj.check_token_revoked(jwt_payload)
 
     @jwt.revoked_token_loader
     def revoked_token_callback(jwt_header, jwt_payload):

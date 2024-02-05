@@ -2,8 +2,8 @@ import logging
 
 from config.app_config import StatusCodes
 from config.prompts.prompts import PromptConfig
-from database.database import db as db_object
-from src.handlers.vendor_handler import VendorHandler
+from database.database import Database
+from src.handlers.vendor_handler.create_vendor_handler import CreateVendorHandler
 from utils.exceptions import MyBaseException
 from utils.response import ErrorResponse, SuccessResponse
 
@@ -13,7 +13,8 @@ class CreateVendorController:
     """Controller to create new vendor"""
 
     def __init__(self) -> None:
-        self.obj_vendor_handler = VendorHandler(db_object)
+        db_object = Database()
+        self.obj_vendor_handler = CreateVendorHandler(db_object)
 
     def create_new_vendor(self, request_data: dict) -> dict:
         """Method to create new vendor in database"""

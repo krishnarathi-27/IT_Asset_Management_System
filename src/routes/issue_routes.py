@@ -50,12 +50,12 @@ class IssueId(MethodView):
         return response
      
     @blp.doc(parameters=[{'name': 'Authorization', 'in': 'header', 'description': 'Authorization: Bearer <access_token>', 'required': 'true'}])
-    @blp.arguments(UserPassword)
+    @blp.arguments(IssueSchema)
     @jwt_required()
-    def put(self,user_data):
+    def put(self,user_data, user_id):
 
         obj_update_issue = UpdateIssueController()
-        response = obj_update_issue.update_issue_status(user_data)
+        response = obj_update_issue.update_issue(user_data, user_id)
 
         return response
     

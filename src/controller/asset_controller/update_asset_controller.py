@@ -2,8 +2,8 @@ import logging
 
 from config.app_config import StatusCodes
 from config.prompts.prompts import PromptConfig
-from database.database import db as db_object
-from handlers.asset_handler import AssetHandler
+from database.database import Database
+from handlers.asset_handler.update_asset_handler import UpdateAssetHandler
 from utils.exceptions import MyBaseException
 from utils.response import SuccessResponse, ErrorResponse
 
@@ -13,7 +13,8 @@ class UpdateAssetController:
     """Controller to update assets status"""
 
     def __init__(self) -> None:
-        self.obj_asset_handler = AssetHandler(db_object)
+        db_object = Database()
+        self.obj_asset_handler = UpdateAssetHandler(db_object)
 
     def assign_asset(self, request_data: dict, asset_id: str) -> dict:
         """Function to assign asset to user"""

@@ -1,35 +1,43 @@
-from flask import jsonify
-from handlers.issue_handler import IssueHandler
+import logging
+
+from config.app_config import StatusCodes
+from config.prompts.prompts import PromptConfig
+from database.database import Database
+from handlers.issue_handler.update_issue_handler import UpdateIssueHandler
 from utils.exceptions import MyBaseException
+from utils.response import SuccessResponse, ErrorResponse
+
+logger = logging.getLogger('update_issue_controller')
 
 class UpdateIssueController:
+    """Class to update issue status that are pending"""
 
     def __init__(self):
-        self.obj_issue_handler = IssueHandler()
+        db_object = Database()
+        self.obj_issue_handler = UpdateIssueHandler(db_object)
 
-    def assign_asset(self, request_data, asset_id):
+    def update_issue(self, request_data: dict, issue_id: str) -> dict:
+        """Method to resolve issue status of issue_id that is pending"""
+        logger.info('Resolving pending issue')
 
         try:
-            print(request_data)
-            mapping_id  = request_data["mapping_id"]
-            asset_type= request_data["asset_type"]
-            assigned_to= request_data["assigned_to"]
-            asset_status= request_data["asset_status"]
+            asset_id = request_data['asset_id']
+            user_id = request_data['user_id']
+            issue_status = request_data['issue_status']
             
-            self.obj_issue_handler.assign_asset(asset_id, assigned_to)
+            self.obj_issue_handler.update_issue_status(user_id,asset_id,issue_id, issue_status)
 
-            response = jsonify({
-                "asset_id" : asset_id,
-                "employee_id" : request_data['assigned_to'],
-                "message": "Asset assigned to user successfully"
-            })
-            return response
+            response = {
+                "issue_id" : issue_id,
+                "message" : PromptConfig.ISSUE_RESOLVED
+            }
+
+            logger.info('Issue successfully resolved')
+            return SuccessResponse.success_message(StatusCodes.OK, 
+                                                       PromptConfig.ISSUE_RESOLVED,
+                                                       response), StatusCodes.OK
         
         except MyBaseException as error:
-            error_response = jsonify({
-                "message": error.error_message,
-                "description": error.error_description
-            })
-
-            return error_response, error.error_code
+            logger.error(f'Error handled by custom error handler {error.error_message}')
+            return ErrorResponse.error_message(error), error.error_code
         
