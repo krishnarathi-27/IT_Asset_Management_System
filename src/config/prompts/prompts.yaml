@@ -46,4 +46,6 @@ VENDOR_DATA_FETCHED : Vendor details fetched
 ISSUE_ALREADY_RESOLVED : Issue already resolved
 CUSTOM_ERROR_MSG : My custom error message
 ISSUE_RESOLVED : Issue resolved successfully
+USER_LOGGED_OUT : User logged out successfully
+
 ...

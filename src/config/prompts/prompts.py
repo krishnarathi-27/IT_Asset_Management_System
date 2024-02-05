@@ -61,6 +61,7 @@ class PromptConfig:
     ISSUE_ALREADY_RESOLVED = None
     CUSTOM_ERROR_MSG = None
     ISSUE_RESOLVED = None
+    USER_LOGGED_OUT = None
 
     @classmethod
     def load(cls) -> None:
@@ -119,3 +120,4 @@ class PromptConfig:
             cls.ISSUE_ALREADY_RESOLVED = data['ISSUE_ALREADY_RESOLVED']
             cls.CUSTOM_ERROR_MSG = data['CUSTOM_ERROR_MSG']
             cls.ISSUE_RESOLVED = data['ISSUE_RESOLVED']
+            cls.USER_LOGGED_OUT = data['USER_LOGGED_OUT']

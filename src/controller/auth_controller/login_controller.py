@@ -44,7 +44,8 @@ class LoginController:
                     'message' : PromptConfig.USER_LOGGED_IN
                 }
                 
-                return SuccessResponse.success_message(StatusCodes.OK, PromptConfig.USER_LOGGED_IN, response)
+                return SuccessResponse.success_message(StatusCodes.OK, 
+                                                       PromptConfig.USER_LOGGED_IN, response), StatusCodes.OK
             
         except MyBaseException as error:
             logger.error(f'Error handled by custom error handler {error.error_message}')

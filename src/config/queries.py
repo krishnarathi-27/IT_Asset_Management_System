@@ -108,7 +108,7 @@ class Queries:
     """
     UPDATE_PASSWORD = """   
         UPDATE authentication
-        SET password = %s
+        SET password = %s, is_changed = "true"
         WHERE user_id = %s
     """
     UPDATE_TOKEN_STATUS = """
