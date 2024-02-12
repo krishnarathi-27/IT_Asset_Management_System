@@ -4,7 +4,7 @@ from config.app_config import StatusCodes
 from config.prompts.prompts import PromptConfig
 from database.database import Database
 from handlers.issue_handler.update_issue_handler import UpdateIssueHandler
-from utils.exceptions import MyBaseException
+from utils.exceptions import ApplicationException, DBException
 from utils.response import SuccessResponse, ErrorResponse
 
 logger = logging.getLogger('update_issue_controller')
@@ -27,17 +27,14 @@ class UpdateIssueController:
             
             self.obj_issue_handler.update_issue_status(user_id,asset_id,issue_id, issue_status)
 
-            response = {
-                "issue_id" : issue_id,
-                "message" : PromptConfig.ISSUE_RESOLVED
-            }
-
             logger.info('Issue successfully resolved')
-            return SuccessResponse.success_message(StatusCodes.OK, 
-                                                       PromptConfig.ISSUE_RESOLVED,
-                                                       response), StatusCodes.OK
+            return SuccessResponse.success_message(PromptConfig.ISSUE_RESOLVED), StatusCodes.OK
         
-        except MyBaseException as error:
-            logger.error(f'Error handled by custom error handler {error.error_message}')
+        except ApplicationException as error:
+            logger.error(f'Error handled by application custom error handler {error.error_message}')
+            return ErrorResponse.error_message(error), error.error_code
+        
+        except DBException as error:
+            logger.error(f'Error handled by database custom error handler {error.error_message}')
             return ErrorResponse.error_message(error), error.error_code
         

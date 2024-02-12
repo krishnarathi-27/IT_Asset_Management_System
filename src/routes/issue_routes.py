@@ -2,6 +2,7 @@ from flask.views import MethodView
 from flask_smorest import Blueprint
 from flask_jwt_extended import jwt_required
 
+from config.app_config import AppConfig
 from utils.mapped_roles import MappedRole
 from controller.issue_controller.create_issue_controller import CreateIssueController
 from controller.issue_controller.update_issue_controller import UpdateIssueController
@@ -15,7 +16,7 @@ blp = Blueprint("issues",__name__, description="Operations on issues")
 @blp.route("/issues")
 class Issues(MethodView):
     
-    @blp.doc(parameters=[{'name': 'Authorization', 'in': 'header', 'description': 'Authorization: Bearer <access_token>', 'required': 'true'}])
+    @blp.doc(parameters=AppConfig.SWAGGER_AUTHORISATION_HEADER)
     @role_required([MappedRole.MANAGER_ROLE])
     @blp.response(200,IssueSchema(many=True))
     def get(self):
@@ -25,7 +26,7 @@ class Issues(MethodView):
             
         return response
     
-    @blp.doc(parameters=[{'name': 'Authorization', 'in': 'header', 'description': 'Authorization: Bearer <access_token>', 'required': 'true'}])
+    @blp.doc(parameters=AppConfig.SWAGGER_AUTHORISATION_HEADER)
     @blp.arguments(IssueCreateSchema)
     @blp.response(201,IssueCreateSchema)
     @jwt_required()
@@ -39,7 +40,7 @@ class Issues(MethodView):
 @blp.route("/issue/<string:user_id>")
 class IssueId(MethodView):
     
-    @blp.doc(parameters=[{'name': 'Authorization', 'in': 'header', 'description': 'Authorization: Bearer <access_token>', 'required': 'true'}])
+    @blp.doc(parameters=AppConfig.SWAGGER_AUTHORISATION_HEADER)
     @blp.response(200,IssueSchema(many=True))
     @jwt_required()
     def get(self, user_id):
@@ -49,7 +50,7 @@ class IssueId(MethodView):
 
         return response
      
-    @blp.doc(parameters=[{'name': 'Authorization', 'in': 'header', 'description': 'Authorization: Bearer <access_token>', 'required': 'true'}])
+    @blp.doc(parameters=AppConfig.SWAGGER_AUTHORISATION_HEADER)
     @blp.arguments(IssueSchema)
     @jwt_required()
     def put(self,user_data, user_id):

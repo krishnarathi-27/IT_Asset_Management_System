@@ -4,7 +4,7 @@ from mysql.connector import Error
 # local imports
 from config.queries import Queries
 from config.prompts.prompts import PromptConfig
-from utils.exceptions import InvalidCredentials, DBException
+from utils.exceptions import ApplicationException, DBException
 
 logger = logging.getLogger("auth_handler")
 
@@ -29,13 +29,11 @@ class AuthHandler:
                 if hashed_password == password:
                     return (role, user_id, is_changed)
                 else:
-                    raise InvalidCredentials(401, PromptConfig.UNAUTHORISED, PromptConfig.INVALID_CREDENTIALS_ENTERED)
+                    raise ApplicationException(401, PromptConfig.UNAUTHORISED, PromptConfig.INVALID_CREDENTIALS_ENTERED)
 
-            raise InvalidCredentials(401, PromptConfig.UNAUTHORISED, PromptConfig.INVALID_CREDENTIALS_ENTERED)
+            raise ApplicationException(401, PromptConfig.UNAUTHORISED, PromptConfig.INVALID_CREDENTIALS_ENTERED)
         
         except Error as error:
             logger.error(f"Error occured in database {error}")
             raise DBException(500,PromptConfig.INTERNAL_SERVER_ERROR, PromptConfig.SERVER_ERROR)
-    
-
     

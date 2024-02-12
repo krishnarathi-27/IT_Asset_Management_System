@@ -4,7 +4,7 @@ from mysql.connector import Error
 from config.app_config import AppConfig
 from config.queries import Queries
 from config.prompts.prompts import PromptConfig
-from utils.exceptions import DataNotExists, DBException
+from utils.exceptions import DBException, ApplicationException
 
 logger = logging.getLogger("update_asset_handler")
 
@@ -21,7 +21,7 @@ class UpdateAssetHandler:
         mapping_id = self.db_object.fetch_data(Queries.FETCH_IF_ASSET_EXISTS, (asset_id,))
 
         if not mapping_id:
-            raise DataNotExists(404, PromptConfig.RESOURCE_NOT_FOUND, PromptConfig.ASSET_ID_NOT_EXISTS)
+            raise ApplicationException(404, PromptConfig.RESOURCE_NOT_FOUND, PromptConfig.ASSET_ID_NOT_EXISTS)
 
         return mapping_id[0]['mapping_id']
 
@@ -35,7 +35,7 @@ class UpdateAssetHandler:
             data_user_id = self.db_object.fetch_data(Queries.FETCH_IF_USER_EXISTS, (employee_id,))
 
             if not data_user_id:
-                raise DataNotExists(404, PromptConfig.RESOURCE_NOT_FOUND, PromptConfig.USER_NOT_EXISTS)
+                raise ApplicationException(404, PromptConfig.RESOURCE_NOT_FOUND, PromptConfig.USER_NOT_EXISTS)
 
             self.db_object.save_data(Queries.UPDATE_ASSET_STATUS,
                 (mapping_id, employee_id,AppConfig.UNAVAILABLE_STATUS,

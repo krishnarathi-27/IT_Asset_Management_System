@@ -5,10 +5,9 @@ class SuccessResponse:
     success = True
 
     @classmethod
-    def success_message(cls,status_code: int, message: str, data: Optional[list]= []):
+    def success_message(cls, message: str, data: Optional[list]= []):
         return jsonify({
             'success': cls.success,
-            'code': status_code,
             'data': data,
             'message': message
          }

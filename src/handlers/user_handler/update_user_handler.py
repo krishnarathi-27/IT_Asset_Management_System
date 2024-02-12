@@ -5,7 +5,7 @@ from flask_jwt_extended import get_jwt
 
 from config.queries import Queries
 from config.prompts.prompts import PromptConfig
-from utils.exceptions import CustomException, DBException
+from utils.exceptions import ApplicationException, DBException
 from utils.common_helper import verify_user_password
 from utils.token import Token
 
@@ -26,7 +26,7 @@ class UpdateUserHandler:
             role = verify_user_password(user_id, old_password, obj_hash_password)
             
             if new_password != confirm_password:
-                raise CustomException(400, PromptConfig.BAD_REQUEST, PromptConfig.PASSWORDS_NOT_MATCH)
+                raise ApplicationException(400, PromptConfig.BAD_REQUEST, PromptConfig.PASSWORDS_NOT_MATCH)
             
             hashed_password = obj_hash_password.secure_password(new_password)
             self.db_object.save_data(Queries.UPDATE_PASSWORD, (hashed_password, user_id,))

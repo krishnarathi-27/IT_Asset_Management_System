@@ -36,8 +36,7 @@ class Token:
         logger.info('New access and refresh token issued')
         
         get_role = MappedRole.get_mapped_role(role)
-
-        if is_changed:
+        if is_changed is False:
             password_type = 0
         else:
             password_type = 1

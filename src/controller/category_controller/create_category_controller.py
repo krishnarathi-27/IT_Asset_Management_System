@@ -4,7 +4,7 @@ from config.app_config import StatusCodes
 from config.prompts.prompts import PromptConfig
 from database.database import Database
 from src.handlers.category_handler.create_category_handler import CreateCategoryHandler
-from utils.exceptions import MyBaseException
+from utils.exceptions import ApplicationException, DBException
 from utils.response import SuccessResponse, ErrorResponse
 
 logger = logging.getLogger('create_category_controller')
@@ -27,20 +27,13 @@ class CreateCategoryController:
 
             category_name = category_name.lower()
             brand_name = brand_name.lower()
-            category_id = self.obj_category_handler.create_category(category_name, brand_name, vendor_email)
-
-            if category_id:
-                response = {
-                    "category_id": category_id,
-                    "category_name": category_name,
-                    "brand_name": brand_name,
-                    "vendor_email": vendor_email,
-                    "message" : PromptConfig.CATEGORY_CREATED
-                }
-                return SuccessResponse.success_message(StatusCodes.CREATED, 
-                                                       PromptConfig.CATEGORY_CREATED,
-                                                       response), StatusCodes.CREATED
+            self.obj_category_handler.create_category(category_name, brand_name, vendor_email)
+            return SuccessResponse.success_message(PromptConfig.CATEGORY_CREATED), StatusCodes.CREATED
         
-        except MyBaseException as error:
-            logger.error(f'Error handled by custom error handler {error.error_message}')
+        except ApplicationException as error:
+            logger.error(f'Error handled by application custom error handler {error.error_message}')
+            return ErrorResponse.error_message(error), error.error_code
+        
+        except DBException as error:
+            logger.error(f'Error handled by database custom error handler {error.error_message}')
             return ErrorResponse.error_message(error), error.error_code

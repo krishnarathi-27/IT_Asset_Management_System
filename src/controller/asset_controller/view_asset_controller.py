@@ -4,7 +4,7 @@ from config.app_config import StatusCodes
 from config.prompts.prompts import PromptConfig
 from database.database import Database
 from src.handlers.asset_handler.view_asset_handler import ViewAssetHandler
-from utils.exceptions import MyBaseException
+from utils.exceptions import ApplicationException, DBException
 from utils.response import SuccessResponse, ErrorResponse
 
 logger = logging.getLogger('view_asset_controller')
@@ -22,11 +22,14 @@ class ViewAssetController:
 
         try:
             response = self.obj_asset_handler.view_all_asset()
-            return SuccessResponse.success_message(StatusCodes.OK, 
-                                                    PromptConfig.ASSET_DATA_FETCHED,
+            return SuccessResponse.success_message(PromptConfig.ASSET_DATA_FETCHED,
                                                     response), StatusCodes.OK
 
-        except MyBaseException as error:
-            logger.error(f'Error handled by custom error handler {error.error_message}')
+        except ApplicationException as error:
+            logger.error(f'Error handled by application custom error handler {error.error_message}')
+            return ErrorResponse.error_message(error), error.error_code
+        
+        except DBException as error:
+            logger.error(f'Error handled by database custom error handler {error.error_message}')
             return ErrorResponse.error_message(error), error.error_code
         

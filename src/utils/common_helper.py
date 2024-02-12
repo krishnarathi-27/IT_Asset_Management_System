@@ -4,7 +4,7 @@ from mysql.connector import Error
 from database.database import Database
 from config.queries import Queries
 from config.prompts.prompts import PromptConfig
-from utils.exceptions import DataNotExists, DBException, InvalidCredentials
+from utils.exceptions import ApplicationException, DBException
 
 logger = logging.getLogger('common_helper')
 
@@ -18,7 +18,7 @@ def fetch_vendor_details(vendor_email: str) -> str:
         vendor_id = db_object.fetch_data(Queries.FETCH_VENDOR_BY_EMAIL, 
                                                 (vendor_email,))
         if not vendor_id:
-            raise DataNotExists(404, PromptConfig.RESOURCE_NOT_FOUND, PromptConfig.VENDOR_NOT_EXISTS)
+            raise ApplicationException(404, PromptConfig.RESOURCE_NOT_FOUND, PromptConfig.VENDOR_NOT_EXISTS)
         
         return vendor_id[0]['vendor_id']
     
@@ -35,7 +35,7 @@ def fetch_category_details(category_name: str, brand_name: str) -> str:
                                                 (category_name,brand_name,))
 
         if not category_id:
-            raise DataNotExists(404, PromptConfig.RESOURCE_NOT_FOUND, PromptConfig.CATEGORY_NOT_EXISTS)
+            raise ApplicationException(404, PromptConfig.RESOURCE_NOT_FOUND, PromptConfig.CATEGORY_NOT_EXISTS)
         
         return category_id[0]['category_id']
     
@@ -53,7 +53,7 @@ def verify_user_password(user_id: str,password: str, obj_hash_password):
         old_password_hashed = obj_hash_password.secure_password(password)
 
         if user_data[0]['password'] != old_password_hashed:
-            raise InvalidCredentials(401, PromptConfig.UNAUTHORISED, PromptConfig.INVALID_CREDENTIALS_ENTERED)
+            raise ApplicationException(401, PromptConfig.UNAUTHORISED, PromptConfig.INVALID_CREDENTIALS_ENTERED)
         
         return user_data[0]['role']
     

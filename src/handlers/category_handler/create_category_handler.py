@@ -4,10 +4,9 @@ from mysql.connector import Error, IntegrityError
 
 # local imports
 from config.queries import Queries
-from config.app_config import AppConfig
 from config.prompts.prompts import PromptConfig
-from utils.common_helper import fetch_category_details, fetch_vendor_details
-from utils.exceptions import DataAlreadyExists, DataNotExists, DBException
+from utils.common_helper import fetch_vendor_details
+from utils.exceptions import DBException, ApplicationException
 
 logger = logging.getLogger('create_category_handler')
 
@@ -68,7 +67,7 @@ class CreateCategoryHandler:
         
         except IntegrityError as err:
             logger.error(f'Same category name already exits {err}')
-            raise DataAlreadyExists(409, PromptConfig.CONFLICT_MSG, PromptConfig.CATEGORY_ALREADY_EXISTS)
+            raise ApplicationException(409, PromptConfig.CONFLICT_MSG, PromptConfig.CATEGORY_ALREADY_EXISTS)
         
         except Error as err:
             logger.error(f"Error occured in mysql database {err}") 

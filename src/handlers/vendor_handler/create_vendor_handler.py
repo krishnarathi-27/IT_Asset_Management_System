@@ -5,7 +5,7 @@ from mysql.connector import IntegrityError, Error
 # local imports
 from config.queries import Queries
 from config.prompts.prompts import PromptConfig
-from utils.exceptions import DataNotExists, DataAlreadyExists, DBException
+from utils.exceptions import ApplicationException, DBException
 
 logger = logging.getLogger('create_vendor_handler')
 
@@ -30,7 +30,7 @@ class CreateVendorHandler:
 
         except IntegrityError as err:
             logger.error(f"Integrity error raised while creating vendor {err}")
-            raise DataAlreadyExists(409, PromptConfig.CONFLICT_MSG, PromptConfig.VENDOR_ALREADY_EXISTS)
+            raise ApplicationException(409, PromptConfig.CONFLICT_MSG, PromptConfig.VENDOR_ALREADY_EXISTS)
 
         except Error as err:
             logger.error(f"Error occured in mysql database {err}") 

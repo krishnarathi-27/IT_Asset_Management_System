@@ -2,6 +2,7 @@ from flask.views import MethodView
 from flask_smorest import Blueprint
 from flask_jwt_extended import jwt_required
 
+from config.app_config import AppConfig
 from utils.mapped_roles import MappedRole
 from controller.user_controller.create_user_controller import CreateUserController
 from controller.user_controller.view_user_controller import ViewUserController
@@ -14,7 +15,7 @@ blp = Blueprint("users",__name__, description="Operations on users")
 @blp.route("/users")
 class Users(MethodView):
     
-    @blp.doc(parameters=[{'name': 'Authorization', 'in': 'header', 'description': 'Authorization: Bearer <access_token>', 'required': 'true'}])
+    @blp.doc(parameters=AppConfig.SWAGGER_AUTHORISATION_HEADER)
     @role_required([MappedRole.ADMIN_ROLE,MappedRole.MANAGER_ROLE])
     @blp.response(200,UserDetailsSchema(many=True))
     def get(self):
@@ -24,7 +25,7 @@ class Users(MethodView):
             
         return response
     
-    @blp.doc(parameters=[{'name': 'Authorization', 'in': 'header', 'description': 'Authorization: Bearer <access_token>', 'required': 'true'}])
+    @blp.doc(parameters=AppConfig.SWAGGER_AUTHORISATION_HEADER)
     @role_required([MappedRole.ADMIN_ROLE])
     @blp.arguments(UserCreateSchema)
     @blp.response(201,UserCreateSchema)
@@ -38,7 +39,7 @@ class Users(MethodView):
 @blp.route("/user/profile")
 class UserProfile(MethodView):
     
-    @blp.doc(parameters=[{'name': 'Authorization', 'in': 'header', 'description': 'Authorization: Bearer <access_token>', 'required': 'true'}])
+    @blp.doc(parameters=AppConfig.SWAGGER_AUTHORISATION_HEADER)
     @blp.response(200,UserDetailsSchema(many=True))
     @jwt_required()
     def get(self):
@@ -51,7 +52,7 @@ class UserProfile(MethodView):
 @blp.route("/user/change-password")
 class UserPassword(MethodView):
      
-    @blp.doc(parameters=[{'name': 'Authorization', 'in': 'header', 'description': 'Authorization: Bearer <access_token>', 'required': 'true'}])
+    @blp.doc(parameters=AppConfig.SWAGGER_AUTHORISATION_HEADER)
     @blp.arguments(UserPassword)
     @jwt_required()
     def put(self,user_data):

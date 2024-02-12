@@ -34,6 +34,8 @@ class AppConfig:
     AVAILABLE_STATUS = "available"
     ASSET_LOCATION = "warehouse"
 
+    SWAGGER_AUTHORISATION_HEADER = [{'name': 'Authorization', 'in': 'header', 'description': 'Authorization: Bearer <access_token>', 'required': 'true'}]
+
 class StatusCodes:
     OK = 200
     CREATED = 201

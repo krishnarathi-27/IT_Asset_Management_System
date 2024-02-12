@@ -5,7 +5,7 @@ from mysql.connector import IntegrityError, Error
 # local imports
 from config.queries import Queries
 from config.prompts.prompts import PromptConfig
-from utils.exceptions import DataNotExists, DataAlreadyExists, DBException
+from utils.exceptions import ApplicationException, DBException
 
 logger = logging.getLogger('create_issue_handler')
 
@@ -23,7 +23,7 @@ class CreateIssueHandler:
             asset_status = self.db_object.fetch_data(Queries.FETCH_IF_USER_HAVE_ASSET,(asset_id,user_id,))
 
             if not asset_status:
-                 raise DataNotExists(404, PromptConfig.RESOURCE_NOT_FOUND, PromptConfig.ASSET_ID_NOT_EXISTS)
+                 raise ApplicationException(404, PromptConfig.RESOURCE_NOT_FOUND, PromptConfig.ASSET_ID_NOT_EXISTS)
 
             issue_id = PromptConfig.ISSUE_ID_PREFIX + shortuuid.ShortUUID().random(length=4)
 
@@ -35,7 +35,7 @@ class CreateIssueHandler:
 
         except IntegrityError as err:
             logger.info(f"User with same username already exists {err}")
-            raise DataAlreadyExists(409,PromptConfig.CONFLICT_MSG, PromptConfig.ISSUE_ALREADY_EXISTS)
+            raise ApplicationException(409,PromptConfig.CONFLICT_MSG, PromptConfig.ISSUE_ALREADY_EXISTS)
 
         except Error as err:
             logger.error(f"Error occured in mysql database {err}") 

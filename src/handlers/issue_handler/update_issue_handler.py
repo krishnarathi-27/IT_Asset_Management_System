@@ -3,7 +3,7 @@ from mysql.connector import Error
 
 from config.queries import Queries
 from config.prompts.prompts import PromptConfig
-from utils.exceptions import MyBaseException, DBException
+from utils.exceptions import ApplicationException, DBException
 
 logger = logging.getLogger('update_issue_handler')
 
@@ -21,7 +21,7 @@ class UpdateIssueHandler:
             fetched_issue_status = self.db_object.fetch_data(Queries.FETCH_IF_ISSUE_PENDING,(issue_id,))
 
             if fetched_issue_status[0]['issue_status'] == "resolved":
-                raise MyBaseException(5100, PromptConfig.CUSTOM_ERROR_MSG,PromptConfig.ISSUE_ALREADY_RESOLVED)
+                raise ApplicationException(5100, PromptConfig.CUSTOM_ERROR_MSG,PromptConfig.ISSUE_ALREADY_RESOLVED)
             
             self.db_object.save_data(Queries.UPDATE_ISSUE_STATUS,(user_id, asset_id,issue_id,))
 

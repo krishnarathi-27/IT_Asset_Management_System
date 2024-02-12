@@ -3,6 +3,7 @@ from flask.views import MethodView
 from flask_smorest import Blueprint
 from flask_jwt_extended import jwt_required
 
+from config.app_config import AppConfig
 from schemas.user_schema import LoginSchema, LoginSuccessSchema
 from controller.auth_controller.login_controller import LoginController
 from controller.auth_controller.logout_controller import LogoutController
@@ -28,6 +29,7 @@ class Login(MethodView):
 @blp.route("/logout")
 class Logout(MethodView):
 
+    @blp.doc(parameters=AppConfig.SWAGGER_AUTHORISATION_HEADER)
     @jwt_required()
     def post(self):
         

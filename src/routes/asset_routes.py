@@ -3,6 +3,7 @@ from flask_smorest import Blueprint
 from flask_jwt_extended import jwt_required
 
 from utils.mapped_roles import MappedRole
+from config.app_config import AppConfig
 from utils.rbac import role_required
 from controller.asset_controller.create_asset_controller import CreateAssetController
 from controller.asset_controller.view_asset_controller import ViewAssetController
@@ -14,7 +15,7 @@ blp = Blueprint("assets",__name__, description="Operations on asset inventory")
 @blp.route("/assets")
 class Assets(MethodView):
     
-    @blp.doc(parameters=[{'name': 'Authorization', 'in': 'header', 'description': 'Authorization: Bearer <access_token>', 'required': 'true'}])
+    @blp.doc(parameters=AppConfig.SWAGGER_AUTHORISATION_HEADER)
     @role_required([MappedRole.ADMIN_ROLE,MappedRole.MANAGER_ROLE])
     @blp.response(200,ViewAssetSchema(many=True))
     def get(self):
@@ -24,7 +25,7 @@ class Assets(MethodView):
             
         return response
     
-    @blp.doc(parameters=[{'name': 'Authorization', 'in': 'header', 'description': 'Authorization: Bearer <access_token>', 'required': 'true'}])
+    @blp.doc(parameters=AppConfig.SWAGGER_AUTHORISATION_HEADER)
     @role_required([MappedRole.MANAGER_ROLE])
     @blp.arguments(AssetSchema)
     @blp.response(201,AssetSchema)
@@ -38,7 +39,7 @@ class Assets(MethodView):
 @blp.route("/assets/<string:asset_id>/assign")
 class AssetAssign(MethodView):
     
-    @blp.doc(parameters=[{'name': 'Authorization', 'in': 'header', 'description': 'Authorization: Bearer <access_token>', 'required': 'true'}])
+    @blp.doc(parameters=AppConfig.SWAGGER_AUTHORISATION_HEADER)
     @role_required([MappedRole.MANAGER_ROLE])
     @blp.arguments(AssetUpdateSchema)
     @blp.response(200,AssetUpdateSchema)
@@ -52,7 +53,7 @@ class AssetAssign(MethodView):
 @blp.route("/assets/<string:asset_id>/unassign")
 class AssetUnassign(MethodView):
      
-    @blp.doc(parameters=[{'name': 'Authorization', 'in': 'header', 'description': 'Authorization: Bearer <access_token>', 'required': 'true'}])
+    @blp.doc(parameters=AppConfig.SWAGGER_AUTHORISATION_HEADER)
     @role_required([MappedRole.MANAGER_ROLE])
     @blp.arguments(AssetUpdateSchema)
     @blp.response(200,AssetUpdateSchema)

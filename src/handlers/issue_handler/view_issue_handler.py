@@ -3,7 +3,7 @@ from mysql.connector import Error
 
 from config.queries import Queries
 from config.prompts.prompts import PromptConfig
-from utils.exceptions import DBException, DataNotExists
+from utils.exceptions import DBException, ApplicationException
 
 logger = logging.getLogger('view_issue_handler')
 
@@ -34,7 +34,7 @@ class ViewIssueHandler:
             if data:
                 return data
             else:
-                raise DataNotExists(404, PromptConfig.RESOURCE_NOT_FOUND, PromptConfig.ISSUE_NOT_EXISTS)
+                raise ApplicationException(404, PromptConfig.RESOURCE_NOT_FOUND, PromptConfig.ISSUE_NOT_EXISTS)
             
         except Error as err:
             logger.error(f"Error occured in mysql database {err}") 

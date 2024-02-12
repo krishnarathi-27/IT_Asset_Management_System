@@ -10,7 +10,6 @@ def role_required(role_list: list):
         def inner(*args, **kwargs):
             verify_jwt_in_request()
             claims = get_jwt()
-            
             if claims["house"] == 0:
                 abort (401, message="Access denied. Change default password first")
             if claims["tent"] in role_list:

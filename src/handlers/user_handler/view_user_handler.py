@@ -3,9 +3,8 @@ import logging
 from mysql.connector import Error
 
 from config.queries import Queries
-from config.app_config import AppConfig
 from config.prompts.prompts import PromptConfig
-from utils.exceptions import DataNotExists, CustomException, DBException, InvalidCredentials
+from utils.exceptions import DBException, ApplicationException
 
 logger = logging.getLogger("view_user_handler")
 
@@ -36,7 +35,7 @@ class ViewUserHandler:
             if data:
                 return data
             else:
-                raise DataNotExists(404, PromptConfig.RESOURCE_NOT_FOUND, PromptConfig.USER_NOT_EXISTS)
+                raise ApplicationException(404, PromptConfig.RESOURCE_NOT_FOUND, PromptConfig.USER_NOT_EXISTS)
             
         except Error as err:
             logger.error(f"Error occured in mysql database {err}") 

@@ -4,7 +4,7 @@ from config.app_config import StatusCodes
 from config.prompts.prompts import PromptConfig
 from database.database import Database
 from handlers.vendor_handler.delete_vendor_handler import DeleteVendorHandler
-from utils.exceptions import MyBaseException
+from utils.exceptions import ApplicationException, DBException
 from utils.response import ErrorResponse, SuccessResponse
 
 logger = logging.getLogger('delete_vendor_controller')
@@ -23,17 +23,19 @@ class DeleteVendorController:
         try:
             self.obj_vendor_handler.deactivate_vendor(vendor_id)
 
-            response = {
-                'vendor_id' : vendor_id,
-                'message' : PromptConfig.VENDOR_DEACTIVATED
-            }
+            response = [{
+                'vendor_id' : vendor_id
+            }]
 
             logger.info(f'Vendor {vendor_id} deactiavted successfully')
-            return SuccessResponse.success_message(StatusCodes.OK, 
-                                                       PromptConfig.VENDOR_DEACTIVATED,
+            return SuccessResponse.success_message(PromptConfig.VENDOR_DEACTIVATED,
                                                        response), StatusCodes.OK
 
-        except MyBaseException as error:
-            logger.error(f'Error handled by custom error handler {error.error_message}')
+        except ApplicationException as error:
+            logger.error(f'Error handled by application custom error handler {error.error_message}')
+            return ErrorResponse.error_message(error), error.error_code
+        
+        except DBException as error:
+            logger.error(f'Error handled by database custom error handler {error.error_message}')
             return ErrorResponse.error_message(error), error.error_code
         
