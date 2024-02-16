@@ -7,6 +7,7 @@ from config.app_config import AppConfig
 from schemas.user_schema import LoginSchema, LoginSuccessSchema
 from controller.auth_controller.login_controller import LoginController
 from controller.auth_controller.logout_controller import LogoutController
+from controller.auth_controller.refresh_controller import RefreshController
 
 logger = logging.getLogger('auth_routes')
 
@@ -38,3 +39,14 @@ class Logout(MethodView):
 
         return response
     
+@blp.route("/refresh")
+class Refresh(MethodView):
+
+    @blp.doc(parameters=AppConfig.SWAGGER_AUTHORISATION_HEADER)
+    @jwt_required(refresh=True)
+    def post(self):
+        
+        obj = RefreshController()
+        response = obj.refresh()
+
+        return response

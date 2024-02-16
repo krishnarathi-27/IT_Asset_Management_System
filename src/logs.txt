@@ -1,106 +1,1531 @@
-2024-02-12 16:30:23,636 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\utils\\rbac.py', reloading
-2024-02-12 16:30:23,696 INFO     [_internal.py:96]  * Restarting with stat
-2024-02-12 16:30:25,022 INFO     [app.py:18] Creating flask app
-2024-02-12 16:30:25,094 DEBUG    [database_context.py:45] Connection established
-2024-02-12 16:30:25,107 INFO     [flask_config.py:18] Setting all flask and swagger configs
-2024-02-12 16:30:25,107 INFO     [flask_config.py:33] Intialising all jwt decorators
-2024-02-12 16:30:25,107 INFO     [flask_config.py:91] Registring all flask blueprints
-2024-02-12 16:30:25,146 WARNING  [_internal.py:96]  * Debugger is active!
-2024-02-12 16:30:25,148 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
-2024-02-12 16:30:27,611 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\utils\\rbac.py', reloading
-2024-02-12 16:30:27,684 INFO     [_internal.py:96]  * Restarting with stat
-2024-02-12 16:30:28,821 INFO     [app.py:18] Creating flask app
-2024-02-12 16:30:28,889 DEBUG    [database_context.py:45] Connection established
-2024-02-12 16:30:28,903 INFO     [flask_config.py:18] Setting all flask and swagger configs
-2024-02-12 16:30:28,904 INFO     [flask_config.py:33] Intialising all jwt decorators
-2024-02-12 16:30:28,904 INFO     [flask_config.py:91] Registring all flask blueprints
-2024-02-12 16:30:28,931 WARNING  [_internal.py:96]  * Debugger is active!
-2024-02-12 16:30:28,933 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
-2024-02-12 16:30:35,593 INFO     [app.py:18] Creating flask app
-2024-02-12 16:30:35,661 DEBUG    [database_context.py:45] Connection established
-2024-02-12 16:30:35,676 INFO     [flask_config.py:18] Setting all flask and swagger configs
-2024-02-12 16:30:35,676 INFO     [flask_config.py:33] Intialising all jwt decorators
-2024-02-12 16:30:35,676 INFO     [flask_config.py:91] Registring all flask blueprints
-2024-02-12 16:30:35,717 INFO     [_internal.py:96] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+2024-02-13 11:26:36,941 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\handlers\\user_handler\\update_user_handler.py', reloading
+2024-02-13 11:26:36,986 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-13 11:26:37,860 INFO     [app.py:18] Creating flask app
+2024-02-13 11:26:37,923 DEBUG    [database_context.py:45] Connection established
+2024-02-13 11:26:37,939 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-13 11:26:37,939 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-13 11:26:37,939 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-13 11:26:37,970 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-13 11:26:37,970 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-13 11:27:05,705 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\handlers\\user_handler\\update_user_handler.py', reloading
+2024-02-13 11:27:05,752 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-13 11:27:06,633 INFO     [app.py:18] Creating flask app
+2024-02-13 11:27:06,683 DEBUG    [database_context.py:45] Connection established
+2024-02-13 11:27:06,699 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-13 11:27:06,699 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-13 11:27:06,699 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-13 11:27:06,731 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-13 11:27:06,731 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-13 11:27:08,014 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\handlers\\user_handler\\update_user_handler.py', reloading
+2024-02-13 11:27:08,077 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-13 11:27:09,028 INFO     [app.py:18] Creating flask app
+2024-02-13 11:27:09,104 DEBUG    [database_context.py:45] Connection established
+2024-02-13 11:27:09,116 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-13 11:27:09,116 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-13 11:27:09,116 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-13 11:27:09,150 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-13 11:27:09,152 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-13 11:30:03,743 INFO     [app.py:18] Creating flask app
+2024-02-13 11:30:03,798 DEBUG    [database_context.py:45] Connection established
+2024-02-13 11:30:03,813 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-13 11:30:03,813 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-13 11:30:03,813 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-13 11:30:03,864 INFO     [_internal.py:96] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on http://127.0.0.1:5000
-2024-02-12 16:30:35,717 INFO     [_internal.py:96] [33mPress CTRL+C to quit[0m
-2024-02-12 16:30:35,720 INFO     [_internal.py:96]  * Restarting with stat
-2024-02-12 16:30:36,947 INFO     [app.py:18] Creating flask app
-2024-02-12 16:30:37,026 DEBUG    [database_context.py:45] Connection established
-2024-02-12 16:30:37,039 INFO     [flask_config.py:18] Setting all flask and swagger configs
-2024-02-12 16:30:37,040 INFO     [flask_config.py:33] Intialising all jwt decorators
-2024-02-12 16:30:37,040 INFO     [flask_config.py:91] Registring all flask blueprints
-2024-02-12 16:30:37,070 WARNING  [_internal.py:96]  * Debugger is active!
-2024-02-12 16:30:37,072 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
-2024-02-12 16:30:39,876 DEBUG    [login_controller.py:24] User authenticating and issuing access token
-2024-02-12 16:30:39,886 DEBUG    [database_context.py:45] Connection established
-2024-02-12 16:30:39,887 INFO     [token.py:36] New access and refresh token issued
-2024-02-12 16:30:39,895 DEBUG    [database_context.py:45] Connection established
-2024-02-12 16:30:39,899 INFO     [_internal.py:96] 127.0.0.1 - - [12/Feb/2024 16:30:39] "POST /asset-management/login HTTP/1.1" 200 -
-2024-02-12 16:30:43,711 INFO     [_internal.py:96] 127.0.0.1 - - [12/Feb/2024 16:30:43] "[31m[1mGET /asset-management/users HTTP/1.1[0m" 401 -
-2024-02-12 16:30:59,246 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\utils\\rbac.py', reloading
-2024-02-12 16:30:59,304 INFO     [_internal.py:96]  * Restarting with stat
-2024-02-12 16:31:00,629 INFO     [app.py:18] Creating flask app
-2024-02-12 16:31:00,701 DEBUG    [database_context.py:45] Connection established
-2024-02-12 16:31:00,716 INFO     [flask_config.py:18] Setting all flask and swagger configs
-2024-02-12 16:31:00,716 INFO     [flask_config.py:33] Intialising all jwt decorators
-2024-02-12 16:31:00,716 INFO     [flask_config.py:91] Registring all flask blueprints
-2024-02-12 16:31:00,744 WARNING  [_internal.py:96]  * Debugger is active!
-2024-02-12 16:31:00,747 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
-2024-02-12 16:34:51,310 DEBUG    [login_controller.py:24] User authenticating and issuing access token
-2024-02-12 16:34:51,322 DEBUG    [database_context.py:45] Connection established
-2024-02-12 16:34:51,325 INFO     [token.py:36] New access and refresh token issued
-2024-02-12 16:34:51,335 DEBUG    [database_context.py:45] Connection established
-2024-02-12 16:34:51,346 INFO     [_internal.py:96] 127.0.0.1 - - [12/Feb/2024 16:34:51] "POST /asset-management/login HTTP/1.1" 200 -
-2024-02-12 16:35:44,370 DEBUG    [login_controller.py:24] User authenticating and issuing access token
-2024-02-12 16:35:44,382 DEBUG    [database_context.py:45] Connection established
-2024-02-12 16:35:44,387 INFO     [token.py:36] New access and refresh token issued
-2024-02-12 16:35:44,398 DEBUG    [database_context.py:45] Connection established
-2024-02-12 16:35:44,402 INFO     [_internal.py:96] 127.0.0.1 - - [12/Feb/2024 16:35:44] "POST /asset-management/login HTTP/1.1" 200 -
-2024-02-12 16:36:34,795 DEBUG    [login_controller.py:24] User authenticating and issuing access token
-2024-02-12 16:36:34,810 DEBUG    [database_context.py:45] Connection established
-2024-02-12 16:36:34,810 INFO     [token.py:36] New access and refresh token issued
-2024-02-12 16:36:34,837 DEBUG    [database_context.py:45] Connection established
-2024-02-12 16:36:34,844 INFO     [_internal.py:96] 127.0.0.1 - - [12/Feb/2024 16:36:34] "POST /asset-management/login HTTP/1.1" 200 -
-2024-02-12 16:36:45,887 INFO     [token.py:17] Checking if token is revoked or not
-2024-02-12 16:36:45,904 DEBUG    [database_context.py:45] Connection established
-2024-02-12 16:36:45,904 INFO     [view_user_controller.py:22] Viewing all user details
-2024-02-12 16:36:45,904 INFO     [view_user_handler.py:19] Viewining user details
-2024-02-12 16:36:45,924 DEBUG    [database_context.py:45] Connection established
-2024-02-12 16:36:45,928 INFO     [_internal.py:96] 127.0.0.1 - - [12/Feb/2024 16:36:45] "GET /asset-management/users HTTP/1.1" 200 -
-2024-02-12 17:49:58,942 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\handlers\\user_handler\\create_user_handler.py', reloading
-2024-02-12 17:49:59,034 INFO     [_internal.py:96]  * Restarting with stat
-2024-02-12 17:50:01,824 INFO     [app.py:18] Creating flask app
-2024-02-12 17:50:01,936 DEBUG    [database_context.py:45] Connection established
-2024-02-12 17:50:01,950 INFO     [flask_config.py:18] Setting all flask and swagger configs
-2024-02-12 17:50:01,950 INFO     [flask_config.py:33] Intialising all jwt decorators
-2024-02-12 17:50:01,952 INFO     [flask_config.py:91] Registring all flask blueprints
-2024-02-12 17:50:01,988 WARNING  [_internal.py:96]  * Debugger is active!
-2024-02-12 17:50:01,991 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
-2024-02-12 17:50:04,472 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\handlers\\user_handler\\create_user_handler.py', reloading
-2024-02-12 17:50:04,547 INFO     [_internal.py:96]  * Restarting with stat
-2024-02-12 17:50:05,944 INFO     [app.py:18] Creating flask app
-2024-02-12 17:50:06,024 DEBUG    [database_context.py:45] Connection established
-2024-02-12 17:50:06,036 INFO     [flask_config.py:18] Setting all flask and swagger configs
-2024-02-12 17:50:06,036 INFO     [flask_config.py:33] Intialising all jwt decorators
-2024-02-12 17:50:06,036 INFO     [flask_config.py:91] Registring all flask blueprints
-2024-02-12 17:50:06,065 WARNING  [_internal.py:96]  * Debugger is active!
-2024-02-12 17:50:06,065 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
-2024-02-12 17:50:09,658 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\handlers\\user_handler\\create_user_handler.py', reloading
-2024-02-12 17:50:09,737 INFO     [_internal.py:96]  * Restarting with stat
-2024-02-12 17:50:11,338 INFO     [app.py:18] Creating flask app
-2024-02-12 17:50:11,405 DEBUG    [database_context.py:45] Connection established
-2024-02-12 17:50:11,428 INFO     [flask_config.py:18] Setting all flask and swagger configs
-2024-02-12 17:50:11,428 INFO     [flask_config.py:33] Intialising all jwt decorators
-2024-02-12 17:50:11,428 INFO     [flask_config.py:91] Registring all flask blueprints
-2024-02-12 17:50:11,452 WARNING  [_internal.py:96]  * Debugger is active!
-2024-02-12 17:50:11,452 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
-2024-02-12 17:54:27,511 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\handlers\\user_handler\\create_user_handler.py', reloading
-2024-02-12 17:54:27,582 INFO     [_internal.py:96]  * Restarting with stat
-2024-02-12 17:54:29,104 INFO     [app.py:18] Creating flask app
-2024-02-12 17:54:29,197 DEBUG    [database_context.py:45] Connection established
-2024-02-12 17:54:29,211 INFO     [flask_config.py:18] Setting all flask and swagger configs
-2024-02-12 17:54:29,211 INFO     [flask_config.py:33] Intialising all jwt decorators
-2024-02-12 17:54:29,211 INFO     [flask_config.py:91] Registring all flask blueprints
-2024-02-12 17:54:29,247 WARNING  [_internal.py:96]  * Debugger is active!
-2024-02-12 17:54:29,249 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-13 11:30:03,864 INFO     [_internal.py:96] [33mPress CTRL+C to quit[0m
+2024-02-13 11:30:03,867 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-13 11:30:04,800 INFO     [app.py:18] Creating flask app
+2024-02-13 11:30:04,878 DEBUG    [database_context.py:45] Connection established
+2024-02-13 11:30:04,894 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-13 11:30:04,894 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-13 11:30:04,894 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-13 11:30:04,926 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-13 11:30:04,926 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-13 11:30:09,039 DEBUG    [login_controller.py:25] User authenticating and issuing access token
+2024-02-13 11:30:09,054 DEBUG    [database_context.py:45] Connection established
+2024-02-13 11:30:09,054 INFO     [common_helper.py:48] Verifying user password
+2024-02-13 11:30:09,054 INFO     [token.py:41] New access and refresh token issued
+2024-02-13 11:30:09,054 DEBUG    [database_context.py:45] Connection established
+2024-02-13 11:30:09,070 INFO     [_internal.py:96] 127.0.0.1 - - [13/Feb/2024 11:30:09] "POST /asset-management/login HTTP/1.1" 200 -
+2024-02-13 11:30:33,197 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-13 11:30:33,208 DEBUG    [database_context.py:45] Connection established
+2024-02-13 11:30:33,209 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-13 11:30:33,217 DEBUG    [database_context.py:45] Connection established
+2024-02-13 11:30:33,219 INFO     [update_user_controller.py:23] Method to update user password
+2024-02-13 11:30:33,219 INFO     [update_user_handler.py:23] Changing user password is old password is valid
+2024-02-13 11:30:33,228 DEBUG    [database_context.py:45] Connection established
+2024-02-13 11:30:33,325 INFO     [_internal.py:96] 127.0.0.1 - - [13/Feb/2024 11:30:33] "[35m[1mPUT /asset-management/user/change-password HTTP/1.1[0m" 500 -
+2024-02-13 11:31:03,378 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\handlers\\user_handler\\update_user_handler.py', reloading
+2024-02-13 11:31:03,438 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-13 11:31:04,374 INFO     [app.py:18] Creating flask app
+2024-02-13 11:31:04,446 DEBUG    [database_context.py:45] Connection established
+2024-02-13 11:31:04,447 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-13 11:31:04,447 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-13 11:31:04,447 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-13 11:31:04,481 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-13 11:31:04,481 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-13 11:31:11,325 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\config\\queries.py', reloading
+2024-02-13 11:31:11,391 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-13 11:31:12,341 INFO     [app.py:18] Creating flask app
+2024-02-13 11:31:12,406 DEBUG    [database_context.py:45] Connection established
+2024-02-13 11:31:12,422 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-13 11:31:12,422 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-13 11:31:12,422 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-13 11:31:12,467 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-13 11:31:12,469 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-13 11:31:18,175 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\config\\queries.py', reloading
+2024-02-13 11:31:18,227 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-13 11:31:19,106 INFO     [app.py:18] Creating flask app
+2024-02-13 11:31:19,174 DEBUG    [database_context.py:45] Connection established
+2024-02-13 11:31:19,186 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-13 11:31:19,186 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-13 11:31:19,187 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-13 11:31:19,215 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-13 11:31:19,217 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-13 11:31:21,064 INFO     [app.py:18] Creating flask app
+2024-02-13 11:31:21,159 DEBUG    [database_context.py:45] Connection established
+2024-02-13 11:31:21,172 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-13 11:31:21,172 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-13 11:31:21,172 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-13 11:31:21,223 INFO     [_internal.py:96] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-02-13 11:31:21,223 INFO     [_internal.py:96] [33mPress CTRL+C to quit[0m
+2024-02-13 11:31:21,226 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-13 11:31:22,295 INFO     [app.py:18] Creating flask app
+2024-02-13 11:31:22,375 DEBUG    [database_context.py:45] Connection established
+2024-02-13 11:31:22,380 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-13 11:31:22,380 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-13 11:31:22,380 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-13 11:31:22,412 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-13 11:31:22,426 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-13 11:31:23,689 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-13 11:31:23,704 DEBUG    [database_context.py:45] Connection established
+2024-02-13 11:31:23,704 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-13 11:31:23,720 DEBUG    [database_context.py:45] Connection established
+2024-02-13 11:31:23,720 INFO     [update_user_controller.py:23] Method to update user password
+2024-02-13 11:31:23,720 INFO     [update_user_handler.py:23] Changing user password is old password is valid
+2024-02-13 11:31:23,720 DEBUG    [database_context.py:45] Connection established
+2024-02-13 11:31:23,720 INFO     [common_helper.py:48] Verifying user password
+2024-02-13 11:31:23,736 DEBUG    [database_context.py:45] Connection established
+2024-02-13 11:31:23,736 INFO     [token.py:33] Revoking token
+2024-02-13 11:31:23,751 DEBUG    [database_context.py:45] Connection established
+2024-02-13 11:31:23,751 INFO     [token.py:41] New access and refresh token issued
+2024-02-13 11:31:23,761 DEBUG    [database_context.py:45] Connection established
+2024-02-13 11:31:23,770 INFO     [update_user_controller.py:42] Password of user updated successfully
+2024-02-13 11:31:23,770 INFO     [_internal.py:96] 127.0.0.1 - - [13/Feb/2024 11:31:23] "PUT /asset-management/user/change-password HTTP/1.1" 200 -
+2024-02-13 11:31:29,490 DEBUG    [login_controller.py:25] User authenticating and issuing access token
+2024-02-13 11:31:29,501 DEBUG    [database_context.py:45] Connection established
+2024-02-13 11:31:29,502 INFO     [common_helper.py:48] Verifying user password
+2024-02-13 11:31:29,502 ERROR    [login_controller.py:48] Error handled by application custom error handler Unauthorised
+2024-02-13 11:31:29,502 INFO     [_internal.py:96] 127.0.0.1 - - [13/Feb/2024 11:31:29] "[31m[1mPOST /asset-management/login HTTP/1.1[0m" 401 -
+2024-02-13 11:31:35,863 DEBUG    [login_controller.py:25] User authenticating and issuing access token
+2024-02-13 11:31:35,872 DEBUG    [database_context.py:45] Connection established
+2024-02-13 11:31:35,874 INFO     [common_helper.py:48] Verifying user password
+2024-02-13 11:31:35,874 INFO     [token.py:41] New access and refresh token issued
+2024-02-13 11:31:35,883 DEBUG    [database_context.py:45] Connection established
+2024-02-13 11:31:35,887 INFO     [_internal.py:96] 127.0.0.1 - - [13/Feb/2024 11:31:35] "POST /asset-management/login HTTP/1.1" 200 -
+2024-02-13 11:32:16,287 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-13 11:32:16,297 DEBUG    [database_context.py:45] Connection established
+2024-02-13 11:32:16,298 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-13 11:32:16,308 DEBUG    [database_context.py:45] Connection established
+2024-02-13 11:32:16,309 INFO     [view_user_controller.py:22] Viewing all user details
+2024-02-13 11:32:16,309 INFO     [view_user_handler.py:19] Viewining user details
+2024-02-13 11:32:16,316 DEBUG    [database_context.py:45] Connection established
+2024-02-13 11:32:16,318 INFO     [_internal.py:96] 127.0.0.1 - - [13/Feb/2024 11:32:16] "GET /asset-management/users HTTP/1.1" 200 -
+2024-02-13 11:32:22,642 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-13 11:32:22,651 DEBUG    [database_context.py:45] Connection established
+2024-02-13 11:32:22,652 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-13 11:32:22,661 DEBUG    [database_context.py:45] Connection established
+2024-02-13 11:32:22,663 INFO     [_internal.py:96] 127.0.0.1 - - [13/Feb/2024 11:32:22] "[31m[1mPOST /asset-management/users HTTP/1.1[0m" 400 -
+2024-02-13 11:32:58,344 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\schemas\\user_schema.py', reloading
+2024-02-13 11:32:58,396 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-13 11:32:59,224 INFO     [app.py:18] Creating flask app
+2024-02-13 11:32:59,298 DEBUG    [database_context.py:45] Connection established
+2024-02-13 11:32:59,311 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-13 11:32:59,312 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-13 11:32:59,312 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-13 11:32:59,339 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-13 11:32:59,339 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-13 11:33:04,987 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\schemas\\user_schema.py', reloading
+2024-02-13 11:33:05,102 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-13 11:33:06,035 INFO     [app.py:18] Creating flask app
+2024-02-13 11:33:06,113 DEBUG    [database_context.py:45] Connection established
+2024-02-13 11:33:06,124 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-13 11:33:06,125 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-13 11:33:06,125 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-13 11:33:06,153 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-13 11:33:06,155 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-13 11:33:09,046 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-13 11:33:09,046 DEBUG    [database_context.py:45] Connection established
+2024-02-13 11:33:09,046 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-13 11:33:09,062 DEBUG    [database_context.py:45] Connection established
+2024-02-13 11:33:09,062 INFO     [_internal.py:96] 127.0.0.1 - - [13/Feb/2024 11:33:09] "[31m[1mPOST /asset-management/users HTTP/1.1[0m" 400 -
+2024-02-13 11:33:19,516 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\schemas\\user_schema.py', reloading
+2024-02-13 11:33:19,584 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-13 11:33:20,433 INFO     [app.py:18] Creating flask app
+2024-02-13 11:33:20,496 DEBUG    [database_context.py:45] Connection established
+2024-02-13 11:33:20,512 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-13 11:33:20,512 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-13 11:33:20,512 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-13 11:33:20,543 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-13 11:33:20,543 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-13 11:33:22,933 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\schemas\\user_schema.py', reloading
+2024-02-13 11:33:22,996 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-13 11:33:23,865 INFO     [app.py:18] Creating flask app
+2024-02-13 11:33:23,930 DEBUG    [database_context.py:45] Connection established
+2024-02-13 11:33:23,943 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-13 11:33:23,943 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-13 11:33:23,943 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-13 11:33:23,971 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-13 11:33:23,972 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-13 11:33:32,370 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-13 11:33:32,370 DEBUG    [database_context.py:45] Connection established
+2024-02-13 11:33:32,370 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-13 11:33:32,385 DEBUG    [database_context.py:45] Connection established
+2024-02-13 11:33:32,385 INFO     [_internal.py:96] 127.0.0.1 - - [13/Feb/2024 11:33:32] "[31m[1mPOST /asset-management/users HTTP/1.1[0m" 400 -
+2024-02-13 11:34:28,932 INFO     [app.py:18] Creating flask app
+2024-02-13 11:34:28,996 DEBUG    [database_context.py:45] Connection established
+2024-02-13 11:34:29,010 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-13 11:34:29,010 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-13 11:34:29,011 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-13 11:34:29,045 INFO     [_internal.py:96] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-02-13 11:34:29,045 INFO     [_internal.py:96] [33mPress CTRL+C to quit[0m
+2024-02-13 11:34:29,048 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-13 11:34:29,953 INFO     [app.py:18] Creating flask app
+2024-02-13 11:34:30,029 DEBUG    [database_context.py:45] Connection established
+2024-02-13 11:34:30,040 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-13 11:34:30,041 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-13 11:34:30,041 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-13 11:34:30,070 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-13 11:34:30,073 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-13 11:34:32,903 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-13 11:34:32,914 DEBUG    [database_context.py:45] Connection established
+2024-02-13 11:34:32,915 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-13 11:34:32,923 DEBUG    [database_context.py:45] Connection established
+2024-02-13 11:34:32,926 INFO     [_internal.py:96] 127.0.0.1 - - [13/Feb/2024 11:34:32] "[31m[1mPOST /asset-management/users HTTP/1.1[0m" 400 -
+2024-02-13 11:35:43,766 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-13 11:35:43,775 DEBUG    [database_context.py:45] Connection established
+2024-02-13 11:35:43,776 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-13 11:35:43,785 DEBUG    [database_context.py:45] Connection established
+2024-02-13 11:35:43,786 INFO     [create_user_controller.py:21] Method that created new user in database
+2024-02-13 11:35:43,787 INFO     [create_user_handler.py:21] Creating new user in database
+2024-02-13 11:35:43,795 DEBUG    [database_context.py:45] Connection established
+2024-02-13 11:35:43,798 INFO     [create_user_handler.py:31] New user with default password created
+2024-02-13 11:35:43,798 INFO     [create_user_controller.py:29] New user created array
+2024-02-13 11:35:43,799 INFO     [_internal.py:96] 127.0.0.1 - - [13/Feb/2024 11:35:43] "[35m[1mPOST /asset-management/users HTTP/1.1[0m" 201 -
+2024-02-13 11:36:27,829 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-13 11:36:27,840 DEBUG    [database_context.py:45] Connection established
+2024-02-13 11:36:27,841 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-13 11:36:27,849 DEBUG    [database_context.py:45] Connection established
+2024-02-13 11:36:27,851 INFO     [create_user_controller.py:21] Method that created new user in database
+2024-02-13 11:36:27,851 INFO     [create_user_handler.py:21] Creating new user in database
+2024-02-13 11:36:27,859 DEBUG    [database_context.py:45] Connection established
+2024-02-13 11:36:27,864 INFO     [create_user_handler.py:31] New user with default password created
+2024-02-13 11:36:27,864 INFO     [create_user_controller.py:29] New user created port
+2024-02-13 11:36:27,865 INFO     [_internal.py:96] 127.0.0.1 - - [13/Feb/2024 11:36:27] "[35m[1mPOST /asset-management/users HTTP/1.1[0m" 201 -
+2024-02-13 12:15:17,517 INFO     [app.py:18] Creating flask app
+2024-02-13 12:15:17,585 DEBUG    [database_context.py:45] Connection established
+2024-02-13 12:15:17,598 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-13 12:15:17,599 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-13 12:15:17,599 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-13 12:15:17,638 INFO     [_internal.py:96] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-02-13 12:15:17,638 INFO     [_internal.py:96] [33mPress CTRL+C to quit[0m
+2024-02-13 12:15:17,641 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-13 12:15:18,504 INFO     [app.py:18] Creating flask app
+2024-02-13 12:15:18,569 DEBUG    [database_context.py:45] Connection established
+2024-02-13 12:15:18,582 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-13 12:15:18,582 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-13 12:15:18,583 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-13 12:15:18,611 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-13 12:15:18,613 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-13 12:16:05,561 DEBUG    [login_controller.py:25] User authenticating and issuing access token
+2024-02-13 12:16:05,561 DEBUG    [database_context.py:45] Connection established
+2024-02-13 12:16:05,561 INFO     [common_helper.py:48] Verifying user password
+2024-02-13 12:16:05,561 INFO     [token.py:41] New access and refresh token issued
+2024-02-13 12:16:05,577 DEBUG    [database_context.py:45] Connection established
+2024-02-13 12:16:05,592 INFO     [_internal.py:96] 127.0.0.1 - - [13/Feb/2024 12:16:05] "POST /asset-management/login HTTP/1.1" 200 -
+2024-02-13 12:16:23,509 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-13 12:16:23,521 DEBUG    [database_context.py:45] Connection established
+2024-02-13 12:16:23,523 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-13 12:16:23,531 DEBUG    [database_context.py:45] Connection established
+2024-02-13 12:16:23,534 INFO     [update_user_controller.py:23] Method to update user password
+2024-02-13 12:16:23,534 INFO     [update_user_handler.py:23] Changing user password is old password is valid
+2024-02-13 12:16:23,544 DEBUG    [database_context.py:45] Connection established
+2024-02-13 12:16:23,545 INFO     [common_helper.py:48] Verifying user password
+2024-02-13 12:16:23,554 DEBUG    [database_context.py:45] Connection established
+2024-02-13 12:16:23,558 INFO     [token.py:33] Revoking token
+2024-02-13 12:16:23,567 DEBUG    [database_context.py:45] Connection established
+2024-02-13 12:16:23,571 INFO     [token.py:41] New access and refresh token issued
+2024-02-13 12:16:23,582 DEBUG    [database_context.py:45] Connection established
+2024-02-13 12:16:23,589 INFO     [update_user_controller.py:42] Password of user updated successfully
+2024-02-13 12:16:23,590 INFO     [_internal.py:96] 127.0.0.1 - - [13/Feb/2024 12:16:23] "PUT /asset-management/user/change-password HTTP/1.1" 200 -
+2024-02-16 09:42:21,441 INFO     [app.py:18] Creating flask app
+2024-02-16 09:42:21,749 DEBUG    [database_context.py:45] Connection established
+2024-02-16 09:42:21,841 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-16 09:42:21,841 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-16 09:42:21,843 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-16 09:42:21,899 INFO     [_internal.py:96] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-02-16 09:42:21,899 INFO     [_internal.py:96] [33mPress CTRL+C to quit[0m
+2024-02-16 09:42:21,904 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-16 09:42:22,973 INFO     [app.py:18] Creating flask app
+2024-02-16 09:42:23,086 DEBUG    [database_context.py:45] Connection established
+2024-02-16 09:42:23,117 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-16 09:42:23,117 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-16 09:42:23,117 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-16 09:42:23,164 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-16 09:42:23,164 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-16 09:42:41,440 DEBUG    [login_controller.py:25] User authenticating and issuing access token
+2024-02-16 09:42:41,456 DEBUG    [database_context.py:45] Connection established
+2024-02-16 09:42:41,506 INFO     [common_helper.py:48] Verifying user password
+2024-02-16 09:42:41,506 INFO     [token.py:41] New access and refresh token issued
+2024-02-16 09:42:41,522 DEBUG    [database_context.py:45] Connection established
+2024-02-16 09:42:41,554 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 09:42:41] "POST /asset-management/login HTTP/1.1" 200 -
+2024-02-16 09:43:07,331 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 09:43:07] "[31m[1mGET /asset-management/users HTTP/1.1[0m" 401 -
+2024-02-16 09:44:18,166 DEBUG    [login_controller.py:25] User authenticating and issuing access token
+2024-02-16 09:44:18,185 DEBUG    [database_context.py:45] Connection established
+2024-02-16 09:44:18,186 INFO     [common_helper.py:48] Verifying user password
+2024-02-16 09:44:18,186 INFO     [token.py:41] New access and refresh token issued
+2024-02-16 09:44:18,212 DEBUG    [database_context.py:45] Connection established
+2024-02-16 09:44:18,220 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 09:44:18] "POST /asset-management/login HTTP/1.1" 200 -
+2024-02-16 09:46:27,436 DEBUG    [login_controller.py:25] User authenticating and issuing access token
+2024-02-16 09:46:27,454 DEBUG    [database_context.py:45] Connection established
+2024-02-16 09:46:27,454 INFO     [common_helper.py:48] Verifying user password
+2024-02-16 09:46:27,454 INFO     [token.py:41] New access and refresh token issued
+2024-02-16 09:46:27,476 DEBUG    [database_context.py:45] Connection established
+2024-02-16 09:46:27,484 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 09:46:27] "POST /asset-management/login HTTP/1.1" 200 -
+2024-02-16 09:47:02,952 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 09:47:02,976 DEBUG    [database_context.py:45] Connection established
+2024-02-16 09:47:02,984 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 09:47:03,000 DEBUG    [database_context.py:45] Connection established
+2024-02-16 09:47:03,008 INFO     [view_user_controller.py:22] Viewing all user details
+2024-02-16 09:47:03,008 INFO     [view_user_handler.py:19] Viewining user details
+2024-02-16 09:47:03,028 DEBUG    [database_context.py:45] Connection established
+2024-02-16 09:47:03,033 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 09:47:03] "GET /asset-management/users HTTP/1.1" 200 -
+2024-02-16 09:47:13,524 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 09:47:13] "[31m[1mGET /asset-management/users HTTP/1.1[0m" 401 -
+2024-02-16 09:50:35,664 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\routes\\auth_routes.py', reloading
+2024-02-16 09:50:35,757 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-16 09:50:37,019 INFO     [app.py:18] Creating flask app
+2024-02-16 09:50:37,098 DEBUG    [database_context.py:45] Connection established
+2024-02-16 09:50:37,121 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-16 09:50:37,121 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-16 09:50:37,121 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-16 09:50:37,171 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-16 09:50:37,176 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-16 09:51:10,136 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\utils\\token.py', reloading
+2024-02-16 09:51:10,212 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-16 09:51:11,271 INFO     [app.py:18] Creating flask app
+2024-02-16 09:51:11,377 DEBUG    [database_context.py:45] Connection established
+2024-02-16 09:51:11,400 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-16 09:51:11,400 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-16 09:51:11,400 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-16 09:51:11,437 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-16 09:51:11,450 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-16 09:51:25,807 DEBUG    [login_controller.py:25] User authenticating and issuing access token
+2024-02-16 09:51:25,822 DEBUG    [database_context.py:45] Connection established
+2024-02-16 09:51:25,822 INFO     [common_helper.py:48] Verifying user password
+2024-02-16 09:51:25,822 INFO     [token.py:41] New access and refresh token issued
+2024-02-16 09:51:25,839 DEBUG    [database_context.py:45] Connection established
+2024-02-16 09:51:25,839 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 09:51:25] "POST /asset-management/login HTTP/1.1" 200 -
+2024-02-16 09:53:40,983 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 09:53:40,991 DEBUG    [database_context.py:45] Connection established
+2024-02-16 09:53:40,996 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 09:53:41,007 DEBUG    [database_context.py:45] Connection established
+2024-02-16 09:53:41,008 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 09:53:41] "[31m[1mPUT /asset-management/assets/ASN4ReH/assign HTTP/1.1[0m" 403 -
+2024-02-16 09:57:43,857 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\utils\\password_generator.py', reloading
+2024-02-16 09:57:43,943 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-16 09:57:45,261 INFO     [app.py:18] Creating flask app
+2024-02-16 09:57:45,336 DEBUG    [database_context.py:45] Connection established
+2024-02-16 09:57:45,345 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-16 09:57:45,345 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-16 09:57:45,345 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-16 09:57:45,385 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-16 09:57:45,385 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-16 10:02:28,927 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:02:28,951 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:02:28,951 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:02:28,967 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:02:28,967 INFO     [create_user_controller.py:21] Method that created new user in database
+2024-02-16 10:02:28,982 INFO     [create_user_handler.py:21] Creating new user in database
+2024-02-16 10:02:28,998 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:02:28,998 INFO     [create_user_handler.py:31] New user with default password created
+2024-02-16 10:02:28,998 INFO     [create_user_controller.py:29] New user created tanvi
+2024-02-16 10:02:29,014 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 10:02:29] "[35m[1mPOST /asset-management/users HTTP/1.1[0m" 201 -
+2024-02-16 10:03:40,161 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:03:40,177 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:03:40,177 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:03:40,194 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:03:40,194 INFO     [view_user_controller.py:39] Viewing user profile
+2024-02-16 10:03:40,194 INFO     [view_user_handler.py:31] Viewing user detail by user id
+2024-02-16 10:03:40,209 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:03:40,210 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 10:03:40] "GET /asset-management/user/profile HTTP/1.1" 200 -
+2024-02-16 10:06:34,392 DEBUG    [login_controller.py:25] User authenticating and issuing access token
+2024-02-16 10:06:34,404 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:06:34,404 INFO     [common_helper.py:48] Verifying user password
+2024-02-16 10:06:34,404 INFO     [token.py:41] New access and refresh token issued
+2024-02-16 10:06:34,416 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:06:34,418 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 10:06:34] "POST /asset-management/login HTTP/1.1" 200 -
+2024-02-16 10:07:29,908 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:07:29,917 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:07:29,917 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:07:29,925 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:07:29,931 INFO     [view_user_controller.py:22] Viewing all user details
+2024-02-16 10:07:29,931 INFO     [view_user_handler.py:19] Viewining user details
+2024-02-16 10:07:29,933 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:07:29,933 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 10:07:29] "GET /asset-management/users HTTP/1.1" 200 -
+2024-02-16 10:13:06,317 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:13:06,327 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:13:06,327 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:13:06,339 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:13:06,339 INFO     [update_user_controller.py:23] Method to update user password
+2024-02-16 10:13:06,339 INFO     [update_user_handler.py:23] Changing user password is old password is valid
+2024-02-16 10:13:06,347 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:13:06,347 INFO     [common_helper.py:48] Verifying user password
+2024-02-16 10:13:06,347 ERROR    [update_user_controller.py:47] Error handled by application custom error handler Unauthorised
+2024-02-16 10:13:06,347 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 10:13:06] "[31m[1mPUT /asset-management/user/change-password HTTP/1.1[0m" 401 -
+2024-02-16 10:14:06,726 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:14:06,730 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:14:06,737 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:14:06,745 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:14:06,745 INFO     [update_user_controller.py:23] Method to update user password
+2024-02-16 10:14:06,745 INFO     [update_user_handler.py:23] Changing user password is old password is valid
+2024-02-16 10:14:06,753 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:14:06,753 INFO     [common_helper.py:48] Verifying user password
+2024-02-16 10:14:06,763 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:14:06,769 INFO     [token.py:33] Revoking token
+2024-02-16 10:14:06,778 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:14:06,786 INFO     [token.py:41] New access and refresh token issued
+2024-02-16 10:14:06,806 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:14:06,811 INFO     [update_user_controller.py:42] Password of user updated successfully
+2024-02-16 10:14:06,811 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 10:14:06] "PUT /asset-management/user/change-password HTTP/1.1" 200 -
+2024-02-16 10:15:49,951 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:15:49,961 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:15:49,964 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:15:49,972 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:15:49,972 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 10:15:49] "[31m[1mGET /asset-management/vendors HTTP/1.1[0m" 401 -
+2024-02-16 10:31:04,312 DEBUG    [login_controller.py:25] User authenticating and issuing access token
+2024-02-16 10:31:04,324 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:31:04,326 INFO     [common_helper.py:48] Verifying user password
+2024-02-16 10:31:04,326 INFO     [token.py:41] New access and refresh token issued
+2024-02-16 10:31:04,339 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:31:04,344 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 10:31:04] "POST /asset-management/login HTTP/1.1" 200 -
+2024-02-16 10:31:10,643 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:31:10,651 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:31:10,651 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:31:10,667 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:31:10,667 INFO     [view_vendor_controller.py:21] Viewing vendors of database
+2024-02-16 10:31:10,684 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:31:10,688 ERROR    [view_vendor_controller.py:29] Error handled by application custom error handler Resource not found
+2024-02-16 10:31:10,688 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 10:31:10] "[33mGET /asset-management/vendors HTTP/1.1[0m" 404 -
+2024-02-16 10:31:45,069 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:31:45,069 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:31:45,069 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:31:45,086 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:31:45,086 INFO     [create_vendor_controller.py:21] Creating new vendor in database
+2024-02-16 10:31:45,086 INFO     [create_vendor_handler.py:20] Creating new vendor in database
+2024-02-16 10:31:45,103 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:31:45,105 INFO     [create_vendor_handler.py:28] New vendor added in database
+2024-02-16 10:31:45,105 INFO     [create_vendor_controller.py:29] Vendor created successfully VEN8AxN
+2024-02-16 10:31:45,105 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 10:31:45] "[35m[1mPOST /asset-management/vendors HTTP/1.1[0m" 201 -
+2024-02-16 10:31:49,450 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:31:49,454 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:31:49,454 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:31:49,470 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:31:49,470 INFO     [view_vendor_controller.py:21] Viewing vendors of database
+2024-02-16 10:31:49,478 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:31:49,486 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 10:31:49] "GET /asset-management/vendors HTTP/1.1" 200 -
+2024-02-16 10:32:30,244 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\handlers\\vendor_handler\\view_vendor_handler.py', reloading
+2024-02-16 10:32:30,333 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-16 10:32:31,622 INFO     [app.py:18] Creating flask app
+2024-02-16 10:32:31,706 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:32:31,729 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-16 10:32:31,729 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-16 10:32:31,729 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-16 10:32:31,772 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-16 10:32:31,776 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-16 10:32:50,046 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\handlers\\vendor_handler\\view_vendor_handler.py', reloading
+2024-02-16 10:32:50,114 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-16 10:32:51,194 INFO     [app.py:18] Creating flask app
+2024-02-16 10:32:51,275 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:32:51,296 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-16 10:32:51,296 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-16 10:32:51,296 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-16 10:32:51,344 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-16 10:32:51,349 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-16 10:33:13,082 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:33:13,096 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:33:13,096 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:33:13,118 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:33:13,118 INFO     [view_vendor_controller.py:21] Viewing vendors of database
+2024-02-16 10:33:13,142 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:33:13,147 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 10:33:13] "GET /asset-management/vendors HTTP/1.1" 200 -
+2024-02-16 10:33:31,937 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:33:31,954 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:33:31,954 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:33:31,970 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:33:31,978 INFO     [view_category_controller.py:21] Viewing all categories of any asset
+2024-02-16 10:33:31,978 INFO     [view_category_handler.py:20] Viewing all categories
+2024-02-16 10:33:31,994 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:33:32,003 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 10:33:32] "GET /asset-management/categories HTTP/1.1" 200 -
+2024-02-16 10:33:42,329 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\handlers\\vendor_handler\\view_vendor_handler.py', reloading
+2024-02-16 10:33:42,460 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-16 10:33:46,223 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-16 10:33:47,296 INFO     [app.py:18] Creating flask app
+2024-02-16 10:33:47,378 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:33:47,395 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-16 10:33:47,397 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-16 10:33:47,397 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-16 10:33:47,430 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-16 10:33:47,430 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-16 10:33:52,332 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:33:52,350 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:33:52,351 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:33:52,361 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:33:52,362 INFO     [view_vendor_controller.py:21] Viewing vendors of database
+2024-02-16 10:33:52,366 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:33:52,366 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 10:33:52] "GET /asset-management/vendors HTTP/1.1" 200 -
+2024-02-16 10:33:55,508 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:33:55,528 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:33:55,528 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:33:55,552 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:33:55,556 INFO     [create_vendor_controller.py:21] Creating new vendor in database
+2024-02-16 10:33:55,556 INFO     [create_vendor_handler.py:20] Creating new vendor in database
+2024-02-16 10:33:55,576 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:33:55,582 INFO     [create_vendor_handler.py:28] New vendor added in database
+2024-02-16 10:33:55,582 INFO     [create_vendor_controller.py:29] Vendor created successfully VEN8duy
+2024-02-16 10:33:55,582 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 10:33:55] "[35m[1mPOST /asset-management/vendors HTTP/1.1[0m" 201 -
+2024-02-16 10:34:09,095 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:34:09,112 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:34:09,114 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:34:09,127 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:34:09,134 INFO     [create_vendor_controller.py:21] Creating new vendor in database
+2024-02-16 10:34:09,134 INFO     [create_vendor_handler.py:20] Creating new vendor in database
+2024-02-16 10:34:09,151 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:34:09,160 ERROR    [create_vendor_handler.py:32] Integrity error raised while creating vendor 1062 (23000): Duplicate entry 'agrima@gmail.com' for key 'vendor_table.vendor_email'
+2024-02-16 10:34:09,160 ERROR    [create_vendor_controller.py:34] Error handled by application custom error handler Conflict
+2024-02-16 10:34:09,160 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 10:34:09] "[31m[1mPOST /asset-management/vendors HTTP/1.1[0m" 409 -
+2024-02-16 10:34:49,034 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:34:49,050 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:34:49,052 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:34:49,067 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:34:49,067 INFO     [create_vendor_controller.py:21] Creating new vendor in database
+2024-02-16 10:34:49,067 INFO     [create_vendor_handler.py:20] Creating new vendor in database
+2024-02-16 10:34:49,088 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:34:49,092 INFO     [create_vendor_handler.py:28] New vendor added in database
+2024-02-16 10:34:49,092 INFO     [create_vendor_controller.py:29] Vendor created successfully VEN6qrB
+2024-02-16 10:34:49,092 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 10:34:49] "[35m[1mPOST /asset-management/vendors HTTP/1.1[0m" 201 -
+2024-02-16 10:35:04,486 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:35:04,502 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:35:04,503 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:35:04,535 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:35:04,539 INFO     [view_vendor_controller.py:21] Viewing vendors of database
+2024-02-16 10:35:04,570 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:35:04,575 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 10:35:04] "GET /asset-management/vendors HTTP/1.1" 200 -
+2024-02-16 10:35:14,232 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:35:14,240 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:35:14,248 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:35:14,257 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:35:14,257 INFO     [delete_vendor_controller.py:21] Deactivating vendor from database
+2024-02-16 10:35:14,257 INFO     [delete_vendor_handler.py:19] Deactivating vendor from database
+2024-02-16 10:35:14,276 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:35:14,289 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:35:14,303 INFO     [delete_vendor_handler.py:28] Vendor deactivated successfully from database
+2024-02-16 10:35:14,303 INFO     [delete_vendor_controller.py:30] Vendor VEN6qrB deactiavted successfully
+2024-02-16 10:35:14,303 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 10:35:14] "DELETE /asset-management/vendor/VEN6qrB HTTP/1.1" 200 -
+2024-02-16 10:36:10,972 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\controller\\vendor_controller\\delete_vendor_controller.py', reloading
+2024-02-16 10:36:11,048 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-16 10:36:12,098 INFO     [app.py:18] Creating flask app
+2024-02-16 10:36:12,200 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:36:12,219 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-16 10:36:12,219 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-16 10:36:12,219 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-16 10:36:12,259 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-16 10:36:12,259 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-16 10:36:21,381 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\controller\\vendor_controller\\delete_vendor_controller.py', reloading
+2024-02-16 10:36:21,459 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-16 10:36:22,514 INFO     [app.py:18] Creating flask app
+2024-02-16 10:36:22,634 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:36:22,662 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-16 10:36:22,663 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-16 10:36:22,663 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-16 10:36:22,701 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-16 10:36:22,701 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-16 10:36:25,298 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:36:25,314 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:36:25,314 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:36:25,330 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:36:25,330 INFO     [delete_vendor_controller.py:21] Deactivating vendor from database
+2024-02-16 10:36:25,330 INFO     [delete_vendor_handler.py:19] Deactivating vendor from database
+2024-02-16 10:36:25,349 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:36:25,349 ERROR    [delete_vendor_controller.py:30] Error handled by application custom error handler Resource not found
+2024-02-16 10:36:25,349 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 10:36:25] "[33mDELETE /asset-management/vendor/VEN6qrB HTTP/1.1[0m" 404 -
+2024-02-16 10:36:35,454 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:36:35,466 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:36:35,468 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:36:35,481 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:36:35,490 INFO     [view_category_controller.py:21] Viewing all categories of any asset
+2024-02-16 10:36:35,490 INFO     [view_category_handler.py:20] Viewing all categories
+2024-02-16 10:36:35,510 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:36:35,514 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 10:36:35] "GET /asset-management/categories HTTP/1.1" 200 -
+2024-02-16 10:38:28,229 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:38:28,235 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:38:28,243 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:38:28,253 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:38:28,253 INFO     [create_category_controller.py:21] Controller for creating new category
+2024-02-16 10:38:28,253 INFO     [create_category_handler.py:59] Method to create new category in database
+2024-02-16 10:38:28,253 INFO     [common_helper.py:15] Fetching vendor details from database
+2024-02-16 10:38:28,276 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:38:28,276 ERROR    [create_category_controller.py:34] Error handled by application custom error handler Resource not found
+2024-02-16 10:38:28,276 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 10:38:28] "[33mPOST /asset-management/categories HTTP/1.1[0m" 404 -
+2024-02-16 10:38:48,371 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:38:48,382 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:38:48,382 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:38:48,393 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:38:48,399 INFO     [create_vendor_controller.py:21] Creating new vendor in database
+2024-02-16 10:38:48,399 INFO     [create_vendor_handler.py:20] Creating new vendor in database
+2024-02-16 10:38:48,415 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:38:48,415 ERROR    [create_vendor_handler.py:32] Integrity error raised while creating vendor 1062 (23000): Duplicate entry 'agrima@gmail.com' for key 'vendor_table.vendor_email'
+2024-02-16 10:38:48,415 ERROR    [create_vendor_controller.py:34] Error handled by application custom error handler Conflict
+2024-02-16 10:38:48,423 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 10:38:48] "[31m[1mPOST /asset-management/vendors HTTP/1.1[0m" 409 -
+2024-02-16 10:40:25,171 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:40:25,188 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:40:25,195 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:40:25,211 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:40:25,219 INFO     [create_vendor_controller.py:21] Creating new vendor in database
+2024-02-16 10:40:25,219 INFO     [create_vendor_handler.py:20] Creating new vendor in database
+2024-02-16 10:40:25,244 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:40:25,252 INFO     [create_vendor_handler.py:28] New vendor added in database
+2024-02-16 10:40:25,252 INFO     [create_vendor_controller.py:29] Vendor created successfully VEN8RNs
+2024-02-16 10:40:25,252 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 10:40:25] "[35m[1mPOST /asset-management/vendors HTTP/1.1[0m" 201 -
+2024-02-16 10:40:32,448 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:40:32,464 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:40:32,473 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:40:32,494 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:40:32,497 INFO     [create_category_controller.py:21] Controller for creating new category
+2024-02-16 10:40:32,498 INFO     [create_category_handler.py:59] Method to create new category in database
+2024-02-16 10:40:32,498 INFO     [common_helper.py:15] Fetching vendor details from database
+2024-02-16 10:40:32,516 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:40:32,516 INFO     [create_category_handler.py:40] Method to check if category with same brand exists
+2024-02-16 10:40:32,537 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:40:32,553 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:40:32,822 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 10:40:32] "[35m[1mPOST /asset-management/categories HTTP/1.1[0m" 500 -
+2024-02-16 10:43:44,839 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\handlers\\category_handler\\create_category_handler.py', reloading
+2024-02-16 10:43:44,924 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-16 10:43:47,212 INFO     [app.py:18] Creating flask app
+2024-02-16 10:43:47,312 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:43:47,331 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-16 10:43:47,331 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-16 10:43:47,331 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-16 10:43:47,371 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-16 10:43:47,372 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-16 10:43:50,096 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:43:50,112 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:43:50,121 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:43:50,136 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:43:50,141 INFO     [create_category_controller.py:21] Controller for creating new category
+2024-02-16 10:43:50,141 INFO     [create_category_handler.py:59] Method to create new category in database
+2024-02-16 10:43:50,141 INFO     [common_helper.py:15] Fetching vendor details from database
+2024-02-16 10:43:50,161 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:43:50,165 INFO     [create_category_handler.py:40] Method to check if category with same brand exists
+2024-02-16 10:43:50,181 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:43:50,201 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:43:50,377 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 10:43:50] "[35m[1mPOST /asset-management/categories HTTP/1.1[0m" 500 -
+2024-02-16 10:44:14,609 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\handlers\\category_handler\\create_category_handler.py', reloading
+2024-02-16 10:44:14,682 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-16 10:44:15,926 INFO     [app.py:18] Creating flask app
+2024-02-16 10:44:16,041 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:44:16,064 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-16 10:44:16,064 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-16 10:44:16,064 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-16 10:44:16,110 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-16 10:44:16,117 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-16 10:45:15,536 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\handlers\\category_handler\\create_category_handler.py', reloading
+2024-02-16 10:45:15,605 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-16 10:45:16,730 INFO     [app.py:18] Creating flask app
+2024-02-16 10:45:16,812 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:45:16,833 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-16 10:45:16,833 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-16 10:45:16,833 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-16 10:45:16,877 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-16 10:45:16,881 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-16 10:46:12,546 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\handlers\\category_handler\\create_category_handler.py', reloading
+2024-02-16 10:46:12,612 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-16 10:46:20,760 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-16 10:46:27,881 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-16 10:46:30,446 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-16 10:46:33,104 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-16 10:46:40,293 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-16 10:46:43,941 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-16 10:46:45,090 INFO     [app.py:18] Creating flask app
+2024-02-16 10:46:45,164 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:46:45,180 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-16 10:46:45,180 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-16 10:46:45,180 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-16 10:46:45,224 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-16 10:46:45,224 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-16 10:46:50,982 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\handlers\\category_handler\\create_category_handler.py', reloading
+2024-02-16 10:46:51,056 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-16 10:46:57,051 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-16 10:46:58,141 INFO     [app.py:18] Creating flask app
+2024-02-16 10:46:58,234 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:46:58,254 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-16 10:46:58,254 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-16 10:46:58,254 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-16 10:46:58,290 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-16 10:46:58,290 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-16 10:46:59,645 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\handlers\\category_handler\\create_category_handler.py', reloading
+2024-02-16 10:46:59,732 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-16 10:47:00,904 INFO     [app.py:18] Creating flask app
+2024-02-16 10:47:00,983 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:47:00,999 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-16 10:47:00,999 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-16 10:47:00,999 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-16 10:47:01,035 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-16 10:47:01,035 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-16 10:47:05,790 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\handlers\\category_handler\\create_category_handler.py', reloading
+2024-02-16 10:47:05,863 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-16 10:47:06,970 INFO     [app.py:18] Creating flask app
+2024-02-16 10:47:07,052 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:47:07,074 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-16 10:47:07,074 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-16 10:47:07,075 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-16 10:47:07,119 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-16 10:47:07,123 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-16 10:47:11,833 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\handlers\\category_handler\\create_category_handler.py', reloading
+2024-02-16 10:47:11,900 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-16 10:47:13,052 INFO     [app.py:18] Creating flask app
+2024-02-16 10:47:13,134 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:47:13,150 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-16 10:47:13,150 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-16 10:47:13,150 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-16 10:47:13,185 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-16 10:47:13,185 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-16 10:47:19,120 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 10:47:19] "[31m[1mPOST /asset-management/categories HTTP/1.1[0m" 401 -
+2024-02-16 10:47:26,285 DEBUG    [login_controller.py:25] User authenticating and issuing access token
+2024-02-16 10:47:26,300 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:47:26,306 INFO     [common_helper.py:48] Verifying user password
+2024-02-16 10:47:26,306 INFO     [token.py:41] New access and refresh token issued
+2024-02-16 10:47:26,323 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:47:26,331 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 10:47:26] "POST /asset-management/login HTTP/1.1" 200 -
+2024-02-16 10:47:31,024 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:47:31,036 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:47:31,036 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:47:31,051 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:47:31,051 INFO     [create_category_controller.py:21] Controller for creating new category
+2024-02-16 10:47:31,051 INFO     [create_category_handler.py:57] Method to create new category in database
+2024-02-16 10:47:31,051 INFO     [common_helper.py:15] Fetching vendor details from database
+2024-02-16 10:47:31,067 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:47:31,075 INFO     [create_category_handler.py:40] Method to check if category with same brand exists
+2024-02-16 10:47:31,091 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:47:31,107 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:47:31,133 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:47:31,143 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 10:47:31] "[35m[1mPOST /asset-management/categories HTTP/1.1[0m" 201 -
+2024-02-16 10:47:37,217 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:47:37,229 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:47:37,229 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:47:37,242 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:47:37,242 INFO     [view_category_controller.py:21] Viewing all categories of any asset
+2024-02-16 10:47:37,242 INFO     [view_category_handler.py:20] Viewing all categories
+2024-02-16 10:47:37,252 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:47:37,257 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 10:47:37] "GET /asset-management/categories HTTP/1.1" 200 -
+2024-02-16 10:47:42,010 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:47:42,020 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:47:42,021 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:47:42,029 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:47:42,029 INFO     [create_category_controller.py:21] Controller for creating new category
+2024-02-16 10:47:42,034 INFO     [create_category_handler.py:57] Method to create new category in database
+2024-02-16 10:47:42,034 INFO     [common_helper.py:15] Fetching vendor details from database
+2024-02-16 10:47:42,043 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:47:42,043 INFO     [create_category_handler.py:40] Method to check if category with same brand exists
+2024-02-16 10:47:42,060 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:47:42,062 INFO     [create_category_handler.py:22] Checking with catgeory of same vendor exists or not
+2024-02-16 10:47:42,081 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:47:42,083 ERROR    [create_category_handler.py:65] Same category name already exits Unknown error
+2024-02-16 10:47:42,083 ERROR    [create_category_controller.py:34] Error handled by application custom error handler Conflict
+2024-02-16 10:47:42,086 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 10:47:42] "[31m[1mPOST /asset-management/categories HTTP/1.1[0m" 409 -
+2024-02-16 10:47:48,790 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:47:48,814 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:47:48,817 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:47:48,832 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:47:48,837 INFO     [create_category_controller.py:21] Controller for creating new category
+2024-02-16 10:47:48,837 INFO     [create_category_handler.py:57] Method to create new category in database
+2024-02-16 10:47:48,837 INFO     [common_helper.py:15] Fetching vendor details from database
+2024-02-16 10:47:48,855 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:47:48,857 INFO     [create_category_handler.py:40] Method to check if category with same brand exists
+2024-02-16 10:47:48,877 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:47:48,877 INFO     [create_category_handler.py:22] Checking with catgeory of same vendor exists or not
+2024-02-16 10:47:48,897 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:47:48,899 ERROR    [create_category_handler.py:65] Same category name already exits Unknown error
+2024-02-16 10:47:48,899 ERROR    [create_category_controller.py:34] Error handled by application custom error handler Conflict
+2024-02-16 10:47:48,901 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 10:47:48] "[31m[1mPOST /asset-management/categories HTTP/1.1[0m" 409 -
+2024-02-16 10:48:11,707 DEBUG    [login_controller.py:25] User authenticating and issuing access token
+2024-02-16 10:48:11,720 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:48:11,720 ERROR    [login_controller.py:48] Error handled by application custom error handler Unauthorised
+2024-02-16 10:48:11,722 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 10:48:11] "[31m[1mPOST /asset-management/login HTTP/1.1[0m" 401 -
+2024-02-16 10:48:45,237 DEBUG    [login_controller.py:25] User authenticating and issuing access token
+2024-02-16 10:48:45,249 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:48:45,257 INFO     [common_helper.py:48] Verifying user password
+2024-02-16 10:48:45,257 INFO     [token.py:41] New access and refresh token issued
+2024-02-16 10:48:45,272 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:48:45,281 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 10:48:45] "POST /asset-management/login HTTP/1.1" 200 -
+2024-02-16 10:48:57,210 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:48:57,227 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:48:57,227 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:48:57,242 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:48:57,242 INFO     [view_asset_controller.py:21] Function to view assets in inventory
+2024-02-16 10:48:57,242 INFO     [view_asset_handler.py:18] Fetching assets from database
+2024-02-16 10:48:57,263 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:48:57,268 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 10:48:57] "GET /asset-management/assets HTTP/1.1" 200 -
+2024-02-16 10:49:11,377 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:49:11,387 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:49:11,387 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:49:11,407 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:49:11,410 INFO     [create_asset_controller.py:21] Function to add asset in inventory
+2024-02-16 10:49:11,410 INFO     [create_asset_handler.py:20] Creating new assets in inventory
+2024-02-16 10:49:11,410 INFO     [common_helper.py:15] Fetching vendor details from database
+2024-02-16 10:49:11,427 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:49:11,427 INFO     [common_helper.py:31] Fetching category details from database
+2024-02-16 10:49:11,453 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:49:11,467 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:49:11,497 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:49:11,503 INFO     [create_asset_handler.py:35] Asset added in inventory
+2024-02-16 10:49:11,503 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 10:49:11] "[35m[1mPOST /asset-management/assets HTTP/1.1[0m" 201 -
+2024-02-16 10:49:14,484 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:49:14,498 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:49:14,500 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:49:14,517 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:49:14,517 INFO     [create_asset_controller.py:21] Function to add asset in inventory
+2024-02-16 10:49:14,517 INFO     [create_asset_handler.py:20] Creating new assets in inventory
+2024-02-16 10:49:14,517 INFO     [common_helper.py:15] Fetching vendor details from database
+2024-02-16 10:49:14,537 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:49:14,537 INFO     [common_helper.py:31] Fetching category details from database
+2024-02-16 10:49:14,558 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:49:14,582 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:49:14,600 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:49:14,608 INFO     [create_asset_handler.py:35] Asset added in inventory
+2024-02-16 10:49:14,608 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 10:49:14] "[35m[1mPOST /asset-management/assets HTTP/1.1[0m" 201 -
+2024-02-16 10:49:16,157 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:49:16,167 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:49:16,174 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:49:16,191 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:49:16,191 INFO     [create_asset_controller.py:21] Function to add asset in inventory
+2024-02-16 10:49:16,191 INFO     [create_asset_handler.py:20] Creating new assets in inventory
+2024-02-16 10:49:16,191 INFO     [common_helper.py:15] Fetching vendor details from database
+2024-02-16 10:49:16,214 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:49:16,217 INFO     [common_helper.py:31] Fetching category details from database
+2024-02-16 10:49:16,237 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:49:16,262 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:49:16,287 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:49:16,291 INFO     [create_asset_handler.py:35] Asset added in inventory
+2024-02-16 10:49:16,291 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 10:49:16] "[35m[1mPOST /asset-management/assets HTTP/1.1[0m" 201 -
+2024-02-16 10:49:17,117 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:49:17,131 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:49:17,131 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:49:17,147 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:49:17,147 INFO     [create_asset_controller.py:21] Function to add asset in inventory
+2024-02-16 10:49:17,147 INFO     [create_asset_handler.py:20] Creating new assets in inventory
+2024-02-16 10:49:17,147 INFO     [common_helper.py:15] Fetching vendor details from database
+2024-02-16 10:49:17,167 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:49:17,172 INFO     [common_helper.py:31] Fetching category details from database
+2024-02-16 10:49:17,188 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:49:17,207 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:49:17,229 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:49:17,237 INFO     [create_asset_handler.py:35] Asset added in inventory
+2024-02-16 10:49:17,237 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 10:49:17] "[35m[1mPOST /asset-management/assets HTTP/1.1[0m" 201 -
+2024-02-16 10:49:18,037 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:49:18,057 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:49:18,059 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:49:18,078 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:49:18,081 INFO     [create_asset_controller.py:21] Function to add asset in inventory
+2024-02-16 10:49:18,081 INFO     [create_asset_handler.py:20] Creating new assets in inventory
+2024-02-16 10:49:18,081 INFO     [common_helper.py:15] Fetching vendor details from database
+2024-02-16 10:49:18,104 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:49:18,107 INFO     [common_helper.py:31] Fetching category details from database
+2024-02-16 10:49:18,126 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:49:18,144 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:49:18,160 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:49:18,168 INFO     [create_asset_handler.py:35] Asset added in inventory
+2024-02-16 10:49:18,170 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 10:49:18] "[35m[1mPOST /asset-management/assets HTTP/1.1[0m" 201 -
+2024-02-16 10:49:22,353 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:49:22,367 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:49:22,367 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:49:22,377 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:49:22,387 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 10:49:22] "[31m[1mPOST /asset-management/assets HTTP/1.1[0m" 422 -
+2024-02-16 10:49:31,225 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:49:31,237 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:49:31,237 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:49:31,249 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:49:31,249 INFO     [create_asset_controller.py:21] Function to add asset in inventory
+2024-02-16 10:49:31,249 INFO     [create_asset_handler.py:20] Creating new assets in inventory
+2024-02-16 10:49:31,249 INFO     [common_helper.py:15] Fetching vendor details from database
+2024-02-16 10:49:31,265 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:49:31,267 ERROR    [create_asset_controller.py:34] Error handled by application custom error handler Resource not found
+2024-02-16 10:49:31,267 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 10:49:31] "[33mPOST /asset-management/assets HTTP/1.1[0m" 404 -
+2024-02-16 10:49:36,547 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:49:36,561 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:49:36,561 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:49:36,577 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:49:36,577 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 10:49:36] "[31m[1mPOST /asset-management/assets HTTP/1.1[0m" 422 -
+2024-02-16 10:49:46,028 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:49:46,041 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:49:46,042 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:49:46,059 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:49:46,061 INFO     [create_asset_controller.py:21] Function to add asset in inventory
+2024-02-16 10:49:46,061 INFO     [create_asset_handler.py:20] Creating new assets in inventory
+2024-02-16 10:49:46,061 INFO     [common_helper.py:15] Fetching vendor details from database
+2024-02-16 10:49:46,079 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:49:46,079 INFO     [common_helper.py:31] Fetching category details from database
+2024-02-16 10:49:46,102 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:49:46,118 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:49:46,145 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:49:46,151 INFO     [create_asset_handler.py:35] Asset added in inventory
+2024-02-16 10:49:46,151 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 10:49:46] "[35m[1mPOST /asset-management/assets HTTP/1.1[0m" 201 -
+2024-02-16 10:49:49,361 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:49:49,373 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:49:49,373 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:49:49,382 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:49:49,387 INFO     [view_asset_controller.py:21] Function to view assets in inventory
+2024-02-16 10:49:49,387 INFO     [view_asset_handler.py:18] Fetching assets from database
+2024-02-16 10:49:49,398 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:49:49,398 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 10:49:49] "GET /asset-management/assets HTTP/1.1" 200 -
+2024-02-16 10:50:00,010 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:50:00,026 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:50:00,026 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:50:00,047 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:50:00,051 INFO     [create_asset_controller.py:21] Function to add asset in inventory
+2024-02-16 10:50:00,051 INFO     [create_asset_handler.py:20] Creating new assets in inventory
+2024-02-16 10:50:00,051 INFO     [common_helper.py:15] Fetching vendor details from database
+2024-02-16 10:50:00,067 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:50:00,067 INFO     [common_helper.py:31] Fetching category details from database
+2024-02-16 10:50:00,078 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:50:00,084 ERROR    [create_asset_controller.py:34] Error handled by application custom error handler Resource not found
+2024-02-16 10:50:00,084 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 10:50:00] "[33mPOST /asset-management/assets HTTP/1.1[0m" 404 -
+2024-02-16 10:50:06,317 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:50:06,329 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:50:06,330 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:50:06,344 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:50:06,344 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 10:50:06] "[31m[1mPOST /asset-management/assets HTTP/1.1[0m" 422 -
+2024-02-16 10:50:18,251 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:50:18,267 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:50:18,267 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:50:18,288 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:50:18,288 INFO     [create_asset_controller.py:21] Function to add asset in inventory
+2024-02-16 10:50:18,288 INFO     [create_asset_handler.py:20] Creating new assets in inventory
+2024-02-16 10:50:18,288 INFO     [common_helper.py:15] Fetching vendor details from database
+2024-02-16 10:50:18,312 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:50:18,314 INFO     [common_helper.py:31] Fetching category details from database
+2024-02-16 10:50:18,336 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:50:18,338 ERROR    [create_asset_controller.py:34] Error handled by application custom error handler Resource not found
+2024-02-16 10:50:18,338 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 10:50:18] "[33mPOST /asset-management/assets HTTP/1.1[0m" 404 -
+2024-02-16 10:50:31,491 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:50:31,502 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:50:31,502 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:50:31,521 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:50:31,527 INFO     [create_asset_controller.py:21] Function to add asset in inventory
+2024-02-16 10:50:31,527 INFO     [create_asset_handler.py:20] Creating new assets in inventory
+2024-02-16 10:50:31,527 INFO     [common_helper.py:15] Fetching vendor details from database
+2024-02-16 10:50:31,542 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:50:31,547 INFO     [common_helper.py:31] Fetching category details from database
+2024-02-16 10:50:31,567 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:50:31,570 ERROR    [create_asset_controller.py:34] Error handled by application custom error handler Resource not found
+2024-02-16 10:50:31,570 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 10:50:31] "[33mPOST /asset-management/assets HTTP/1.1[0m" 404 -
+2024-02-16 10:50:35,083 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:50:35,107 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:50:35,108 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:50:35,134 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:50:35,136 INFO     [view_asset_controller.py:21] Function to view assets in inventory
+2024-02-16 10:50:35,136 INFO     [view_asset_handler.py:18] Fetching assets from database
+2024-02-16 10:50:35,150 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:50:35,158 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 10:50:35] "GET /asset-management/assets HTTP/1.1" 200 -
+2024-02-16 10:50:39,347 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:50:39,357 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:50:39,363 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:50:39,375 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:50:39,377 INFO     [view_asset_controller.py:21] Function to view assets in inventory
+2024-02-16 10:50:39,377 INFO     [view_asset_handler.py:18] Fetching assets from database
+2024-02-16 10:50:39,388 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:50:39,388 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 10:50:39] "GET /asset-management/assets HTTP/1.1" 200 -
+2024-02-16 10:50:40,322 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:50:40,337 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:50:40,337 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:50:40,353 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:50:40,357 INFO     [view_asset_controller.py:21] Function to view assets in inventory
+2024-02-16 10:50:40,357 INFO     [view_asset_handler.py:18] Fetching assets from database
+2024-02-16 10:50:40,377 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:50:40,379 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 10:50:40] "GET /asset-management/assets HTTP/1.1" 200 -
+2024-02-16 10:50:41,195 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:50:41,215 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:50:41,217 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:50:41,235 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:50:41,237 INFO     [view_asset_controller.py:21] Function to view assets in inventory
+2024-02-16 10:50:41,237 INFO     [view_asset_handler.py:18] Fetching assets from database
+2024-02-16 10:50:41,252 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:50:41,257 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 10:50:41] "GET /asset-management/assets HTTP/1.1" 200 -
+2024-02-16 10:52:12,497 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:52:12,517 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:52:12,519 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:52:12,539 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:52:12,542 INFO     [update_asset_controller.py:21] Assigning assets to user
+2024-02-16 10:52:12,542 INFO     [update_asset_handler.py:30] Assigning asset to user
+2024-02-16 10:52:12,542 INFO     [update_asset_handler.py:19] Fetching asset exists or not
+2024-02-16 10:52:12,560 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:52:12,583 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:52:12,605 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:52:12,612 INFO     [update_asset_controller.py:31] Assets assigned to user EMP49gi
+2024-02-16 10:52:12,612 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 10:52:12] "PUT /asset-management/assets/ASN4UQ5/assign HTTP/1.1" 200 -
+2024-02-16 10:52:18,092 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:52:18,109 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:52:18,114 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:52:18,132 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:52:18,134 INFO     [view_asset_controller.py:21] Function to view assets in inventory
+2024-02-16 10:52:18,134 INFO     [view_asset_handler.py:18] Fetching assets from database
+2024-02-16 10:52:18,154 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:52:18,160 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 10:52:18] "GET /asset-management/assets HTTP/1.1" 200 -
+2024-02-16 10:52:41,149 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:52:41,170 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:52:41,170 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:52:41,194 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:52:41,198 INFO     [update_asset_controller.py:21] Assigning assets to user
+2024-02-16 10:52:41,199 INFO     [update_asset_handler.py:30] Assigning asset to user
+2024-02-16 10:52:41,199 INFO     [update_asset_handler.py:19] Fetching asset exists or not
+2024-02-16 10:52:41,211 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:52:41,229 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:52:41,252 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:52:41,259 INFO     [update_asset_controller.py:31] Assets assigned to user EMP49gi
+2024-02-16 10:52:41,259 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 10:52:41] "PUT /asset-management/assets/ASN5JKa/assign HTTP/1.1" 200 -
+2024-02-16 10:52:48,899 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:52:48,916 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:52:48,919 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:52:48,939 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:52:48,939 INFO     [update_asset_controller.py:44] Asset unassigned successfully
+2024-02-16 10:52:48,939 INFO     [update_asset_handler.py:51] Method to unassign asset from user
+2024-02-16 10:52:48,939 INFO     [update_asset_handler.py:19] Fetching asset exists or not
+2024-02-16 10:52:48,964 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:52:48,987 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:52:48,990 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 10:52:48] "PUT /asset-management/assets/ASN5JKa/unassign HTTP/1.1" 200 -
+2024-02-16 10:53:26,274 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\controller\\asset_controller\\update_asset_controller.py', reloading
+2024-02-16 10:53:26,347 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-16 10:53:27,694 INFO     [app.py:18] Creating flask app
+2024-02-16 10:53:27,779 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:53:27,805 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-16 10:53:27,805 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-16 10:53:27,805 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-16 10:53:27,855 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-16 10:53:27,857 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-16 10:53:31,624 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:53:31,645 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:53:31,645 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:53:31,667 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:53:31,669 INFO     [update_asset_controller.py:44] Asset unassigned successfully
+2024-02-16 10:53:31,669 INFO     [update_asset_handler.py:51] Method to unassign asset from user
+2024-02-16 10:53:31,669 INFO     [update_asset_handler.py:19] Fetching asset exists or not
+2024-02-16 10:53:31,689 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:53:31,711 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:53:31,711 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 10:53:31] "PUT /asset-management/assets/ASN5JKa/unassign HTTP/1.1" 200 -
+2024-02-16 10:53:34,029 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:53:34,043 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:53:34,045 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:53:34,058 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:53:34,060 INFO     [update_asset_controller.py:44] Asset unassigned successfully
+2024-02-16 10:53:34,060 INFO     [update_asset_handler.py:51] Method to unassign asset from user
+2024-02-16 10:53:34,060 INFO     [update_asset_handler.py:19] Fetching asset exists or not
+2024-02-16 10:53:34,074 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:53:34,090 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:53:34,093 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 10:53:34] "PUT /asset-management/assets/ASN5JKa/unassign HTTP/1.1" 200 -
+2024-02-16 10:53:54,939 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:53:54,953 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:53:54,959 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:53:54,980 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:53:54,980 INFO     [view_asset_controller.py:21] Function to view assets in inventory
+2024-02-16 10:53:54,980 INFO     [view_asset_handler.py:18] Fetching assets from database
+2024-02-16 10:53:54,999 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:53:55,002 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 10:53:55] "GET /asset-management/assets HTTP/1.1" 200 -
+2024-02-16 10:54:39,855 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\config\\queries.py', reloading
+2024-02-16 10:54:39,929 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-16 10:54:41,121 INFO     [app.py:18] Creating flask app
+2024-02-16 10:54:41,215 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:54:41,229 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-16 10:54:41,229 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-16 10:54:41,232 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-16 10:54:41,265 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-16 10:54:41,265 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-16 10:54:42,582 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\config\\queries.py', reloading
+2024-02-16 10:54:42,653 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-16 10:54:43,939 INFO     [app.py:18] Creating flask app
+2024-02-16 10:54:44,019 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:54:44,043 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-16 10:54:44,043 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-16 10:54:44,043 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-16 10:54:44,089 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-16 10:54:44,089 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-16 10:54:48,839 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\config\\queries.py', reloading
+2024-02-16 10:54:48,907 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-16 10:54:50,099 INFO     [app.py:18] Creating flask app
+2024-02-16 10:54:50,199 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:54:50,214 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-16 10:54:50,214 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-16 10:54:50,214 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-16 10:54:50,259 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-16 10:54:50,262 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-16 10:54:51,609 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\config\\queries.py', reloading
+2024-02-16 10:54:51,681 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-16 10:54:52,772 INFO     [app.py:18] Creating flask app
+2024-02-16 10:54:52,870 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:54:52,894 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-16 10:54:52,894 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-16 10:54:52,894 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-16 10:54:52,939 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-16 10:54:52,942 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-16 10:54:56,539 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\config\\queries.py', reloading
+2024-02-16 10:54:56,619 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-16 10:54:57,854 INFO     [app.py:18] Creating flask app
+2024-02-16 10:54:57,940 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:54:57,959 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-16 10:54:57,959 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-16 10:54:57,959 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-16 10:54:57,995 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-16 10:54:57,997 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-16 10:54:58,179 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\config\\queries.py', reloading
+2024-02-16 10:54:58,254 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-16 10:54:59,404 INFO     [app.py:18] Creating flask app
+2024-02-16 10:54:59,490 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:54:59,507 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-16 10:54:59,507 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-16 10:54:59,508 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-16 10:54:59,547 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-16 10:54:59,549 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-16 10:55:00,949 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\config\\queries.py', reloading
+2024-02-16 10:55:01,018 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-16 10:55:02,229 INFO     [app.py:18] Creating flask app
+2024-02-16 10:55:02,301 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:55:02,319 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-16 10:55:02,319 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-16 10:55:02,319 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-16 10:55:02,364 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-16 10:55:02,364 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-16 10:55:44,499 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\handlers\\asset_handler\\update_asset_handler.py', reloading
+2024-02-16 10:55:44,566 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-16 10:55:45,711 INFO     [app.py:18] Creating flask app
+2024-02-16 10:55:45,806 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:55:45,827 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-16 10:55:45,827 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-16 10:55:45,827 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-16 10:55:45,871 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-16 10:55:45,873 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-16 10:55:52,852 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\handlers\\asset_handler\\update_asset_handler.py', reloading
+2024-02-16 10:55:52,921 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-16 10:55:54,139 INFO     [app.py:18] Creating flask app
+2024-02-16 10:55:54,251 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:55:54,271 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-16 10:55:54,271 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-16 10:55:54,271 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-16 10:55:54,305 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-16 10:55:54,309 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-16 10:56:00,129 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\handlers\\asset_handler\\update_asset_handler.py', reloading
+2024-02-16 10:56:00,199 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-16 10:56:01,375 INFO     [app.py:18] Creating flask app
+2024-02-16 10:56:01,459 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:56:01,469 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-16 10:56:01,469 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-16 10:56:01,469 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-16 10:56:01,514 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-16 10:56:01,514 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-16 10:56:02,842 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\handlers\\asset_handler\\update_asset_handler.py', reloading
+2024-02-16 10:56:02,917 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-16 10:56:04,241 INFO     [app.py:18] Creating flask app
+2024-02-16 10:56:04,341 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:56:04,352 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-16 10:56:04,352 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-16 10:56:04,357 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-16 10:56:04,392 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-16 10:56:04,392 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-16 10:56:38,528 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\handlers\\asset_handler\\update_asset_handler.py', reloading
+2024-02-16 10:56:38,605 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-16 10:56:39,749 INFO     [app.py:18] Creating flask app
+2024-02-16 10:56:39,828 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:56:39,848 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-16 10:56:39,848 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-16 10:56:39,848 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-16 10:56:39,888 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-16 10:56:39,888 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-16 10:56:41,227 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\handlers\\asset_handler\\update_asset_handler.py', reloading
+2024-02-16 10:56:41,303 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-16 10:56:42,530 INFO     [app.py:18] Creating flask app
+2024-02-16 10:56:42,612 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:56:42,628 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-16 10:56:42,628 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-16 10:56:42,628 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-16 10:56:42,669 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-16 10:56:42,669 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-16 10:56:43,984 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\handlers\\asset_handler\\update_asset_handler.py', reloading
+2024-02-16 10:56:44,070 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-16 10:56:45,328 INFO     [app.py:18] Creating flask app
+2024-02-16 10:56:45,415 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:56:45,428 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-16 10:56:45,428 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-16 10:56:45,428 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-16 10:56:45,471 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-16 10:56:45,471 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-16 10:56:54,719 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\handlers\\asset_handler\\update_asset_handler.py', reloading
+2024-02-16 10:56:54,793 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-16 10:56:55,919 INFO     [app.py:18] Creating flask app
+2024-02-16 10:56:55,995 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:56:56,013 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-16 10:56:56,013 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-16 10:56:56,014 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-16 10:56:56,048 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-16 10:56:56,048 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-16 10:56:58,510 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\handlers\\asset_handler\\update_asset_handler.py', reloading
+2024-02-16 10:56:58,584 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-16 10:56:59,729 INFO     [app.py:18] Creating flask app
+2024-02-16 10:56:59,810 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:56:59,818 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-16 10:56:59,818 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-16 10:56:59,818 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-16 10:56:59,857 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-16 10:56:59,862 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-16 10:57:03,475 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\handlers\\asset_handler\\update_asset_handler.py', reloading
+2024-02-16 10:57:03,546 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-16 10:57:04,722 INFO     [app.py:18] Creating flask app
+2024-02-16 10:57:04,807 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:57:04,828 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-16 10:57:04,828 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-16 10:57:04,828 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-16 10:57:04,883 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-16 10:57:04,883 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-16 10:57:12,729 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:57:12,753 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:57:12,753 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:57:12,771 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:57:12,778 INFO     [update_asset_controller.py:21] Assigning assets to user
+2024-02-16 10:57:12,778 INFO     [update_asset_handler.py:30] Assigning asset to user
+2024-02-16 10:57:12,778 INFO     [update_asset_handler.py:19] Fetching asset exists or not
+2024-02-16 10:57:12,798 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:57:12,818 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:57:12,828 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:57:12,838 INFO     [update_asset_controller.py:31] Assets assigned to user EMP49gi
+2024-02-16 10:57:12,838 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 10:57:12] "PUT /asset-management/assets/ASN5JKa/assign HTTP/1.1" 200 -
+2024-02-16 10:57:19,231 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:57:19,248 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:57:19,252 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:57:19,273 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:57:19,273 INFO     [update_asset_controller.py:21] Assigning assets to user
+2024-02-16 10:57:19,273 INFO     [update_asset_handler.py:30] Assigning asset to user
+2024-02-16 10:57:19,273 INFO     [update_asset_handler.py:19] Fetching asset exists or not
+2024-02-16 10:57:19,293 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:57:19,298 ERROR    [update_asset_controller.py:35] Error handled by application custom error handler Resource not found
+2024-02-16 10:57:19,298 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 10:57:19] "[33mPUT /asset-management/assets/ASN5JKa/assign HTTP/1.1[0m" 404 -
+2024-02-16 10:57:23,677 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:57:23,688 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:57:23,688 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:57:23,699 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:57:23,699 INFO     [update_asset_controller.py:44] Asset unassigned successfully
+2024-02-16 10:57:23,699 INFO     [update_asset_handler.py:51] Method to unassign asset from user
+2024-02-16 10:57:23,699 INFO     [update_asset_handler.py:19] Fetching asset exists or not
+2024-02-16 10:57:23,718 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:57:23,732 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:57:23,741 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 10:57:23] "PUT /asset-management/assets/ASN5JKa/unassign HTTP/1.1" 200 -
+2024-02-16 10:57:25,785 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:57:25,798 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:57:25,798 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:57:25,810 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:57:25,810 INFO     [update_asset_controller.py:44] Asset unassigned successfully
+2024-02-16 10:57:25,810 INFO     [update_asset_handler.py:51] Method to unassign asset from user
+2024-02-16 10:57:25,810 INFO     [update_asset_handler.py:19] Fetching asset exists or not
+2024-02-16 10:57:25,838 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:57:25,838 ERROR    [update_asset_controller.py:57] Error handled by application custom error handler Resource not found
+2024-02-16 10:57:25,842 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 10:57:25] "[33mPUT /asset-management/assets/ASN5JKa/unassign HTTP/1.1[0m" 404 -
+2024-02-16 10:58:18,807 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:58:18,820 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:58:18,821 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:58:18,832 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:58:18,834 DEBUG    [view_issue_controller.py:21] Method to view all the issues
+2024-02-16 10:58:18,834 INFO     [view_issue_handler.py:18] View all issues in database
+2024-02-16 10:58:18,845 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:58:18,849 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 10:58:18] "GET /asset-management/issues HTTP/1.1" 200 -
+2024-02-16 10:58:26,678 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:58:26,690 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:58:26,692 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:58:26,706 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:58:26,708 DEBUG    [create_issue_controller.py:22] Method to create new issue
+2024-02-16 10:58:26,709 INFO     [create_issue_handler.py:20] Creating new issue for asset
+2024-02-16 10:58:26,732 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:58:26,736 ERROR    [create_issue_controller.py:33] Error handled by application custom error handler Resource not found
+2024-02-16 10:58:26,736 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 10:58:26] "[33mPOST /asset-management/issues HTTP/1.1[0m" 404 -
+2024-02-16 10:59:15,482 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:59:15,502 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:59:15,504 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:59:15,524 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:59:15,526 DEBUG    [create_issue_controller.py:22] Method to create new issue
+2024-02-16 10:59:15,526 INFO     [create_issue_handler.py:20] Creating new issue for asset
+2024-02-16 10:59:15,546 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:59:15,548 ERROR    [create_issue_controller.py:33] Error handled by application custom error handler Resource not found
+2024-02-16 10:59:15,549 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 10:59:15] "[33mPOST /asset-management/issues HTTP/1.1[0m" 404 -
+2024-02-16 10:59:25,090 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:59:25,103 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:59:25,104 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 10:59:25,115 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:59:25,116 DEBUG    [create_issue_controller.py:22] Method to create new issue
+2024-02-16 10:59:25,116 INFO     [create_issue_handler.py:20] Creating new issue for asset
+2024-02-16 10:59:25,128 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:59:25,129 ERROR    [create_issue_controller.py:33] Error handled by application custom error handler Resource not found
+2024-02-16 10:59:25,129 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 10:59:25] "[33mPOST /asset-management/issues HTTP/1.1[0m" 404 -
+2024-02-16 10:59:50,912 DEBUG    [login_controller.py:25] User authenticating and issuing access token
+2024-02-16 10:59:50,925 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:59:50,926 INFO     [common_helper.py:48] Verifying user password
+2024-02-16 10:59:50,927 INFO     [token.py:41] New access and refresh token issued
+2024-02-16 10:59:50,947 DEBUG    [database_context.py:45] Connection established
+2024-02-16 10:59:50,954 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 10:59:50] "POST /asset-management/login HTTP/1.1" 200 -
+2024-02-16 11:00:08,378 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 11:00:08,390 DEBUG    [database_context.py:45] Connection established
+2024-02-16 11:00:08,391 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 11:00:08,404 DEBUG    [database_context.py:45] Connection established
+2024-02-16 11:00:08,405 DEBUG    [create_issue_controller.py:22] Method to create new issue
+2024-02-16 11:00:08,405 INFO     [create_issue_handler.py:20] Creating new issue for asset
+2024-02-16 11:00:08,418 DEBUG    [database_context.py:45] Connection established
+2024-02-16 11:00:08,437 DEBUG    [database_context.py:45] Connection established
+2024-02-16 11:00:08,463 DEBUG    [database_context.py:45] Connection established
+2024-02-16 11:00:08,473 INFO     [create_issue_handler.py:33] New issue created for ISN8tGg
+2024-02-16 11:00:08,474 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 11:00:08] "[35m[1mPOST /asset-management/issues HTTP/1.1[0m" 201 -
+2024-02-16 11:00:36,222 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 11:00:36,239 DEBUG    [database_context.py:45] Connection established
+2024-02-16 11:00:36,240 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 11:00:36,259 DEBUG    [database_context.py:45] Connection established
+2024-02-16 11:00:36,261 DEBUG    [create_issue_controller.py:22] Method to create new issue
+2024-02-16 11:00:36,261 INFO     [create_issue_handler.py:20] Creating new issue for asset
+2024-02-16 11:00:36,280 DEBUG    [database_context.py:45] Connection established
+2024-02-16 11:00:36,282 ERROR    [create_issue_controller.py:33] Error handled by application custom error handler Resource not found
+2024-02-16 11:00:36,283 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 11:00:36] "[33mPOST /asset-management/issues HTTP/1.1[0m" 404 -
+2024-02-16 11:15:30,812 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 11:15:30] "[31m[1mPOST /asset-management/issues HTTP/1.1[0m" 401 -
+2024-02-16 11:16:42,922 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\config\\flask_config.py', reloading
+2024-02-16 11:16:42,992 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-16 11:16:44,389 INFO     [app.py:18] Creating flask app
+2024-02-16 11:16:44,504 DEBUG    [database_context.py:45] Connection established
+2024-02-16 11:16:44,522 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-16 11:16:44,522 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-16 11:16:44,522 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-16 11:16:44,568 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-16 11:16:44,572 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-16 11:16:46,493 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 11:16:46] "[31m[1mPOST /asset-management/issues HTTP/1.1[0m" 4014 -
+2024-02-16 11:16:59,161 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\config\\flask_config.py', reloading
+2024-02-16 11:16:59,287 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-16 11:17:00,578 INFO     [app.py:18] Creating flask app
+2024-02-16 11:17:00,682 DEBUG    [database_context.py:45] Connection established
+2024-02-16 11:17:00,703 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-16 11:17:00,703 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-16 11:17:00,704 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-16 11:17:00,745 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-16 11:17:00,748 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-16 11:17:02,082 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\config\\flask_config.py', reloading
+2024-02-16 11:17:02,160 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-16 11:17:03,370 INFO     [app.py:18] Creating flask app
+2024-02-16 11:17:03,454 DEBUG    [database_context.py:45] Connection established
+2024-02-16 11:17:03,471 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-16 11:17:03,471 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-16 11:17:03,471 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-16 11:17:03,507 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-16 11:17:03,511 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-16 11:17:04,956 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 11:17:04] "[1mPOST /asset-management/issues HTTP/1.1[0m" 1000 -
+2024-02-16 11:17:11,702 INFO     [app.py:18] Creating flask app
+2024-02-16 11:17:11,782 DEBUG    [database_context.py:45] Connection established
+2024-02-16 11:17:11,794 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-16 11:17:11,794 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-16 11:17:11,795 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-16 11:17:11,835 INFO     [_internal.py:96] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-02-16 11:17:11,835 INFO     [_internal.py:96] [33mPress CTRL+C to quit[0m
+2024-02-16 11:17:11,837 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-16 11:17:13,031 INFO     [app.py:18] Creating flask app
+2024-02-16 11:17:13,157 DEBUG    [database_context.py:45] Connection established
+2024-02-16 11:17:13,173 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-16 11:17:13,173 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-16 11:17:13,173 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-16 11:17:13,211 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-16 11:17:13,214 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-16 11:17:14,384 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 11:17:14] "[1mPOST /asset-management/issues HTTP/1.1[0m" 1000 -
+2024-02-16 11:19:46,176 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\config\\flask_config.py', reloading
+2024-02-16 11:19:46,245 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-16 11:19:47,450 INFO     [app.py:18] Creating flask app
+2024-02-16 11:19:47,556 DEBUG    [database_context.py:45] Connection established
+2024-02-16 11:19:47,577 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-16 11:19:47,577 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-16 11:19:47,578 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-16 11:19:47,611 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-16 11:19:47,616 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-16 11:19:48,986 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 11:19:48] "[33mPOST /asset-management/issues HTTP/1.1[0m" 404 -
+2024-02-16 11:19:59,156 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\config\\flask_config.py', reloading
+2024-02-16 11:19:59,234 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-16 11:20:00,427 INFO     [app.py:18] Creating flask app
+2024-02-16 11:20:00,521 DEBUG    [database_context.py:45] Connection established
+2024-02-16 11:20:00,538 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-16 11:20:00,538 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-16 11:20:00,538 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-16 11:20:00,567 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-16 11:20:00,567 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-16 11:25:05,322 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\config\\flask_config.py', reloading
+2024-02-16 11:25:05,401 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-16 11:25:06,764 INFO     [app.py:18] Creating flask app
+2024-02-16 11:25:06,880 DEBUG    [database_context.py:45] Connection established
+2024-02-16 11:25:06,899 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-16 11:25:06,899 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-16 11:25:06,899 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-16 11:25:06,947 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-16 11:25:06,950 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-16 11:26:41,236 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 11:26:41] "[33mPOST /asset-management/lgin HTTP/1.1[0m" 404 -
+2024-02-16 11:26:52,346 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 11:26:52] "[31m[1mPATCH /asset-management/login HTTP/1.1[0m" 405 -
+2024-02-16 11:27:06,947 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 11:27:06] "[31m[1mPOST /asset-management/login HTTP/1.1[0m" 422 -
+2024-02-16 11:27:07,006 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 11:27:07] "[31m[1mPOST /asset-management/login HTTP/1.1[0m" 422 -
+2024-02-16 11:27:30,230 DEBUG    [login_controller.py:25] User authenticating and issuing access token
+2024-02-16 11:27:30,239 DEBUG    [database_context.py:45] Connection established
+2024-02-16 11:27:30,247 INFO     [common_helper.py:48] Verifying user password
+2024-02-16 11:27:30,247 INFO     [token.py:41] New access and refresh token issued
+2024-02-16 11:27:30,271 DEBUG    [database_context.py:45] Connection established
+2024-02-16 11:27:30,271 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 11:27:30] "POST /asset-management/login HTTP/1.1" 200 -
+2024-02-16 11:27:42,112 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 11:27:42,121 DEBUG    [database_context.py:45] Connection established
+2024-02-16 11:27:42,125 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 11:27:42,140 DEBUG    [database_context.py:45] Connection established
+2024-02-16 11:27:42,140 DEBUG    [view_issue_controller.py:21] Method to view all the issues
+2024-02-16 11:27:42,140 INFO     [view_issue_handler.py:18] View all issues in database
+2024-02-16 11:27:42,157 DEBUG    [database_context.py:45] Connection established
+2024-02-16 11:27:42,165 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 11:27:42] "GET /asset-management/issues HTTP/1.1" 200 -
+2024-02-16 11:28:50,306 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 11:28:50,322 DEBUG    [database_context.py:45] Connection established
+2024-02-16 11:28:50,322 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 11:28:50,333 DEBUG    [database_context.py:45] Connection established
+2024-02-16 11:28:50,333 INFO     [update_issue_controller.py:21] Resolving pending issue
+2024-02-16 11:28:50,333 INFO     [update_issue_handler.py:18] Updating status of issue
+2024-02-16 11:28:50,347 DEBUG    [database_context.py:45] Connection established
+2024-02-16 11:28:50,354 DEBUG    [database_context.py:45] Connection established
+2024-02-16 11:28:50,362 INFO     [update_issue_controller.py:30] Issue successfully resolved
+2024-02-16 11:28:50,362 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 11:28:50] "PUT /asset-management/issue/ISN8tGg HTTP/1.1" 200 -
+2024-02-16 11:28:53,603 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 11:28:53,613 DEBUG    [database_context.py:45] Connection established
+2024-02-16 11:28:53,617 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 11:28:53,626 DEBUG    [database_context.py:45] Connection established
+2024-02-16 11:28:53,626 INFO     [update_issue_controller.py:21] Resolving pending issue
+2024-02-16 11:28:53,626 INFO     [update_issue_handler.py:18] Updating status of issue
+2024-02-16 11:28:53,642 DEBUG    [database_context.py:45] Connection established
+2024-02-16 11:28:53,642 ERROR    [update_issue_controller.py:34] Error handled by application custom error handler My custom error message
+2024-02-16 11:28:53,642 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 11:28:53] "[35m[1mPUT /asset-management/issue/ISN8tGg HTTP/1.1[0m" 5100 -
+2024-02-16 11:29:14,229 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 11:29:14,252 DEBUG    [database_context.py:45] Connection established
+2024-02-16 11:29:14,253 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 11:29:14,269 DEBUG    [database_context.py:45] Connection established
+2024-02-16 11:29:14,269 INFO     [update_issue_controller.py:21] Resolving pending issue
+2024-02-16 11:29:14,269 INFO     [update_issue_handler.py:18] Updating status of issue
+2024-02-16 11:29:14,285 DEBUG    [database_context.py:45] Connection established
+2024-02-16 11:29:14,285 ERROR    [update_issue_controller.py:34] Error handled by application custom error handler My custom error message
+2024-02-16 11:29:14,293 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 11:29:14] "[35m[1mPUT /asset-management/issue/ISN8tGg HTTP/1.1[0m" 5100 -
+2024-02-16 11:29:22,831 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 11:29:22,848 DEBUG    [database_context.py:45] Connection established
+2024-02-16 11:29:22,848 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 11:29:22,865 DEBUG    [database_context.py:45] Connection established
+2024-02-16 11:29:22,867 INFO     [update_issue_controller.py:21] Resolving pending issue
+2024-02-16 11:29:22,867 INFO     [update_issue_handler.py:18] Updating status of issue
+2024-02-16 11:29:22,882 DEBUG    [database_context.py:45] Connection established
+2024-02-16 11:29:22,882 ERROR    [update_issue_controller.py:34] Error handled by application custom error handler My custom error message
+2024-02-16 11:29:22,882 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 11:29:22] "[35m[1mPUT /asset-management/issue/ISN8tGg HTTP/1.1[0m" 5100 -
+2024-02-16 11:29:56,161 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\handlers\\issue_handler\\update_issue_handler.py', reloading
+2024-02-16 11:29:56,236 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-16 11:30:05,798 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-16 11:30:06,995 INFO     [app.py:18] Creating flask app
+2024-02-16 11:30:07,099 DEBUG    [database_context.py:45] Connection established
+2024-02-16 11:30:07,114 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-16 11:30:07,114 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-16 11:30:07,117 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-16 11:30:07,151 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-16 11:30:07,152 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-16 11:30:17,558 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\handlers\\issue_handler\\update_issue_handler.py', reloading
+2024-02-16 11:30:17,632 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-16 11:30:18,959 INFO     [app.py:18] Creating flask app
+2024-02-16 11:30:19,070 DEBUG    [database_context.py:45] Connection established
+2024-02-16 11:30:19,086 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-16 11:30:19,086 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-16 11:30:19,086 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-16 11:30:19,142 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-16 11:30:19,149 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-16 11:30:21,582 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\handlers\\issue_handler\\update_issue_handler.py', reloading
+2024-02-16 11:30:21,663 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-16 11:30:30,099 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-16 11:30:36,161 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-16 11:30:41,135 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-16 11:30:46,111 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-16 11:30:49,988 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-16 11:30:52,737 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-16 11:30:56,592 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-16 11:31:01,484 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-16 11:37:10,147 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-16 11:37:11,352 INFO     [app.py:18] Creating flask app
+2024-02-16 11:37:11,420 DEBUG    [database_context.py:45] Connection established
+2024-02-16 11:37:11,436 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-16 11:37:11,436 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-16 11:37:11,436 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-16 11:37:11,468 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-16 11:37:11,468 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-16 11:37:14,919 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\handlers\\issue_handler\\update_issue_handler.py', reloading
+2024-02-16 11:37:14,974 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-16 11:37:15,944 INFO     [app.py:18] Creating flask app
+2024-02-16 11:37:16,005 DEBUG    [database_context.py:45] Connection established
+2024-02-16 11:37:16,035 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-16 11:37:16,035 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-16 11:37:16,035 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-16 11:37:16,064 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-16 11:37:16,066 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-16 11:37:23,875 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\handlers\\issue_handler\\update_issue_handler.py', reloading
+2024-02-16 11:37:23,922 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-16 11:37:26,294 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-16 11:37:27,394 INFO     [app.py:18] Creating flask app
+2024-02-16 11:37:27,460 DEBUG    [database_context.py:45] Connection established
+2024-02-16 11:37:27,477 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-16 11:37:27,477 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-16 11:37:27,477 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-16 11:37:27,508 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-16 11:37:27,523 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-16 11:37:28,801 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\handlers\\issue_handler\\update_issue_handler.py', reloading
+2024-02-16 11:37:28,848 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-16 11:37:34,421 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-16 11:37:35,352 INFO     [app.py:18] Creating flask app
+2024-02-16 11:37:35,420 DEBUG    [database_context.py:45] Connection established
+2024-02-16 11:37:35,436 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-16 11:37:35,436 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-16 11:37:35,436 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-16 11:37:35,467 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-16 11:37:35,467 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-16 11:37:43,319 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\handlers\\issue_handler\\update_issue_handler.py', reloading
+2024-02-16 11:37:43,382 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-16 11:37:44,388 INFO     [app.py:18] Creating flask app
+2024-02-16 11:37:44,472 DEBUG    [database_context.py:45] Connection established
+2024-02-16 11:37:44,488 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-16 11:37:44,488 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-16 11:37:44,488 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-16 11:37:44,522 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-16 11:37:44,522 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-16 11:37:46,137 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 11:37:46,152 DEBUG    [database_context.py:45] Connection established
+2024-02-16 11:37:46,152 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 11:37:46,168 DEBUG    [database_context.py:45] Connection established
+2024-02-16 11:37:46,168 INFO     [update_issue_controller.py:21] Resolving pending issue
+2024-02-16 11:37:46,168 INFO     [update_issue_handler.py:19] Updating status of issue
+2024-02-16 11:37:46,168 DEBUG    [database_context.py:45] Connection established
+2024-02-16 11:37:46,168 ERROR    [update_issue_controller.py:34] Error handled by application custom error handler Resource not found
+2024-02-16 11:37:46,168 INFO     [_internal.py:96] 127.0.0.1 - - [16/Feb/2024 11:37:46] "[35m[1mPUT /asset-management/issue/ISN8tGg HTTP/1.1[0m" 500 -
+2024-02-16 11:37:53,552 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\handlers\\issue_handler\\update_issue_handler.py', reloading
+2024-02-16 11:37:53,619 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-16 11:38:45,442 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-16 11:38:46,537 INFO     [app.py:18] Creating flask app
+2024-02-16 11:38:46,617 DEBUG    [database_context.py:45] Connection established
+2024-02-16 11:38:46,631 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-16 11:38:46,632 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-16 11:38:46,632 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-16 11:38:46,663 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-16 11:38:46,665 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-16 11:40:10,338 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 11:40:10,348 DEBUG    [database_context.py:45] Connection established
+2024-02-16 11:40:10,350 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-16 11:40:10,360 DEBUG    [database_context.py:45] Connection established
+2024-02-16 11:40:10,361 DEBUG    [view_issue_controller.py:38] Method to view all the issues created by an user
+2024-02-16 11:40:10,362 INFO     [view_issue_handler.py:30] Viewing all issues raised by any user id
+2024-02-16 11:40:10,371 DEBUG    [database_context.py:45] Connection established

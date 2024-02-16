@@ -35,7 +35,7 @@ class CreateCategoryHandler:
         else:
             raise IntegrityError
 
-    def check_category(self, category_id,vendor_id: str, category_name: str, brand_name: str) -> None:
+    def check_category(self, category_id: str,vendor_id: str, category_name: str, brand_name: str) -> None:
         """Method to check if category with same brand exists or not"""
         logger.info('Method to check if category with same brand exists')
 
@@ -45,10 +45,8 @@ class CreateCategoryHandler:
         mapping_id = PromptConfig.MAPPING_ID_PREFIX + shortuuid.ShortUUID().random(length=4)
         
         if not category_details:
-            self.db_object.save_data(
-                [Queries.INSERT_CATEGORY_DETAILS, Queries.INSERT_MAPPING_DETAILS],
-                [(category_id, category_name,brand_name),
-                 (mapping_id,category_id,vendor_id,)])
+            self.db_object.save_data(Queries.INSERT_CATEGORY_DETAILS,(category_id, category_name,brand_name,))
+            self.db_object.save_data(Queries.INSERT_MAPPING_DETAILS,(mapping_id,category_id,vendor_id,))
 
         else:
             category_id = category_details[0]['category_id']
@@ -60,10 +58,8 @@ class CreateCategoryHandler:
 
         try:
             vendor_id = fetch_vendor_details(vendor_email)
-            
             category_id = PromptConfig.CATEGORY_ID_PREFIX + shortuuid.ShortUUID().random(length=4)
             self.check_category(category_id, vendor_id, category_name, brand_name)
-            return category_id
         
         except IntegrityError as err:
             logger.error(f'Same category name already exits {err}')

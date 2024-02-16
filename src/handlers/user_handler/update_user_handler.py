@@ -23,7 +23,14 @@ class UpdateUserHandler:
         logger.info('Changing user password is old password is valid')
 
         try:
-            role = verify_user_password(user_id, old_password, obj_hash_password)
+            user_data = self.db_object.fetch_data(Queries.FETCH_PASSWORD, (user_id,))
+
+            password = user_data[0]['password']
+            role = user_data[0]['role']
+            is_changed = user_data[0]['is_changed']
+            
+            if not verify_user_password(password,old_password,is_changed,obj_hash_password):
+                raise ApplicationException(401, PromptConfig.UNAUTHORISED, PromptConfig.INVALID_CREDENTIALS_ENTERED)
             
             if new_password != confirm_password:
                 raise ApplicationException(400, PromptConfig.BAD_REQUEST, PromptConfig.PASSWORDS_NOT_MATCH)

@@ -3,7 +3,6 @@ import logging
 from config.app_config import StatusCodes
 from config.prompts.prompts import PromptConfig
 from database.database import Database
-from utils.secure_password import HashPassword
 from handlers.user_handler.create_user_handler import CreateUserHandler
 from utils.exceptions import ApplicationException, DBException
 from utils.response import SuccessResponse, ErrorResponse
@@ -23,11 +22,9 @@ class CreateUserController:
 
         try:
             username = user_data['username']
-            password = user_data['password']
             role = user_data['role']
 
-            obj_secure_password = HashPassword()
-            self.obj_user_handler.create_new_user(role,username,password, obj_secure_password)
+            self.obj_user_handler.create_new_user(role,username)
 
             logger.info(f'New user created {username}')
             return SuccessResponse.success_message(PromptConfig.USER_CREATED), StatusCodes.CREATED

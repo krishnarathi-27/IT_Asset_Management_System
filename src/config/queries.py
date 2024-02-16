@@ -114,11 +114,11 @@ class Queries:
     UPDATE_TOKEN_STATUS = """
         UPDATE token_table
         SET token_status = %s
-        WHERE access_token = %s
+        WHERE user_id = %s
     """
     # FETCH DATA
     FETCH_PASSWORD = """
-        SELECT password, role
+        SELECT password, role, is_changed
         FROM authentication
         WHERE user_id = %s
     """
@@ -226,7 +226,7 @@ class Queries:
     FETCH_IF_ASSET_EXISTS = """
         SELECT mapping_id 
         FROM asset_table 
-        WHERE asset_id = %s AND asset_type = "assignable"    
+        WHERE asset_id = %s AND asset_status = %s  AND asset_type = "assignable" 
     """
     FETCH_IF_USER_EXISTS = """
     SELECT user_id FROM authentication WHERE user_id = %s
@@ -330,5 +330,5 @@ class Queries:
     FETCH_IF_TOKEN_REVOKED = """
         SELECT token_status
         FROM token_table
-        WHERE access_token = %s
+        WHERE {} = %s
     """

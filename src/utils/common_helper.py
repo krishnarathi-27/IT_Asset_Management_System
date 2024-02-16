@@ -43,19 +43,18 @@ def fetch_category_details(category_name: str, brand_name: str) -> str:
         logger.error(f"Error occured in mysql database {err}") 
         raise DBException(500, PromptConfig.INTERNAL_SERVER_ERROR, PromptConfig.SERVER_ERROR)
     
-def verify_user_password(user_id: str,password: str, obj_hash_password):
+def verify_user_password(password: str,input_password: str ,password_type: str, obj_hash_password):
     """Function to verify user password is correct or not"""
     logger.info('Verifying user password')
 
     try:
-        user_data = db_object.fetch_data(Queries.FETCH_PASSWORD,(user_id,))
 
-        old_password_hashed = obj_hash_password.secure_password(password)
-
-        if user_data[0]['password'] != old_password_hashed:
-            raise ApplicationException(401, PromptConfig.UNAUTHORISED, PromptConfig.INVALID_CREDENTIALS_ENTERED)
+        if password_type == 'false':
+            return password == input_password
         
-        return user_data[0]['role']
+        old_password_hashed = obj_hash_password.secure_password(input_password)
+
+        return password == old_password_hashed
     
     except Error as err:
         logger.warning(f"Error occured in mysql database {err}") 

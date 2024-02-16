@@ -51,8 +51,7 @@ class UpdateAssetController:
 
             self.obj_asset_handler.unassign_asset(asset_id)
 
-            return SuccessResponse.success_message(StatusCodes.OK, 
-                                                       PromptConfig.ASSET_UNASSIGNED), StatusCodes.OK
+            return SuccessResponse.success_message(PromptConfig.ASSET_UNASSIGNED), StatusCodes.OK
         
         except ApplicationException as error:
             logger.error(f'Error handled by application custom error handler {error.error_message}')

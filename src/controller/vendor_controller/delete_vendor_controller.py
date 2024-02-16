@@ -23,13 +23,8 @@ class DeleteVendorController:
         try:
             self.obj_vendor_handler.deactivate_vendor(vendor_id)
 
-            response = [{
-                'vendor_id' : vendor_id
-            }]
-
             logger.info(f'Vendor {vendor_id} deactiavted successfully')
-            return SuccessResponse.success_message(PromptConfig.VENDOR_DEACTIVATED,
-                                                       response), StatusCodes.OK
+            return SuccessResponse.success_message(PromptConfig.VENDOR_DEACTIVATED), StatusCodes.OK
 
         except ApplicationException as error:
             logger.error(f'Error handled by application custom error handler {error.error_message}')

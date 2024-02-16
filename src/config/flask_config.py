@@ -37,7 +37,6 @@ def intialise_jwt_config(app):
 
     @jwt.expired_token_loader
     def expired_token_callback(jwt_header, jwt_payload):
-        token_obj.revoke_token(jwt_payload)
         return (
             jsonify({"message": "The token has expired.", "error": "token_expired"}),
             401,
@@ -75,16 +74,9 @@ def intialise_jwt_config(app):
     
     @jwt.token_in_blocklist_loader
     def check_if_token_in_blocklist(jwt_header, jwt_payload):
-        return token_obj.check_token_revoked(jwt_payload)
-
-    @jwt.revoked_token_loader
-    def revoked_token_callback(jwt_header, jwt_payload):
-        return (
-            jsonify(
-                {"description": "The token has been revoked.", "error": "token_revoked"}
-            ),
-            401,
-        )
+        check_access_revoked = token_obj.check_token_revoked(jwt_payload,'access_token')
+        check_refresh_revoked = token_obj.check_token_revoked(jwt_payload,'refresh_token')
+        return check_access_revoked or check_refresh_revoked
     
 def register_blueprints(app):
     'Register blueprints to flask app'

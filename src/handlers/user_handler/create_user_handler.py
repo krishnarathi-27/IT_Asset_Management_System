@@ -6,6 +6,7 @@ from mysql.connector import IntegrityError, Error
 from config.queries import Queries
 from config.prompts.prompts import PromptConfig
 from utils.exceptions import ApplicationException, DBException
+from utils.password_generator import generate_password
 
 logger = logging.getLogger("create_user_handler")
 
@@ -15,13 +16,15 @@ class CreateUserHandler:
     def __init__(self, db_object) -> None:
         self.db_object = db_object
         
-    def create_new_user(self, user_role: str, username: str, password: str) -> str:
+    def create_new_user(self, user_role: str, username: str) -> str:
         """Method for creating new user in database"""
         logger.info('Creating new user in database')
 
         try:
             user_id = PromptConfig.USER_ID_PREFIX + shortuuid.ShortUUID().random(length=4)      
 
+            password = generate_password()
+            
             self.db_object.save_data(Queries.INSERT_USER_CREDENTIALS,
                 (user_id,username,password,user_role,)
             )  

@@ -11,11 +11,8 @@ class LoginSuccessSchema(Schema):
     message = fields.Str(dump_only=True)
 
 class UserCreateSchema(Schema):
-    user_id = fields.Str(dump_only=True)
     username = fields.Str(required=True)
-    password = fields.Str(required=True,load_only=True)
     role = fields.Str(required=True)
-    message = fields.Str(dump_only=True)
 
 class UserDetailsSchema(Schema):
     user_id = fields.Str(dump_only=True)

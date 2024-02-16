@@ -17,7 +17,8 @@ class LoginController:
     def __init__(self) -> None:
         db_object = Database()
         self.token_obj = Token()
-        self.obj_auth_handler = AuthHandler(db_object)
+        obj_secure_password = HashPassword()
+        self.obj_auth_handler = AuthHandler(db_object,obj_secure_password)
 
     def login(self, user_data: dict) -> dict:
         """Function for login where user is authenticated and JWT token is issues"""
@@ -25,11 +26,9 @@ class LoginController:
         
         try:
             username = user_data['username']
-            password = user_data['password']
+            password = user_data['password']   
 
-            obj_secure_password = HashPassword()
-
-            result = self.obj_auth_handler.validate_user(username, password, obj_secure_password)
+            result = self.obj_auth_handler.validate_user(username, password)
             
             if result:
                 role = result[0]
