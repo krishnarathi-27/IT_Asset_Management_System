@@ -3,8 +3,8 @@
 
 class AppConfig:
     """Class is used to load all the appconfig constants"""
-    
-    PROMPT_FILE_LOCATION = r"config\prompts\prompts.yaml"
+
+    PROMPT_FILE_LOCATION = r"src\config\prompts\prompts.yaml"
     MAX_LOGIN_ATTEMPTS = 3
     LOG_LOCATION = r"logs.txt"
 
