@@ -21,6 +21,7 @@ pymysql = "*"
 cryptography = "*"
 gunicorn = "*"
 flask = "*"
+python-dotenv = "*"
 
 [dev-packages]
 

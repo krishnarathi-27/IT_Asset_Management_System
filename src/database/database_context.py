@@ -3,7 +3,6 @@
 import logging
 import pymysql
 import os
-import mysql.connector
 from pathlib import Path
 from dotenv import load_dotenv
 
