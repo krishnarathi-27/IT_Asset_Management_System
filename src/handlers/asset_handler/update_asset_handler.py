@@ -5,6 +5,7 @@ from config.app_config import AppConfig
 from config.queries import Queries
 from config.prompts.prompts import PromptConfig
 from utils.exceptions import DBException, ApplicationException
+from utils.common_helper import regex_validation
 
 logger = logging.getLogger("update_asset_handler")
 
@@ -30,6 +31,11 @@ class UpdateAssetHandler:
        logger.info('Assigning asset to user')
 
        try:
+            result = regex_validation(AppConfig.REGEX_USER_ID, asset_id)
+
+            if not result:
+                raise ApplicationException(422, PromptConfig.UNPROCESSIBLE_ENTITY, PromptConfig.INVALID_ASSET_ID)
+            
             mapping_id = self.fetch_asset_exists(asset_id,AppConfig.AVAILABLE_STATUS)
 
             data_user_id = self.db_object.fetch_data(Queries.FETCH_IF_USER_EXISTS, (employee_id,))
@@ -51,6 +57,11 @@ class UpdateAssetHandler:
        logger.info('Method to unassign asset from user')
 
        try:
+            result = regex_validation(AppConfig.REGEX_USER_ID, asset_id)
+
+            if not result:
+                raise ApplicationException(422, PromptConfig.UNPROCESSIBLE_ENTITY, PromptConfig.INVALID_ASSET_ID)
+            
             mapping_id = self.fetch_asset_exists(asset_id,AppConfig.UNAVAILABLE_STATUS)
 
             self.db_object.save_data(Queries.UPDATE_ASSET_STATUS,

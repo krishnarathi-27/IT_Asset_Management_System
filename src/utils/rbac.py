@@ -1,10 +1,17 @@
+import os
 import functools
 
 from flask_smorest import abort
 from flask_jwt_extended import get_jwt
 from flask_jwt_extended import verify_jwt_in_request
 
-def role_required(role_list: list):
+ROLE_REQUIRED = {
+    "admin": os.getenv('ADMIN'),
+    "asset manager": os.getenv('MANAGER'),
+    "employee": os.getenv('employee')
+}
+
+def access_required(role_list: list):
     def wrapper(fn):
         @functools.wraps(fn)
         def inner(*args, **kwargs):

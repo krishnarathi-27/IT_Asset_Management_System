@@ -25,7 +25,7 @@ class UpdateIssueController:
             user_id = request_data['user_id']
             issue_status = request_data['issue_status']
             
-            self.obj_issue_handler.update_issue_status(user_id,asset_id,issue_id, issue_status)
+            self.obj_issue_handler.update_issue_status(user_id,asset_id,issue_id)
 
             logger.info('Issue successfully resolved')
             return SuccessResponse.success_message(PromptConfig.ISSUE_RESOLVED), StatusCodes.OK

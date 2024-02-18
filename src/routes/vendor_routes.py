@@ -1,14 +1,12 @@
-import shortuuid
 from flask.views import MethodView
-from flask_smorest import Blueprint, abort
+from flask_smorest import Blueprint
 
 from config.app_config import AppConfig
 from controller.vendor_controller.create_vendor_controller import CreateVendorController
 from controller.vendor_controller.view_vendor_controller import ViewVendorController
 from controller.vendor_controller.delete_vendor_controller import DeleteVendorController
-from utils.mapped_roles import MappedRole
 from src.schemas.asset_schema import VendorSchema, VendorDetailsSchema, VendorDeactivateSchema
-from utils.rbac import role_required
+from utils.rbac import access_required, ROLE_REQUIRED
 
 blp = Blueprint("vendors",__name__, description="Operations on asset vendors")
     
@@ -16,7 +14,7 @@ blp = Blueprint("vendors",__name__, description="Operations on asset vendors")
 class Vendors(MethodView):
 
     @blp.doc(parameters=AppConfig.SWAGGER_AUTHORISATION_HEADER)
-    @role_required([MappedRole.ADMIN_ROLE,MappedRole.MANAGER_ROLE])
+    @access_required([ROLE_REQUIRED['admin'],ROLE_REQUIRED['asset manager']])
     @blp.response(200,VendorDetailsSchema(many=True))
     def get(self):
         
@@ -26,7 +24,7 @@ class Vendors(MethodView):
         return response
     
     @blp.doc(parameters=AppConfig.SWAGGER_AUTHORISATION_HEADER)
-    @role_required([MappedRole.ADMIN_ROLE,MappedRole.MANAGER_ROLE])
+    @access_required([ROLE_REQUIRED['admin'],ROLE_REQUIRED['asset manager']])
     @blp.arguments(VendorSchema)
     @blp.response(201,VendorSchema)
     def post(self, request_data):
@@ -36,11 +34,11 @@ class Vendors(MethodView):
 
         return response
     
-@blp.route("/vendor/<string:vendor_id>")
+@blp.route("/vendors/<string:vendor_id>")
 class Vendor(MethodView):
 
     @blp.doc(parameters=AppConfig.SWAGGER_AUTHORISATION_HEADER)
-    @role_required([MappedRole.ADMIN_ROLE])
+    @access_required([ROLE_REQUIRED['admin']])
     @blp.response(200,VendorDeactivateSchema)
     def delete(self, vendor_id):
         

@@ -2,7 +2,7 @@ import logging
 from flask_jwt_extended import get_jti, create_access_token, create_refresh_token
 from config.queries import Queries
 from database.database import Database
-from utils.mapped_roles import MappedRole
+from utils.rbac import ROLE_REQUIRED
 
 logger = logging.getLogger('token')
 
@@ -40,7 +40,7 @@ class Token:
         """Method to generate new access and refresh token and saving token in database"""
         logger.info('New access and refresh token issued')
         
-        get_role = MappedRole.get_mapped_role(role)
+        get_role = ROLE_REQUIRED[role]
         if is_changed == "false":
             password_type = 0
         else:

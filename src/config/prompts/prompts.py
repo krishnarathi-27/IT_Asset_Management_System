@@ -27,6 +27,7 @@ class PromptConfig:
     USERNAME_EXISTS = None
     SERVER_ERROR = None
     RESOURCE_NOT_FOUND = None
+    UNPROCESSIBLE_ENTITY = None
 
     VENDOR_NOT_EXISTS = None
     USER_NOT_EXISTS = None
@@ -62,6 +63,10 @@ class PromptConfig:
     CUSTOM_ERROR_MSG = None
     ISSUE_RESOLVED = None
     USER_LOGGED_OUT = None
+    INVALID_ASSET_ID = None
+    INVALID_VENDOR_ID = None
+    INVALID_ISSUE_ID = None
+    INVALID_USER_ID = None
 
     @classmethod
     def load(cls) -> None:
@@ -85,6 +90,7 @@ class PromptConfig:
             cls.USERNAME_EXISTS = data['USERNAME_EXISTS']
             cls.SERVER_ERROR = data['SERVER_ERROR']
             cls.RESOURCE_NOT_FOUND = data['RESOURCE_NOT_FOUND']
+            cls.UNPROCESSIBLE_ENTITY = data['UNPROCESSIBLE_ENTITY']
 
             cls.VENDOR_NOT_EXISTS = data['VENDOR_NOT_EXISTS']
             cls.USER_NOT_EXISTS = data['USER_NOT_EXISTS']
@@ -121,3 +127,7 @@ class PromptConfig:
             cls.CUSTOM_ERROR_MSG = data['CUSTOM_ERROR_MSG']
             cls.ISSUE_RESOLVED = data['ISSUE_RESOLVED']
             cls.USER_LOGGED_OUT = data['USER_LOGGED_OUT']
+            cls.INVALID_ASSET_ID = data['INVALID_ASSET_ID']
+            cls.INVALID_VENDOR_ID = data['INVALID_VENDOR_ID']
+            cls.INVALID_ISSUE_ID = data['INVALID_ISSUE_ID']
+            cls.INVALID_USER_ID = data['INVALID_USER_ID']

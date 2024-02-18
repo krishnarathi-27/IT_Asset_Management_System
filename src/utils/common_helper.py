@@ -1,4 +1,7 @@
 import logging
+import random
+import re
+import string
 from mysql.connector import Error
 
 from database.database import Database
@@ -60,3 +63,20 @@ def verify_user_password(password: str,input_password: str ,password_type: str, 
         logger.warning(f"Error occured in mysql database {err}") 
         raise DBException(500, PromptConfig.INTERNAL_SERVER_ERROR, PromptConfig.SERVER_ERROR)
     
+def generate_password():
+    'Generate a random password using string combinations'
+
+    characters = string.ascii_letters + string.digits + '@#$&'
+    password = ''.join(random.choice(characters) for _ in range(6))
+    return password
+
+def regex_validation(regex_pattern, user_input):
+
+    result = re.match(regex_pattern, user_input)
+    
+    if result is None:
+        logger.info('Regex validation failed for user input')
+        return False
+    
+    return True
+ 

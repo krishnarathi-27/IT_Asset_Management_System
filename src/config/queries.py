@@ -179,7 +179,7 @@ class Queries:
         WHERE asset_status = "under_maintenance"
     """
     FETCH_USER_CREDENTIALS = """
-        SELECT user_id, password, role, is_changed 
+        SELECT user_id, password, role, is_changed
         FROM authentication WHERE username = %s 
     """
     FETCH_ASSIGNED_ASSETS_BY_UID = """

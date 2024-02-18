@@ -1,9 +1,11 @@
 import logging
 from mysql.connector import Error
 
+from config.app_config import AppConfig
 from config.queries import Queries
 from config.prompts.prompts import PromptConfig
 from utils.exceptions import DBException, ApplicationException
+from utils.common_helper import regex_validation
 
 logger = logging.getLogger('view_issue_handler')
 
@@ -30,6 +32,11 @@ class ViewIssueHandler:
         logger.info('Viewing all issues raised by any user id')
 
         try: 
+            result = regex_validation(AppConfig.REGEX_USER_ID, user_id)
+
+            if not result:
+                raise ApplicationException(422, PromptConfig.UNPROCESSIBLE_ENTITY, PromptConfig.INVALID_USER_ID)
+            
             data = self.db_object.fetch_data(Queries.FETCH_ISSUE_BY_USER_ID,(user_id,))
             if data:
                 return data

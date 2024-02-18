@@ -21,7 +21,6 @@ class ErrorResponse:
         return  jsonify(
                     {
                         "success" : cls.success,
-                        'code': error.error_code,
                         "error" : error.error_description,
                         "message" : error.error_message
                     }

@@ -6,7 +6,7 @@ from mysql.connector import IntegrityError, Error
 from config.queries import Queries
 from config.prompts.prompts import PromptConfig
 from utils.exceptions import ApplicationException, DBException
-from utils.password_generator import generate_password
+from utils.common_helper import generate_password
 
 logger = logging.getLogger("create_user_handler")
 

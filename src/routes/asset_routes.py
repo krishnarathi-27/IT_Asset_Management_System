@@ -1,10 +1,8 @@
 from flask.views import MethodView
 from flask_smorest import Blueprint
-from flask_jwt_extended import jwt_required
 
-from utils.mapped_roles import MappedRole
 from config.app_config import AppConfig
-from utils.rbac import role_required
+from utils.rbac import access_required, ROLE_REQUIRED
 from controller.asset_controller.create_asset_controller import CreateAssetController
 from controller.asset_controller.view_asset_controller import ViewAssetController
 from controller.asset_controller.update_asset_controller import UpdateAssetController
@@ -16,7 +14,7 @@ blp = Blueprint("assets",__name__, description="Operations on asset inventory")
 class Assets(MethodView):
     
     @blp.doc(parameters=AppConfig.SWAGGER_AUTHORISATION_HEADER)
-    @role_required([MappedRole.ADMIN_ROLE,MappedRole.MANAGER_ROLE])
+    @access_required([ROLE_REQUIRED['admin'],ROLE_REQUIRED['asset manager']])
     @blp.response(200,ViewAssetSchema(many=True))
     def get(self):
 
@@ -26,7 +24,7 @@ class Assets(MethodView):
         return response
     
     @blp.doc(parameters=AppConfig.SWAGGER_AUTHORISATION_HEADER)
-    @role_required([MappedRole.MANAGER_ROLE])
+    @access_required([ROLE_REQUIRED['asset manager']])
     @blp.arguments(AssetSchema)
     @blp.response(201,AssetSchema)
     def post(self,request_data):
@@ -40,7 +38,7 @@ class Assets(MethodView):
 class AssetAssign(MethodView):
     
     @blp.doc(parameters=AppConfig.SWAGGER_AUTHORISATION_HEADER)
-    @role_required([MappedRole.MANAGER_ROLE])
+    @access_required([ROLE_REQUIRED['asset manager']])
     @blp.arguments(AssetUpdateSchema)
     @blp.response(200,AssetUpdateSchema)
     def put(self,request_data,asset_id):
@@ -54,7 +52,7 @@ class AssetAssign(MethodView):
 class AssetUnassign(MethodView):
      
     @blp.doc(parameters=AppConfig.SWAGGER_AUTHORISATION_HEADER)
-    @role_required([MappedRole.MANAGER_ROLE])
+    @access_required([ROLE_REQUIRED['asset manager']])
     @blp.arguments(AssetUpdateSchema)
     @blp.response(200,AssetUpdateSchema)
     def put(self,request_data,asset_id):

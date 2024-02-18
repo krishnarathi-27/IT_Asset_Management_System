@@ -11,6 +11,7 @@ INTERNAL_SERVER_ERROR: Internal server error
 RESOURCE_NOT_FOUND: Resource not found
 UNAUTHORISED: Unauthorised
 BAD_REQUEST: Bad request
+UNPROCESSIBLE_ENTITY: Unprocessible entity
 
 USERNAME_EXISTS: Username already exists
 SERVER_ERROR: Server not responding. Try again after some time
@@ -47,5 +48,8 @@ ISSUE_ALREADY_RESOLVED : Issue already resolved
 CUSTOM_ERROR_MSG : My custom error message
 ISSUE_RESOLVED : Issue resolved successfully
 USER_LOGGED_OUT : User logged out successfully
-
+INVALID_USER_ID : User id entered is not of valid format
+INVALID_ISSUE_ID : Issue id entered is not of valid format
+INVALID_VENDOR_ID: Vendor id entered is not of valid format
+INVALID_ASSET_ID: Asset id entered is not of valid format
 ...

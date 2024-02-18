@@ -3,12 +3,11 @@ from flask_smorest import Blueprint
 from flask_jwt_extended import jwt_required
 
 from config.app_config import AppConfig
-from utils.mapped_roles import MappedRole
 from controller.user_controller.create_user_controller import CreateUserController
 from controller.user_controller.view_user_controller import ViewUserController
 from controller.user_controller.update_user_controller import UpdateUserController
 from schemas.user_schema import UserCreateSchema, UserDetailsSchema, UserPassword
-from utils.rbac import role_required
+from utils.rbac import access_required, ROLE_REQUIRED
 
 blp = Blueprint("users",__name__, description="Operations on users")
 
@@ -16,7 +15,7 @@ blp = Blueprint("users",__name__, description="Operations on users")
 class Users(MethodView):
     
     @blp.doc(parameters=AppConfig.SWAGGER_AUTHORISATION_HEADER)
-    @role_required([MappedRole.ADMIN_ROLE,MappedRole.MANAGER_ROLE])
+    @access_required([ROLE_REQUIRED['admin'],ROLE_REQUIRED['asset manager']])
     @blp.response(200,UserDetailsSchema(many=True))
     def get(self):
 
@@ -26,7 +25,7 @@ class Users(MethodView):
         return response
     
     @blp.doc(parameters=AppConfig.SWAGGER_AUTHORISATION_HEADER)
-    @role_required([MappedRole.ADMIN_ROLE])
+    @access_required([ROLE_REQUIRED['admin']])
     @blp.arguments(UserCreateSchema)
     @blp.response(201,UserCreateSchema)
     def post(self,user_data):

@@ -13,6 +13,9 @@ logging.basicConfig(
 
 logger = logging.getLogger("main")
 
+# def internal_server_error(e):
+#   return {"message": 'huhuhu'}, 400
+
 def create_app():
     """Creating flask app server and initialising all configs and database tables """
     logger.info('Creating flask app')
@@ -22,7 +25,8 @@ def create_app():
     db.create_all_table()
 
     app = Flask(__name__)
-
+    # app.register_error_handler(404, internal_server_error)
+    
     create_flask_config(app)
     intialise_jwt_config(app)
     register_blueprints(app)

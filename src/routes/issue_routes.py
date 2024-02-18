@@ -3,13 +3,11 @@ from flask_smorest import Blueprint
 from flask_jwt_extended import jwt_required
 
 from config.app_config import AppConfig
-from utils.mapped_roles import MappedRole
 from controller.issue_controller.create_issue_controller import CreateIssueController
 from controller.issue_controller.update_issue_controller import UpdateIssueController
 from controller.issue_controller.view_issue_controller import ViewIssueController
-from schemas.user_schema import UserDetailsSchema, UserPassword
 from schemas.issue_schema import IssueSchema, IssueCreateSchema
-from utils.rbac import role_required
+from utils.rbac import access_required, ROLE_REQUIRED
 
 blp = Blueprint("issues",__name__, description="Operations on issues")
 
@@ -17,7 +15,7 @@ blp = Blueprint("issues",__name__, description="Operations on issues")
 class Issues(MethodView):
     
     @blp.doc(parameters=AppConfig.SWAGGER_AUTHORISATION_HEADER)
-    @role_required([MappedRole.MANAGER_ROLE])
+    @access_required([ROLE_REQUIRED['asset manager']])
     @blp.response(200,IssueSchema(many=True))
     def get(self):
 
@@ -37,7 +35,7 @@ class Issues(MethodView):
 
         return response
     
-@blp.route("/issue/<string:user_id>")
+@blp.route("/issues/<string:user_id>")
 class IssueId(MethodView):
     
     @blp.doc(parameters=AppConfig.SWAGGER_AUTHORISATION_HEADER)
