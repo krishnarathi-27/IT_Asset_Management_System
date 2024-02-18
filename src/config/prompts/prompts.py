@@ -75,7 +75,6 @@ class PromptConfig:
         Parameters = cls
         Return Type = None
         """
-        print(AppConfig.PROMPT_FILE_LOCATION)
         with open(AppConfig.PROMPT_FILE_LOCATION, "r") as file:
             data = yaml.safe_load(file)
 

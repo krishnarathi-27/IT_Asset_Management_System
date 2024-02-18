@@ -78,12 +78,12 @@ class Queries:
     # UPDATE DATA QUERIES
     UPDATE_VENDOR_ACTIVE_STATUS = """
         UPDATE vendor_table
-        SET active_status = "false" 
+        SET active_status = 'false' 
         WHERE vendor_id = %s 
     """
     UPDATE_DEFAULT_PASSWORD = """
         UPDATE authentication SET password = %s,
-        is_changed = "true" WHERE username = %s 
+        is_changed = 'true' WHERE username = %s 
     """
     UPDATE_ASSET_STATUS = """
         UPDATE asset_table 
@@ -92,23 +92,23 @@ class Queries:
     """
     UPDATE_ISSUE_STATUS = """
         UPDATE issue_table
-        SET issue_status = "resolved", user_id = %s, asset_id = %s 
+        SET issue_status = 'resolved', user_id = %s, asset_id = %s 
         WHERE issue_id = %s  
     """
     UPDATE_ASSET_STATUS_UNDER_MAINTENANCE = """
         UPDATE asset_table 
-        SET asset_status = "under-maintenance"
+        SET asset_status = 'under-maintenance'
         WHERE asset_id = %s     
     """
 
     UPDATE_ASSET_STATUS_AGAIN_TO_AVAILABLE = """
         UPDATE asset_table 
-        SET asset_status = "available"
+        SET asset_status = 'available'
         WHERE asset_id = %s 
     """
     UPDATE_PASSWORD = """   
         UPDATE authentication
-        SET password = %s, is_changed = "true"
+        SET password = %s, is_changed = 'true'
         WHERE user_id = %s
     """
     UPDATE_TOKEN_STATUS = """
@@ -172,11 +172,11 @@ class Queries:
     """
     FETCH_ASSETS_AVAILABLE = """
         SELECT * FROM asset_table
-        WHERE asset_status = "available"    
+        WHERE asset_status = 'available'    
     """
     FETCH_ASSETS_UNDER_MAINTENANCE = """
         SELECT * FROM asset_table
-        WHERE asset_status = "under_maintenance"
+        WHERE asset_status = 'under_maintenance'
     """
     FETCH_USER_CREDENTIALS = """
         SELECT user_id, password, role, is_changed
@@ -199,15 +199,15 @@ class Queries:
         FROM asset_table
         INNER JOIN mapping_table ON asset_table.mapping_id = mapping_table.mapping_id
         INNER JOIN asset_category ON mapping_table.category_id = asset_category.category_id
-        WHERE asset_table.asset_type = "assignable" AND asset_table.asset_status = "available"
+        WHERE asset_table.asset_type = 'assignable' AND asset_table.asset_status = 'available'
     """
     FETCH_ASSIGNABLE_ASSETS_TO_ASSIGN = """
         SELECT * FROM asset_table
-        WHERE asset_type = "assignable" AND asset_status = "available" 
+        WHERE asset_type = 'assignable' AND asset_status = 'available' 
     """
     FETCH_ASSIGNED_ASSETS_TO_UNASSIGN = """
         SELECT * FROM asset_table
-        WHERE asset_type = "assignable" AND asset_status = "unavailable"
+        WHERE asset_type = 'assignable' AND asset_status = 'unavailable'
     """
     FETCH_FROM_MAPPING_TABLE = """
         SELECT * FROM mapping_table
@@ -216,7 +216,7 @@ class Queries:
     FETCH_ISSUES_PENDING = """
         SELECT issue_id, user_id, asset_id 
         FROM issue_table
-        WHERE issue_status = "pending"  
+        WHERE issue_status = 'pending'  
     """
     FETCH_IF_CATEGORY_EXISTS = """
         SELECT category_name
@@ -226,7 +226,7 @@ class Queries:
     FETCH_IF_ASSET_EXISTS = """
         SELECT mapping_id 
         FROM asset_table 
-        WHERE asset_id = %s AND asset_status = %s  AND asset_type = "assignable" 
+        WHERE asset_id = %s AND asset_status = %s  AND asset_type = 'assignable' 
     """
     FETCH_IF_USER_EXISTS = """
     SELECT user_id FROM authentication WHERE user_id = %s
@@ -234,12 +234,12 @@ class Queries:
     FETCH_VENDOR_BY_EMAIL = """
         SELECT vendor_id 
         FROM vendor_table 
-        WHERE vendor_email = %s AND active_status = "true"    
+        WHERE vendor_email = %s AND active_status = 'true'    
     """
     FETCH_VENDOR_BY_ID = """
         SELECT vendor_email
         FROM vendor_table 
-        WHERE vendor_id = %s AND active_status = "true"    
+        WHERE vendor_id = %s AND active_status = 'true'    
     """
     FETCH_DETAILS_BY_UID = """
         SELECT user_id, username, role
@@ -249,7 +249,7 @@ class Queries:
     FETCH_IF_USER_HAVE_ASSET = """
         SELECT mapping_id
         FROM asset_table
-        WHERE asset_id = %s AND assigned_to = %s AND asset_status = "unavailable"
+        WHERE asset_id = %s AND assigned_to = %s AND asset_status = 'unavailable'
     """
     FETCH_MAPPING_ID = """
         SELECT mapping_id 

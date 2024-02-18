@@ -558,3 +558,177 @@
 2024-02-19 01:20:04,340 INFO     [token.py:41] New access and refresh token issued
 2024-02-19 01:20:04,955 DEBUG    [database_context.py:51] Connection established
 2024-02-19 01:20:05,099 INFO     [_internal.py:96] 127.0.0.1 - - [19/Feb/2024 01:20:05] "POST /asset-management/v1/login HTTP/1.1" 200 -
+2024-02-19 02:44:54,840 INFO     [app.py:21] Creating flask app
+2024-02-19 02:44:55,646 DEBUG    [database_context.py:50] Connection established
+2024-02-19 02:44:56,576 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-19 02:44:56,576 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-19 02:44:56,576 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-19 02:44:56,616 INFO     [_internal.py:96] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-02-19 02:44:56,616 INFO     [_internal.py:96] [33mPress CTRL+C to quit[0m
+2024-02-19 02:44:56,626 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-19 02:44:57,840 INFO     [app.py:21] Creating flask app
+2024-02-19 02:44:58,372 DEBUG    [database_context.py:50] Connection established
+2024-02-19 02:44:59,538 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-19 02:44:59,538 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-19 02:44:59,538 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-19 02:44:59,569 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-19 02:44:59,585 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-19 02:45:06,450 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\app.py', reloading
+2024-02-19 02:45:06,517 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-19 02:45:07,764 INFO     [app.py:21] Creating flask app
+2024-02-19 02:45:08,199 DEBUG    [database_context.py:50] Connection established
+2024-02-19 02:45:08,967 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-19 02:45:08,967 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-19 02:45:08,967 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-19 02:45:08,983 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-19 02:45:08,999 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-19 02:45:28,811 INFO     [app.py:21] Creating flask app
+2024-02-19 02:45:29,545 DEBUG    [database_context.py:50] Connection established
+2024-02-19 02:45:30,118 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-19 02:45:30,118 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-19 02:45:30,118 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-19 02:45:30,150 INFO     [_internal.py:96] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-02-19 02:45:30,150 INFO     [_internal.py:96] [33mPress CTRL+C to quit[0m
+2024-02-19 02:45:30,150 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-19 02:45:31,332 INFO     [app.py:21] Creating flask app
+2024-02-19 02:45:31,871 DEBUG    [database_context.py:50] Connection established
+2024-02-19 02:45:32,930 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-19 02:45:32,930 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-19 02:45:32,930 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-19 02:45:32,946 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-19 02:45:32,962 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-19 02:45:35,384 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-19 02:45:35,826 DEBUG    [database_context.py:50] Connection established
+2024-02-19 02:45:36,014 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-19 02:45:36,478 DEBUG    [database_context.py:50] Connection established
+2024-02-19 02:45:36,717 INFO     [update_user_controller.py:23] Method to update user password
+2024-02-19 02:45:36,718 INFO     [update_user_handler.py:23] Changing user password is old password is valid
+2024-02-19 02:45:37,126 DEBUG    [database_context.py:50] Connection established
+2024-02-19 02:45:37,331 INFO     [common_helper.py:51] Verifying user password
+2024-02-19 02:45:37,946 DEBUG    [database_context.py:50] Connection established
+2024-02-19 02:45:38,150 ERROR    [update_user_handler.py:47] Error occured in mysql database (1054, "Unknown column 'true' in 'field list'")
+2024-02-19 02:45:38,151 ERROR    [update_user_controller.py:51] Error handled by database custom error handler Internal server error
+2024-02-19 02:45:38,152 INFO     [_internal.py:96] 127.0.0.1 - - [19/Feb/2024 02:45:38] "[35m[1mPUT /asset-management/v1/users/change-password HTTP/1.1[0m" 500 -
+2024-02-19 02:46:14,984 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\config\\queries.py', reloading
+2024-02-19 02:46:15,047 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-19 02:46:16,308 INFO     [app.py:21] Creating flask app
+2024-02-19 02:46:16,963 DEBUG    [database_context.py:50] Connection established
+2024-02-19 02:46:17,678 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-19 02:46:17,678 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-19 02:46:17,678 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-19 02:46:17,712 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-19 02:46:17,715 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-19 02:46:22,252 INFO     [app.py:21] Creating flask app
+2024-02-19 02:46:22,743 DEBUG    [database_context.py:50] Connection established
+2024-02-19 02:46:23,927 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-19 02:46:23,929 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-19 02:46:23,929 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-19 02:46:23,982 INFO     [_internal.py:96] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-02-19 02:46:23,982 INFO     [_internal.py:96] [33mPress CTRL+C to quit[0m
+2024-02-19 02:46:23,982 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-19 02:46:25,147 INFO     [app.py:21] Creating flask app
+2024-02-19 02:46:25,966 DEBUG    [database_context.py:50] Connection established
+2024-02-19 02:46:27,269 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-19 02:46:27,269 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-19 02:46:27,269 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-19 02:46:27,316 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-19 02:46:27,316 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-19 02:46:27,426 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-19 02:46:27,994 DEBUG    [database_context.py:50] Connection established
+2024-02-19 02:46:28,213 INFO     [token.py:17] Checking if token is revoked or not
+2024-02-19 02:46:28,782 DEBUG    [database_context.py:50] Connection established
+2024-02-19 02:46:28,942 INFO     [update_user_controller.py:23] Method to update user password
+2024-02-19 02:46:28,942 INFO     [update_user_handler.py:23] Changing user password is old password is valid
+2024-02-19 02:46:29,455 DEBUG    [database_context.py:50] Connection established
+2024-02-19 02:46:29,662 INFO     [common_helper.py:51] Verifying user password
+2024-02-19 02:46:30,063 DEBUG    [database_context.py:50] Connection established
+2024-02-19 02:46:30,273 INFO     [token.py:33] Revoking token
+2024-02-19 02:46:30,793 DEBUG    [database_context.py:50] Connection established
+2024-02-19 02:46:31,078 INFO     [token.py:41] New access and refresh token issued
+2024-02-19 02:46:31,706 DEBUG    [database_context.py:50] Connection established
+2024-02-19 02:46:31,918 INFO     [update_user_controller.py:42] Password of user updated successfully
+2024-02-19 02:46:31,919 INFO     [_internal.py:96] 127.0.0.1 - - [19/Feb/2024 02:46:31] "PUT /asset-management/v1/users/change-password HTTP/1.1" 200 -
+2024-02-19 02:48:06,644 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\config\\queries.py', reloading
+2024-02-19 02:48:06,687 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-19 02:48:08,030 INFO     [app.py:21] Creating flask app
+2024-02-19 02:48:08,670 DEBUG    [database_context.py:50] Connection established
+2024-02-19 02:48:09,692 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-19 02:48:09,692 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-19 02:48:09,692 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-19 02:48:09,755 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-19 02:48:09,771 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-19 02:48:17,713 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\config\\queries.py', reloading
+2024-02-19 02:48:17,770 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-19 02:48:18,956 INFO     [app.py:21] Creating flask app
+2024-02-19 02:48:19,480 DEBUG    [database_context.py:50] Connection established
+2024-02-19 02:48:20,325 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-19 02:48:20,325 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-19 02:48:20,325 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-19 02:48:20,357 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-19 02:48:20,357 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-19 02:48:34,779 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\config\\queries.py', reloading
+2024-02-19 02:48:34,847 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-19 02:48:36,139 INFO     [app.py:21] Creating flask app
+2024-02-19 02:48:36,937 DEBUG    [database_context.py:50] Connection established
+2024-02-19 02:48:37,753 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-19 02:48:37,753 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-19 02:48:37,753 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-19 02:48:37,794 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-19 02:48:37,797 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-19 02:48:54,490 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\config\\queries.py', reloading
+2024-02-19 02:48:54,553 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-19 02:48:55,751 INFO     [app.py:21] Creating flask app
+2024-02-19 02:48:56,493 DEBUG    [database_context.py:50] Connection established
+2024-02-19 02:48:57,323 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-19 02:48:57,323 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-19 02:48:57,323 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-19 02:48:57,361 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-19 02:48:57,361 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-19 02:49:06,315 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\config\\queries.py', reloading
+2024-02-19 02:49:06,369 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-19 02:49:07,541 INFO     [app.py:21] Creating flask app
+2024-02-19 02:49:07,959 DEBUG    [database_context.py:50] Connection established
+2024-02-19 02:49:08,778 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-19 02:49:08,778 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-19 02:49:08,778 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-19 02:49:08,825 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-19 02:49:08,825 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-19 02:49:29,922 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\config\\queries.py', reloading
+2024-02-19 02:49:29,981 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-19 02:49:31,230 INFO     [app.py:21] Creating flask app
+2024-02-19 02:49:31,889 DEBUG    [database_context.py:50] Connection established
+2024-02-19 02:49:32,716 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-19 02:49:32,716 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-19 02:49:32,716 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-19 02:49:32,738 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-19 02:49:32,738 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-19 02:49:46,106 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\config\\queries.py', reloading
+2024-02-19 02:49:46,152 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-19 02:49:47,377 INFO     [app.py:21] Creating flask app
+2024-02-19 02:49:48,005 DEBUG    [database_context.py:50] Connection established
+2024-02-19 02:49:48,833 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-19 02:49:48,833 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-19 02:49:48,833 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-19 02:49:48,876 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-19 02:49:48,879 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-19 02:50:01,203 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\config\\queries.py', reloading
+2024-02-19 02:50:01,261 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-19 02:50:02,670 INFO     [app.py:21] Creating flask app
+2024-02-19 02:50:03,414 DEBUG    [database_context.py:50] Connection established
+2024-02-19 02:50:04,084 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-19 02:50:04,084 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-19 02:50:04,084 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-19 02:50:04,117 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-19 02:50:04,119 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
+2024-02-19 02:50:15,309 INFO     [_internal.py:96]  * Detected change in 'C:\\Users\\krathi\\OneDrive - WatchGuard Technologies Inc\\Desktop\\IT_Asset_Management_System\\src\\config\\queries.py', reloading
+2024-02-19 02:50:15,396 INFO     [_internal.py:96]  * Restarting with stat
+2024-02-19 02:50:16,626 INFO     [app.py:21] Creating flask app
+2024-02-19 02:50:17,190 DEBUG    [database_context.py:50] Connection established
+2024-02-19 02:50:17,901 INFO     [flask_config.py:18] Setting all flask and swagger configs
+2024-02-19 02:50:17,901 INFO     [flask_config.py:33] Intialising all jwt decorators
+2024-02-19 02:50:17,901 INFO     [flask_config.py:83] Registring all flask blueprints
+2024-02-19 02:50:17,939 WARNING  [_internal.py:96]  * Debugger is active!
+2024-02-19 02:50:17,948 INFO     [_internal.py:96]  * Debugger PIN: 395-963-455
