@@ -3,10 +3,8 @@
 
 class AppConfig:
     """Class is used to load all the appconfig constants"""
-
-    DATABASE_LOCATION = r"models\asset_management.db"
+    
     PROMPT_FILE_LOCATION = r"config\prompts\prompts.yaml"
-    LOG_FILE_LOCATION = r"config\log_prompts\logs_config.yaml"
     MAX_LOGIN_ATTEMPTS = 3
     LOG_LOCATION = r"logs.txt"
 
