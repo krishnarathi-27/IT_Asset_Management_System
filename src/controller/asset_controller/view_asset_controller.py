@@ -3,7 +3,7 @@ import logging
 from config.app_config import StatusCodes
 from config.prompts.prompts import PromptConfig
 from database.database import Database
-from src.handlers.asset_handler.view_asset_handler import ViewAssetHandler
+from handlers.asset_handler.view_asset_handler import ViewAssetHandler
 from utils.exceptions import ApplicationException, DBException
 from utils.response import SuccessResponse, ErrorResponse
 

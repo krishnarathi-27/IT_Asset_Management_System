@@ -5,7 +5,7 @@ from config.app_config import AppConfig
 from controller.vendor_controller.create_vendor_controller import CreateVendorController
 from controller.vendor_controller.view_vendor_controller import ViewVendorController
 from controller.vendor_controller.delete_vendor_controller import DeleteVendorController
-from src.schemas.asset_schema import VendorSchema, VendorDetailsSchema, VendorDeactivateSchema
+from schemas.asset_schema import VendorSchema, VendorDetailsSchema, VendorDeactivateSchema
 from utils.rbac import access_required, ROLE_REQUIRED
 
 blp = Blueprint("vendors",__name__, description="Operations on asset vendors")

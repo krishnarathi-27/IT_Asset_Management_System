@@ -1,5 +1,5 @@
 from marshmallow import Schema, fields,validate
-from src.config.app_config import AppConfig
+from config.app_config import AppConfig
 
 class VendorSchema(Schema):
     vendor_id = fields.Str(dump_only=True)

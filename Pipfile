@@ -14,12 +14,13 @@ flake8 = "*"
 pylint = "*"
 pytest = "*"
 pytest-cov = "*"
-flask = "*"
 flask-smorest = "*"
 flask-jwt-extended = "*"
 mysql-connector-python = "*"
 pymysql = "*"
 cryptography = "*"
+gunicorn = "*"
+flask = "*"
 
 [dev-packages]
 

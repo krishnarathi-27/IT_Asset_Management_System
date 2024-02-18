@@ -4,8 +4,8 @@ from flask_jwt_extended import get_jwt_identity
 from config.app_config import StatusCodes
 from config.prompts.prompts import PromptConfig
 from database.database import Database
-from src.utils.secure_password import HashPassword
-from src.handlers.user_handler.update_user_handler import UpdateUserHandler
+from utils.secure_password import HashPassword
+from handlers.user_handler.update_user_handler import UpdateUserHandler
 from utils.response import SuccessResponse, ErrorResponse
 from utils.exceptions import ApplicationException, DBException
 

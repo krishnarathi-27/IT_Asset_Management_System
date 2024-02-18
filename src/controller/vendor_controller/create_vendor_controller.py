@@ -3,7 +3,7 @@ import logging
 from config.app_config import StatusCodes
 from config.prompts.prompts import PromptConfig
 from database.database import Database
-from src.handlers.vendor_handler.create_vendor_handler import CreateVendorHandler
+from handlers.vendor_handler.create_vendor_handler import CreateVendorHandler
 from utils.exceptions import ApplicationException, DBException
 from utils.response import ErrorResponse, SuccessResponse
 

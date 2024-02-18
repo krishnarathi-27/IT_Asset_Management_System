@@ -4,7 +4,7 @@ from config.app_config import StatusCodes
 from config.prompts.prompts import PromptConfig
 from database.database import Database
 from flask_jwt_extended import get_jwt_identity
-from src.handlers.user_handler.view_user_handler import ViewUserHandler
+from handlers.user_handler.view_user_handler import ViewUserHandler
 from utils.response import SuccessResponse, ErrorResponse
 from utils.exceptions import ApplicationException, DBException
 

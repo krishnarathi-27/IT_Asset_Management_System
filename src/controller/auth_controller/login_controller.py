@@ -3,7 +3,7 @@ import logging
 from config.app_config import StatusCodes
 from config.prompts.prompts import PromptConfig
 from database.database import Database
-from src.handlers.auth_handler import AuthHandler
+from handlers.auth_handler import AuthHandler
 from utils.exceptions import ApplicationException, DBException
 from utils.secure_password import HashPassword
 from utils.response import SuccessResponse, ErrorResponse

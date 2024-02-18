@@ -2,7 +2,7 @@ import logging
 import random
 import re
 import string
-from mysql.connector import Error
+import pymysql
 
 from database.database import Database
 from config.queries import Queries
@@ -25,7 +25,7 @@ def fetch_vendor_details(vendor_email: str) -> str:
         
         return vendor_id[0]['vendor_id']
     
-    except Error as err:
+    except pymysql.Error as err:
         logger.error(f"Error occured in mysql database {err}") 
         raise DBException(500, PromptConfig.INTERNAL_SERVER_ERROR, PromptConfig.SERVER_ERROR)
 
@@ -42,7 +42,7 @@ def fetch_category_details(category_name: str, brand_name: str) -> str:
         
         return category_id[0]['category_id']
     
-    except Error as err:
+    except pymysql.Error as err:
         logger.error(f"Error occured in mysql database {err}") 
         raise DBException(500, PromptConfig.INTERNAL_SERVER_ERROR, PromptConfig.SERVER_ERROR)
     
@@ -59,7 +59,7 @@ def verify_user_password(password: str,input_password: str ,password_type: str, 
 
         return password == old_password_hashed
     
-    except Error as err:
+    except pymysql.Error as err:
         logger.warning(f"Error occured in mysql database {err}") 
         raise DBException(500, PromptConfig.INTERNAL_SERVER_ERROR, PromptConfig.SERVER_ERROR)
     
