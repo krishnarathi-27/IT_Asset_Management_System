@@ -6,7 +6,7 @@ class AppConfig:
 
     PROMPT_FILE_LOCATION = os.path.abspath(os.curdir) + "/config/prompts/prompts.yaml"
     MAX_LOGIN_ATTEMPTS = 3
-    LOG_LOCATION = r"logs.txt"
+    LOG_LOCATION = os.path.abspath(os.curdir) + "/logs.txt"
 
     # roles of user
     ADMININSTRATOR = "admin"

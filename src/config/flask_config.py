@@ -84,10 +84,10 @@ def register_blueprints(app):
 
     api = Api(app)
 
-    api.register_blueprint(AuthRoutes,url_prefix="/asset-management")
-    api.register_blueprint(UserRoutes,url_prefix="/asset-management")
-    api.register_blueprint(CategoryRoutes,url_prefix="/asset-management")
-    api.register_blueprint(VendorRoutes,url_prefix="/asset-management")
-    api.register_blueprint(AssetRoutes,url_prefix="/asset-management")
-    api.register_blueprint(IssueRoutes,url_prefix="/asset-management")
+    api.register_blueprint(AuthRoutes)
+    api.register_blueprint(UserRoutes)
+    api.register_blueprint(CategoryRoutes)
+    api.register_blueprint(VendorRoutes)
+    api.register_blueprint(AssetRoutes)
+    api.register_blueprint(IssueRoutes)
     
