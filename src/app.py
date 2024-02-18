@@ -20,6 +20,7 @@ def create_app():
     """Creating flask app server and initialising all configs and database tables """
     logger.info('Creating flask app')
     
+    print(AppConfig.PROMPT_FILE_LOCATION)
     PromptConfig.load()
     db = Database()
     db.create_all_table()
