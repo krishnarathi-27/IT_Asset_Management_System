@@ -1,6 +1,6 @@
 import logging
 import shortuuid
-from mysql.connector import IntegrityError, Error
+import pymysql
 
 # local imports
 from config.queries import Queries
@@ -33,11 +33,11 @@ class CreateIssueHandler:
             logger.info(f'New issue created for {issue_id}')
             return issue_id
 
-        except IntegrityError as err:
+        except pymysql.IntegrityError as err:
             logger.info(f"User with same username already exists {err}")
             raise ApplicationException(409,PromptConfig.CONFLICT_MSG, PromptConfig.ISSUE_ALREADY_EXISTS)
 
-        except Error as err:
+        except pymysql.Error as err:
             logger.error(f"Error occured in mysql database {err}") 
             raise DBException(500,PromptConfig.INTERNAL_SERVER_ERROR, PromptConfig.SERVER_ERROR)    
         

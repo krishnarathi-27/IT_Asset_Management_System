@@ -1,5 +1,5 @@
 import logging
-from mysql.connector import Error
+import pymysql
 
 # local imports
 from config.queries import Queries
@@ -19,7 +19,7 @@ class AuthHandler:
         """
         Method for validating user by their credentials Paramters : self, username, input_password Return type : bool
         """
-        try: 
+        try:
             user_data = self.db_object.fetch_data(Queries.FETCH_USER_CREDENTIALS, (username,))
 
             if not user_data:
@@ -35,7 +35,7 @@ class AuthHandler:
             else:
                 raise ApplicationException(401, PromptConfig.UNAUTHORISED, PromptConfig.INVALID_CREDENTIALS_ENTERED)
     
-        except Error as error:
+        except pymysql.Error as error:
             logger.error(f"Error occured in database {error}")
             raise DBException(500,PromptConfig.INTERNAL_SERVER_ERROR, PromptConfig.SERVER_ERROR)
     

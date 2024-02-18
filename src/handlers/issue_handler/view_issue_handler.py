@@ -1,5 +1,5 @@
 import logging
-from mysql.connector import Error
+import pymysql
 
 from config.app_config import AppConfig
 from config.queries import Queries
@@ -23,7 +23,7 @@ class ViewIssueHandler:
             data = self.db_object.fetch_data(Queries.FETCH_ISSUE_TABLE)
             return data
             
-        except Error as err:
+        except pymysql.Error as err:
             logger.error(f"Error occured in mysql database {err}") 
             raise DBException(500, PromptConfig.INTERNAL_SERVER_ERROR, PromptConfig.SERVER_ERROR)
         
@@ -43,7 +43,7 @@ class ViewIssueHandler:
             else:
                 raise ApplicationException(404, PromptConfig.RESOURCE_NOT_FOUND, PromptConfig.ISSUE_NOT_EXISTS)
             
-        except Error as err:
+        except pymysql.Error as err:
             logger.error(f"Error occured in mysql database {err}") 
             raise DBException(500, PromptConfig.INTERNAL_SERVER_ERROR, PromptConfig.SERVER_ERROR)
         

@@ -9,7 +9,7 @@ from utils.rbac import access_required, ROLE_REQUIRED
 
 blp = Blueprint("categories",__name__, description="Operations on asset category")
 
-@blp.route("/categories")
+@blp.route("/v1/categories")
 class Categories(MethodView):
     
     @blp.doc(parameters=AppConfig.SWAGGER_AUTHORISATION_HEADER)

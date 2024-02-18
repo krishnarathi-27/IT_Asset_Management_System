@@ -15,7 +15,7 @@ class Queries:
             username VARCHAR(30) UNIQUE,
             password VARCHAR(150),
             role VARCHAR(20),
-            is_changed VARCHAR(10) DEFAULT "false" 
+            is_changed VARCHAR(10) DEFAULT 'false' 
         )
     """
     CREATE_VENDOR_TABLE = """
@@ -23,7 +23,7 @@ class Queries:
             vendor_id VARCHAR(10) PRIMARY KEY,
             vendor_name VARCHAR(30),
             vendor_email VARCHAR(50) UNIQUE,
-            active_status VARCHAR(10) DEFAULT "true"
+            active_status VARCHAR(10) DEFAULT 'true'
         )   
     """
     CREATE_ASSET_CATEGORY_TABLE = """
@@ -48,8 +48,8 @@ class Queries:
             asset_id VARCHAR(10) PRIMARY KEY,
             mapping_id VARCHAR(10),
             asset_type VARCHAR(20),
-            assigned_to VARCHAR(20) DEFAULT "location",
-            asset_status VARCHAR(20) DEFAULT "available",
+            assigned_to VARCHAR(20) DEFAULT 'location',
+            asset_status VARCHAR(20) DEFAULT 'available',
             FOREIGN KEY(mapping_id) REFERENCES mapping_table(mapping_id) ON DELETE CASCADE ON UPDATE CASCADE
         )    
     """
@@ -59,8 +59,8 @@ class Queries:
             issue_id VARCHAR(10) PRIMARY KEY,
             user_id VARCHAR(10),
             asset_id VARCHAR(10),
-            issue_status VARCHAR(20) DEFAULT "pending",
-            issue_resolved_by VARCHAR(20) DEFAULT "pending",
+            issue_status VARCHAR(20) DEFAULT 'pending',
+            issue_resolved_by VARCHAR(20) DEFAULT 'pending',
             FOREIGN KEY(asset_id) REFERENCES asset_table(asset_id) ON DELETE CASCADE ON UPDATE CASCADE,
             FOREIGN KEY(user_id) REFERENCES authentication(user_id) ON DELETE CASCADE ON UPDATE CASCADE
         )    
@@ -71,7 +71,7 @@ class Queries:
             user_id VARCHAR(10) ,
             access_token VARCHAR(100) UNIQUE NOT NULL PRIMARY KEY,
             refresh_token VARCHAR(100) UNIQUE NOT NULL,
-            token_status VARCHAR(20) DEFAULT "issued",
+            token_status VARCHAR(20) DEFAULT 'issued',
             FOREIGN KEY(user_id) REFERENCES authentication(user_id) ON DELETE CASCADE ON UPDATE CASCADE
         )
     """

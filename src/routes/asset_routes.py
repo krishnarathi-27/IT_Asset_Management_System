@@ -10,7 +10,7 @@ from schemas.asset_schema import AssetSchema, ViewAssetSchema, AssetUpdateSchema
 
 blp = Blueprint("assets",__name__, description="Operations on asset inventory")
 
-@blp.route("/assets")
+@blp.route("/v1/assets")
 class Assets(MethodView):
     
     @blp.doc(parameters=AppConfig.SWAGGER_AUTHORISATION_HEADER)
@@ -34,7 +34,7 @@ class Assets(MethodView):
 
         return response
     
-@blp.route("/assets/<string:asset_id>/assign")
+@blp.route("/v1/assets/<string:asset_id>/assign")
 class AssetAssign(MethodView):
     
     @blp.doc(parameters=AppConfig.SWAGGER_AUTHORISATION_HEADER)
@@ -48,7 +48,7 @@ class AssetAssign(MethodView):
 
         return response
 
-@blp.route("/assets/<string:asset_id>/unassign")
+@blp.route("/v1/assets/<string:asset_id>/unassign")
 class AssetUnassign(MethodView):
      
     @blp.doc(parameters=AppConfig.SWAGGER_AUTHORISATION_HEADER)

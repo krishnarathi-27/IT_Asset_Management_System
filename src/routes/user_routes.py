@@ -11,7 +11,7 @@ from utils.rbac import access_required, ROLE_REQUIRED
 
 blp = Blueprint("users",__name__, description="Operations on users")
 
-@blp.route("/users")
+@blp.route("/v1/users")
 class Users(MethodView):
     
     @blp.doc(parameters=AppConfig.SWAGGER_AUTHORISATION_HEADER)
@@ -35,7 +35,7 @@ class Users(MethodView):
 
         return response
     
-@blp.route("/user/profile")
+@blp.route("/v1/users/profile")
 class UserProfile(MethodView):
     
     @blp.doc(parameters=AppConfig.SWAGGER_AUTHORISATION_HEADER)
@@ -48,7 +48,7 @@ class UserProfile(MethodView):
 
         return response
 
-@blp.route("/user/change-password")
+@blp.route("/v1/users/change-password")
 class UserPassword(MethodView):
      
     @blp.doc(parameters=AppConfig.SWAGGER_AUTHORISATION_HEADER)

@@ -1,6 +1,6 @@
 """Module having buisness logic of user related functionalities"""
 import logging
-from mysql.connector import Error
+import pymysql
 from flask_jwt_extended import get_jwt
 
 from config.queries import Queries
@@ -43,7 +43,7 @@ class UpdateUserHandler:
 
             return token
         
-        except Error as err:
+        except pymysql.Error as err:
             logger.error(f"Error occured in mysql database {err}") 
             raise DBException(500, PromptConfig.INTERNAL_SERVER_ERROR, PromptConfig.SERVER_ERROR)
  

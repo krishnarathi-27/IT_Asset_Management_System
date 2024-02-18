@@ -1,7 +1,7 @@
 """Module having buisness logic of user related functionalities"""
 import logging
 import shortuuid
-from mysql.connector import IntegrityError, Error
+import pymysql
 
 from config.queries import Queries
 from config.prompts.prompts import PromptConfig
@@ -30,11 +30,11 @@ class CreateUserHandler:
             )  
             logger.info('New user with default password created')
         
-        except IntegrityError as err:
+        except pymysql.IntegrityError as err:
             logger.info(f"User with same username already exists {err}")
             raise ApplicationException(409, PromptConfig.CONFLICT_MSG, PromptConfig.USERNAME_EXISTS)
         
-        except Error as err:
+        except pymysql.Error as err:
             logger.error(f"Error occured in mysql database {err}") 
             raise DBException(500, PromptConfig.INTERNAL_SERVER_ERROR, PromptConfig.SERVER_ERROR)
         

@@ -1,6 +1,6 @@
 import logging
 import shortuuid
-from mysql.connector import Error, IntegrityError
+import pymysql
 
 # local imports
 from config.queries import Queries
@@ -33,7 +33,7 @@ class CreateCategoryHandler:
             logging.info("New category created in database")
 
         else:
-            raise IntegrityError
+            raise pymysql.IntegrityError
 
     def check_category(self, category_id: str,vendor_id: str, category_name: str, brand_name: str) -> None:
         """Method to check if category with same brand exists or not"""
@@ -61,11 +61,11 @@ class CreateCategoryHandler:
             category_id = PromptConfig.CATEGORY_ID_PREFIX + shortuuid.ShortUUID().random(length=4)
             self.check_category(category_id, vendor_id, category_name, brand_name)
         
-        except IntegrityError as err:
+        except pymysql.IntegrityError as err:
             logger.error(f'Same category name already exits {err}')
             raise ApplicationException(409, PromptConfig.CONFLICT_MSG, PromptConfig.CATEGORY_ALREADY_EXISTS)
         
-        except Error as err:
+        except pymysql.Error as err:
             logger.error(f"Error occured in mysql database {err}") 
             raise DBException(500, PromptConfig.INTERNAL_SERVER_ERROR, PromptConfig.SERVER_ERROR)
         

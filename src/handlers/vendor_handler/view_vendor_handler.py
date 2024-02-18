@@ -1,11 +1,10 @@
 import logging
-import shortuuid
-from mysql.connector import Error
+import pymysql
 
 # local imports
 from config.queries import Queries
 from config.prompts.prompts import PromptConfig
-from utils.exceptions import ApplicationException, DBException
+from utils.exceptions import DBException
 
 logger = logging.getLogger('view_vendor_handler')
 
@@ -21,6 +20,6 @@ class ViewVendorHandler:
             data = self.db_object.fetch_data(Queries.FETCH_VENDOR_TABLE)
             return data
         
-        except Error as err:
+        except pymysql.Error as err:
             logger.error(f"Error occured in mysql database {err}") 
             raise DBException(500, PromptConfig.INTERNAL_SERVER_ERROR, PromptConfig.SERVER_ERROR)

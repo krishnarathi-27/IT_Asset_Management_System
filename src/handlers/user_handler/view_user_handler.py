@@ -1,6 +1,6 @@
 """Module having buisness logic of user related functionalities"""
 import logging
-from mysql.connector import Error
+import pymysql
 
 from config.queries import Queries
 from config.prompts.prompts import PromptConfig
@@ -22,7 +22,7 @@ class ViewUserHandler:
             data = self.db_object.fetch_data(Queries.FETCH_AUTHENTICATION_TABLE)
             return data
             
-        except Error as err:
+        except pymysql.Error as err:
             logger.error(f"Error occured in mysql database {err}") 
             raise DBException(500, PromptConfig.INTERNAL_SERVER_ERROR, PromptConfig.SERVER_ERROR)
     
@@ -37,7 +37,7 @@ class ViewUserHandler:
             else:
                 raise ApplicationException(404, PromptConfig.RESOURCE_NOT_FOUND, PromptConfig.USER_NOT_EXISTS)
             
-        except Error as err:
+        except pymysql.Error as err:
             logger.error(f"Error occured in mysql database {err}") 
             raise DBException(500, PromptConfig.INTERNAL_SERVER_ERROR, PromptConfig.SERVER_ERROR)
                  

@@ -11,7 +11,7 @@ from utils.rbac import access_required, ROLE_REQUIRED
 
 blp = Blueprint("issues",__name__, description="Operations on issues")
 
-@blp.route("/issues")
+@blp.route("/v1/issues")
 class Issues(MethodView):
     
     @blp.doc(parameters=AppConfig.SWAGGER_AUTHORISATION_HEADER)
@@ -35,7 +35,7 @@ class Issues(MethodView):
 
         return response
     
-@blp.route("/issues/<string:user_id>")
+@blp.route("/v1/issues/<string:user_id>")
 class IssueId(MethodView):
     
     @blp.doc(parameters=AppConfig.SWAGGER_AUTHORISATION_HEADER)

@@ -1,6 +1,6 @@
 import logging
 import shortuuid
-from mysql.connector import IntegrityError, Error
+import pymysql
 
 # local imports
 from config.queries import Queries
@@ -28,11 +28,11 @@ class CreateVendorHandler:
             logging.info("New vendor added in database")
             return vendor_id
 
-        except IntegrityError as err:
+        except pymysql.IntegrityError as err:
             logger.error(f"Integrity error raised while creating vendor {err}")
             raise ApplicationException(409, PromptConfig.CONFLICT_MSG, PromptConfig.VENDOR_ALREADY_EXISTS)
 
-        except Error as err:
+        except pymysql.Error as err:
             logger.error(f"Error occured in mysql database {err}") 
             raise DBException(500, PromptConfig.INTERNAL_SERVER_ERROR, PromptConfig.SERVER_ERROR)
         

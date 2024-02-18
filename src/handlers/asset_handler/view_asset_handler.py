@@ -1,5 +1,5 @@
 import logging
-from mysql.connector import Error
+import pymysql
 
 from config.queries import Queries
 from config.prompts.prompts import PromptConfig
@@ -21,7 +21,7 @@ class ViewAssetHandler:
             data = self.db_object.fetch_data(Queries.FETCH_ASSETS_TABLE)
             return data
             
-        except Error as err:
+        except pymysql.Error as err:
             logger.error(f"Error occured in mysql database {err}") 
             raise DBException(500, PromptConfig.INTERNAL_SERVER_ERROR, PromptConfig.SERVER_ERROR)
         

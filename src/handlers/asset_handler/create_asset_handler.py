@@ -1,6 +1,6 @@
 import logging
 import shortuuid
-from mysql.connector import Error
+import pymysql
 
 from config.queries import Queries
 from utils.common_helper import fetch_category_details, fetch_vendor_details
@@ -35,7 +35,7 @@ class CreateAssetHandler:
             logger.info("Asset added in inventory")
             return asset_id
             
-        except Error as err:
+        except pymysql.Error as err:
             logger.error(f"Error occured in mysql database {err}") 
             raise DBException(500, PromptConfig.INTERNAL_SERVER_ERROR, PromptConfig.SERVER_ERROR)
         

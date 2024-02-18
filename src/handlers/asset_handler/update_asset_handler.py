@@ -1,5 +1,5 @@
 import logging
-from mysql.connector import Error
+import pymysql
 
 from config.app_config import AppConfig
 from config.queries import Queries
@@ -48,7 +48,7 @@ class UpdateAssetHandler:
                 AppConfig.ASSIGNABLE_ASSET_TYPE,asset_id,)
             )
        
-       except Error as err:
+       except pymysql.Error as err:
             logger.error(f"Error occured in mysql database {err}") 
             raise DBException(500, PromptConfig.INTERNAL_SERVER_ERROR, PromptConfig.SERVER_ERROR)
        
@@ -69,7 +69,7 @@ class UpdateAssetHandler:
                 AppConfig.ASSIGNABLE_ASSET_TYPE,asset_id,)
             )
        
-       except Error as err:
+       except pymysql.Error as err:
             logger.error(f"Error occured in mysql database {err}") 
             raise DBException(500, PromptConfig.INTERNAL_SERVER_ERROR, PromptConfig.SERVER_ERROR)
        

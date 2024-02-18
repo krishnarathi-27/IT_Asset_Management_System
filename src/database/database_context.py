@@ -1,6 +1,7 @@
 '''Context Manager for the database'''
 
 import logging
+import pymysql
 import os
 import mysql.connector
 from pathlib import Path
@@ -19,28 +20,33 @@ class DatabaseContext:
     opening database connection and closing connection each time
     '''
 
-    MYSQL_USER = os.getenv('MYSQL_USER')
+    MYSQL_USERNAME = os.getenv('MYSQL_USERNAME')
     MYSQL_PASSWORD = os.getenv('MYSQL_PASSWORD')
     MYSQL_HOST = os.getenv('MYSQL_HOST')
-    MYSQL_DB = os.getenv('MYSQL_DB')
+    MYSQL_PORT = 19828
 
     def __init__(self) -> None:
         self.connection = None
         self.cursor = None
         try:
-            self.connection = mysql.connector.connect(
-                user = DatabaseContext.MYSQL_USER,
+            timeout = 10
+            self.connection = pymysql.connect(
+                charset="utf8mb4",
+                connect_timeout=timeout,
+                cursorclass=pymysql.cursors.DictCursor,
+                db="assetmanagement",
+                host=DatabaseContext.MYSQL_HOST,
                 password=DatabaseContext.MYSQL_PASSWORD,
-                host=DatabaseContext.MYSQL_HOST
-
+                read_timeout=timeout,
+                port=DatabaseContext.MYSQL_PORT,
+                user=DatabaseContext.MYSQL_USERNAME,
+                write_timeout=timeout,
                 )
-            self.cursor = self.connection.cursor(dictionary=True)
-            self.cursor.execute(Queries.CREATE_DATABASE.format(DatabaseContext.MYSQL_DB))
-            self.cursor.execute(Queries.USE_DATABASE.format(DatabaseContext.MYSQL_DB))
+            self.cursor = self.connection.cursor()
 
         except Exception as error:
             logger.exception(error)
-            raise mysql.connector.Error from error
+            raise pymysql.Error from error
         else:
             logger.debug("Connection established")
 

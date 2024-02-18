@@ -1,5 +1,5 @@
 import logging
-from mysql.connector import Error
+import pymysql
 
 # local imports
 from config.queries import Queries
@@ -23,7 +23,7 @@ class ViewCategoryHandler:
             data = self.db_object.fetch_data(Queries.FETCH_CATEGORY_TABLE_WITH_VENDORS)
             return data
         
-        except Error as err:
+        except pymysql.Error as err:
             logger.error(f"Error occured in mysql database {err}") 
             raise DBException(500, PromptConfig.INTERNAL_SERVER_ERROR, PromptConfig.SERVER_ERROR)
         

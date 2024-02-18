@@ -1,5 +1,5 @@
 import logging
-from mysql.connector import Error
+import pymysql
 
 # local imports
 from config.queries import Queries
@@ -27,7 +27,7 @@ class DeleteVendorHandler:
             self.db_object.save_data(Queries.UPDATE_VENDOR_ACTIVE_STATUS, (vendor_id,))
             logger.info("Vendor deactivated successfully from database")
         
-        except Error as err:
+        except pymysql.Error as err:
             logger.error(f"Error occured in mysql database {err}") 
             raise DBException(500,PromptConfig.INTERNAL_SERVER_ERROR, PromptConfig.SERVER_ERROR)
         

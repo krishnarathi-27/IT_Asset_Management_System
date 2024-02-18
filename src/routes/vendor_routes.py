@@ -10,7 +10,7 @@ from utils.rbac import access_required, ROLE_REQUIRED
 
 blp = Blueprint("vendors",__name__, description="Operations on asset vendors")
     
-@blp.route("/vendors")
+@blp.route("/v1/vendors")
 class Vendors(MethodView):
 
     @blp.doc(parameters=AppConfig.SWAGGER_AUTHORISATION_HEADER)
@@ -34,7 +34,7 @@ class Vendors(MethodView):
 
         return response
     
-@blp.route("/vendors/<string:vendor_id>")
+@blp.route("/v1/vendors/<string:vendor_id>")
 class Vendor(MethodView):
 
     @blp.doc(parameters=AppConfig.SWAGGER_AUTHORISATION_HEADER)

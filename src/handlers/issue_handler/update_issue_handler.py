@@ -1,5 +1,5 @@
 import logging
-from mysql.connector import Error
+import pymysql
 
 from config.app_config import AppConfig
 from config.queries import Queries
@@ -32,7 +32,7 @@ class UpdateIssueHandler:
             
             self.db_object.save_data(Queries.UPDATE_ISSUE_STATUS,(user_id, asset_id,issue_id,))
 
-        except Error as err:
+        except pymysql.Error as err:
             logger.error(f"Error occured in mysql database {err}") 
             raise DBException(500, PromptConfig.INTERNAL_SERVER_ERROR, PromptConfig.SERVER_ERROR)
             
