@@ -1,13 +1,11 @@
-import logging
 import shortuuid
 import pymysql
+from flask import current_app as app
 
-from config.queries import Queries
-from utils.common_helper import fetch_category_details, fetch_vendor_details
-from config.prompts.prompts import PromptConfig
-from utils.exceptions import DBException
-
-logger = logging.getLogger("create_asset_handler")
+from src.config.queries import Queries
+from src.utils.common_helper import fetch_category_details, fetch_vendor_details
+from src.config.prompts.prompts import PromptConfig
+from src.utils.exceptions import DBException
 
 class CreateAssetHandler:
     """Class containing business logic to create new asset in database"""
@@ -17,7 +15,7 @@ class CreateAssetHandler:
 
     def create_asset(self, category_name: str, vendor_email: str, brand_name: str, asset_type: str) -> str:
         """Method for creating new assets in database"""
-        logger.info('Creating new assets in inventory')
+        app.logger.info('Creating new assets in inventory')
 
         try:
             asset_id = PromptConfig.ASSET_ID_PREFIX + shortuuid.ShortUUID().random(length=4)
@@ -32,10 +30,10 @@ class CreateAssetHandler:
                 Queries.INSERY_ASSET_DETAILS,
                 (asset_id, mapping_id[0]['mapping_id'], asset_type,)
             )
-            logger.info("Asset added in inventory")
+            app.logger.info("Asset added in inventory")
             return asset_id
             
         except pymysql.Error as err:
-            logger.error(f"Error occured in mysql database {err}") 
+            app.logger.error(f"Error occured in mysql database {err}") 
             raise DBException(500, PromptConfig.INTERNAL_SERVER_ERROR, PromptConfig.SERVER_ERROR)
         

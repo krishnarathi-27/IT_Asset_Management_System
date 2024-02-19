@@ -1,13 +1,11 @@
-import logging
+from flask import current_app as app
 
-from config.app_config import StatusCodes
-from config.prompts.prompts import PromptConfig
-from database.database import Database
-from handlers.asset_handler.create_asset_handler import CreateAssetHandler
-from utils.exceptions import ApplicationException, DBException
-from utils.response import SuccessResponse, ErrorResponse
-
-logger = logging.getLogger('create_asset_controller')
+from src.config.app_config import StatusCodes
+from src.config.prompts.prompts import PromptConfig
+from src.database.database import Database
+from src.handlers.asset_handler.create_asset_handler import CreateAssetHandler
+from src.utils.exceptions import ApplicationException, DBException
+from src.utils.response import SuccessResponse, ErrorResponse
 
 class CreateAssetController:
     """Controller to add new asset in inventory"""
@@ -18,7 +16,7 @@ class CreateAssetController:
 
     def create_asset(self, request_data: dict) -> dict:
         """Function to add new asset in inventory"""
-        logging.info('Function to add asset in inventory')
+        app.logger.info('Function to add asset in inventory')
 
         try:
             category_name = request_data['category_name']
@@ -31,10 +29,10 @@ class CreateAssetController:
             return SuccessResponse.success_message(PromptConfig.ASSET_CREATED), StatusCodes.CREATED
         
         except ApplicationException as error:
-            logger.error(f'Error handled by application custom error handler {error.error_message}')
+            app.logger.error(f'Error handled by application custom error handler {error.error_message}')
             return ErrorResponse.error_message(error), error.error_code
         
         except DBException as error:
-            logger.error(f'Error handled by database custom error handler {error.error_message}')
+            app.logger.error(f'Error handled by database custom error handler {error.error_message}')
             return ErrorResponse.error_message(error), error.error_code      
             

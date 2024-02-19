@@ -1,13 +1,13 @@
 from flask import current_app as app
 
-from config.app_config import StatusCodes
-from config.prompts.prompts import PromptConfig
-from database.database import Database
-from handlers.auth_handler import AuthHandler
-from utils.exceptions import ApplicationException, DBException
-from utils.secure_password import HashPassword
-from utils.response import SuccessResponse, ErrorResponse
-from utils.token import Token
+from src.config.app_config import StatusCodes
+from src.config.prompts.prompts import PromptConfig
+from src.database.database import Database
+from src.handlers.auth_handler import AuthHandler
+from src.utils.exceptions import ApplicationException, DBException
+from src.utils.secure_password import HashPassword
+from src.utils.response import SuccessResponse, ErrorResponse
+from src.utils.token import Token
 
 class LoginController:
     """Controller for authenticating user and generating access token"""

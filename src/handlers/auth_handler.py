@@ -1,12 +1,11 @@
-import logging
 import pymysql
 from flask import current_app as app
 
 # local imports
-from config.queries import Queries
-from config.prompts.prompts import PromptConfig
-from utils.exceptions import ApplicationException, DBException
-from utils.common_helper import verify_user_password
+from src.config.queries import Queries
+from src.config.prompts.prompts import PromptConfig
+from src.utils.exceptions import ApplicationException, DBException
+from src.utils.common_helper import verify_user_password
 
 
 class AuthHandler:

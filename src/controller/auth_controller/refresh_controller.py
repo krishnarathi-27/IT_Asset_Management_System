@@ -1,13 +1,11 @@
-import logging
+from flask import current_app as app
 from flask_jwt_extended import get_jwt
 
-from config.app_config import StatusCodes
-from config.prompts.prompts import PromptConfig
-from utils.exceptions import DBException, ApplicationException
-from utils.response import SuccessResponse, ErrorResponse
-from utils.token import Token
-
-logger = logging.getLogger('refresh_controller')
+from src.config.app_config import StatusCodes
+from src.config.prompts.prompts import PromptConfig
+from src.utils.exceptions import DBException, ApplicationException
+from src.utils.response import SuccessResponse, ErrorResponse
+from src.utils.token import Token
 
 class RefreshController:
     """Controller for authenticating user and generating access token"""
@@ -32,9 +30,9 @@ class RefreshController:
             return SuccessResponse.success_message(PromptConfig.USER_LOGGED_OUT,response), StatusCodes.OK
         
         except ApplicationException as error:
-            logger.error(f'Error handled by application custom error handler {error.error_message}')
+            app.logger.error(f'Error handled by application custom error handler {error.error_message}')
             return ErrorResponse.error_message(error), error.error_code
         
         except DBException as error:
-            logger.error(f'Error handled by database custom error handler {error.error_message}')
+            app.logger.error(f'Error handled by database custom error handler {error.error_message}')
             return ErrorResponse.error_message(error), error.error_code

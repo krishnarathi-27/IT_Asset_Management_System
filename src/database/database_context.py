@@ -1,16 +1,12 @@
 '''Context Manager for the database'''
-
-import logging
 import pymysql
 import os
 from pathlib import Path
 from dotenv import load_dotenv
-
-from config.queries import Queries
+from flask import current_app as app
 
 dotenv_path = Path('.env')
 load_dotenv(dotenv_path=dotenv_path)
-logger = logging.getLogger('database_context')
 
 
 class DatabaseContext:
@@ -31,23 +27,24 @@ class DatabaseContext:
             timeout = 10
             self.connection = pymysql.connect(
                 charset="utf8mb4",
-                connect_timeout=timeout,
+                # connect_timeout=timeout,
                 cursorclass=pymysql.cursors.DictCursor,
                 db="assetmanagement",
                 host=DatabaseContext.MYSQL_HOST,
                 password=DatabaseContext.MYSQL_PASSWORD,
-                read_timeout=timeout,
+                # read_timeout=timeout,
                 port=DatabaseContext.MYSQL_PORT,
                 user=DatabaseContext.MYSQL_USERNAME,
-                write_timeout=timeout,
+                # write_timeout=timeout,
                 )
             self.cursor = self.connection.cursor()
 
         except Exception as error:
-            logger.exception(error)
+            print(error.args)
+            app.logger.exception(error)
             raise pymysql.Error from error
         else:
-            logger.debug("Connection established")
+            app.logger.debug("Connection established")
 
         self.connection = self.connection
         self.cursor = self.cursor

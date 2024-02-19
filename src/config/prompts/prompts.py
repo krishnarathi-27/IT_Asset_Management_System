@@ -3,7 +3,7 @@
 import yaml
 
 # local imports
-from config.app_config import AppConfig
+from src.config.app_config import AppConfig
 
 
 class PromptConfig:

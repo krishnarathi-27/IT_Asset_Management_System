@@ -1,5 +1,5 @@
 """This module contains all the queries of the project"""
-from config.prompts.prompts import PromptConfig
+from src.config.prompts.prompts import PromptConfig
 
 PromptConfig.load()
 

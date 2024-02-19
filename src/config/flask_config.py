@@ -5,26 +5,20 @@ from flask.logging import default_handler
 from flask_jwt_extended import JWTManager
 from flask_smorest import Api
 
-from routes.auth_routes import blp as AuthRoutes
-from routes.user_routes import blp as UserRoutes
-from routes.category_routes import blp as CategoryRoutes
-from routes.vendor_routes import blp as VendorRoutes
-from routes.asset_routes import blp as AssetRoutes
-from routes.issue_routes import blp as IssueRoutes
-from utils.token import Token
+from src.database.database import Database
+from src.routes.auth_routes import blp as AuthRoutes
+from src.routes.user_routes import blp as UserRoutes
+from src.routes.category_routes import blp as CategoryRoutes
+from src.routes.vendor_routes import blp as VendorRoutes
+from src.routes.asset_routes import blp as AssetRoutes
+from src.routes.issue_routes import blp as IssueRoutes
+from src.utils.token import Token
 
 PAPERTRAIL_HOSTNAME = "logs2.papertrailapp.com"
 PAPERTRAIL_PORT = 32836
 
 class CustomFormatter(logging.Formatter):
-    """
-        Custom log formatter to format the logs and add request_id in each log.
-        ...
-        Methods
-        -------
-        format(): str -> overriden the parent format method to add request_id field.
-    """
-
+    
     def format(self, record: logging.LogRecord) -> str:
         """
             Method to override the parent format methods.
@@ -39,11 +33,7 @@ class CustomFormatter(logging.Formatter):
 
 
 def logging_configuration(app) -> None:
-    """
-        Function to set up logging configurations for app.
-        Parameters -> Flask app
-        Returns -> None
-    """
+
     app.logger.removeHandler(default_handler)
     formatter = CustomFormatter(
         fmt='%(asctime)s %(levelname)-8s [%(filename)s %(funcName)s:%(lineno)d] %(message)s - [%(request_id)s]'
@@ -69,6 +59,8 @@ def create_flask_config(app):
     # app.config["JWT_ACCESS_TOKEN_EXPIRES"] = timedelta(hours=1)
 
     logging_configuration(app)
+    db = Database()
+    db.create_all_table()
     app.config["JWT_SECRET_KEY"] = "krishna261152921044102586974899032980882739636"
 
 def intialise_jwt_config(app):

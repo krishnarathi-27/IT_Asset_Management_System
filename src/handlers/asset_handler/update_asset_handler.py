@@ -1,13 +1,11 @@
-import logging
 import pymysql
+from flask import current_app as app
 
-from config.app_config import AppConfig
-from config.queries import Queries
-from config.prompts.prompts import PromptConfig
-from utils.exceptions import DBException, ApplicationException
-from utils.common_helper import regex_validation
-
-logger = logging.getLogger("update_asset_handler")
+from src.config.app_config import AppConfig
+from src.config.queries import Queries
+from src.config.prompts.prompts import PromptConfig
+from src.utils.exceptions import DBException, ApplicationException
+from src.utils.common_helper import regex_validation
 
 class UpdateAssetHandler:
     """Class containing business logic to update existing asset in database"""
@@ -17,7 +15,7 @@ class UpdateAssetHandler:
 
     def fetch_asset_exists(self, asset_id: str, asset_status: str) -> str:
         """Method to fetch if asset exists or not"""
-        logger.info('Fetching asset exists or not')
+        app.logger.info('Fetching asset exists or not')
 
         mapping_id = self.db_object.fetch_data(Queries.FETCH_IF_ASSET_EXISTS, (asset_id,asset_status,))
 
@@ -28,7 +26,7 @@ class UpdateAssetHandler:
 
     def assign_asset(self,asset_id: str, employee_id: str) -> None:
        """Method to assign asset to user"""
-       logger.info('Assigning asset to user')
+       app.logger.info('Assigning asset to user')
 
        try:
             result = regex_validation(AppConfig.REGEX_USER_ID, asset_id)
@@ -49,12 +47,12 @@ class UpdateAssetHandler:
             )
        
        except pymysql.Error as err:
-            logger.error(f"Error occured in mysql database {err}") 
+            app.logger.error(f"Error occured in mysql database {err}") 
             raise DBException(500, PromptConfig.INTERNAL_SERVER_ERROR, PromptConfig.SERVER_ERROR)
        
     def unassign_asset(self,asset_id: str) -> str:
        """Method to unassign asset from user"""
-       logger.info('Method to unassign asset from user')
+       app.logger.info('Method to unassign asset from user')
 
        try:
             result = regex_validation(AppConfig.REGEX_USER_ID, asset_id)
@@ -70,6 +68,6 @@ class UpdateAssetHandler:
             )
        
        except pymysql.Error as err:
-            logger.error(f"Error occured in mysql database {err}") 
+            app.logger.error(f"Error occured in mysql database {err}") 
             raise DBException(500, PromptConfig.INTERNAL_SERVER_ERROR, PromptConfig.SERVER_ERROR)
        

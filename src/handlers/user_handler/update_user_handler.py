@@ -1,15 +1,13 @@
 """Module having buisness logic of user related functionalities"""
-import logging
 import pymysql
 from flask_jwt_extended import get_jwt
+from flask import current_app as app
 
-from config.queries import Queries
-from config.prompts.prompts import PromptConfig
-from utils.exceptions import ApplicationException, DBException
-from utils.common_helper import verify_user_password
-from utils.token import Token
-
-logger = logging.getLogger("update_user_handler")
+from src.config.queries import Queries
+from src.config.prompts.prompts import PromptConfig
+from src.utils.exceptions import ApplicationException, DBException
+from src.utils.common_helper import verify_user_password
+from src.utils.token import Token
 
 class UpdateUserHandler:
     """Class containing to update any of user details"""
@@ -20,7 +18,7 @@ class UpdateUserHandler:
 
     def change_password(self,user_id: str, old_password: str, new_password: str, confirm_password: str, obj_hash_password) -> None:
         """Method to change user password if old password is correct"""
-        logger.info('Changing user password is old password is valid')
+        app.logger.info('Changing user password is old password is valid')
 
         try:
             user_data = self.db_object.fetch_data(Queries.FETCH_PASSWORD, (user_id,))
@@ -44,6 +42,6 @@ class UpdateUserHandler:
             return token
         
         except pymysql.Error as err:
-            logger.error(f"Error occured in mysql database {err}") 
+            app.logger.error(f"Error occured in mysql database {err}") 
             raise DBException(500, PromptConfig.INTERNAL_SERVER_ERROR, PromptConfig.SERVER_ERROR)
  

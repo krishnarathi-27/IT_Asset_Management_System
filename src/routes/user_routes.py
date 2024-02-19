@@ -2,12 +2,12 @@ from flask.views import MethodView
 from flask_smorest import Blueprint
 from flask_jwt_extended import jwt_required
 
-from config.app_config import AppConfig
-from controller.user_controller.create_user_controller import CreateUserController
-from controller.user_controller.view_user_controller import ViewUserController
-from controller.user_controller.update_user_controller import UpdateUserController
-from schemas.user_schema import UserCreateSchema, UserDetailsSchema, UserPassword
-from utils.rbac import access_required, ROLE_REQUIRED
+from src.config.app_config import AppConfig
+from src.controller.user_controller.create_user_controller import CreateUserController
+from src.controller.user_controller.view_user_controller import ViewUserController
+from src.controller.user_controller.update_user_controller import UpdateUserController
+from src.schemas.user_schema import UserCreateSchema, UserDetailsSchema, UserPassword
+from src.utils.rbac import access_required, ROLE_REQUIRED
 
 blp = Blueprint("users",__name__, description="Operations on users")
 

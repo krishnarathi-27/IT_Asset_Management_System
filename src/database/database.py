@@ -1,23 +1,15 @@
 """This Module provides all methods related for database operations"""
-import os
 import pymysql
-import logging
+from flask import current_app as app
 from pathlib import Path
 from dotenv import load_dotenv
 
 # local imports
-from config.queries import Queries
-from database.database_context import DatabaseContext
+from src.config.queries import Queries
+from src.database.database_context import DatabaseContext
 
 dotenv_path = Path('.env')
 load_dotenv(dotenv_path=dotenv_path)
-
-logger = logging.getLogger(__name__)
-
-# MYSQL_USER = os.getenv('MYSQL_USER')
-# MYSQL_PASSWORD = os.getenv('MYSQL_PASSWORD')
-# MYSQL_HOST = os.getenv('MYSQL_HOST')
-# MYSQL_DB = os.getenv('MYSQL_DB')
 
 class Database:
     

@@ -1,12 +1,12 @@
 from flask.views import MethodView
 from flask_smorest import Blueprint
 
-from config.app_config import AppConfig
-from utils.rbac import access_required, ROLE_REQUIRED
-from controller.asset_controller.create_asset_controller import CreateAssetController
-from controller.asset_controller.view_asset_controller import ViewAssetController
-from controller.asset_controller.update_asset_controller import UpdateAssetController
-from schemas.asset_schema import AssetSchema, ViewAssetSchema, AssetUpdateSchema
+from src.config.app_config import AppConfig
+from src.utils.rbac import access_required, ROLE_REQUIRED
+from src.controller.asset_controller.create_asset_controller import CreateAssetController
+from src.controller.asset_controller.view_asset_controller import ViewAssetController
+from src.controller.asset_controller.update_asset_controller import UpdateAssetController
+from src.schemas.asset_schema import AssetSchema, ViewAssetSchema, AssetUpdateSchema
 
 blp = Blueprint("assets",__name__, description="Operations on asset inventory")
 

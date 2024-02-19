@@ -1,10 +1,9 @@
-import logging 
+from flask import current_app as app
 from flask_jwt_extended import get_jti, create_access_token, create_refresh_token
-from config.queries import Queries
-from database.database import Database
-from utils.rbac import ROLE_REQUIRED
 
-logger = logging.getLogger('token')
+from src.config.queries import Queries
+from src.database.database import Database
+from src.utils.rbac import ROLE_REQUIRED
 
 class Token:
     """Class containing methods of token related functionalities"""
@@ -14,7 +13,7 @@ class Token:
 
     def check_token_revoked(self, jwt_payload, token_name) -> bool:
         """Method to check if token is revoked"""
-        logger.info('Checking if token is revoked or not')
+        app.logger.info('Checking if token is revoked or not')
 
         jti_access_token = jwt_payload["jti"]
 
@@ -30,7 +29,7 @@ class Token:
 
     def revoke_token(self, jwt_payload)-> None:
         """Method to revoke a token"""
-        logger.info("Revoking token")
+        app.logger.info("Revoking token")
 
         user_id = jwt_payload["sub"]
 
@@ -38,7 +37,7 @@ class Token:
 
     def generate_token(self,role: str,user_id: str,is_changed = None) -> tuple :
         """Method to generate new access and refresh token and saving token in database"""
-        logger.info('New access and refresh token issued')
+        app.logger.info('New access and refresh token issued')
         
         get_role = ROLE_REQUIRED[role]
         if is_changed == "false":

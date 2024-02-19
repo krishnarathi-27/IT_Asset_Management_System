@@ -1,13 +1,11 @@
-import logging
+from flask import current_app as app
 
-from config.app_config import StatusCodes
-from config.prompts.prompts import PromptConfig
-from database.database import Database
-from handlers.category_handler.create_category_handler import CreateCategoryHandler
-from utils.exceptions import ApplicationException, DBException
-from utils.response import SuccessResponse, ErrorResponse
-
-logger = logging.getLogger('create_category_controller')
+from src.config.app_config import StatusCodes
+from src.config.prompts.prompts import PromptConfig
+from src.database.database import Database
+from src.handlers.category_handler.create_category_handler import CreateCategoryHandler
+from src.utils.exceptions import ApplicationException, DBException
+from src.utils.response import SuccessResponse, ErrorResponse
 
 class CreateCategoryController:
     """Controller for creating category"""
@@ -18,7 +16,7 @@ class CreateCategoryController:
 
     def create_new_category(self, request_data: dict) -> dict:
         """Method to create new category if vendor exists and if same category already not exists"""
-        logger.info('Controller for creating new category')
+        app.logger.info('Controller for creating new category')
 
         try:
             category_name = request_data['category_name']
@@ -31,9 +29,9 @@ class CreateCategoryController:
             return SuccessResponse.success_message(PromptConfig.CATEGORY_CREATED), StatusCodes.CREATED
         
         except ApplicationException as error:
-            logger.error(f'Error handled by application custom error handler {error.error_message}')
+            app.logger.error(f'Error handled by application custom error handler {error.error_message}')
             return ErrorResponse.error_message(error), error.error_code
         
         except DBException as error:
-            logger.error(f'Error handled by database custom error handler {error.error_message}')
+            app.logger.error(f'Error handled by database custom error handler {error.error_message}')
             return ErrorResponse.error_message(error), error.error_code

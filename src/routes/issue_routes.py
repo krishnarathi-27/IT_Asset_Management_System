@@ -2,12 +2,12 @@ from flask.views import MethodView
 from flask_smorest import Blueprint
 from flask_jwt_extended import jwt_required
 
-from config.app_config import AppConfig
-from controller.issue_controller.create_issue_controller import CreateIssueController
-from controller.issue_controller.update_issue_controller import UpdateIssueController
-from controller.issue_controller.view_issue_controller import ViewIssueController
-from schemas.issue_schema import IssueSchema, IssueCreateSchema
-from utils.rbac import access_required, ROLE_REQUIRED
+from src.config.app_config import AppConfig
+from src.controller.issue_controller.create_issue_controller import CreateIssueController
+from src.controller.issue_controller.update_issue_controller import UpdateIssueController
+from src.controller.issue_controller.view_issue_controller import ViewIssueController
+from src.schemas.issue_schema import IssueSchema, IssueCreateSchema
+from src.utils.rbac import access_required, ROLE_REQUIRED
 
 blp = Blueprint("issues",__name__, description="Operations on issues")
 

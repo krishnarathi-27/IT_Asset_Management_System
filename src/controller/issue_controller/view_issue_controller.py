@@ -1,13 +1,11 @@
-import logging
+from flask import current_app as app
 
-from config.app_config import StatusCodes
-from config.prompts.prompts import PromptConfig
-from database.database import Database
-from handlers.issue_handler.view_issue_handler import ViewIssueHandler
-from utils.exceptions import ApplicationException, DBException
-from utils.response import SuccessResponse, ErrorResponse
-
-logger = logging.getLogger('view_issue_controller')
+from src.config.app_config import StatusCodes
+from src.config.prompts.prompts import PromptConfig
+from src.database.database import Database
+from src.handlers.issue_handler.view_issue_handler import ViewIssueHandler
+from src.utils.exceptions import ApplicationException, DBException
+from src.utils.response import SuccessResponse, ErrorResponse
 
 class ViewIssueController:
     """Controller to view all the issues"""
@@ -18,7 +16,7 @@ class ViewIssueController:
 
     def view_all_issue(self) -> dict:
         """Method to view all the issues"""
-        logger.debug('Method to view all the issues')
+        app.logger.debug('Method to view all the issues')
 
         try:
             response = self.obj_issue_handler.view_issues()
@@ -26,16 +24,16 @@ class ViewIssueController:
                                                        response), StatusCodes.OK
 
         except ApplicationException as error:
-            logger.error(f'Error handled by application custom error handler {error.error_message}')
+            app.logger.error(f'Error handled by application custom error handler {error.error_message}')
             return ErrorResponse.error_message(error), error.error_code
         
         except DBException as error:
-            logger.error(f'Error handled by database custom error handler {error.error_message}')
+            app.logger.error(f'Error handled by database custom error handler {error.error_message}')
             return ErrorResponse.error_message(error), error.error_code
         
     def view_issue(self,user_id: str) -> dict:
         """Method to view all the issues created by any user"""
-        logger.debug('Method to view all the issues created by an user')
+        app.logger.debug('Method to view all the issues created by an user')
 
         try:
             response = self.obj_issue_handler.view_issue_by_userid(user_id)
@@ -43,10 +41,10 @@ class ViewIssueController:
                                                        response), StatusCodes.OK
 
         except ApplicationException as error:
-            logger.error(f'Error handled by application custom error handler {error.error_message}')
+            app.logger.error(f'Error handled by application custom error handler {error.error_message}')
             return ErrorResponse.error_message(error), error.error_code
         
         except DBException as error:
-            logger.error(f'Error handled by database custom error handler {error.error_message}')
+            app.logger.error(f'Error handled by database custom error handler {error.error_message}')
             return ErrorResponse.error_message(error), error.error_code
         

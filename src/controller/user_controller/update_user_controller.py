@@ -1,15 +1,13 @@
-import logging
+from flask import current_app as app
 from flask_jwt_extended import get_jwt_identity
 
-from config.app_config import StatusCodes
-from config.prompts.prompts import PromptConfig
-from database.database import Database
-from utils.secure_password import HashPassword
-from handlers.user_handler.update_user_handler import UpdateUserHandler
-from utils.response import SuccessResponse, ErrorResponse
-from utils.exceptions import ApplicationException, DBException
-
-logger = logging.getLogger('update_user_controller')
+from src.config.app_config import StatusCodes
+from src.config.prompts.prompts import PromptConfig
+from src.database.database import Database
+from src.utils.secure_password import HashPassword
+from src.handlers.user_handler.update_user_handler import UpdateUserHandler
+from src.utils.response import SuccessResponse, ErrorResponse
+from src.utils.exceptions import ApplicationException, DBException
 
 class UpdateUserController:
     """Controller to update user details"""
@@ -20,7 +18,7 @@ class UpdateUserController:
 
     def update_password(self, user_data: dict) -> dict:
         """Method to update password of user"""
-        logger.info("Method to update user password")
+        app.logger.info("Method to update user password")
 
         try:
             old_password = user_data['old_password']
@@ -39,15 +37,15 @@ class UpdateUserController:
                 "access_token" : token[0],
                 "refesh_token" : token[1]
             }]
-            logger.info("Password of user updated successfully")
+            app.logger.info("Password of user updated successfully")
             return SuccessResponse.success_message(PromptConfig.PASSWORD_UPDATED, 
                                                    response), StatusCodes.OK
 
         except ApplicationException as error:
-            logger.error(f'Error handled by application custom error handler {error.error_message}')
+            app.logger.error(f'Error handled by application custom error handler {error.error_message}')
             return ErrorResponse.error_message(error), error.error_code
         
         except DBException as error:
-            logger.error(f'Error handled by database custom error handler {error.error_message}')
+            app.logger.error(f'Error handled by database custom error handler {error.error_message}')
             return ErrorResponse.error_message(error), error.error_code
             

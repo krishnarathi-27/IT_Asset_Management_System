@@ -1,13 +1,11 @@
-import logging
 import shortuuid
 import pymysql
+from flask import current_app as app
 
 # local imports
-from config.queries import Queries
-from config.prompts.prompts import PromptConfig
-from utils.exceptions import ApplicationException, DBException
-
-logger = logging.getLogger('create_vendor_handler')
+from src.config.queries import Queries
+from src.config.prompts.prompts import PromptConfig
+from src.utils.exceptions import ApplicationException, DBException
 
 class CreateVendorHandler:
     """ Class containinig methods to create new vendor"""
@@ -17,7 +15,7 @@ class CreateVendorHandler:
 
     def create_vendor(self,vendor_name: str, vendor_email: str) -> str:    
         """Method to create vendor if vendor not exists already in database"""
-        logger.info('Creating new vendor in database')
+        app.logger.info('Creating new vendor in database')
 
         try:
             vendor_id = PromptConfig.VENDOR_ID_PREFIX + shortuuid.ShortUUID().random(length=4)
@@ -25,14 +23,14 @@ class CreateVendorHandler:
                         Queries.INSERT_VENDOR_DETAILS,
                         (vendor_id,vendor_name,vendor_email,))
             
-            logging.info("New vendor added in database")
+            app.logger.info("New vendor added in database")
             return vendor_id
 
         except pymysql.IntegrityError as err:
-            logger.error(f"Integrity error raised while creating vendor {err}")
+            app.logger.error(f"Integrity error raised while creating vendor {err}")
             raise ApplicationException(409, PromptConfig.CONFLICT_MSG, PromptConfig.VENDOR_ALREADY_EXISTS)
 
         except pymysql.Error as err:
-            logger.error(f"Error occured in mysql database {err}") 
+            app.logger.error(f"Error occured in mysql database {err}") 
             raise DBException(500, PromptConfig.INTERNAL_SERVER_ERROR, PromptConfig.SERVER_ERROR)
         

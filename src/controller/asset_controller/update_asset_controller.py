@@ -1,13 +1,11 @@
-import logging
+from flask import current_app as app
 
-from config.app_config import StatusCodes
-from config.prompts.prompts import PromptConfig
-from database.database import Database
-from handlers.asset_handler.update_asset_handler import UpdateAssetHandler
-from utils.exceptions import ApplicationException, DBException
-from utils.response import SuccessResponse, ErrorResponse
-
-logger = logging.getLogger('update_asset_controller')
+from src.config.app_config import StatusCodes
+from src.config.prompts.prompts import PromptConfig
+from src.database.database import Database
+from src.handlers.asset_handler.update_asset_handler import UpdateAssetHandler
+from src.utils.exceptions import ApplicationException, DBException
+from src.utils.response import SuccessResponse, ErrorResponse
 
 class UpdateAssetController:
     """Controller to update assets status"""
@@ -18,7 +16,7 @@ class UpdateAssetController:
 
     def assign_asset(self, request_data: dict, asset_id: str) -> dict:
         """Function to assign asset to user"""
-        logger.info("Assigning assets to user")
+        app.logger.info("Assigning assets to user")
 
         try:
             mapping_id  = request_data['mapping_id']
@@ -28,20 +26,20 @@ class UpdateAssetController:
             
             self.obj_asset_handler.assign_asset(asset_id, assigned_to)
 
-            logger.info(f'Assets assigned to user {assigned_to}')
+            app.logger.info(f'Assets assigned to user {assigned_to}')
             return SuccessResponse.success_message(PromptConfig.ASSET_ASSIGNED), StatusCodes.OK
         
         except ApplicationException as error:
-            logger.error(f'Error handled by application custom error handler {error.error_message}')
+            app.logger.error(f'Error handled by application custom error handler {error.error_message}')
             return ErrorResponse.error_message(error), error.error_code
         
         except DBException as error:
-            logger.error(f'Error handled by database custom error handler {error.error_message}')
+            app.logger.error(f'Error handled by database custom error handler {error.error_message}')
             return ErrorResponse.error_message(error), error.error_code
         
     def unassign_asset(self, request_data: dict, asset_id: str) -> dict:
         """Function to unassign assigned asset from user"""
-        logger.info('Asset unassigned successfully')
+        app.logger.info('Asset unassigned successfully')
 
         try:
             mapping_id  = request_data['mapping_id']
@@ -54,10 +52,10 @@ class UpdateAssetController:
             return SuccessResponse.success_message(PromptConfig.ASSET_UNASSIGNED), StatusCodes.OK
         
         except ApplicationException as error:
-            logger.error(f'Error handled by application custom error handler {error.error_message}')
+            app.logger.error(f'Error handled by application custom error handler {error.error_message}')
             return ErrorResponse.error_message(error), error.error_code
         
         except DBException as error:
-            logger.error(f'Error handled by database custom error handler {error.error_message}')
+            app.logger.error(f'Error handled by database custom error handler {error.error_message}')
             return ErrorResponse.error_message(error), error.error_code
         

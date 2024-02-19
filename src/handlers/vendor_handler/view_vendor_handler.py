@@ -1,12 +1,10 @@
-import logging
 import pymysql
+from flask import current_app as app
 
 # local imports
-from config.queries import Queries
-from config.prompts.prompts import PromptConfig
-from utils.exceptions import DBException
-
-logger = logging.getLogger('view_vendor_handler')
+from src.config.queries import Queries
+from src.config.prompts.prompts import PromptConfig
+from src.utils.exceptions import DBException
 
 class ViewVendorHandler:
     """
@@ -21,5 +19,5 @@ class ViewVendorHandler:
             return data
         
         except pymysql.Error as err:
-            logger.error(f"Error occured in mysql database {err}") 
+            app.logger.error(f"Error occured in mysql database {err}") 
             raise DBException(500, PromptConfig.INTERNAL_SERVER_ERROR, PromptConfig.SERVER_ERROR)

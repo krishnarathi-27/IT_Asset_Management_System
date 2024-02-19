@@ -1,5 +1,5 @@
 from marshmallow import Schema, fields,validate
-from config.app_config import AppConfig
+from src.config.app_config import AppConfig
 
 class LoginSchema(Schema):
     username = fields.Str(required=True,validate=validate.Regexp(AppConfig.REGEX_NAME))

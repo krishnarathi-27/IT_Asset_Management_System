@@ -1,14 +1,14 @@
-import logging
+import shortuuid
 import random
 import re
 import string
 import pymysql
 from flask import current_app as app
 
-from database.database import Database
-from config.queries import Queries
-from config.prompts.prompts import PromptConfig
-from utils.exceptions import ApplicationException, DBException
+from src.database.database import Database
+from src.config.queries import Queries
+from src.config.prompts.prompts import PromptConfig
+from src.utils.exceptions import ApplicationException, DBException
 
 
 db_object = Database()
@@ -79,4 +79,7 @@ def regex_validation(regex_pattern, user_input):
         return False
     
     return True
- 
+
+def generate_shortuuid(prefix: str) -> str:
+    id = prefix + shortuuid.ShortUUID().random(length=5)
+    return id

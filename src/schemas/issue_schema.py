@@ -1,5 +1,5 @@
 from marshmallow import Schema, fields,validate
-from config.app_config import AppConfig
+from src.config.app_config import AppConfig
 
 class IssueSchema(Schema):
     issue_id = fields.Str(dump_only=True,validate=validate.Regexp(AppConfig.REGEX_ISSUE_ID))
