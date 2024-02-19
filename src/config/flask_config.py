@@ -1,5 +1,7 @@
 import logging
-from flask import jsonify
+from logging.handlers import SysLogHandler
+from flask import jsonify, g
+from flask.logging import default_handler
 from flask_jwt_extended import JWTManager
 from flask_smorest import Api
 
@@ -11,11 +13,51 @@ from routes.asset_routes import blp as AssetRoutes
 from routes.issue_routes import blp as IssueRoutes
 from utils.token import Token
 
-logger = logging.getLogger('flask_config')
+PAPERTRAIL_HOSTNAME = "logs2.papertrailapp.com"
+PAPERTRAIL_PORT = 32836
+
+class CustomFormatter(logging.Formatter):
+    """
+        Custom log formatter to format the logs and add request_id in each log.
+        ...
+        Methods
+        -------
+        format(): str -> overriden the parent format method to add request_id field.
+    """
+
+    def format(self, record: logging.LogRecord) -> str:
+        """
+            Method to override the parent format methods.
+            Parameters -> record
+            Returns -> str
+        """
+        if hasattr(g, 'request_id'):
+            record.request_id = g.request_id
+        else:
+            record.request_id = "REQapp01"
+        return super().format(record)
+
+
+def logging_configuration(app) -> None:
+    """
+        Function to set up logging configurations for app.
+        Parameters -> Flask app
+        Returns -> None
+    """
+    app.logger.removeHandler(default_handler)
+    formatter = CustomFormatter(
+        fmt='%(asctime)s %(levelname)-8s [%(filename)s %(funcName)s:%(lineno)d] %(message)s - [%(request_id)s]'
+    )
+    handler = SysLogHandler(address=(PAPERTRAIL_HOSTNAME, PAPERTRAIL_PORT))
+    handler.setFormatter(formatter)
+    handler.setLevel(logging.DEBUG)
+
+    app.logger.addHandler(handler)
+    app.logger.setLevel(logging.DEBUG)
 
 def create_flask_config(app):
     """ Creates all flask config for flask app and Swagger documentation """
-    logger.info('Setting all flask and swagger configs')
+    # logger.info('Setting all flask and swagger configs')
 
     app.config["PROPAGATE_EXCEPTIONS"] = True
     app.config["API_TITLE"] = "IT Asset Management REST API"
@@ -26,11 +68,12 @@ def create_flask_config(app):
     app.config["OPENAPI_SWAGGER_UI_URL"] = "https://cdn.jsdelivr.net/npm/swagger-ui-dist/"
     # app.config["JWT_ACCESS_TOKEN_EXPIRES"] = timedelta(hours=1)
 
+    logging_configuration(app)
     app.config["JWT_SECRET_KEY"] = "krishna261152921044102586974899032980882739636"
 
 def intialise_jwt_config(app):
     """Initialising all jwt inbuilt decorators"""
-    logger.info('Intialising all jwt decorators')
+    # logger.info('Intialising all jwt decorators')
 
     jwt = JWTManager(app)
     token_obj = Token()
@@ -80,7 +123,7 @@ def intialise_jwt_config(app):
     
 def register_blueprints(app):
     'Register blueprints to flask app'
-    logger.info('Registring all flask blueprints')
+    # logger.info('Registring all flask blueprints')
 
     api = Api(app)
 
@@ -90,4 +133,5 @@ def register_blueprints(app):
     api.register_blueprint(VendorRoutes)
     api.register_blueprint(AssetRoutes)
     api.register_blueprint(IssueRoutes)
-    
+
+

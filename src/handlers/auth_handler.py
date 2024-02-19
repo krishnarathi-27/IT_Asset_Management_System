@@ -1,5 +1,6 @@
 import logging
 import pymysql
+from flask import current_app as app
 
 # local imports
 from config.queries import Queries
@@ -7,7 +8,6 @@ from config.prompts.prompts import PromptConfig
 from utils.exceptions import ApplicationException, DBException
 from utils.common_helper import verify_user_password
 
-logger = logging.getLogger("auth_handler")
 
 class AuthHandler:
 
@@ -36,6 +36,6 @@ class AuthHandler:
                 raise ApplicationException(401, PromptConfig.UNAUTHORISED, PromptConfig.INVALID_CREDENTIALS_ENTERED)
     
         except pymysql.Error as error:
-            logger.error(f"Error occured in database {error}")
+            app.logger.error(f"Error occured in database {error}")
             raise DBException(500,PromptConfig.INTERNAL_SERVER_ERROR, PromptConfig.SERVER_ERROR)
     
