@@ -13,6 +13,8 @@ from src.routes.vendor_routes import blp as VendorRoutes
 from src.routes.asset_routes import blp as AssetRoutes
 from src.routes.issue_routes import blp as IssueRoutes
 from src.utils.token import Token
+from src.utils.response import ErrorResponse
+from src.utils.exceptions import ApplicationException
 
 PAPERTRAIL_HOSTNAME = "logs2.papertrailapp.com"
 PAPERTRAIL_PORT = 32836
@@ -56,12 +58,11 @@ def create_flask_config(app):
     app.config["OPENAPI_URL_PREFIX"] = "/asset-management/"
     app.config["OPENAPI_SWAGGER_UI_PATH"] = "/swagger-ui"
     app.config["OPENAPI_SWAGGER_UI_URL"] = "https://cdn.jsdelivr.net/npm/swagger-ui-dist/"
-    # app.config["JWT_ACCESS_TOKEN_EXPIRES"] = timedelta(hours=1)
 
     logging_configuration(app)
     db = Database()
     db.create_all_table()
-    app.config["JWT_SECRET_KEY"] = "krishna261152921044102586974899032980882739636"
+    app.config["JWT_SECRET_KEY"] = "thisismyjwtsecretkeythatyoucantfindoutatall"
 
 def intialise_jwt_config(app):
     """Initialising all jwt inbuilt decorators"""
@@ -72,40 +73,26 @@ def intialise_jwt_config(app):
 
     @jwt.expired_token_loader
     def expired_token_callback(jwt_header, jwt_payload):
-        return (
-            jsonify({"message": "The token has expired.", "error": "token_expired"}),
-            401,
-        )
+        error = ApplicationException(401,"The token has expired.","token_expired")
+        app.logger.info('Token expired')
+        return ErrorResponse.error_message(error),401
 
     @jwt.invalid_token_loader
     def invalid_token_callback(error):
-        return (
-            jsonify(
-                {"message": "Signature verification failed.", "error": "invalid_token"}
-            ),
-            401,
-        )
+        error = ApplicationException(401,"Signature verification failed.","invalid_token")
+        app.logger.critical('Token verifictaion failed')
+        return ErrorResponse.error_message(error),401
 
     @jwt.unauthorized_loader
     def missing_token_callback(error):
-        return (
-            jsonify(
-                {
-                    "description": "Request does not contain an access token.",
-                    "error": "authorization_required",
-                }
-            ),
-            401,
-        )
+        error = ApplicationException(401,"Request does not contain an access token.","authorization_required")
+        app.logger.critical('Token missing in request')
+        return ErrorResponse.error_message(error),401
 
     @jwt.revoked_token_loader
     def revoked_token_callback(jwt_header, jwt_payload):
-        return (
-            jsonify(
-                {"description": "The token has been revoked.", "error": "token_revoked"}
-            ),
-            401,
-        )
+        error = ApplicationException(401,"The token has been revoked.","token_revoked")
+        app.logger.critical('Revoked token used')
     
     @jwt.token_in_blocklist_loader
     def check_if_token_in_blocklist(jwt_header, jwt_payload):
@@ -126,4 +113,16 @@ def register_blueprints(app):
     api.register_blueprint(AssetRoutes)
     api.register_blueprint(IssueRoutes)
 
+def handle_app_errors(err):
+    return ErrorResponse.error_message(err), err.error_code
 
+def handle_internal_errors(err):
+    return {"code": err.code,
+            "message": err.name,
+            "description": err.description
+            },err.code
+
+def register_error(app):
+    app.register_error_handler(400, handle_internal_errors)
+    app.register_error_handler(404, handle_internal_errors)
+    app.register_error_handler(Exception, handle_app_errors)

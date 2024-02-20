@@ -4,12 +4,17 @@ def create_app():
     """Creating flask app server and initialising all configs and database tables """
 
     app = Flask(__name__)
-    # app.register_error_handler(404, internal_server_error)
     
     with app.app_context():
-        from src.config.flask_config import create_flask_config, register_blueprints, intialise_jwt_config
+        from src.config.flask_config import (
+            create_flask_config, 
+            register_blueprints, 
+            intialise_jwt_config,
+            register_error
+        )
         from src.config.prompts.prompts import PromptConfig
         from src.utils.common_helper import generate_shortuuid
+        register_error(app)
         create_flask_config(app)
         intialise_jwt_config(app)
         register_blueprints(app)

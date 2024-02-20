@@ -25,9 +25,10 @@ class Database:
                 cursor.execute(Queries.CREATE_ASSET_TABLE)
                 cursor.execute(Queries.CREATE_ISSUE_TABLE)
                 cursor.execute(Queries.CREATE_TOKEN_TABLE)
-        except pymysql.Error as e:
-            print("hi")
-            print(e)
+
+        except pymysql.Error:
+            print("hihihi")
+            app.logger.info("Defection")
 
     def save_data(self, query: str, data: tuple = None) -> bool:
         '''saves data in database'''

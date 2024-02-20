@@ -8,7 +8,6 @@ from flask import current_app as app
 dotenv_path = Path('.env')
 load_dotenv(dotenv_path=dotenv_path)
 
-
 class DatabaseContext:
     '''
     Class for contect manager of creating MySQL database connection, 
@@ -27,19 +26,19 @@ class DatabaseContext:
             timeout = 10
             self.connection = pymysql.connect(
                 charset="utf8mb4",
-                # connect_timeout=timeout,
+                connect_timeout=timeout,
                 cursorclass=pymysql.cursors.DictCursor,
                 db="assetmanagement",
                 host=DatabaseContext.MYSQL_HOST,
                 password=DatabaseContext.MYSQL_PASSWORD,
-                # read_timeout=timeout,
+                read_timeout=timeout,
                 port=DatabaseContext.MYSQL_PORT,
                 user=DatabaseContext.MYSQL_USERNAME,
-                # write_timeout=timeout,
+                write_timeout=timeout,
                 )
             self.cursor = self.connection.cursor()
 
-        except Exception as error:
+        except pymysql.Error as error:
             print(error.args)
             app.logger.exception(error)
             raise pymysql.Error from error
