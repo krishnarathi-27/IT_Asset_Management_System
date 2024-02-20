@@ -1,9 +1,9 @@
 import os
 import functools
-
-from flask_smorest import abort
 from flask_jwt_extended import get_jwt
 from flask_jwt_extended import verify_jwt_in_request
+
+from src.utils.exceptions import ApplicationException
 
 ROLE_REQUIRED = {
     "admin": os.getenv('ADMIN'),
@@ -18,12 +18,12 @@ def access_required(role_list: list):
             verify_jwt_in_request()
             claims = get_jwt()
             if claims["house"] == 0:
-                abort (401, message="Access denied. Change default password first")
+                raise ApplicationException(403, "Forbidden", "Change default password first")
             if claims["tent"] in role_list:
                 return fn(*args, **kwargs)
             else:
-                abort (403, message="Unauthorised request")
-
+                raise ApplicationException(403, "Forbidden", "Access denied to this route")
+            
         return inner
 
     return wrapper

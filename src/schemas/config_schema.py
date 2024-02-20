@@ -6,3 +6,4 @@ class MySchema(Schema):
 
     def handle_error(self, error: fields.ValidationError, data: Any, *, many: bool, **kwargs):
         raise ApplicationException(422,"Unprocessible Entity","Request body have invalid fields")
+    
