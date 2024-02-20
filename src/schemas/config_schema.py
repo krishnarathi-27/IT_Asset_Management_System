@@ -1,6 +1,6 @@
 from typing import Any
 from marshmallow import Schema, fields
-from utils.exceptions import ApplicationException
+from src.utils.exceptions import ApplicationException
 
 class MySchema(Schema):
 
