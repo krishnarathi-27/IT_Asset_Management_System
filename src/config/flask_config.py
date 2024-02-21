@@ -66,7 +66,7 @@ def create_flask_config(app):
 
 def intialise_jwt_config(app):
     """Initialising all jwt inbuilt decorators"""
-    # logger.info('Intialising all jwt decorators')
+    app.logger.info('Intialising all jwt decorators')
 
     jwt = JWTManager(app)
     token_obj = Token()
@@ -93,16 +93,23 @@ def intialise_jwt_config(app):
     def revoked_token_callback(jwt_header, jwt_payload):
         error = ApplicationException(401,"The token has been revoked.","token_revoked")
         app.logger.critical('Revoked token used')
+        return ErrorResponse.error_message(error),401
     
     @jwt.token_in_blocklist_loader
     def check_if_token_in_blocklist(jwt_header, jwt_payload):
         check_access_revoked = token_obj.check_token_revoked(jwt_payload,'access_token')
         check_refresh_revoked = token_obj.check_token_revoked(jwt_payload,'refresh_token')
-        return check_access_revoked or check_refresh_revoked
+        result =  check_access_revoked or check_refresh_revoked
+        if not result:
+            app.logger.warning("Token given is already revoked.")
+            return False
+
+        app.logger.warning("Token not revoked.")
+        return True
     
 def register_blueprints(app):
     'Register blueprints to flask app'
-    # logger.info('Registring all flask blueprints')
+    app.logger.info('Registring all flask blueprints')
 
     api = Api(app)
 

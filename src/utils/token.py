@@ -39,7 +39,11 @@ class Token:
         """Method to generate new access and refresh token and saving token in database"""
         app.logger.info('New access and refresh token issued')
         
-        get_role = ROLE_REQUIRED[role]
+        if not role in ROLE_REQUIRED:
+            get_role = role
+        else:
+            get_role = ROLE_REQUIRED[role]
+            
         if is_changed == "false":
             password_type = 0
         else:

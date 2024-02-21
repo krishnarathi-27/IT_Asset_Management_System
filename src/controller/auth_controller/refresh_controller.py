@@ -19,7 +19,6 @@ class RefreshController:
             role = get_jwt()['tent']
 
             self.token_obj.revoke_token(get_jwt())
-
             token = self.token_obj.generate_token(role,user_id)
 
             response = [{

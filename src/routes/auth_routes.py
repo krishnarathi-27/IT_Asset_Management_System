@@ -47,5 +47,4 @@ class Refresh(MethodView):
         
         obj = RefreshController()
         response = obj.refresh()
-
         return response
