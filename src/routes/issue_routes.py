@@ -50,7 +50,7 @@ class IssueId(MethodView):
      
     @blp.doc(parameters=AppConfig.SWAGGER_AUTHORISATION_HEADER)
     @blp.arguments(IssueSchema)
-    @jwt_required()
+    @access_required([ROLE_REQUIRED['asset manager']])
     def put(self,user_data, user_id):
 
         obj_update_issue = UpdateIssueController()
