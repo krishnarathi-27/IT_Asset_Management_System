@@ -1,0 +1,94 @@
+[
+    {
+        "iteration_name": "Admin",
+        "routes": [
+            "Login-admin",
+            "View-my-profile",
+            "Change-password-admin",
+            "View-all-users",
+            "Create-new-user",
+            "Create new vendor",
+            "View all vendors",
+            "Delete vendor",
+            "View-all-categories",
+            "Create-new-category",
+            "Refresh",
+            "Logout"
+        ]
+    },
+    {
+        "iteration_name": "Manager",
+        "routes": [
+            "Login-manager",
+            "View-my-profile",
+            "Change-password-manager",
+            "View-all-users",
+            "Create new vendor",
+            "View all vendors",
+            "View-all-categories",
+            "Create-new-category",
+            "View-all-assets-in-inventory",
+            "Create-new-assets-in-inventory",
+            "Assign-asset",
+            "Unassign-asset",
+            "View-issue-for-user",
+            "View-all-issues",
+            "Update-issue-status",
+            "Refresh",
+            "Logout"
+        ]
+    },
+    {
+        "iteration_name": "Employee",
+        "routes": [
+            "Login-employee",
+            "View-my-profile",
+            "Change-password-employee",
+            "Create-new-issue",
+            "View-issue-for-user",
+            "Refresh",
+            "Logout"
+        ]
+    },
+    {
+        "iteration_name": "Not authenticated",
+        "routes": [
+            "View all users 401",
+            "Change password 401",
+            "View my profile 401",
+            "View all vendors 401",
+            "View all categories 401",
+            "Create new vendor 401",
+            "Update issue status 401",
+            "View all assets in inventory 401",
+            "Create new category 401",
+            "Create new assets in inventory 401",
+            "Assign asset 401",
+            "Unassign asset 401",
+            "View all issues 401",
+            "Create new user 401",
+            "Delete vendor 401",
+            "View issue for user 401",
+            "Create new issue 401"
+        ]
+    },
+    {
+        "iteration_name": "Not authorised",
+        "routes": [
+            "Login-manager",
+            "View all users 403",
+            "View all vendors 403",
+            "View all categories 403",
+            "Create new vendor 403",
+            "Update issue status 403",
+            "View all assets in inventory 403",
+            "Create new category 403",
+            "Create new assets in inventory 403",
+            "Assign asset 403",
+            "Unassign asset 403",
+            "View all issues 403",
+            "Create new user 403",
+            "Delete vendor 403"
+        ]
+    }
+]

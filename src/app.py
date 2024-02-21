@@ -30,4 +30,12 @@ def create_app():
         new_request_id = generate_shortuuid("REQ")
         g.request_id = new_request_id
 
+    @app.route("/status", methods=["GET"])
+    def status():
+        return {
+            "status": "API is working fine"
+        }, 200
+
+    return app
+
     return app
