@@ -92,7 +92,7 @@ class Queries:
     """
     UPDATE_ISSUE_STATUS = """
         UPDATE issue_table
-        SET issue_status = 'resolved', user_id = %s, asset_id = %s 
+        SET issue_status = 'resolved', asset_id = %s 
         WHERE issue_id = %s  
     """
     UPDATE_ASSET_STATUS_UNDER_MAINTENANCE = """

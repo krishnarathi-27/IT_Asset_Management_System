@@ -28,9 +28,10 @@ class UpdateIssueHandler:
             if fetched_issue_status[0]['issue_status'] == "resolved":
                 raise ApplicationException(404,PromptConfig.RESOURCE_NOT_FOUND,PromptConfig.ISSUE_ALREADY_RESOLVED)
             
-            self.db_object.save_data(Queries.UPDATE_ISSUE_STATUS,(user_id, asset_id,issue_id,))
+            self.db_object.save_data(Queries.UPDATE_ISSUE_STATUS,(asset_id,issue_id,))
 
         except pymysql.Error as err:
+            print(err)
             app.logger.error(f"Error occured in mysql database {err}") 
             raise DBException(500, PromptConfig.INTERNAL_SERVER_ERROR, PromptConfig.SERVER_ERROR)
             
