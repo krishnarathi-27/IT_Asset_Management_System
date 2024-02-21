@@ -29,6 +29,7 @@ class UpdateIssueHandler:
                 raise ApplicationException(404,PromptConfig.RESOURCE_NOT_FOUND,PromptConfig.ISSUE_ALREADY_RESOLVED)
             
             self.db_object.save_data(Queries.UPDATE_ISSUE_STATUS,(asset_id,issue_id,))
+            self.db_object.save_data(Queries.UPDATE_ASSET_STATUS_AGAIN_TO_AVAILABLE,(asset_id,))
 
         except pymysql.Error as err:
             print(err)

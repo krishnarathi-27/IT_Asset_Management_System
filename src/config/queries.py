@@ -103,7 +103,7 @@ class Queries:
 
     UPDATE_ASSET_STATUS_AGAIN_TO_AVAILABLE = """
         UPDATE asset_table 
-        SET asset_status = 'available'
+        SET asset_status = 'unavailable'
         WHERE asset_id = %s 
     """
     UPDATE_PASSWORD = """   
