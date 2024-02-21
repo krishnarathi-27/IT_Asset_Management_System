@@ -35,7 +35,7 @@ class UpdateUserController:
 
             response = [{
                 "access_token" : token[0],
-                "refesh_token" : token[1]
+                "refresh_token" : token[1]
             }]
             app.logger.info("Password of user updated successfully")
             return SuccessResponse.success_message(PromptConfig.PASSWORD_UPDATED, 

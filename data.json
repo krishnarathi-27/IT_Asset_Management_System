@@ -75,7 +75,7 @@
     {
         "iteration_name": "Not authorised",
         "routes": [
-            "Login-manager",
+            "Login-employee",
             "View all users 403",
             "View all vendors 403",
             "View all categories 403",

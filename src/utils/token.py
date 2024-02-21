@@ -38,7 +38,7 @@ class Token:
     def generate_token(self,role: str,user_id: str,is_changed = None) -> tuple :
         """Method to generate new access and refresh token and saving token in database"""
         app.logger.info('New access and refresh token issued')
-        
+  
         if not role in ROLE_REQUIRED:
             get_role = role
         else:
