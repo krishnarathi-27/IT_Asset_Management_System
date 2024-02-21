@@ -55,7 +55,7 @@ class UpdateAssetHandler:
        app.logger.info('Method to unassign asset from user')
 
        try:
-            result = regex_validation(AppConfig.REGEX_USER_ID, asset_id)
+            result = regex_validation(AppConfig.REGEX_ASSET_ID, asset_id)
 
             if not result:
                 raise ApplicationException(422, PromptConfig.UNPROCESSIBLE_ENTITY, PromptConfig.INVALID_ASSET_ID)

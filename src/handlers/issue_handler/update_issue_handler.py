@@ -18,7 +18,7 @@ class UpdateIssueHandler:
         app.logger.info('Updating status of issue')
 
         try:
-            result = regex_validation(AppConfig.REGEX_USER_ID, issue_id)
+            result = regex_validation(AppConfig.REGEX_ISSUE_ID, issue_id)
 
             if not result:
                 raise ApplicationException(422, PromptConfig.UNPROCESSIBLE_ENTITY, PromptConfig.INVALID_ISSUE_ID)
