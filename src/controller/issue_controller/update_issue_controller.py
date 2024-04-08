@@ -22,7 +22,6 @@ class UpdateIssueController:
             asset_id = request_data['asset_id']
             user_id = request_data['user_id']
             issue_status = request_data['issue_status']
-            
             self.obj_issue_handler.update_issue_status(user_id,asset_id,issue_id)
 
             app.logger.info('Issue successfully resolved')

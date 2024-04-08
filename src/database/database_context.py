@@ -32,7 +32,7 @@ class DatabaseContext:
                 host=DatabaseContext.MYSQL_HOST,
                 password=DatabaseContext.MYSQL_PASSWORD,
                 read_timeout=timeout,
-                port=DatabaseContext.MYSQL_PORT,
+                # port=DatabaseContext.MYSQL_PORT,
                 user=DatabaseContext.MYSQL_USERNAME,
                 write_timeout=timeout,
                 )

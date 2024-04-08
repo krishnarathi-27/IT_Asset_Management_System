@@ -36,6 +36,7 @@ USER_CREATED : User created successfully
 PASSWORD_UPDATED : Password updated successfully
 VENDOR_CREATED : Vendor created successfully
 VENDOR_DEACTIVATED : Vendor deactivated successfully
+ASSET_UNDER_MAINTENANCE_CANT_ASSIGN : Asset is under maintenance you can't unassign it
 
 SUCCESS_REPONSE : Request is successfull
 USER_DATA_FETCHED : User details fetched

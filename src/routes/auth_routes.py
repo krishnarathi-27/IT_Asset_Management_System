@@ -24,7 +24,7 @@ class Login(MethodView):
         
         app.logger.info('Login endpoint')
         token = obj_auth.login(user_data)
-        return token
+        return token  
         
 @blp.route("/v1/logout")
 class Logout(MethodView):

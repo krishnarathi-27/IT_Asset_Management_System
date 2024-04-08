@@ -22,6 +22,7 @@ cryptography = "*"
 gunicorn = "*"
 flask = "*"
 python-dotenv = "*"
+flask-cors = "*"
 
 [dev-packages]
 

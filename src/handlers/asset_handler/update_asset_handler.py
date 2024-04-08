@@ -17,6 +17,11 @@ class UpdateAssetHandler:
         """Method to fetch if asset exists or not"""
         app.logger.info('Fetching asset exists or not')
 
+        is_asset_under_maintenance = self.db_object.fetch_data(Queries.FETCH_ASSET_ID_UNDER_MAINTENANCE,(asset_id,))
+
+        if is_asset_under_maintenance:
+            raise ApplicationException(404, PromptConfig.RESOURCE_NOT_FOUND, PromptConfig.ASSET_UNDER_MAINTENANCE_CANT_ASSIGN)
+
         mapping_id = self.db_object.fetch_data(Queries.FETCH_IF_ASSET_EXISTS, (asset_id,asset_status,))
 
         if not mapping_id:

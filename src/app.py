@@ -1,9 +1,11 @@
 from flask import Flask, g
+from flask_cors import CORS
 
 def create_app():
     """Creating flask app server and initialising all configs and database tables """
 
     app = Flask(__name__)
+    CORS(app)
     
     with app.app_context():
         from src.config.flask_config import (
@@ -35,7 +37,5 @@ def create_app():
         return {
             "status": "API is working fine"
         }, 200
-
-    return app
 
     return app

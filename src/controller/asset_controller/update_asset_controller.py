@@ -19,10 +19,7 @@ class UpdateAssetController:
         app.logger.info("Assigning assets to user")
 
         try:
-            mapping_id  = request_data['mapping_id']
-            asset_type= request_data['asset_type']
             assigned_to= request_data['assigned_to']
-            asset_status= request_data['asset_status']
             
             self.obj_asset_handler.assign_asset(asset_id, assigned_to)
 
@@ -42,10 +39,6 @@ class UpdateAssetController:
         app.logger.info('Asset unassigned successfully')
 
         try:
-            mapping_id  = request_data['mapping_id']
-            asset_type= request_data['asset_type']
-            assigned_to= request_data['assigned_to']
-            asset_status= request_data['asset_status']
 
             self.obj_asset_handler.unassign_asset(asset_id)
 

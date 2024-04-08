@@ -67,6 +67,7 @@ class PromptConfig:
     INVALID_VENDOR_ID = None
     INVALID_ISSUE_ID = None
     INVALID_USER_ID = None
+    ASSET_UNDER_MAINTENANCE_CANT_ASSIGN = None
 
     @classmethod
     def load(cls) -> None:
@@ -131,3 +132,4 @@ class PromptConfig:
             cls.INVALID_VENDOR_ID = data['INVALID_VENDOR_ID']
             cls.INVALID_ISSUE_ID = data['INVALID_ISSUE_ID']
             cls.INVALID_USER_ID = data['INVALID_USER_ID']
+            cls.ASSET_UNDER_MAINTENANCE_CANT_ASSIGN = data['ASSET_UNDER_MAINTENANCE_CANT_ASSIGN']

@@ -36,10 +36,11 @@ class ViewIssueHandler:
                 raise ApplicationException(422, PromptConfig.UNPROCESSIBLE_ENTITY, PromptConfig.INVALID_USER_ID)
             
             data = self.db_object.fetch_data(Queries.FETCH_ISSUE_BY_USER_ID,(user_id,))
-            if data:
-                return data
-            else:
-                raise ApplicationException(404, PromptConfig.RESOURCE_NOT_FOUND, PromptConfig.ISSUE_NOT_EXISTS)
+            # if data:
+            #     return data
+            # else:
+            #     raise ApplicationException(404, PromptConfig.RESOURCE_NOT_FOUND, PromptConfig.ISSUE_NOT_EXISTS)
+            return data
             
         except pymysql.Error as err:
             app.logger.error(f"Error occured in mysql database {err}") 

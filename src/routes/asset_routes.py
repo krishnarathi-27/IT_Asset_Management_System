@@ -39,8 +39,8 @@ class AssetAssign(MethodView):
     
     @blp.doc(parameters=AppConfig.SWAGGER_AUTHORISATION_HEADER)
     @access_required([ROLE_REQUIRED['asset manager']])
-    @blp.arguments(AssetUpdateSchema)
-    @blp.response(200,AssetUpdateSchema)
+    @blp.arguments(AssetSchema)
+    @blp.response(200,AssetSchema)
     def put(self,request_data,asset_id):
 
         obj_update_user = UpdateAssetController()
@@ -53,8 +53,8 @@ class AssetUnassign(MethodView):
      
     @blp.doc(parameters=AppConfig.SWAGGER_AUTHORISATION_HEADER)
     @access_required([ROLE_REQUIRED['asset manager']])
-    @blp.arguments(AssetUpdateSchema)
-    @blp.response(200,AssetUpdateSchema)
+    @blp.arguments(AssetSchema)
+    @blp.response(200,AssetSchema)
     def put(self,request_data,asset_id):
 
         obj_update_user = UpdateAssetController()

@@ -60,4 +60,3 @@ class UserPassword(MethodView):
         response = obj_update_user.update_password(user_data)
 
         return response
-    

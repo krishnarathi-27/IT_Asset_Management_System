@@ -25,10 +25,9 @@ class UpdateIssueHandler:
             
             fetched_issue_status = self.db_object.fetch_data(Queries.FETCH_IF_ISSUE_PENDING,(issue_id,))
 
-            print(fetched_issue_status)
             if not fetched_issue_status or fetched_issue_status[0]['issue_status'] == "resolved":
                 raise ApplicationException(404,PromptConfig.RESOURCE_NOT_FOUND,PromptConfig.ISSUE_ALREADY_RESOLVED)
-            
+        
             self.db_object.save_data(Queries.UPDATE_ISSUE_STATUS,(asset_id,issue_id,))
             self.db_object.save_data(Queries.UPDATE_ASSET_STATUS_AGAIN_TO_AVAILABLE,(asset_id,))
 

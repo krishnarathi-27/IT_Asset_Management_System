@@ -140,7 +140,7 @@ class Queries:
     """
     FETCH_ASSETS_TABLE = """
         SELECT asset_table.asset_id, asset_table.asset_type, assigned_to, asset_status,
-        asset_category.category_name, vendor_table.vendor_email
+        asset_category.category_name, vendor_table.vendor_email,asset_category.brand_name
         FROM asset_table
         INNER JOIN mapping_table ON asset_table.mapping_id = mapping_table.mapping_id
         INNER JOIN asset_category ON mapping_table.category_id = asset_category.category_id
@@ -174,6 +174,12 @@ class Queries:
         SELECT * FROM asset_table
         WHERE asset_status = 'available'    
     """
+
+    FETCH_ASSET_ID_UNDER_MAINTENANCE = """
+        SELECT asset_id FROM asset_table
+        WHERE asset_status = 'under-maintenance' AND asset_id = %s
+    """
+
     FETCH_ASSETS_UNDER_MAINTENANCE = """
         SELECT * FROM asset_table
         WHERE asset_status = 'under_maintenance'

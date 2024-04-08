@@ -44,6 +44,7 @@ class AssetSchema(MySchema):
     brand_name = fields.Str(required=True,validate=validate.Regexp(AppConfig.REGEX_NAME))
     vendor_email = fields.Str(required=True,validate=validate.Regexp(AppConfig.REGEX_EMAIL))
     asset_type = fields.Str(required=True,validate=validate.Regexp(AppConfig.REGEX_NAME))
+    assigned_to = fields.Str(required=True)
     message = fields.Str(dump_only=True)
 
 class AssetUpdateSchema(MySchema):
